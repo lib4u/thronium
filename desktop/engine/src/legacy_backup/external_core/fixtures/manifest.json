@@ -1,0 +1,27 @@
+{
+  "qtVersion": "6.11.2",
+  "cases": 22,
+  "checks": "22 initialized ports; exact complete DTO; omitted defaults; empty input; permissive Qt type coercions",
+  "sources": {
+    "include/configs/outbounds/extracore.h": "d2f923c792442a92570224a1135585aed5ede589e279ba8802ea84d365f6d75f",
+    "include/configs/common/Outbound.h": "5566eb70a2d36ff1f85d1afe39704ca76b29411f3883aee0eb68fb459769af3e",
+    "include/configs/baseConfig.h": "40c3ac916a4c61b8013c3550dc0af60785a4dc9e854b6a939ebfc393bebeea53",
+    "src/configs/common/OutboundFactory.cpp": "9f61093e3dd746e13322810a330052dad142f660f08f335ccf74e84564a2fa64",
+    "src/database/ProfilesRepo.cpp": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49",
+    "src/configs/generate.cpp": "3ecda90ce0ad6f9a02ebbd3c9780467e6065d5db620ddf9531dfd17518948a65",
+    "src/ui/profile/edit_extra_core.cpp": "06dea8d29898ba455339bed90819b7c21a16823cc687212a37878678373fe3e5",
+    "desktop/engine/src/external_core.rs": "a57ac4a02787027265a1831af7e9e06178c947148dce42693ad478a361c0e004",
+    "desktop/engine/src/external_core/runtime.rs": "dffe474d0f2cd93c96f311fa07b119b966a230d99190ce9c0a0456a23af0259e",
+    "desktop/engine/src/legacy_backup/profiles.rs": "8980027bca8a9196c078a38a6e316c2c56b9df36eaa9da40ea860030373e81d7",
+    "desktop/engine/src/legacy_backup/routes/mod.rs": "a93a082447713cea80238453c4d3061fddccfef558a24543da379ffe96d02215",
+    "desktop/engine/src/legacy_backup/autoselector.rs": "f590646662cc3200f497416bdf3c764e234aab1434b2fdea6d7e6c3583df2a24"
+  },
+  "artifacts": {
+    "inputs.json": "a133c412283348f83aa1a3008415b657cb1e64a37fc47a37d3a06ba0bae78913",
+    "cases.json": "fbdc10296d43f7575536a9ccdc432444988d9070aeae83768b3690ff7efeec9f",
+    "oracle.cpp": "de5ff0e073b01e0a7821351db49ddf817e8976aac4e9248ae011a10235ed2ae3",
+    "outbound_stub.h": "dd0a0f3a5f264b6cec3f09ff0aba59754d7e37cdb81cd40050a504a6bf99501d",
+    "make_oracle.py": "be8c534059d00894abcc16cbdfb6d2c8a8721be770ba51d2aa29fc8babc04ba0"
+  },
+  "boundary": "Unchanged extracore.h Parse/Export/Build under real Qt. Unrelated outbound base stubbed; implicit default constructor retained. Placement value initialization over 0xA5 memory has same initialization form as original factory. No profile executable/config path is accessed or executed."
+}

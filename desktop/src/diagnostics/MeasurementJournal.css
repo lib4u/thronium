@@ -1,0 +1,4 @@
+.measurement-journal-entries {
+  max-height: 480px;
+  overflow: auto;
+}

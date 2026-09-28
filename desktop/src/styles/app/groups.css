@@ -1,0 +1,173 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.group-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.groups-modal .feature-field {
+  margin-bottom: 16px;
+}
+.group-list {
+  display: grid;
+  gap: 4px;
+}
+.group-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.group-item-info {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.group-item-info strong,
+.group-item-info small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.group-item-info strong {
+  font-size: 14px;
+}
+.group-item-info small {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+  line-height: 1.5;
+}
+.group-item-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.group-item-actions .text-button {
+  margin-right: 8px;
+}
+.subscription-change {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.subscription-change > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.subscription-change small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.subscription-change > span {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.subscription-change[data-subscription-action='removed'] > span {
+  color: var(--danger);
+}
+.subscription-warning {
+  margin-block: 16px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.subscription-job-status {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.subscription-job-list {
+  display: grid;
+  gap: 12px;
+}
+.subscription-job {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 16px;
+  min-width: 0;
+}
+.subscription-job-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+}
+.subscription-job-head strong {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.subscription-job-head > span {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.subscription-job > small,
+.group-schedule {
+  color: var(--muted);
+  font-size: 12px;
+  display: block;
+  margin-top: 8px;
+}
+.subscription-job progress {
+  width: 100%;
+  accent-color: var(--accent);
+  height: 6px;
+  margin-top: 12px;
+}
+.group-update-error {
+  flex-basis: 100%;
+}
+.subscription-updates-modal .import-summary {
+  font-size: 12px;
+  color: var(--muted);
+}
+@media (max-width: 600px) {
+  .subscription-job {
+    padding: 12px;
+  }
+  .subscription-job-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .groups-modal .modal-footer {
+    flex-wrap: wrap;
+  }
+}
+.subscription-group-head .subscription-collapse {
+  min-width: 0;
+}
+.subscription-group-head .subscription-collapse small {
+  overflow-wrap: anywhere;
+}
+.desktop-import-modal textarea.import-source {
+  min-height: 230px;
+}
+.desktop-inline-error {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--danger);
+  overflow-wrap: anywhere;
+  margin-block: 10px;
+}
+@media (max-width: 600px) {
+  .desktop-import-modal textarea.import-source {
+    min-height: 180px;
+  }
+}

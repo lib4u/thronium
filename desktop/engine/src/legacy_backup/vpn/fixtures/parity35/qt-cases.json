@@ -1,0 +1,623 @@
+[
+    {
+        "name": "openvpn-array-mixed",
+        "parsed": true,
+        "qtBuild": {
+            "routes": [
+                " padded "
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    " padded "
+                ]
+            },
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "routes": [
+                " padded "
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    " padded "
+                ]
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": [
+                "",
+                " ",
+                "\t",
+                " padded "
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    "",
+                    " ",
+                    "\t",
+                    " padded "
+                ]
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openvpn-newline-mixed",
+        "parsed": true,
+        "qtBuild": {
+            "routes": [
+                " padded "
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    " padded "
+                ]
+            },
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "routes": [
+                " padded "
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    " padded "
+                ]
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": "\n \n\t\n padded \n",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": "\n \n\t\n padded \n"
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openvpn-array-blank",
+        "parsed": true,
+        "qtBuild": {
+            "routes": [
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                ]
+            },
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "routes": [
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                ]
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": [
+                " ",
+                "\t",
+                ""
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                    " ",
+                    "\t",
+                    ""
+                ]
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openvpn-newline-blank",
+        "parsed": true,
+        "qtBuild": {
+            "routes": [
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                ]
+            },
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "routes": [
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                ]
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": " \n\t\n",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": " \n\t\n"
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openvpn-array-empty",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": [
+            ],
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": [
+                ]
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openvpn-newline-empty",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openvpn-client"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openvpn",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "routes": "\n",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate": "\n"
+            },
+            "type": "openvpn"
+        }
+    },
+    {
+        "name": "openconnect-array-mixed",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "tls": {
+                "certificate_authority": [
+                    " padded "
+                ]
+            },
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                    " padded "
+                ]
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                    "",
+                    " ",
+                    "\t",
+                    " padded "
+                ]
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "openconnect-newline-mixed",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "tls": {
+                "certificate_authority": [
+                    " padded "
+                ]
+            },
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                    " padded "
+                ]
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": "\n \n\t\n padded \n"
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "openconnect-array-blank",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "tls": {
+                "certificate_authority": [
+                ]
+            },
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                ]
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                    " ",
+                    "\t",
+                    ""
+                ]
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "openconnect-newline-blank",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "tls": {
+                "certificate_authority": [
+                ]
+            },
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                ]
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": " \n\t\n"
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "openconnect-array-empty",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": [
+                ]
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "openconnect-newline-empty",
+        "parsed": true,
+        "qtBuild": {
+            "server": "vpn.fixture.invalid",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tls": {
+                "certificate_authority": "\n"
+            },
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-0",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[[::1]]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "[[::1]]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "[[::1]]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-1",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[::1:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "[::1",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "[::1",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-2",
+        "parsed": true,
+        "qtBuild": {
+            "server": "::1]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "::1]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "::1]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-3",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[::1]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "::1",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "[::1]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-4",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[::1]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "::1",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "::1",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-5",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[fe80::1%eth0]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "fe80::1%eth0",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "fe80::1%eth0",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    },
+    {
+        "name": "oc-host-6",
+        "parsed": true,
+        "qtBuild": {
+            "server": "[fe80::1%eth0]:444/login",
+            "type": "openconnect"
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "server": "fe80::1%eth0",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect",
+            "use_tunnel_dns": true
+        },
+        "skipBuild": null,
+        "source": {
+            "otp_profile_id": -1,
+            "server": "[fe80::1%eth0]",
+            "server_path": "login",
+            "server_port": 444,
+            "type": "openconnect"
+        }
+    }
+]

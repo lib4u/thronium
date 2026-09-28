@@ -1,0 +1,124 @@
+.library-pane .library-heading {
+  margin-bottom: 12px;
+}
+.library-compact-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.library-compact-search .group-strip {
+  flex: 0 1 44%;
+  min-width: 145px;
+  margin: 0;
+  gap: 5px;
+}
+.library-compact-search .group-strip select {
+  min-width: 0;
+  height: 34px;
+  min-height: 34px;
+  padding-block: 6px;
+  font-size: 11px;
+}
+.library-compact-search .group-strip .icon-button {
+  width: 28px;
+  height: 30px;
+}
+.library-compact-search .library-search {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+.library-compact-search .search-field {
+  height: 34px;
+  min-height: 34px;
+  padding: 0 11px;
+}
+.library-compact-search .search-field input {
+  min-width: 0;
+  font-size: 11px;
+}
+.library-pane .library-tabs {
+  gap: 18px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  min-height: 36px;
+  align-items: center;
+}
+.library-pane .library-tabs > button {
+  padding-block: 10px;
+  font-size: 11px;
+}
+.library-toolbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+.library-toolbar-tools .icon-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border: 0;
+  border-radius: var(--radius-s);
+}
+.library-toolbar-tools .icon-button .icon {
+  width: 16px;
+  height: 16px;
+}
+.library-toolbar-tools .icon-button[aria-expanded='true'],
+.library-toolbar-tools .icon-button[aria-pressed='true'] {
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+}
+.library-toolbar-tools .has-filter::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 3px;
+  right: 3px;
+  background: var(--accent);
+}
+.desktop-profile-icon.profile-emoji {
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  line-height: 1;
+  font-family: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+}
+@media (min-width: 701px) and (max-width: 1100px), (max-width: 440px) {
+  .library-compact-search {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .library-compact-search .group-strip,
+  .library-compact-search .library-search {
+    flex-basis: 100%;
+  }
+  .library-pane .library-tabs {
+    gap: 12px;
+  }
+  .library-toolbar-tools {
+    gap: 0;
+  }
+  .library-toolbar-tools .icon-button {
+    width: 27px;
+  }
+}
+.maintenance-list {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+}
+.maintenance-list strong {
+  display: block;
+}
+.maintenance-list small {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}

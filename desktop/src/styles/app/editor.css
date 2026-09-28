@@ -1,0 +1,124 @@
+/* Match the prototype editor while keeping the dialog usable in the native webview. */
+.desktop-modal.editor-modal {
+  width: min(1020px, calc(100vw - 32px));
+}
+.editor-modal .feature-field > label {
+  font-size: 11px;
+  color: var(--muted);
+}
+.editor-modal .field-multiline {
+  line-height: 1.6;
+  min-height: 80px;
+  resize: vertical;
+}
+.editor-modal .field-secret {
+  -webkit-text-security: disc;
+}
+.editor-modal .field-reveal {
+  align-self: flex-end;
+  font-size: 10px;
+  padding: 0;
+}
+.editor-modal .field-hint {
+  margin: 0;
+}
+.editor-modal .desktop-json {
+  width: 100%;
+}
+.editor-import {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.editor-invalid-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.editor-keygen {
+  margin-bottom: 20px;
+}
+.editor-keygen .button + .button {
+  margin-left: 10px;
+}
+.editor-card > .feature-panel-head {
+  padding-bottom: 12px;
+}
+
+.desktop-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  max-height: calc(100dvh - 32px);
+}
+.desktop-modal[open] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.desktop-modal > .modal-head,
+.desktop-modal > .modal-footer {
+  flex-shrink: 0;
+}
+.desktop-modal > .modal-body {
+  min-height: 0;
+  overflow: auto;
+}
+.desktop-modal.confirmation-modal {
+  width: min(480px, calc(100vw - 32px));
+}
+.confirmation-modal .modal-head {
+  padding-bottom: 24px;
+}
+.confirmation-modal .modal-head h2 {
+  font-size: 18px;
+  line-height: 1.45;
+}
+.confirmation-modal .modal-head p {
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 12px;
+}
+.confirmation-modal .modal-footer {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.confirmation-modal .modal-footer .button {
+  white-space: normal;
+}
+.editor-modal .feature-fields > .feature-field,
+.editor-type > .feature-field {
+  margin: 0;
+}
+.editor-modal .feature-fields + .editor-keygen {
+  margin-top: 18px;
+}
+select.text-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--shell);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+.group-strip select.text-input {
+  padding-right: 30px;
+}
+
+.library-heading .library-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

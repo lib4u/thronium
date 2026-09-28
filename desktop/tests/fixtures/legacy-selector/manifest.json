@@ -1,0 +1,15 @@
+{
+  "writer": "desktop/tests/thrbackup_writer.py: byte for byte the Qt6 QDataStream Qt_6_0 little-endian writer",
+  "validProfiles": 15,
+  "validGroups": 4,
+  "validSelectors": 2,
+  "blockedProfiles": 23,
+  "blockedSelectors": 9,
+  "data": "Synthetic profiles only; no connection is started by the fixture writer.",
+  "sha256": {
+    "blocked.thrbackup": "769745befa15dba3973671cc9bed98533da4198d8d9344c6a234e48d4094d36e",
+    "excluded-profiles.thrbackup": "fd3a1bba790734cbcb83a8d6270a34d602285a5cfbefbbabc3fbe28604c5f696",
+    "excluded-settings.thrbackup": "febaf112683b4e70c0c72a95390057992e0fe00dba3e5a8fe5e060e5f88c5425",
+    "valid.thrbackup": "e8a1f151b9907454ab640cdc798c8dcc3a7e9643828209fa350040a0950261d2"
+  }
+}

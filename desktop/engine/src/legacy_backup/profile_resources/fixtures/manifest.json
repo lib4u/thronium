@@ -1,0 +1,156 @@
+{
+  "qtRuntime": "6.11.1",
+  "writer": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "archives": {
+    "profiles-resources": {
+      "sha256": "c6701e98bf3ede39150db66ee8e4519ff5ed7285d079a3b5a95e889678fd938a",
+      "bytes": 25120,
+      "profiles": [
+        {
+          "id": 1,
+          "subtype": "fullconfig",
+          "name": "Full config with files"
+        },
+        {
+          "id": 2,
+          "subtype": "outbound",
+          "name": "SSH with key files"
+        }
+      ]
+    },
+    "profiles-resources-blocked": {
+      "sha256": "a7a8d1cd137543af27733eb8857bec67522ccdac3880ff06e7f70be8128b799e",
+      "bytes": 25120,
+      "profiles": [
+        {
+          "id": 3,
+          "subtype": "xrayfullconfig",
+          "name": "Xray external assets"
+        }
+      ]
+    }
+  },
+  "full": {
+    "outbounds": [
+      {
+        "type": "trojan",
+        "tag": "proxy",
+        "server": "192.0.2.44",
+        "server_port": 443,
+        "password": "synthetic-password",
+        "tls": {
+          "enabled": true,
+          "server_name": "proxy.fixture.invalid",
+          "certificate_path": "/old/Throne/ca.pem"
+        }
+      },
+      {
+        "type": "direct",
+        "tag": "direct"
+      }
+    ],
+    "dns": {
+      "servers": [
+        {
+          "type": "hosts",
+          "tag": "saved-hosts",
+          "path": "/old/Throne DNS/custom.hosts"
+        },
+        {
+          "type": "local",
+          "tag": "local"
+        }
+      ],
+      "rules": [
+        {
+          "preferred_by": [
+            "saved-hosts"
+          ],
+          "server": "saved-hosts"
+        }
+      ],
+      "final": "local"
+    },
+    "route": {
+      "rules": [
+        {
+          "rule_set": [
+            "binary-set"
+          ],
+          "action": "reject"
+        }
+      ],
+      "rule_set": [
+        {
+          "type": "local",
+          "tag": "binary-set",
+          "format": "binary",
+          "path": "/old/Throne rules/loopback.srs"
+        },
+        {
+          "type": "remote",
+          "tag": "seeded",
+          "format": "binary",
+          "url": "https://rules.fixture.invalid/set.srs",
+          "initial_path": "/old/Throne rules/seed.srs"
+        }
+      ],
+      "final": "proxy"
+    }
+  },
+  "ssh": {
+    "type": "ssh",
+    "server": "192.0.2.22",
+    "server_port": 22,
+    "user": "fixture",
+    "private_key_path": "/old/Throne keys/id_fixture"
+  },
+  "xrayExt": {
+    "outbounds": [
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "domain": [
+            "ext:private.dat:tag"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 31099,
+        "protocol": "socks",
+        "streamSettings": {
+          "security": "tls",
+          "tlsSettings": {
+            "certificates": [
+              {
+                "certificateFile": "/old/Throne/server.pem",
+                "keyFile": "/old/Throne/server.key"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "selectable": {
+    "custom.hosts": "3c44b7976efed68b0b53080db5c572a6ec8a370f440030ee25934394956d40ae",
+    "loopback.srs": "642045ad3597d11e07623355c37c8ce528414ceb4710e1c58940e1ef24276f4f"
+  },
+  "paths": {
+    "/old/Throne DNS/custom.hosts": "hosts",
+    "/old/Throne rules/loopback.srs": "rule-set-binary",
+    "/old/Throne/ca.pem": "pem",
+    "/old/Throne keys/id_fixture": "pem"
+  }
+}

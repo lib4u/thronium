@@ -1,0 +1,262 @@
+[
+  {
+    "id": "direct_dns-quic://dns.fixture.invalid-xray-False",
+    "settings": {
+      "direct_dns": "quic://dns.fixture.invalid"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:8853-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:8853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:8853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://bootstrap.fixture.invalid"
+    },
+    "proxyUsesXray": false,
+    "rules": [],
+    "expectedError": "legacy_dns_bootstrap_hostname_unsupported"
+  },
+  {
+    "id": "remote_dns-quic://1.1.1.1:8853-xray-False",
+    "settings": {
+      "remote_dns": "quic://1.1.1.1:8853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-False",
+    "settings": {
+      "remote_dns": "quic://dns.fixture.invalid:8853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "remote_dns-192.0.2.53:5353-xray-False",
+    "settings": {
+      "remote_dns": "192.0.2.53:5353"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://dns.fixture.invalid-xray-True",
+    "settings": {
+      "direct_dns": "quic://dns.fixture.invalid"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:8853-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:8853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:8853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://bootstrap.fixture.invalid"
+    },
+    "proxyUsesXray": true,
+    "rules": [],
+    "expectedError": "legacy_dns_bootstrap_hostname_unsupported"
+  },
+  {
+    "id": "remote_dns-quic://1.1.1.1:8853-xray-True",
+    "settings": {
+      "remote_dns": "quic://1.1.1.1:8853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-True",
+    "settings": {
+      "remote_dns": "quic://dns.fixture.invalid:8853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "remote_dns-192.0.2.53:5353-xray-True",
+    "settings": {
+      "remote_dns": "192.0.2.53:5353"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:1-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:1"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:65535-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:65535"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:00853-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:00853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:1"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:65535"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-False",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:00853"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "both-quic-xray-False",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:8853",
+      "core_box_underlying_dns": "quic://127.0.0.2:8854"
+    },
+    "proxyUsesXray": false,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:1-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:1"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:65535-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:65535"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "direct_dns-quic://127.0.0.1:00853-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:00853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:1"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:65535"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-True",
+    "settings": {
+      "core_box_underlying_dns": "quic://127.0.0.2:00853"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  },
+  {
+    "id": "both-quic-xray-True",
+    "settings": {
+      "direct_dns": "quic://127.0.0.1:8853",
+      "core_box_underlying_dns": "quic://127.0.0.2:8854"
+    },
+    "proxyUsesXray": true,
+    "rules": []
+  }
+]

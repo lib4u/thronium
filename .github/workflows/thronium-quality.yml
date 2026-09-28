@@ -1,0 +1,53 @@
+name: Thronium quality
+on:
+  pull_request:
+    paths:
+      - 'desktop/**'
+      - 'core/server/**'
+      - '.github/workflows/thronium-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'desktop/**'
+      - 'core/server/**'
+      - '.github/workflows/thronium-quality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: thronium-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4.3.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.21.1'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - name: Install Engine build dependencies
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libglib2.0-dev gsettings-desktop-schemas pkg-config
+      - name: Install tested Rust toolchain
+        run: rustup toolchain install 1.98.0 --profile minimal --component rustfmt --component clippy && rustup default 1.98.0
+      - uses: actions/cache@v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            desktop/engine/target
+          key: thronium-engine-${{ runner.os }}-1.98.0-${{ hashFiles('desktop/engine/Cargo.lock') }}
+      - run: npm ci
+      - name: Check catalogs, TypeScript, UI text, lint, format and unit tests
+        run: npm run check:frontend
+      - name: Check generated IPC and Rust format
+        run: npm run contracts:check && npm run rust:fmt:check
+      - name: Check Engine targets
+        run: cargo clippy --locked --manifest-path engine/Cargo.toml --all-targets -j 2
+      - name: Test Engine library
+        run: cargo test --locked --manifest-path engine/Cargo.toml --lib -j 2 -- --test-threads=2

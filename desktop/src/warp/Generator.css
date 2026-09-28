@@ -1,0 +1,56 @@
+.warp-generator {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  min-width: 0;
+}
+.warp-generator h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.warp-generator .field-hint {
+  margin: 8px 0;
+}
+.warp-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.warp-consent input {
+  flex: none;
+  margin-top: 4px;
+  accent-color: var(--accent);
+}
+.warp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.warp-result {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.warp-result dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  margin: 0;
+  font-size: 12px;
+}
+.warp-result dt {
+  color: var(--muted);
+}
+.warp-result dd {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+.warp-generator .button {
+  max-width: 100%;
+  white-space: normal;
+}

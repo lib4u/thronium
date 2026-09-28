@@ -1,0 +1,202 @@
+{
+  "qtRuntime": "6.11.2",
+  "writer": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "description": "Real Qt container encoding; SQLite DDL extracted from SettingsRepo; ten header defaults asserted. No network or user files.",
+  "partsMask": 4,
+  "excludedPartsMask": 8,
+  "groups": {
+    "appearance": [
+      "language",
+      "show_config_security",
+      "skip_delete_confirmation"
+    ],
+    "testing": [
+      "test_url",
+      "url_test_timeout_ms",
+      "test_concurrent",
+      "speed_test_mode",
+      "speed_test_timeout_ms",
+      "simple_dl_url"
+    ],
+    "logging": [
+      "log_auto_scroll"
+    ]
+  },
+  "sourceDefaults": {
+    "language": "0",
+    "show_config_security": "false",
+    "skip_delete_confirmation": "false",
+    "log_auto_scroll": "true",
+    "test_url": "http://cp.cloudflare.com/",
+    "url_test_timeout_ms": "3000",
+    "test_concurrent": "10",
+    "speed_test_mode": "0",
+    "speed_test_timeout_ms": "5000",
+    "simple_dl_url": "http://cachefly.cachefly.net/1mb.test"
+  },
+  "validSourceRows": {
+    "language": "1",
+    "show_config_security": "true",
+    "skip_delete_confirmation": "false",
+    "log_auto_scroll": "false",
+    "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+    "url_test_timeout_ms": "4500",
+    "test_concurrent": "2",
+    "speed_test_mode": "3",
+    "speed_test_timeout_ms": "6000",
+    "simple_dl_url": "http://127.0.0.1:38173/download"
+  },
+  "modes": {
+    "defaults": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "0",
+        "show_config_security": "false",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "true",
+        "test_url": "http://cp.cloudflare.com/",
+        "url_test_timeout_ms": "3000",
+        "test_concurrent": "10",
+        "speed_test_mode": "0",
+        "speed_test_timeout_ms": "5000",
+        "simple_dl_url": "http://cachefly.cachefly.net/1mb.test"
+      }
+    },
+    "valid-en": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "1",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    },
+    "valid-ru": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "4",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    },
+    "blocked-appearance": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "2",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    },
+    "blocked-testing": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "1",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "4",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    },
+    "missing-fields": {
+      "settings": 2,
+      "sourceRows": {
+        "log_auto_scroll": "1",
+        "test_concurrent": "+0002"
+      }
+    },
+    "empty": {
+      "settings": 0,
+      "sourceRows": {}
+    },
+    "unknown-values": {
+      "settings": 11,
+      "sourceRows": {
+        "language": "1",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download",
+        "synthetic-private-unknown-key": "synthetic-private-unknown-value-{\"not-json\""
+      }
+    },
+    "bad-sqlite-type": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "1",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    },
+    "unknown-column": {
+      "settings": 10,
+      "sourceRows": {
+        "language": "1",
+        "show_config_security": "true",
+        "skip_delete_confirmation": "false",
+        "log_auto_scroll": "false",
+        "test_url": "http://127.0.0.1:38173/probe?fixture=synthetic-private",
+        "url_test_timeout_ms": "4500",
+        "test_concurrent": "2",
+        "speed_test_mode": "3",
+        "speed_test_timeout_ms": "6000",
+        "simple_dl_url": "http://127.0.0.1:38173/download"
+      }
+    }
+  },
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c"
+  },
+  "ddlSha256": "45310d279b655a71f7394f88edc86cbce8f87535dea0f147033839dcebaca903",
+  "sha256": {
+    "bad-sqlite-type.thrbackup": "59f1027dfe26dceccb5b10cf4874a75305439b9823d33f6b88f0d38fe2994690",
+    "blocked-appearance.thrbackup": "8b64fc7889a2ca62ad6f2ed8dc81817a14c738c1c237c45ac24edd3246548dd5",
+    "blocked-testing.thrbackup": "4ade45ce4094a4487d19b8e07aba1c479f6b2dfcad98a871010343fcd1917421",
+    "defaults.thrbackup": "85f97aefc6ddecdbe0718e0156c052e8e8acf3de73b443e180bd7083b701dccf",
+    "empty.thrbackup": "182e308d0d4e92eba7e393ead882555f5b97d7547bd15bbc9899a134dc542f27",
+    "excluded-settings.thrbackup": "e9ab050b0c28354be892b81f1334a7cb60dad0fefba4af1f4a83d9d3db79588a",
+    "missing-fields.thrbackup": "392e924195240f9d30741b96c504c309037b39c4d8e7c55f4f12b1a72e92eb16",
+    "unknown-column.thrbackup": "0ff2e0c13f423c644ab30ac6188f589d7a345c2dd7acde91f6cae81de77b4581",
+    "unknown-values.thrbackup": "f42008ad7e701b19d8199b0c24ea2abd0cd9eacb10d0753450b2511e817387b8",
+    "valid-en.thrbackup": "86fc624026ef3b8ac5ba97152276990b042790fff60cbe89b488607e20e89860",
+    "valid-ru.thrbackup": "e9374af66cc3734676e802a38070a1839f1cf6f2ec2469def19f6a5f6889a0fb"
+  }
+}

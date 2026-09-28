@@ -1,0 +1,1023 @@
+{
+  "qtRuntime": "6.11.2",
+  "cases": [
+    {
+      "id": "rule-set-direct-v6-false-raw-False",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "raw": false,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-private"
+              ],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-direct-v6-false-raw-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "rule-set-direct-v6-false-raw-True",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "raw": true,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-private"
+              ],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-direct-v6-false-raw-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "rule-set-direct-v6-true-raw-False",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "raw": false,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-openai"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-private"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-private"
+              ],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-direct-v6-true-raw-False",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "rule-set-direct-v6-true-raw-True",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "raw": true,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-openai"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-private"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-private"
+              ],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "two.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-direct-v6-true-raw-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "rule-set-remote-v6-false-raw-False",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "raw": false,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-remote-v6-false-raw-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "rule-set-remote-v6-false-raw-True",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "raw": true,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-remote-v6-false-raw-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "rule-set-remote-v6-true-raw-False",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "raw": false,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-openai"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-remote-v6-true-raw-False",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "rule-set-remote-v6-true-raw-True",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "raw": true,
+      "raw_route": {
+        "final": -2
+      },
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+            "domain_suffix_json": "[\"one.invalid\"]"
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]",
+            "domain_json": "[\"two.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ],
+              "rule_set": [
+                "geosite-openai"
+              ]
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-openai"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "one.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "rule-set-remote-v6-true-raw-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    }
+  ]
+}

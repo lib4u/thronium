@@ -1,0 +1,29 @@
+# Editors and operating systems
+*~
+.#*
+.*.swp
+.DS_Store
+.directory
+Thumbs.db
+.vscode
+.idea
+.vs
+
+# Build output that must never be committed
+*.o
+*.a
+*.so
+*.so.*
+*.dll
+*.exe
+*.pdb
+*.pyc
+__pycache__/
+# Core dumps, but not the core/ directory
+core
+!core/
+
+# Generated Go bindings and desktop sidecars
+/core/server/gen/*.pb.go
+/desktop/src-tauri/binaries/*
+!/desktop/src-tauri/binaries/.gitkeep

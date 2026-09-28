@@ -1,0 +1,341 @@
+{
+  "qtRuntime": "6.11.2",
+  "sourceFields": [
+    "net_use_proxy",
+    "net_insecure",
+    "user_agent2",
+    "sub_auto_update",
+    "sub_clear",
+    "sub_show_change_popup",
+    "sub_send_hwid",
+    "sub_custom_hwid_params",
+    "allow_stopping_active_profile"
+  ],
+  "modes": {
+    "valid": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "empty-agent": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "negative-interval": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "-30",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "tiny-interval": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "15",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "zero-interval": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "0",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "proxy-insecure": {
+      "net_use_proxy": "true",
+      "net_insecure": "true",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "clear-all": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "true",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "bad-agent": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75\r\nx-hwid: private-injected75",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "too-large-interval": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "43201",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "bad-bool": {
+      "net_use_proxy": "yes",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "unknown-column": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    },
+    "excluded-settings": {
+      "net_use_proxy": "false",
+      "net_insecure": "false",
+      "user_agent2": "private-agent75/1.0",
+      "sub_auto_update": "60",
+      "sub_clear": "false",
+      "sub_show_change_popup": "true",
+      "sub_send_hwid": "true",
+      "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+      "allow_stopping_active_profile": "false",
+      "log_auto_scroll": "true"
+    }
+  },
+  "expectations": {
+    "valid": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "empty-agent": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "Throne/Thronium-0.1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "negative-interval": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 0,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "tiny-interval": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 0,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "zero-interval": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 0,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "proxy-insecure": {
+      "network": {
+        "net_use_proxy": true,
+        "net_insecure": true,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "clear-all": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "recreate"
+      }
+    },
+    "bad-agent": {
+      "network": "legacy_network_value_unsupported",
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "too-large-interval": {
+      "network": {
+        "net_use_proxy": false,
+        "net_insecure": false,
+        "user_agent": "private-agent75/1.0"
+      },
+      "subscriptions": "legacy_settings_limit"
+    },
+    "bad-bool": {
+      "network": "legacy_settings_value_invalid",
+      "subscriptions": {
+        "sub_auto_update": 60,
+        "sub_clear": true,
+        "sub_show_change_popup": true,
+        "sub_send_hwid": true,
+        "sub_custom_hwid_params": "hwid=private-hwid75,os=FixtureOS75,osversion=fixture-version75,model=private-model75",
+        "allow_stopping_active_profile": false,
+        "sub_update_mode": "reconcile"
+      }
+    },
+    "unknown-column": {
+      "network": "legacy_settings_structure",
+      "subscriptions": "legacy_settings_structure"
+    },
+    "excluded-settings": {
+      "network": "legacy_settings_part_missing",
+      "subscriptions": "legacy_settings_part_missing"
+    }
+  },
+  "defaultUserAgent": "Throne/Thronium-0.1.0",
+  "description": "Actual Qt6 QDataStream archives, original SQLite DDL, exact user_agent2 alias, original scheduler threshold and reconcile/clear-all distinction; synthetic private markers only.",
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "src/ui/mainWindow/mainwindow_setup.cpp": "3b311e0a94b09a668aa532ac4f3cdc92a2727e8e7939f2272a4121928f41fd1f",
+    "src/configs/sub/GroupUpdater.cpp": "69ee2d50a31cd4b8b429c4d2544d9ce16eebe665145979382373966f06ef44f4",
+    "src/global/HTTPRequestHelper.cpp": "00ce68cff903f4a551616871d70872a918cd61a832c45bf8a19e91aa19c832d9",
+    "desktop/src/settings/catalog.json": "65df27ff77d93872c04748b1dc62a456231d7981e3e588207f824b71d940e2ca"
+  },
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "sha256": {
+    "bad-agent.thrbackup": "ba1a0eb8d9cc87192b7c2289823b61786a7f4ec05f3ee87096e3e137d2025f33",
+    "bad-bool.thrbackup": "f67d768f684518e321c11e85bd4c533a511ae4f5532f400e4a2a6d18e7b9af49",
+    "clear-all.thrbackup": "8a93dcdff4f08d928302b3b6832d52aeb5daeb1d9d9263b013a420d6e2362157",
+    "empty-agent.thrbackup": "0191886e168fb8c8c90d8b4a3549a66e174bc8fb1e7a19e976411a6fff63195b",
+    "excluded-settings.thrbackup": "f046c368aab5709d7782060351113f2d4f12f9e7caf1ad9f702f35e3cbaf2d1a",
+    "negative-interval.thrbackup": "0b33a61b7922a4234d1c54afbefa70510cb27d0782ebb44397a15d5e2a8bd834",
+    "proxy-insecure.thrbackup": "2e2d447e1736e878e9559e4fe91693e53c48cf095cf0616d668ca341ab74dd65",
+    "tiny-interval.thrbackup": "09204f4a23ed088adaf1f662f0fde8296b0a95692e3d732e1a4cf09bd3b2e9cd",
+    "too-large-interval.thrbackup": "48fcca78104b6982727cb8df3f764fbae81743140931562a2f44a1112a0f54da",
+    "unknown-column.thrbackup": "09fe1d3ba3adba19b63f812111748a737586ec3b27f11f24a77d4fb4be4f9a90",
+    "valid.thrbackup": "f18043ee932888322118da603cdfffa66a007f24d0ee2c4c421b6c90deb42058",
+    "zero-interval.thrbackup": "c30ef1fad3e8c2357d2fbf134e081fe6405278234c3460e6d900c9b0f8a01a06"
+  },
+  "expectationRevision": "M77: explicit sub_update_mode; original Qt archive bytes and their creation hashes retained"
+}

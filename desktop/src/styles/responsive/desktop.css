@@ -1,0 +1,52 @@
+@media (min-width: 1620px) {
+  .app-shell {
+    margin: 28px auto;
+    min-height: calc(100vh - 56px);
+  }
+  .sidebar {
+    top: 28px;
+    height: calc(100vh - 58px);
+  }
+  main {
+    padding: 39px 42px;
+  }
+}
+@media (max-width: 1610px) {
+  .app-shell {
+    margin: 16px;
+  }
+}
+@media (max-width: 1250px) {
+  .app-shell {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+  .sidebar {
+    padding-inline: 12px;
+  }
+  .nav-link {
+    padding-inline: 11px;
+    gap: 10px;
+    font-size: 11px;
+  }
+  main {
+    padding: 27px;
+  }
+  .topbar {
+    padding: 0 27px;
+  }
+  .settings-panel {
+    padding: 20px;
+  }
+  .setting-row {
+    gap: 10px;
+  }
+  .setting-row p {
+    font-size: 8px;
+  }
+  .setting-row strong {
+    font-size: 10px;
+  }
+  .toast-stack {
+    left: calc(50% + 95px);
+  }
+}

@@ -1,0 +1,54 @@
+.core-log-filters {
+  display: grid;
+  grid-template-columns: minmax(160px, 2fr) repeat(3, minmax(110px, 1fr));
+  gap: 12px;
+}
+.core-log-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+.core-log-actions .import-toggle {
+  margin: 0;
+  font-size: 11px;
+}
+.core-log-entries {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+  max-height: 420px;
+  overflow: auto;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.core-log-entries li {
+  border-bottom: 1px solid var(--border);
+  padding: 6px 0;
+}
+.core-log-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+}
+.core-log-entries [data-log-level='error'] b {
+  color: var(--danger);
+}
+.core-log-entries [data-log-level='warn'] b {
+  color: var(--warning);
+}
+.core-log-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.core-log-probe {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .core-log-filters {
+    grid-template-columns: 1fr;
+  }
+}

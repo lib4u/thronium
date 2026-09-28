@@ -1,0 +1,92 @@
+.modal {
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 48px);
+  border: 1px solid var(--border);
+  border-radius: var(--dialog-radius);
+  background: var(--panel);
+  color: var(--text);
+  padding: 0;
+  box-shadow: var(--shadow-dialog);
+  overflow: auto;
+}
+.modal::backdrop {
+  background: var(--backdrop);
+  backdrop-filter: blur(6px);
+}
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 24px 15px;
+}
+.modal-head h2 {
+  font-size: 20px;
+  letter-spacing: -0.65px;
+}
+.modal-head p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 7px;
+}
+.modal-head > .icon-button {
+  margin: -4px -6px 0 0;
+}
+.modal-body {
+  padding: 5px 24px 22px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+  border-top: 1px solid var(--border);
+  padding: 15px 24px;
+}
+.modal-footer .text-button {
+  margin-right: auto;
+}
+.field-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 16px 0 7px;
+}
+.text-input {
+  background: var(--shell);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  color: var(--text);
+  padding: 11px 12px;
+  width: 100%;
+  font-size: 11px;
+  resize: vertical;
+}
+.text-input::placeholder {
+  color: var(--faint);
+}
+.text-input:focus {
+  border-color: var(--accent);
+}
+textarea.text-input {
+  min-height: 92px;
+}
+.field-hint {
+  font-size: 9px;
+  color: var(--faint);
+  margin-top: 7px;
+  line-height: 1.65;
+}
+.field-error {
+  font-size: 10px;
+  color: var(--danger);
+  padding: 10px 0 0;
+}
+.import-tabs {
+  width: 100%;
+  margin: 4px 0 10px;
+}
+.import-tabs button {
+  flex: 1;
+}

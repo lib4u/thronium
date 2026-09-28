@@ -1,0 +1,86 @@
+[
+  {
+    "file": "src/AppShell.tsx",
+    "value": "thronium"
+  },
+  {
+    "file": "src/diagnostics/ResourcesPanel.tsx",
+    "value": "CPU"
+  },
+  {
+    "file": "src/diagnostics/ResourcesPanel.tsx",
+    "value": "RAM"
+  },
+  {
+    "file": "src/otp/OtpEditorDialog.tsx",
+    "value": "TOTP"
+  },
+  {
+    "file": "src/otp/OtpEditorDialog.tsx",
+    "value": "HOTP"
+  },
+  {
+    "file": "src/otp/OtpView.tsx",
+    "value": "Google Authenticator"
+  },
+  {
+    "file": "src/profiles/ConfigurationDialog.tsx",
+    "value": "Xray"
+  },
+  {
+    "file": "src/profiles/ConfigurationDialog.tsx",
+    "value": "sing-box"
+  },
+  {
+    "file": "src/profiles/ConfigurationDialog.tsx",
+    "value": "JSON"
+  },
+  {
+    "file": "src/profiles/ImportSourceFields.tsx",
+    "value": "https://, vless://, ss://, tt://, throne://…"
+  },
+  {
+    "file": "src/profiles/ProfileForm.tsx",
+    "value": "Xray"
+  },
+  {
+    "file": "src/profiles/ProfileForm.tsx",
+    "value": "sing-box"
+  },
+  {
+    "file": "src/routing/GeoPanel.tsx",
+    "value": "GeoSite ·"
+  },
+  {
+    "file": "src/routing/GeoPanel.tsx",
+    "value": "GeoIP ·"
+  },
+  {
+    "file": "src/routing/GeoPanel.tsx",
+    "value": "https://…/geosite.dat"
+  },
+  {
+    "file": "src/routing/GeoPanel.tsx",
+    "value": "MiB"
+  },
+  {
+    "file": "src/routing/ObjectEditor.tsx",
+    "value": "JSON"
+  },
+  {
+    "file": "src/routing/RuleConditions.tsx",
+    "value": "JSON"
+  },
+  {
+    "file": "src/selectors/DynamicSelectorView.tsx",
+    "value": "DE,NL"
+  },
+  {
+    "file": "src/selectors/Panel.tsx",
+    "value": "UDP:"
+  },
+  {
+    "file": "src/settings/SettingsSearchResults.tsx",
+    "value": "DNS"
+  }
+]

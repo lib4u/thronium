@@ -1,0 +1,19 @@
+.share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.share-qr {
+  margin: 16px 0;
+  text-align: center;
+}
+.share-qr img {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+.share-qr .share-actions {
+  justify-content: center;
+}

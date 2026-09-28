@@ -1,0 +1,1728 @@
+[
+    {
+        "name": "ovpn-defaults",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-000",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-001",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-010",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-011",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-100",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-101",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-110",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-policy-111",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-dial",
+        "parsed": true,
+        "qtBuild": {
+            "bind_interface": "synthetic0",
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openvpn-client",
+            "udp_fragment": true,
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "bind_interface": "synthetic0",
+            "block_outside_dns": false,
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openvpn",
+            "udp_fragment": true,
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "bind_interface": "synthetic0",
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openvpn",
+            "udp_fragment": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject; Qt coercion is not permission to change policy",
+        "name": "ovpn-wrong-type-policy",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": "false",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject; do not reproduce Qt silent discard",
+        "name": "ovpn-unknown-field",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "future_option": 9007199254740993,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-defaults",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-000",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-001",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-010",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-011",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": false,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-100",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-101",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": false
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-110",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-policy-111",
+        "parsed": true,
+        "policy": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "use_tunnel_dns": true
+        },
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "block_outside_dns": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-dial",
+        "parsed": true,
+        "qtBuild": {
+            "bind_interface": "synthetic0",
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openconnect",
+            "udp_fragment": true,
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "bind_interface": "synthetic0",
+            "block_outside_dns": false,
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openconnect",
+            "udp_fragment": true,
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "bind_interface": "synthetic0",
+            "connect_timeout": "11s",
+            "inet4_bind_address": "192.0.2.44",
+            "inet6_bind_address": "2001:db8::44",
+            "password": " synthetic-password ",
+            "reuse_addr": true,
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "type": "openconnect",
+            "udp_fragment": true,
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject; Qt coercion is not permission to change policy",
+        "name": "oc-wrong-type-policy",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": false,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": "false",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject; do not reproduce Qt silent discard",
+        "name": "oc-unknown-field",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "future_option": 9007199254740993,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-servers-precedence",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "remote_random": true,
+            "servers": [
+                {
+                    "network": "udp",
+                    "server": "198.51.100.1",
+                    "server_port": 1195
+                },
+                {
+                    "network": "tcp",
+                    "server": "2001:db8::1",
+                    "server_port": 443
+                }
+            ],
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "remote_random": true,
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "servers": [
+                {
+                    "network": "udp",
+                    "server": "198.51.100.1",
+                    "server_port": 1195
+                },
+                {
+                    "network": "tcp",
+                    "server": "2001:db8::1",
+                    "server_port": 443
+                }
+            ],
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "remote_random": true,
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "servers": [
+                {
+                    "network": "udp",
+                    "server": "198.51.100.1",
+                    "server_port": 1195
+                },
+                {
+                    "network": "tcp",
+                    "server": "2001:db8::1",
+                    "server_port": 443
+                }
+            ],
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "ovpn-static-options",
+        "parsed": true,
+        "qtBuild": {
+            "address": [
+                "10.23.0.2/24"
+            ],
+            "auth_retry": "none",
+            "data_ciphers": [
+                "AES-256-GCM",
+                "AES-128-GCM"
+            ],
+            "mode": "tls",
+            "mtu": 1370,
+            "network": "udp",
+            "password": " synthetic-password ",
+            "pull_filters": [
+                {
+                    "action": "reject",
+                    "text": "redirect-gateway"
+                }
+            ],
+            "renegotiate_bytes": 9007199254740993,
+            "renegotiate_packets": 9223372036854775807,
+            "route_gateway": "10.23.0.1",
+            "route_metric": 17,
+            "route_no_pull": true,
+            "routes": [
+                "10.24.0.0/16",
+                "2001:db8:34::/48"
+            ],
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate": [
+                    "synthetic-ca-line-1",
+                    "synthetic-ca-line-2"
+                ],
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ],
+                "control_wrap": {
+                    "key": [
+                        "synthetic-static-key"
+                    ],
+                    "type": "tls-crypt"
+                }
+            },
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "address": [
+                "10.23.0.2/24"
+            ],
+            "auth_retry": "none",
+            "block_outside_dns": false,
+            "data_ciphers": [
+                "AES-256-GCM",
+                "AES-128-GCM"
+            ],
+            "mode": "tls",
+            "mtu": 1370,
+            "network": "udp",
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "pull_filters": [
+                {
+                    "action": "reject",
+                    "text": "redirect-gateway"
+                }
+            ],
+            "renegotiate_bytes": 9007199254740993,
+            "renegotiate_packets": 9223372036854775807,
+            "route_gateway": "10.23.0.1",
+            "route_metric": 17,
+            "route_no_pull": true,
+            "routes": [
+                "10.24.0.0/16",
+                "2001:db8:34::/48"
+            ],
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate": [
+                    "synthetic-ca-line-1",
+                    "synthetic-ca-line-2"
+                ],
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ],
+                "control_wrap": {
+                    "key": [
+                        "synthetic-static-key"
+                    ],
+                    "type": "tls-crypt"
+                }
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "address": [
+                "10.23.0.2/24"
+            ],
+            "auth_retry": "none",
+            "data_ciphers": "AES-256-GCM\nAES-128-GCM",
+            "mode": "tls",
+            "mtu": 1370,
+            "network": "udp",
+            "password": " synthetic-password ",
+            "pull_filters": [
+                {
+                    "action": "reject",
+                    "text": "redirect-gateway"
+                }
+            ],
+            "renegotiate_bytes": 9007199254740993,
+            "renegotiate_packets": 9223372036854775807,
+            "route_gateway": "10.23.0.1",
+            "route_metric": 17,
+            "route_no_pull": true,
+            "routes": [
+                "10.24.0.0/16",
+                "2001:db8:34::/48"
+            ],
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate": "synthetic-ca-line-1\nsynthetic-ca-line-2",
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ],
+                "control_wrap": {
+                    "key": [
+                        "synthetic-static-key"
+                    ],
+                    "type": "tls-crypt"
+                }
+            },
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject external dependencies; never read paths",
+        "name": "ovpn-paths-unread",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "static_key_path": "/nonexistent/synthetic/static.key",
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate_path": "/nonexistent/synthetic/ca.pem",
+                "client_key_path": "/nonexistent/synthetic/client.key",
+                "control_wrap": {
+                    "key_path": "/nonexistent/synthetic/auth.key",
+                    "type": "tls-auth"
+                },
+                "crl_path": "/nonexistent/synthetic/crl.pem"
+            },
+            "type": "openvpn-client",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "static_key_path": "/nonexistent/synthetic/static.key",
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate_path": "/nonexistent/synthetic/ca.pem",
+                "client_key_path": "/nonexistent/synthetic/client.key",
+                "control_wrap": {
+                    "key_path": "/nonexistent/synthetic/auth.key",
+                    "type": "tls-auth"
+                },
+                "crl_path": "/nonexistent/synthetic/crl.pem"
+            },
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "static_key_path": "/nonexistent/synthetic/static.key",
+            "tag": "Synthetic OVPN 🦊",
+            "tls": {
+                "certificate_path": "/nonexistent/synthetic/ca.pem",
+                "client_key_path": "/nonexistent/synthetic/client.key",
+                "control_wrap": {
+                    "key_path": "/nonexistent/synthetic/auth.key",
+                    "type": "tls-auth"
+                },
+                "crl_path": "/nonexistent/synthetic/crl.pem"
+            },
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "pure Export-only; no HOTP resolve during plan",
+        "name": "ovpn-bound-static-challenge",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "auth_retry": "interact",
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "otp_profile_id": 17,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "static_challenge": "OTP code",
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": true,
+        "source": {
+            "auth_retry": "interact",
+            "otp_profile_id": 17,
+            "password": " synthetic-password ",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "static_challenge": "OTP code",
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "reject unsupported start placeholder; no resolve",
+        "name": "ovpn-bound-credential-placeholder",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "otp_profile_id": 17,
+            "password": "prefix-{otp}",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": true,
+        "source": {
+            "otp_profile_id": 17,
+            "password": "prefix-{otp}",
+            "server": "192.0.2.10",
+            "server_port": 1194,
+            "tag": "Synthetic OVPN 🦊",
+            "type": "openvpn",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-ipv6-path",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "[2001:db8::123]:8443/gateway/auth",
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "2001:db8::123",
+            "server_path": "gateway/auth",
+            "server_port": 8443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "2001:db8::123",
+            "server_path": "gateway/auth",
+            "server_port": 8443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "name": "oc-static-options",
+        "parsed": true,
+        "qtBuild": {
+            "auth_group": "synthetic-group",
+            "base_mtu": 1420,
+            "dpd_interval": "17s",
+            "dtls_local_port": 18443,
+            "flavor": "anyconnect",
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "realm",
+                    "value": "synthetic-realm"
+                }
+            ],
+            "mtu": 1360,
+            "no_udp": true,
+            "password": " synthetic-password ",
+            "queue_length": 64,
+            "server": "vpn.fixture.invalid/realm",
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority": [
+                    "synthetic-ca-1",
+                    "synthetic-ca-2"
+                ],
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ]
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "auth_group": "synthetic-group",
+            "base_mtu": 1420,
+            "block_outside_dns": false,
+            "dpd_interval": "17s",
+            "dtls_local_port": 18443,
+            "flavor": "anyconnect",
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "realm",
+                    "value": "synthetic-realm"
+                }
+            ],
+            "mtu": 1360,
+            "no_udp": true,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "queue_length": 64,
+            "server": "vpn.fixture.invalid",
+            "server_path": "/realm",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority": [
+                    "synthetic-ca-1",
+                    "synthetic-ca-2"
+                ],
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ]
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "auth_group": "synthetic-group",
+            "base_mtu": 1420,
+            "dpd_interval": "17s",
+            "dtls_local_port": 18443,
+            "flavor": "anyconnect",
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "realm",
+                    "value": "synthetic-realm"
+                }
+            ],
+            "mtu": 1360,
+            "no_udp": true,
+            "password": " synthetic-password ",
+            "queue_length": 64,
+            "server": "vpn.fixture.invalid",
+            "server_path": "/realm",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority": "synthetic-ca-1\nsynthetic-ca-2",
+                "client_certificate": [
+                    "synthetic-cert"
+                ],
+                "client_key": [
+                    "synthetic-key"
+                ]
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "preserve exact integer or strict unsupported token rejection",
+        "name": "oc-token-precise-counter",
+        "parsed": true,
+        "qtBuild": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "token": {
+                "counter": 9007199254740993,
+                "mode": "hotp",
+                "secret": "synthetic-token-secret"
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "token": {
+                "counter": 9007199254740993,
+                "mode": "hotp",
+                "secret": "synthetic-token-secret"
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "token": {
+                "counter": 9007199254740993,
+                "mode": "hotp",
+                "secret": "synthetic-token-secret"
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "strict-reject paths/executables; never access",
+        "name": "oc-paths-unread",
+        "parsed": true,
+        "qtBuild": {
+            "csd": {
+                "wrapper_path": "/nonexistent/synthetic/csd-helper"
+            },
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority_path": "/nonexistent/synthetic/ca.pem"
+            },
+            "tncc": {
+                "wrapper_path": "/nonexistent/synthetic/tncc-helper"
+            },
+            "token": {
+                "mode": "hotp",
+                "secret_path": "/nonexistent/synthetic/token"
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        },
+        "qtExport": {
+            "block_outside_dns": false,
+            "csd": {
+                "wrapper_path": "/nonexistent/synthetic/csd-helper"
+            },
+            "only_advertised_routes": true,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority_path": "/nonexistent/synthetic/ca.pem"
+            },
+            "tncc": {
+                "wrapper_path": "/nonexistent/synthetic/tncc-helper"
+            },
+            "token": {
+                "mode": "hotp",
+                "secret_path": "/nonexistent/synthetic/token"
+            },
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": null,
+        "source": {
+            "csd": {
+                "wrapper_path": "/nonexistent/synthetic/csd-helper"
+            },
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "tls": {
+                "certificate_authority_path": "/nonexistent/synthetic/ca.pem"
+            },
+            "tncc": {
+                "wrapper_path": "/nonexistent/synthetic/tncc-helper"
+            },
+            "token": {
+                "mode": "hotp",
+                "secret_path": "/nonexistent/synthetic/token"
+            },
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "pure Export-only; binding/source preservation decided before runtime transform",
+        "name": "oc-bound-form",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "block_outside_dns": false,
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "otp",
+                    "value": "{otp}"
+                },
+                {
+                    "form_id": "main",
+                    "name": "realm",
+                    "value": "synthetic-realm"
+                }
+            ],
+            "only_advertised_routes": true,
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": true,
+        "source": {
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "otp",
+                    "value": "{otp}"
+                },
+                {
+                    "form_id": "main",
+                    "name": "realm",
+                    "value": "synthetic-realm"
+                }
+            ],
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "reject unsupported start placeholder; no resolve",
+        "name": "oc-bound-credential-placeholder",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "block_outside_dns": false,
+            "only_advertised_routes": true,
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": "user-{otp}"
+        },
+        "skipBuild": true,
+        "source": {
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": "user-{otp}"
+        }
+    },
+    {
+        "migrationExpectation": "reject accepted30 cached password form",
+        "name": "oc-bound-cached-password",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "block_outside_dns": false,
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "password",
+                    "value": "{otp}"
+                }
+            ],
+            "only_advertised_routes": true,
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": true,
+        "source": {
+            "form_entries": [
+                {
+                    "form_id": "main",
+                    "name": "password",
+                    "value": "{otp}"
+                }
+            ],
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    },
+    {
+        "migrationExpectation": "reject accepted30 name-shadowed form even when form_id differs",
+        "name": "oc-bound-shadowed-form",
+        "parsed": true,
+        "qtBuildSkipped": true,
+        "qtExport": {
+            "block_outside_dns": false,
+            "form_entries": [
+                {
+                    "form_id": "first",
+                    "name": "otp",
+                    "value": "{otp}"
+                },
+                {
+                    "form_id": "other",
+                    "name": "otp",
+                    "value": "fixed-synthetic"
+                }
+            ],
+            "only_advertised_routes": true,
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "use_tunnel_dns": true,
+            "username": " synthetic-user "
+        },
+        "skipBuild": true,
+        "source": {
+            "form_entries": [
+                {
+                    "form_id": "first",
+                    "name": "otp",
+                    "value": "{otp}"
+                },
+                {
+                    "form_id": "other",
+                    "name": "otp",
+                    "value": "fixed-synthetic"
+                }
+            ],
+            "otp_profile_id": 41,
+            "password": " synthetic-password ",
+            "server": "vpn.fixture.invalid",
+            "server_port": 443,
+            "tag": "Synthetic OC 日本",
+            "type": "openconnect",
+            "username": " synthetic-user "
+        }
+    }
+]

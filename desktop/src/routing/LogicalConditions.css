@@ -1,0 +1,100 @@
+.condition-node {
+  min-width: 0;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+}
+.condition-node > legend {
+  padding: 0 5px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--muted);
+  font-size: 11px;
+}
+.condition-node-group {
+  border-left: 2px solid var(--accent);
+}
+.condition-children {
+  min-width: 0;
+}
+.condition-node .condition-mode {
+  min-width: 0;
+  font-size: 11px;
+}
+.condition-fields {
+  display: grid;
+  gap: 9px;
+}
+.condition-field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 26px;
+  gap: 8px;
+  align-items: start;
+}
+.condition-field-row > div {
+  min-width: 0;
+}
+.condition-field-row .text-input {
+  font-size: 11px;
+  min-width: 0;
+}
+.condition-field-row textarea {
+  resize: vertical;
+  overflow: auto;
+}
+.condition-field-row .icon-button {
+  width: 26px;
+  height: 26px;
+  margin-top: 6px;
+}
+.condition-add-actions,
+.condition-node-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-top: 8px;
+}
+.condition-node .text-button {
+  min-width: 0;
+  white-space: normal;
+  text-align: left;
+  font-size: 11px;
+}
+.condition-node > .feature-check {
+  margin-top: 10px;
+  font-size: 11px;
+}
+.condition-node .desktop-inline-error {
+  font-size: 10px;
+  margin: 4px 0;
+}
+#rule-group-conditions {
+  font-size: 11px;
+  margin-left: 12px;
+}
+@media (max-width: 600px) {
+  .condition-node {
+    padding: 7px 5px;
+  }
+  .condition-field-row {
+    grid-template-columns: minmax(0, 1fr) 24px;
+  }
+  .condition-field-row > select {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .condition-field-row > div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .condition-field-row > button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #rule-group-conditions {
+    display: flex;
+    margin: 5px 0 0;
+  }
+}

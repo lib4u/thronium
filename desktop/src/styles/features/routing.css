@@ -1,0 +1,199 @@
+@media (max-width: 1100px) {
+  .primary-nav {
+    gap: 14px;
+  }
+  .nav-link {
+    font-size: 10px;
+  }
+  .topbar {
+    padding-inline: 23px;
+  }
+  .client-wordmark {
+    font-size: 19px;
+  }
+}
+@media (max-width: 850px) and (min-width: 701px) {
+  .nav-link > span {
+    display: none;
+  }
+  .primary-nav {
+    gap: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .primary-nav {
+    gap: 0;
+  }
+  .primary-nav .nav-link {
+    flex: 1;
+    font-size: 8px;
+  }
+  .primary-nav .nav-link > span {
+    display: block;
+  }
+  .feature-fields,
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  .span-all {
+    grid-column: auto;
+  }
+  .editor-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .editor-nav {
+    flex-direction: row;
+    overflow: auto;
+  }
+  .editor-nav button {
+    white-space: nowrap;
+    padding: 8px;
+  }
+  .editor-type {
+    grid-template-columns: 1fr;
+  }
+  .settings-workbench {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .settings-sections {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .settings-sections button {
+    white-space: nowrap;
+    flex: none;
+  }
+  .feature-panel {
+    padding: 18px;
+  }
+  .route-profile-bar {
+    padding: 12px;
+  }
+  .route-profile-bar select {
+    flex: 1;
+  }
+  .feature-toolbar .text-input {
+    flex: 1;
+    width: 100%;
+  }
+}
+.route-rule-name {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: none;
+  padding: 0;
+  text-align: left;
+  max-width: 420px;
+}
+.route-rule-name > span:last-child {
+  min-width: 0;
+}
+.route-rule-name strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+.route-rule-name small {
+  display: block;
+  max-width: 380px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+.rule-number {
+  color: var(--faint);
+  font:
+    10px ui-monospace,
+    monospace;
+}
+.routing-table .switch {
+  width: 30px;
+  height: 18px;
+}
+.routing-table .switch::after {
+  width: 12px;
+  height: 12px;
+}
+.routing-table .switch.active::after {
+  transform: translateX(12px);
+}
+.routing-mode-grid .mode-card {
+  min-width: 0;
+}
+.routing-mode-grid .mode-card > span > small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.routing-mode-grid .mode-card strong {
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .route-rule-name {
+    max-width: 190px;
+  }
+  .route-rule-name small {
+    max-width: 145px;
+  }
+  .feature-panel-head {
+    flex-wrap: wrap;
+  }
+  .otp-code {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  #otp-list .group-row {
+    flex-wrap: wrap;
+  }
+}
+.group-strip select.text-input,
+.feature-toolbar select.text-input,
+.route-profile-bar select.text-input {
+  padding: 6px 10px;
+  line-height: 1.4;
+}
+.routing-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.routing-mode-grid .mode-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  text-align: left;
+}
+.routing-mode-grid .mode-card .mode-icon {
+  margin: 0;
+  flex: none;
+}
+.routing-mode-grid .mode-card > span:nth-child(2) {
+  padding-right: 12px;
+}
+@media (max-width: 700px) {
+  .routing-mode-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .routing-mode-grid .mode-card {
+    padding: 15px;
+  }
+}
+@media (min-width: 701px) {
+  .editor-nav {
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+  .settings-sections {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    max-height: calc(100dvh - 190px);
+    overflow-y: auto;
+  }
+}

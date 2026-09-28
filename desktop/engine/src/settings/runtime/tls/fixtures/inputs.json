@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "spoof-000",
+    "group": "spoof",
+    "tls": {
+      "enabled": true
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-001",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-002",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-003",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-004",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-005",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-006",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-007",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-008",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-009",
+    "group": "spoof",
+    "tls": {
+      "enabled": true
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-010",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-011",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-012",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-013",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-014",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-015",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-016",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-017",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-018",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-019",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-020",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-021",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-022",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-023",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-024",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-025",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-026",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-027",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-028",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-029",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-030",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-031",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-032",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-033",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-034",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-035",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-036",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-037",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-038",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-039",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-040",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-041",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-042",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-043",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-044",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": false,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-045",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-046",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-047",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-048",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-049",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-050",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-051",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-052",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": ""
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "spoof-053",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": false,
+      "spoof": "own.fixture.invalid",
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {
+      "tls_spoof_default_on": true,
+      "tls_spoof": "  default.fixture.invalid  ",
+      "tls_spoof_method": "  wrong-sequence  "
+    }
+  },
+  {
+    "id": "tricks-absent-False",
+    "group": "tricks",
+    "tls": {
+      "enabled": true
+    },
+    "settings": {
+      "tls_tricks_default_on": false
+    }
+  },
+  {
+    "id": "tricks-absent-True",
+    "group": "tricks",
+    "tls": {
+      "enabled": true
+    },
+    "settings": {
+      "tls_tricks_default_on": true
+    }
+  },
+  {
+    "id": "tricks-True-False",
+    "group": "tricks",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {
+        "mixedcase_sni": true
+      }
+    },
+    "settings": {
+      "tls_tricks_default_on": false
+    }
+  },
+  {
+    "id": "tricks-True-True",
+    "group": "tricks",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {
+        "mixedcase_sni": true
+      }
+    },
+    "settings": {
+      "tls_tricks_default_on": true
+    }
+  },
+  {
+    "id": "tricks-False-False",
+    "group": "tricks",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {
+        "mixedcase_sni": false
+      }
+    },
+    "settings": {
+      "tls_tricks_default_on": false
+    }
+  },
+  {
+    "id": "tricks-False-True",
+    "group": "tricks",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {
+        "mixedcase_sni": false
+      }
+    },
+    "settings": {
+      "tls_tricks_default_on": true
+    }
+  },
+  {
+    "id": "fragment-absent-False-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms"
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-absent-False-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms"
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "fragment-absent-True-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms"
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-absent-True-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms"
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "fragment-True-False-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": true
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-True-False-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": true
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "fragment-True-True-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": true
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-True-True-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": true
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "fragment-False-False-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": false
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-False-False-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": false
+    },
+    "settings": {
+      "fragment_default_on": false,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "fragment-False-True-built-in",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": false
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "built-in"
+    }
+  },
+  {
+    "id": "fragment-False-True-custom",
+    "group": "fragment",
+    "tls": {
+      "enabled": true,
+      "fragment_fallback_delay": "17ms",
+      "fragment": false
+    },
+    "settings": {
+      "fragment_default_on": true,
+      "fragment_implementation": "custom"
+    }
+  },
+  {
+    "id": "empty-global",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": true
+    },
+    "settings": {
+      "tls_spoof": " \t ",
+      "tls_spoof_method": " wrong-ack "
+    }
+  },
+  {
+    "id": "own-whitespace",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof": "  "
+    },
+    "settings": {
+      "tls_spoof_default_on": false
+    }
+  },
+  {
+    "id": "method-without-sni",
+    "group": "spoof",
+    "tls": {
+      "enabled": true,
+      "spoof_method": "wrong-ack"
+    },
+    "settings": {}
+  },
+  {
+    "id": "disabled",
+    "group": "spoof",
+    "tls": {
+      "enabled": false,
+      "spoof_enabled": true,
+      "spoof": "own.fixture.invalid"
+    },
+    "settings": {
+      "tls_spoof_default_on": true
+    }
+  },
+  {
+    "id": "tricks-empty-object",
+    "group": "non-parity-preservation",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {}
+    },
+    "settings": {
+      "tls_tricks_default_on": true,
+      "tls_spoof_default_on": true,
+      "tls_spoof": "default.fixture.invalid"
+    }
+  },
+  {
+    "id": "tricks-bool-old-thronium",
+    "group": "non-parity-preservation",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": true
+    },
+    "settings": {
+      "tls_tricks_default_on": true,
+      "tls_spoof_default_on": true,
+      "tls_spoof": "default.fixture.invalid"
+    }
+  },
+  {
+    "id": "spoof-null",
+    "group": "non-parity-preservation",
+    "tls": {
+      "enabled": true,
+      "spoof_enabled": null
+    },
+    "settings": {
+      "tls_tricks_default_on": true,
+      "tls_spoof_default_on": true,
+      "tls_spoof": "default.fixture.invalid"
+    }
+  },
+  {
+    "id": "spoof-number",
+    "group": "non-parity-preservation",
+    "tls": {
+      "enabled": true,
+      "spoof": 42
+    },
+    "settings": {
+      "tls_tricks_default_on": true,
+      "tls_spoof_default_on": true,
+      "tls_spoof": "default.fixture.invalid"
+    }
+  },
+  {
+    "id": "unknown-neighbor",
+    "group": "non-parity-preservation",
+    "tls": {
+      "enabled": true,
+      "tls_tricks": {
+        "mixedcase_sni": false,
+        "future": true
+      }
+    },
+    "settings": {
+      "tls_tricks_default_on": true,
+      "tls_spoof_default_on": true,
+      "tls_spoof": "default.fixture.invalid"
+    }
+  }
+]

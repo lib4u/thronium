@@ -1,0 +1,15 @@
+name: Feature request
+description: Suggest something Thronium should do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you want to do
+      description: The task you are trying to accomplish and why the current behaviour does not cover it.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How it could work

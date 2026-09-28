@@ -1,0 +1,58 @@
+.legacy-resources {
+  margin-block: 16px;
+}
+.legacy-resources h3 {
+  font-size: inherit;
+  margin-block: 0 6px;
+}
+.legacy-resources h4 {
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--muted);
+  margin-block: 10px 0;
+}
+.legacy-resources ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.legacy-resources li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.legacy-resources li > div {
+  flex: 1;
+  min-width: 0;
+}
+.legacy-resource-path {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.legacy-resources small {
+  color: var(--muted);
+}
+.legacy-resources button {
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .legacy-resources li {
+    flex-wrap: wrap;
+  }
+  .legacy-resources li > div {
+    flex-basis: 100%;
+  }
+}
+
+/* A long scope choice stays on one line instead of widening the review. */
+.legacy-review-choice {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: none;
+}
+/* Each term and its description sit directly in the review grid. */
+.legacy-review-row {
+  display: contents;
+}

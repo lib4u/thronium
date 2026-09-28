@@ -1,0 +1,835 @@
+{
+  "status": "Actual pinned core oracle passed:20HTTP,33invalidCheck,14DNSresponses; see inline-ruleset-oracle-run2/summary.json",
+  "source": "Pinned option/rule_set.go, route/rule/rule_headless.go and rule_item_rule_set.go; independent of current/future UI model",
+  "request": {
+    "route": {
+      "final": "direct",
+      "rule_set": [
+        {
+          "type": "inline",
+          "tag": "fixture",
+          "rules": "$case.rules"
+        }
+      ],
+      "rules": [
+        {
+          "rule_set": [
+            "fixture"
+          ],
+          "action": "route",
+          "outbound": "direct",
+          "override_port": "$matchedOriginPort"
+        }
+      ]
+    }
+  },
+  "http": [
+    {
+      "name": "and-00",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "and-01",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "and-10",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "and-11",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "or-00",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "or-01",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "or-10",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "or-11",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "not-leaf-0",
+      "rules": [
+        {
+          "network": "udp",
+          "invert": true
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "not-leaf-1",
+      "rules": [
+        {
+          "network": "tcp",
+          "invert": true
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "not-and-00",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ],
+          "invert": true
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "not-and-01",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "udp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ],
+          "invert": true
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "not-and-10",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                1
+              ]
+            }
+          ],
+          "invert": true
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "not-and-11",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp"
+            },
+            {
+              "port": [
+                "$destinationPort"
+              ]
+            }
+          ],
+          "invert": true
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "flat-destination-address-group-or",
+      "rules": [
+        {
+          "domain": [
+            "never-match.invalid"
+          ],
+          "ip_cidr": [
+            "127.0.0.0/8"
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "explicit-destination-address-and",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "domain": [
+                "never-match.invalid"
+              ]
+            },
+            {
+              "ip_cidr": [
+                "127.0.0.0/8"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "flat-destination-port-group-or",
+      "rules": [
+        {
+          "port": [
+            1
+          ],
+          "port_range": [
+            "$destinationRange"
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "explicit-destination-port-and",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "port": [
+                1
+              ]
+            },
+            {
+              "port_range": [
+                "$destinationRange"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedMatched": false
+    },
+    {
+      "name": "top-level-array-or-false-first",
+      "rules": [
+        {
+          "network": "udp"
+        },
+        {
+          "port": [
+            "$destinationPort"
+          ]
+        }
+      ],
+      "expectedMatched": true
+    },
+    {
+      "name": "top-level-array-or-true-first",
+      "rules": [
+        {
+          "port": [
+            "$destinationPort"
+          ]
+        },
+        {
+          "network": "udp"
+        }
+      ],
+      "expectedMatched": true
+    }
+  ],
+  "invalidCheck": [
+    {
+      "name": "route-only-auth_user",
+      "rules": [
+        {
+          "network": "tcp",
+          "auth_user": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-clash_mode",
+      "rules": [
+        {
+          "network": "tcp",
+          "clash_mode": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-client",
+      "rules": [
+        {
+          "network": "tcp",
+          "client": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-geoip",
+      "rules": [
+        {
+          "network": "tcp",
+          "geoip": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-geosite",
+      "rules": [
+        {
+          "network": "tcp",
+          "geosite": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-inbound",
+      "rules": [
+        {
+          "network": "tcp",
+          "inbound": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-interface_address",
+      "rules": [
+        {
+          "network": "tcp",
+          "interface_address": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-ip_is_private",
+      "rules": [
+        {
+          "network": "tcp",
+          "ip_is_private": false
+        }
+      ]
+    },
+    {
+      "name": "route-only-ip_version",
+      "rules": [
+        {
+          "network": "tcp",
+          "ip_version": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-preferred_by",
+      "rules": [
+        {
+          "network": "tcp",
+          "preferred_by": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-protocol",
+      "rules": [
+        {
+          "network": "tcp",
+          "protocol": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-rule_set",
+      "rules": [
+        {
+          "network": "tcp",
+          "rule_set": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-rule_set_ip_cidr_match_source",
+      "rules": [
+        {
+          "network": "tcp",
+          "rule_set_ip_cidr_match_source": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-rule_set_ipcidr_match_source",
+      "rules": [
+        {
+          "network": "tcp",
+          "rule_set_ipcidr_match_source": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-source_geoip",
+      "rules": [
+        {
+          "network": "tcp",
+          "source_geoip": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-source_hostname",
+      "rules": [
+        {
+          "network": "tcp",
+          "source_hostname": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-source_ip_is_private",
+      "rules": [
+        {
+          "network": "tcp",
+          "source_ip_is_private": false
+        }
+      ]
+    },
+    {
+      "name": "route-only-source_mac_address",
+      "rules": [
+        {
+          "network": "tcp",
+          "source_mac_address": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-user",
+      "rules": [
+        {
+          "network": "tcp",
+          "user": ""
+        }
+      ]
+    },
+    {
+      "name": "route-only-user_id",
+      "rules": [
+        {
+          "network": "tcp",
+          "user_id": ""
+        }
+      ]
+    },
+    {
+      "name": "unsupported-action",
+      "rules": [
+        {
+          "network": "tcp",
+          "action": ""
+        }
+      ]
+    },
+    {
+      "name": "unsupported-outbound",
+      "rules": [
+        {
+          "network": "tcp",
+          "outbound": ""
+        }
+      ]
+    },
+    {
+      "name": "unsupported-override_port",
+      "rules": [
+        {
+          "network": "tcp",
+          "override_port": 0
+        }
+      ]
+    },
+    {
+      "name": "unsupported-adguard_domain",
+      "rules": [
+        {
+          "network": "tcp",
+          "adguard_domain": [
+            "||example.invalid^"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "invert-only",
+      "rules": [
+        {
+          "invert": true
+        }
+      ]
+    },
+    {
+      "name": "empty-group",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": []
+        }
+      ]
+    },
+    {
+      "name": "mode-missing",
+      "rules": [
+        {
+          "type": "logical",
+          "rules": [
+            {
+              "network": "tcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mode-xor",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "xor",
+          "rules": [
+            {
+              "network": "tcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "null-child",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "name": "action-child",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp",
+              "action": "reject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "match-on-group",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "network": "tcp"
+            }
+          ],
+          "network": "tcp"
+        }
+      ]
+    },
+    {
+      "name": "empty-set-never-matches",
+      "rules": [],
+      "expectedErrorContains": "empty inline rule-set"
+    },
+    {
+      "name": "all-empty-rules-decoded-as-empty-set",
+      "rules": [
+        {}
+      ],
+      "expectedErrorContains": "empty inline rule-set"
+    }
+  ],
+  "additionalCheckOnly": [
+    {
+      "name": "query-type-name",
+      "rules": [
+        {
+          "query_type": [
+            "A",
+            "AAAA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "query-type-number",
+      "rules": [
+        {
+          "query_type": [
+            1,
+            28
+          ]
+        }
+      ]
+    }
+  ],
+  "harness": "Two owned IPv4 loopback origins MATCHED/FALLBACK, GET to fallback through actual mixed inbound; each invalid Check retains active baseline. No DNS/TUN/privileges or remote traffic. Use separate runner/artifacts, preserve nested-routing-oracle unchanged.",
+  "decoderCaveat": "The pinned fork drops recursively empty values while UnmarshallExcluded serializes badjson JSONObject. Whole rules:[{}] becomes an empty set; an empty node beside a nonempty sibling still reaches NewHeadlessRule and fails. Preserve original JSON; form drafts remain explicit unfinished/raw. LocalRuleSet constructor rejects the resulting empty inline set; decoder acceptance is not CheckConfig acceptance.",
+  "dns": [
+    {
+      "name": "A-name",
+      "rules": [
+        {
+          "query_type": "A"
+        }
+      ],
+      "expectedA": true,
+      "expectedAAAA": false
+    },
+    {
+      "name": "AAAA-number",
+      "rules": [
+        {
+          "query_type": 28
+        }
+      ],
+      "expectedA": false,
+      "expectedAAAA": true
+    },
+    {
+      "name": "logical-or-types",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "query_type": "A"
+            },
+            {
+              "query_type": "AAAA"
+            }
+          ]
+        }
+      ],
+      "expectedA": true,
+      "expectedAAAA": true
+    },
+    {
+      "name": "logical-and-domain",
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "query_type": "A"
+            },
+            {
+              "domain_suffix": [
+                "oracle.invalid"
+              ]
+            }
+          ]
+        }
+      ],
+      "expectedA": true,
+      "expectedAAAA": false
+    },
+    {
+      "name": "invert-A",
+      "rules": [
+        {
+          "query_type": "A",
+          "invert": true
+        }
+      ],
+      "expectedA": false,
+      "expectedAAAA": true
+    },
+    {
+      "name": "array-or-types",
+      "rules": [
+        {
+          "query_type": "A"
+        },
+        {
+          "query_type": 28
+        }
+      ],
+      "expectedA": true,
+      "expectedAAAA": true
+    },
+    {
+      "name": "null-query-type-list",
+      "rules": [
+        {
+          "query_type": [
+            null
+          ]
+        }
+      ],
+      "expectedA": false,
+      "expectedAAAA": false
+    }
+  ]
+}

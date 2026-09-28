@@ -1,0 +1,527 @@
+{
+    "cases": [
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 0
+        },
+        {
+            "accepted": true,
+            "after": [
+                22,
+                11,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 1
+        },
+        {
+            "accepted": true,
+            "after": [
+                22,
+                33,
+                11,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 2
+        },
+        {
+            "accepted": true,
+            "after": [
+                22,
+                33,
+                44,
+                11,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 3
+        },
+        {
+            "accepted": true,
+            "after": [
+                22,
+                33,
+                44,
+                55,
+                11
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 4
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 1,
+            "targetIndex": 0
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 1,
+            "targetIndex": 1
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                33,
+                22,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 1,
+            "targetIndex": 2
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                33,
+                44,
+                22,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 1,
+            "targetIndex": 3
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                33,
+                44,
+                55,
+                22
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 1,
+            "targetIndex": 4
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                33,
+                22,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 2,
+            "targetIndex": 0
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 2,
+            "targetIndex": 1
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 2,
+            "targetIndex": 2
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                44,
+                33,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 2,
+            "targetIndex": 3
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                44,
+                55,
+                33
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 2,
+            "targetIndex": 4
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                44,
+                22,
+                33,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 3,
+            "targetIndex": 0
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                44,
+                33,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 3,
+            "targetIndex": 1
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 3,
+            "targetIndex": 2
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 3,
+            "targetIndex": 3
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                55,
+                44
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 3,
+            "targetIndex": 4
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                55,
+                22,
+                33,
+                44
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 4,
+            "targetIndex": 0
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                55,
+                33,
+                44
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 4,
+            "targetIndex": 1
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                55,
+                44
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 4,
+            "targetIndex": 2
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 4,
+            "targetIndex": 3
+        },
+        {
+            "accepted": true,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 4,
+            "targetIndex": 4
+        },
+        {
+            "accepted": false,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 5,
+            "targetIndex": 0
+        },
+        {
+            "accepted": false,
+            "after": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "before": [
+                11,
+                22,
+                33,
+                44,
+                55
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 5
+        },
+        {
+            "accepted": false,
+            "after": [
+            ],
+            "before": [
+            ],
+            "sourceIndex": 0,
+            "targetIndex": 0
+        }
+    ],
+    "qtVersion": "6.11.2"
+}

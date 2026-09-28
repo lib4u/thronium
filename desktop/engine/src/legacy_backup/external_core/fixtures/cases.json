@@ -1,0 +1,641 @@
+[
+    {
+        "initialPort": 0,
+        "name": "complete-exact-strings",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "type-only",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "",
+            "extra_core_conf": "",
+            "extra_core_path": "",
+            "name": "",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "empty-object",
+        "parsed": false,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "",
+            "extra_core_conf": "",
+            "extra_core_path": "",
+            "name": "",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-name",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-socks_address",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-socks_port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-extra_core_path",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-extra_core_args",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-extra_core_conf",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "missing-no_logs",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "null-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": null,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "string-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": "19080",
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "fractional-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080.5,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "zero-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 0,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 0,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "privileged-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 80,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 80,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 80,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "max-port",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 65535,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 65535,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 65535,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "relative-path",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "./local/helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "./local/helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "empty-name",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "wrong-no-logs",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": "true",
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "null-args",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": null,
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "false-no-logs",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": false,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    },
+    {
+        "initialPort": 0,
+        "name": "extra-field",
+        "parsed": true,
+        "qtBuild": {
+            "server": "127.0.0.1",
+            "server_port": 19080,
+            "type": "socks"
+        },
+        "qtExport": {
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        },
+        "source": {
+            "command": "synthetic-not-executed",
+            "extra_core_args": "  --config '%s' --literal 'quoted spaces' --literal ''  ",
+            "extra_core_conf": "\t{\n  \"synthetic\": \"тест🦊\", \"percent\": \"%d %% %s\"\n}\n",
+            "extra_core_path": "/missing/synthetic helper",
+            "name": "Qt внешнее 🦊",
+            "no_logs": true,
+            "socks_address": "127.0.0.1",
+            "socks_port": 19080,
+            "type": "extracore"
+        }
+    }
+]

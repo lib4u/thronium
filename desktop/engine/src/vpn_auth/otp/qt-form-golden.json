@@ -1,0 +1,4546 @@
+{
+  "qtRuntime": "6.11.2",
+  "cases": [
+    {
+      "input": {
+        "id": "token-label-token",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "TOKEN",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-token",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_token",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-otp",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "OTP",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-otp",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_otp",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-passcode",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "PASSCODE",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-passcode",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_passcode",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-one-time",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "ONE-TIME",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-one-time",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_one-time",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-onetime",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "ONETIME",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-onetime",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_onetime",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-second",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "SECOND",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-second",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_second",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-challenge",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "CHALLENGE",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-challenge",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_challenge",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-verification",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "VERIFICATION",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-verification",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_verification",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-label-authenticator",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "AUTHENTICATOR",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-name-authenticator",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "field_authenticator",
+            "label": "Account password",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "username-hint-user",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "Mixed_USER",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "account-user"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "u": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "u": "account-user"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "username-hint-login",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "Mixed_LOGIN",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "account-user"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "u": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "u": "account-user"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "username-hint-account",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "Mixed_ACCOUNT",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "account-user"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "u": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "u": "account-user"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "non-English-label-not-guessed",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "",
+            "label": "Пользователь",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "text-token-not-inferred",
+        "fields": [
+          {
+            "key": "otp",
+            "kind": "text",
+            "name": "otp",
+            "label": "OTP",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        },
+        "desiredBoundary": "validate whole form before any HOTP resolve"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "otp",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "password-first-account-second-token",
+        "fields": [
+          {
+            "key": "a",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "b",
+            "kind": "password",
+            "name": "password2",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "a": "account-password",
+            "b": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "a": "account-password",
+            "b": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "a",
+              "token": false,
+              "username": false
+            },
+            {
+              "key": "b",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "a": "account-password",
+                "b": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "token-first-then-account",
+        "fields": [
+          {
+            "key": "a",
+            "kind": "password",
+            "name": "token",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "b",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "a": "654321",
+            "b": "account-password"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "a": "654321",
+            "b": "account-password"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "a",
+              "token": true,
+              "username": false
+            },
+            {
+              "key": "b",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "a": "654321",
+                "b": "account-password"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "password-empty-account-uses-code",
+        "password": "",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "both-credentials-placeholder",
+        "username": "u-{otp}",
+        "password": "p-{otp}",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "username",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "u-654321",
+            "p": "p-654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "p-654321",
+            "u": "u-654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            },
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "p-654321",
+                "u": "u-654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "mixed-form-with-selected-value",
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "username",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "t",
+            "kind": "password",
+            "name": "token",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "r",
+            "kind": "select",
+            "name": "realm",
+            "label": "",
+            "value": "two",
+            "options": [
+              [
+                "one",
+                "One"
+              ],
+              [
+                "two",
+                "Two"
+              ]
+            ]
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "account-user",
+            "p": "account-password",
+            "t": "654321",
+            "r": "two"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "account-password",
+            "r": "two",
+            "t": "654321",
+            "u": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            },
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            },
+            {
+              "key": "t",
+              "token": true,
+              "username": false
+            },
+            {
+              "key": "r",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "account-password",
+                "r": "two",
+                "t": "654321",
+                "u": "account-user"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "select-no-first-option-guess",
+        "fields": [
+          {
+            "key": "r",
+            "kind": "select",
+            "name": "realm",
+            "label": "",
+            "value": "",
+            "options": [
+              [
+                "one",
+                "One"
+              ]
+            ]
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "r",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "select-invalid-selected-value",
+        "fields": [
+          {
+            "key": "r",
+            "kind": "select",
+            "name": "realm",
+            "label": "",
+            "value": "missing",
+            "options": [
+              [
+                "one",
+                "One"
+              ]
+            ]
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "r": "missing"
+          }
+        },
+        "desiredBoundary": "strict option membership must reject before consuming OTP"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "r": "missing"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "r",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "r": "missing"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "select-username-hint-ignores-options",
+        "fields": [
+          {
+            "key": "r",
+            "kind": "select",
+            "name": "usergroup",
+            "label": "",
+            "value": "",
+            "options": [
+              [
+                "one",
+                "One"
+              ]
+            ]
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "r": "account-user"
+          }
+        },
+        "desiredBoundary": "strict option membership preflight"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "r": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "r",
+              "token": false,
+              "username": true
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "r": "account-user"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "unknown-kind-default-value",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "checkbox",
+            "name": "mystery",
+            "label": "",
+            "value": "enabled"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "enabled"
+          }
+        },
+        "desiredBoundary": "unsupported kind must reject before consuming OTP"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "enabled"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "enabled"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "unknown-kind-no-value",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "checkbox",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "default-value-literal-placeholder",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": "literal-{otp}"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "literal-{otp}"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "literal-{otp}"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "literal-{otp}"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "late-unresolved-spends-before-false",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        },
+        "desiredBoundary": "known Qt HOTP spend-before-form-validity defect"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {
+            "p": "account-password"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            },
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "empty-form-spends-before-false",
+        "fields": [],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        },
+        "desiredBoundary": "known Qt HOTP spend-before-form-validity defect"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "duplicate-submission-keys-collapse",
+        "fields": [
+          {
+            "key": "same",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "same",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "same": "654321"
+          }
+        },
+        "desiredBoundary": "duplicate key must reject before consuming OTP"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "same": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "same",
+              "token": false,
+              "username": false
+            },
+            {
+              "key": "same",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "same": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "empty-submission-key-accepted",
+        "fields": [
+          {
+            "key": "",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "": "654321"
+          }
+        },
+        "desiredBoundary": "empty submission key must reject before consuming OTP"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-key-plain",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "x",
+            "value": "fixed"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "fixed"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "fixed"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "fixed"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-key-placeholder",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "x",
+            "value": "prefix{otp}/{otp}"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "prefix654321/654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "prefix654321/654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "prefix654321/654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-name-plain-ignored",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "name": "mystery",
+            "value": "fixed"
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-name-placeholder",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "name": "mystery",
+            "value": "otp:{otp}"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "otp:654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "otp:654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "otp:654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-name-case-sensitive",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "name": "MYSTERY",
+            "value": "{otp}"
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-wrong-key-disables-name-match",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "other",
+            "name": "mystery",
+            "value": "{otp}"
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-last-match-wins",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "x",
+            "value": "first"
+          },
+          {
+            "key": "x",
+            "value": "last-{otp}"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "last-654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "last-654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "last-654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-form-id-not-considered",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "formId": "different-form",
+            "key": "x",
+            "value": "{otp}"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-promote-skipped",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "x",
+            "value": "{otp}",
+            "promote": true
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-promote-falls-back-password",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "p",
+            "value": "fixed",
+            "promote": true
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "account-password"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "account-password"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "account-password"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-null-entry-skipped",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          null
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-empty-value-resolved",
+        "fields": [
+          {
+            "key": "x",
+            "kind": "text",
+            "name": "mystery",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "x",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "x": ""
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "x": ""
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "x",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "x": ""
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "explicit-password-does-not-mark-account-used",
+        "fields": [
+          {
+            "key": "a",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "b",
+            "kind": "password",
+            "name": "password2",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "entries": [
+          {
+            "key": "a",
+            "value": "explicit"
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "a": "explicit",
+            "b": "account-password"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "a": "explicit",
+            "b": "account-password"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "a",
+              "token": false,
+              "username": false
+            },
+            {
+              "key": "b",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "a": "explicit",
+                "b": "account-password"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "placeholder-case-sensitive",
+        "password": "literal-{OTP}",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "literal-{OTP}"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "literal-{OTP}"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "literal-{OTP}"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "actual-temporary-credential-override",
+        "override": {
+          "username": "override-{otp}",
+          "password": "override-secret"
+        },
+        "fields": [
+          {
+            "key": "u",
+            "kind": "text",
+            "name": "username",
+            "label": "",
+            "value": ""
+          },
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "password",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "u": "override-654321",
+            "p": "override-secret"
+          }
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "account-password",
+            "u": "account-user"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "u",
+              "token": false,
+              "username": true
+            },
+            {
+              "key": "p",
+              "token": false,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "override-secret",
+                "u": "override-654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openconnect-unsupported-browser",
+        "kind": "browser",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openconnect-unsupported-message",
+        "kind": "message",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openconnect-unsupported-open-url",
+        "kind": "open-url",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openconnect-unsupported-unknown",
+        "kind": "unknown",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-unsupported-message",
+        "protocol": "openvpn",
+        "kind": "message",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-unsupported-open-url",
+        "protocol": "openvpn",
+        "kind": "open-url",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-unsupported-form",
+        "protocol": "openvpn",
+        "kind": "form",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-unsupported-unknown",
+        "protocol": "openvpn",
+        "kind": "unknown",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-secret",
+        "protocol": "openvpn",
+        "kind": "secret",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "username": "",
+          "password": "",
+          "secret": "654321"
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": true,
+          "hints": [],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {},
+              "password": "",
+              "secret": "654321",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-credentials-placeholders",
+        "protocol": "openvpn",
+        "kind": "credentials",
+        "username": "u-{otp}",
+        "password": "p-{otp}",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "username": "u-654321",
+          "password": "p-654321",
+          "secret": "654321"
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": true,
+          "hints": [],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {},
+              "password": "p-654321",
+              "secret": "654321",
+              "username": "u-654321"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "openvpn-empty-credentials-no-mint",
+        "protocol": "openvpn",
+        "kind": "credentials",
+        "username": "",
+        "password": "",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": false,
+          "directBuildValues": {},
+          "handled": false,
+          "hints": [],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "no-running",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "running": false,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "empty-id",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "challengeId": "",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "no-tag-profile",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "profileId": -1,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "profile-missing",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "profileExists": false,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "otp-unbound",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpId": -1,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "otp-missing",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpExists": false,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "otp-invalid",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpValid": false,
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "already-answering-handled-no-mint",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "answering": true,
+        "expected": {
+          "handled": true,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "empty-generated-code-stops",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "code": "",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 1,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": ""
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "deadline-not-checked-by-auto-helper",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "deadline": "1",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          }
+        },
+        "desiredBoundary": "existing live deadline validation must precede consumption"
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "same-totp-rejected-holds",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "totp",
+        "error": "synthetic reject",
+        "lastCode": "654321",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "CurrentCode"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "changed-totp-rejected-retries",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "totp",
+        "error": "synthetic reject",
+        "lastCode": "123456",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          },
+          "rejects": 1
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "CurrentCode",
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 1,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "same-hotp-can-advance",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "hotp",
+        "error": "synthetic reject",
+        "lastCode": "654321",
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          },
+          "rejects": 1
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 1,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "max-three-error-rejects",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "error": "synthetic reject",
+        "rejects": 3,
+        "lastCode": "old",
+        "expected": {
+          "handled": false,
+          "resolveCalls": 0,
+          "submitted": 0
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "old",
+          "rejects": 3,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "max-budget-not-applied-without-error",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "rejects": 99,
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          },
+          "rejects": 99
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 99,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "connected-clears-rejects-but-retains-code",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "totp",
+        "error": "synthetic reject",
+        "lastCode": "654321",
+        "rejects": 3,
+        "connectedEvent": true,
+        "expected": {
+          "handled": true,
+          "resolveCalls": 0,
+          "submitted": 0,
+          "rejects": 0,
+          "lastCode": "654321"
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "CurrentCode"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "per-run-reset-clears-last-code-and-rejects",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "totp",
+        "error": "synthetic reject",
+        "lastCode": "654321",
+        "rejects": 3,
+        "resetEvent": true,
+        "expected": {
+          "handled": true,
+          "resolveCalls": 1,
+          "submitted": 1,
+          "form": {
+            "p": "654321"
+          },
+          "rejects": 1
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "CurrentCode",
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "654321"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "654321",
+          "rejects": 1,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "654321"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "id": "stateful-totp-same-window-and-three-retries",
+        "fields": [
+          {
+            "key": "p",
+            "kind": "password",
+            "name": "otp",
+            "label": "",
+            "value": ""
+          }
+        ],
+        "otpType": "totp",
+        "steps": [
+          {
+            "code": "111111"
+          },
+          {
+            "code": "111111",
+            "error": "reject"
+          },
+          {
+            "code": "222222",
+            "error": "reject"
+          },
+          {
+            "code": "333333",
+            "error": "reject"
+          },
+          {
+            "code": "444444",
+            "error": "reject"
+          },
+          {
+            "code": "555555",
+            "error": "reject"
+          }
+        ],
+        "expected": {
+          "steps": [
+            {
+              "handled": true,
+              "resolveCalls": 1,
+              "submitted": 1,
+              "form": {
+                "p": "111111"
+              }
+            },
+            {
+              "handled": true,
+              "resolveCalls": 0,
+              "submitted": 0
+            },
+            {
+              "handled": true,
+              "resolveCalls": 1,
+              "submitted": 1,
+              "form": {
+                "p": "222222"
+              },
+              "rejects": 1
+            },
+            {
+              "handled": true,
+              "resolveCalls": 1,
+              "submitted": 1,
+              "form": {
+                "p": "333333"
+              },
+              "rejects": 2
+            },
+            {
+              "handled": true,
+              "resolveCalls": 1,
+              "submitted": 1,
+              "form": {
+                "p": "444444"
+              },
+              "rejects": 3
+            },
+            {
+              "handled": false,
+              "resolveCalls": 0,
+              "submitted": 0
+            }
+          ]
+        }
+      },
+      "actualQt": [
+        {
+          "calls": [
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "111111"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "111111",
+          "rejects": 0,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "111111"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        },
+        {
+          "calls": [
+            "CurrentCode"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "111111"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "111111",
+          "rejects": 0,
+          "resolveCalls": 0,
+          "submits": []
+        },
+        {
+          "calls": [
+            "CurrentCode",
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "222222"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "222222",
+          "rejects": 1,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "222222"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        },
+        {
+          "calls": [
+            "CurrentCode",
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "333333"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "333333",
+          "rejects": 2,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "333333"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        },
+        {
+          "calls": [
+            "CurrentCode",
+            "ResolveOtpCode",
+            "Submit"
+          ],
+          "currentCodeCalls": 1,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "444444"
+          },
+          "handled": true,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "444444",
+          "rejects": 3,
+          "resolveCalls": 1,
+          "submits": [
+            {
+              "form": {
+                "p": "444444"
+              },
+              "password": "",
+              "secret": "",
+              "username": ""
+            }
+          ]
+        },
+        {
+          "calls": [],
+          "currentCodeCalls": 0,
+          "directBuildAccepted": true,
+          "directBuildValues": {
+            "p": "555555"
+          },
+          "handled": false,
+          "hints": [
+            {
+              "key": "p",
+              "token": true,
+              "username": false
+            }
+          ],
+          "lastCode": "444444",
+          "rejects": 3,
+          "resolveCalls": 0,
+          "submits": []
+        }
+      ]
+    }
+  ]
+}

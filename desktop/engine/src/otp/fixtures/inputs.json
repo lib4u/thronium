@@ -1,0 +1,3292 @@
+[
+  {
+    "id": "rfc4226-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "rfcCode": "755224"
+  },
+  {
+    "id": "rfc4226-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "1"
+    },
+    "time": "59",
+    "rfcCode": "287082"
+  },
+  {
+    "id": "rfc4226-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "2"
+    },
+    "time": "59",
+    "rfcCode": "359152"
+  },
+  {
+    "id": "rfc4226-3",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "3"
+    },
+    "time": "59",
+    "rfcCode": "969429"
+  },
+  {
+    "id": "rfc4226-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "4"
+    },
+    "time": "59",
+    "rfcCode": "338314"
+  },
+  {
+    "id": "rfc4226-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "5"
+    },
+    "time": "59",
+    "rfcCode": "254676"
+  },
+  {
+    "id": "rfc4226-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "6"
+    },
+    "time": "59",
+    "rfcCode": "287922"
+  },
+  {
+    "id": "rfc4226-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "59",
+    "rfcCode": "162583"
+  },
+  {
+    "id": "rfc4226-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "8"
+    },
+    "time": "59",
+    "rfcCode": "399871"
+  },
+  {
+    "id": "rfc4226-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9"
+    },
+    "time": "59",
+    "rfcCode": "520489"
+  },
+  {
+    "id": "rfc6238-SHA1-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "rfcCode": "94287082"
+  },
+  {
+    "id": "rfc6238-SHA256-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "rfcCode": "46119246"
+  },
+  {
+    "id": "rfc6238-SHA512-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "rfcCode": "90693936"
+  },
+  {
+    "id": "rfc6238-SHA1-1111111109",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111109",
+    "rfcCode": "07081804"
+  },
+  {
+    "id": "rfc6238-SHA256-1111111109",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111109",
+    "rfcCode": "68084774"
+  },
+  {
+    "id": "rfc6238-SHA512-1111111109",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111109",
+    "rfcCode": "25091201"
+  },
+  {
+    "id": "rfc6238-SHA1-1111111111",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111111",
+    "rfcCode": "14050471"
+  },
+  {
+    "id": "rfc6238-SHA256-1111111111",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111111",
+    "rfcCode": "67062674"
+  },
+  {
+    "id": "rfc6238-SHA512-1111111111",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1111111111",
+    "rfcCode": "99943326"
+  },
+  {
+    "id": "rfc6238-SHA1-1234567890",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1234567890",
+    "rfcCode": "89005924"
+  },
+  {
+    "id": "rfc6238-SHA256-1234567890",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1234567890",
+    "rfcCode": "91819424"
+  },
+  {
+    "id": "rfc6238-SHA512-1234567890",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "1234567890",
+    "rfcCode": "93441116"
+  },
+  {
+    "id": "rfc6238-SHA1-2000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "2000000000",
+    "rfcCode": "69279037"
+  },
+  {
+    "id": "rfc6238-SHA256-2000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "2000000000",
+    "rfcCode": "90698825"
+  },
+  {
+    "id": "rfc6238-SHA512-2000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "2000000000",
+    "rfcCode": "38618901"
+  },
+  {
+    "id": "rfc6238-SHA1-20000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "20000000000",
+    "rfcCode": "65353130"
+  },
+  {
+    "id": "rfc6238-SHA256-20000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "20000000000",
+    "rfcCode": "77737706"
+  },
+  {
+    "id": "rfc6238-SHA512-20000000000",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "20000000000",
+    "rfcCode": "47863826"
+  },
+  {
+    "id": "digits-SHA1-totp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-totp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA1-hotp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "counter-SHA1-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "1"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-4294967295",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967295"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-4294967296",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967296"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-9007199254740991",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740991"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-9007199254740992",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740992"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-9007199254740993",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA1-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9223372036854775807"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA1-1-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-1-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA1-1-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA1-1-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA1-2-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-2-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA1-2-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA1-2-3",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "3"
+  },
+  {
+    "id": "period-SHA1-2-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA1-29-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-29-28",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "28"
+  },
+  {
+    "id": "period-SHA1-29-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA1-29-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA1-29-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA1-30-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-30-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA1-30-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA1-30-31",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "31"
+  },
+  {
+    "id": "period-SHA1-30-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA1-60-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-60-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA1-60-60",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "60"
+  },
+  {
+    "id": "period-SHA1-60-61",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "61"
+  },
+  {
+    "id": "period-SHA1-60-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA1-3600-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA1-3600-3599",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3599"
+  },
+  {
+    "id": "period-SHA1-3600-3600",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3600"
+  },
+  {
+    "id": "period-SHA1-3600-3601",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3601"
+  },
+  {
+    "id": "period-SHA1-3600-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "digits-SHA256-totp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-totp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA256-hotp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "counter-SHA256-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "1"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-4294967295",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967295"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-4294967296",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967296"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-9007199254740991",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740991"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-9007199254740992",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740992"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-9007199254740993",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA256-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9223372036854775807"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA256-1-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-1-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA256-1-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA256-1-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA256-2-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-2-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA256-2-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA256-2-3",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "3"
+  },
+  {
+    "id": "period-SHA256-2-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA256-29-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-29-28",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "28"
+  },
+  {
+    "id": "period-SHA256-29-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA256-29-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA256-29-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA256-30-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-30-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA256-30-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA256-30-31",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "31"
+  },
+  {
+    "id": "period-SHA256-30-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA256-60-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-60-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA256-60-60",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "60"
+  },
+  {
+    "id": "period-SHA256-60-61",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "61"
+  },
+  {
+    "id": "period-SHA256-60-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA256-3600-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA256-3600-3599",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3599"
+  },
+  {
+    "id": "period-SHA256-3600-3600",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3600"
+  },
+  {
+    "id": "period-SHA256-3600-3601",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3601"
+  },
+  {
+    "id": "period-SHA256-3600-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA",
+      "algorithm": "SHA256",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "digits-SHA512-totp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 4,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 5,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-6",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 7,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-8",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 8,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-9",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 9,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-totp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "digits-SHA512-hotp-10",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "7"
+    },
+    "time": "1111111109"
+  },
+  {
+    "id": "counter-SHA512-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "1"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-4294967295",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967295"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-4294967296",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "4294967296"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-9007199254740991",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740991"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-9007199254740992",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740992"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-9007199254740993",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "counter-SHA512-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9223372036854775807"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA512-1-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-1-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA512-1-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA512-1-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 1,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA512-2-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-2-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "1"
+  },
+  {
+    "id": "period-SHA512-2-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "2"
+  },
+  {
+    "id": "period-SHA512-2-3",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "3"
+  },
+  {
+    "id": "period-SHA512-2-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 2,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA512-29-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-29-28",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "28"
+  },
+  {
+    "id": "period-SHA512-29-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA512-29-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA512-29-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 29,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA512-30-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-30-29",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "29"
+  },
+  {
+    "id": "period-SHA512-30-30",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "30"
+  },
+  {
+    "id": "period-SHA512-30-31",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "31"
+  },
+  {
+    "id": "period-SHA512-30-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA512-60-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-60-59",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "period-SHA512-60-60",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "60"
+  },
+  {
+    "id": "period-SHA512-60-61",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "61"
+  },
+  {
+    "id": "period-SHA512-60-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 60,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "period-SHA512-3600-0",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "0"
+  },
+  {
+    "id": "period-SHA512-3600-3599",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3599"
+  },
+  {
+    "id": "period-SHA512-3600-3600",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3600"
+  },
+  {
+    "id": "period-SHA512-3600-3601",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "3601"
+  },
+  {
+    "id": "period-SHA512-3600-9223372036854775807",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNA",
+      "algorithm": "SHA512",
+      "type": "totp",
+      "digits": 8,
+      "period": 3600,
+      "counter": "0"
+    },
+    "time": "9223372036854775807"
+  },
+  {
+    "id": "normalize-0",
+    "normalizeOnly": true,
+    "secret": ""
+  },
+  {
+    "id": "normalize-1",
+    "normalizeOnly": true,
+    "secret": "A"
+  },
+  {
+    "id": "normalize-2",
+    "normalizeOnly": true,
+    "secret": "="
+  },
+  {
+    "id": "normalize-3",
+    "normalizeOnly": true,
+    "secret": " === "
+  },
+  {
+    "id": "normalize-4",
+    "normalizeOnly": true,
+    "secret": "MY"
+  },
+  {
+    "id": "normalize-5",
+    "normalizeOnly": true,
+    "secret": "MZ"
+  },
+  {
+    "id": "normalize-6",
+    "normalizeOnly": true,
+    "secret": "M7"
+  },
+  {
+    "id": "normalize-7",
+    "normalizeOnly": true,
+    "secret": "MYA"
+  },
+  {
+    "id": "normalize-8",
+    "normalizeOnly": true,
+    "secret": "MZX"
+  },
+  {
+    "id": "normalize-9",
+    "normalizeOnly": true,
+    "secret": "MZXW"
+  },
+  {
+    "id": "normalize-10",
+    "normalizeOnly": true,
+    "secret": "MZXW6"
+  },
+  {
+    "id": "normalize-11",
+    "normalizeOnly": true,
+    "secret": "MZXW6Y"
+  },
+  {
+    "id": "normalize-12",
+    "normalizeOnly": true,
+    "secret": "MZXW6YQ"
+  },
+  {
+    "id": "normalize-13",
+    "normalizeOnly": true,
+    "secret": "mzxw6ytboi======"
+  },
+  {
+    "id": "normalize-14",
+    "normalizeOnly": true,
+    "secret": "m=z=x=w=6=y=t=b=o=i"
+  },
+  {
+    "id": "normalize-15",
+    "normalizeOnly": true,
+    "secret": " m-z_x\tw\r6\ny t b o i "
+  },
+  {
+    "id": "normalize-16",
+    "normalizeOnly": true,
+    "secret": "MY0"
+  },
+  {
+    "id": "normalize-17",
+    "normalizeOnly": true,
+    "secret": "MY1"
+  },
+  {
+    "id": "normalize-18",
+    "normalizeOnly": true,
+    "secret": "MY8"
+  },
+  {
+    "id": "normalize-19",
+    "normalizeOnly": true,
+    "secret": "MY9"
+  },
+  {
+    "id": "normalize-20",
+    "normalizeOnly": true,
+    "secret": "MY!"
+  },
+  {
+    "id": "normalize-21",
+    "normalizeOnly": true,
+    "secret": "MY\u000b"
+  },
+  {
+    "id": "normalize-22",
+    "normalizeOnly": true,
+    "secret": "MY\f"
+  },
+  {
+    "id": "normalize-23",
+    "normalizeOnly": true,
+    "secret": "MY "
+  },
+  {
+    "id": "normalize-24",
+    "normalizeOnly": true,
+    "secret": "MYÉ"
+  },
+  {
+    "id": "normalize-25",
+    "normalizeOnly": true,
+    "secret": "MYŁ"
+  },
+  {
+    "id": "normalize-26",
+    "normalizeOnly": true,
+    "secret": "MY🦊"
+  },
+  {
+    "id": "normalize-27",
+    "normalizeOnly": true,
+    "secret": "MY\u0000"
+  },
+  {
+    "id": "normalize-28",
+    "normalizeOnly": true,
+    "secret": "ＭＹ"
+  },
+  {
+    "id": "normalize-29",
+    "normalizeOnly": true,
+    "secret": "my====a"
+  },
+  {
+    "id": "normalize-keybytes-1",
+    "normalizeOnly": true,
+    "secret": "AM"
+  },
+  {
+    "id": "keybytes-1",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "AM",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-2",
+    "normalizeOnly": true,
+    "secret": "ANFA"
+  },
+  {
+    "id": "keybytes-2",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-3",
+    "normalizeOnly": true,
+    "secret": "ANFJC"
+  },
+  {
+    "id": "keybytes-3",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJC",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-4",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA"
+  },
+  {
+    "id": "keybytes-4",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-5",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7"
+  },
+  {
+    "id": "keybytes-5",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-7",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7M2WQ"
+  },
+  {
+    "id": "keybytes-7",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7M2WQ",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-16",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFQ"
+  },
+  {
+    "id": "keybytes-16",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFQ",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-64",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7A"
+  },
+  {
+    "id": "keybytes-64",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7A",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-128",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7GDBJIZRXZGNW2PWQUJ2ALV5JPMGN5MCCCPS3OSI25S7FAIPTQVLSR6UMLYX4DE3FG3EJU3B5Z6QXGBGWVB5AXXNPIEJOJNSIDHV32TY"
+  },
+  {
+    "id": "keybytes-128",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7GDBJIZRXZGNW2PWQUJ2ALV5JPMGN5MCCCPS3OSI25S7FAIPTQVLSR6UMLYX4DE3FG3EJU3B5Z6QXGBGWVB5AXXNPIEJOJNSIDHV32TY",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "normalize-keybytes-1024",
+    "normalizeOnly": true,
+    "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7GDBJIZRXZGNW2PWQUJ2ALV5JPMGN5MCCCPS3OSI25S7FAIPTQVLSR6UMLYX4DE3FG3EJU3B5Z6QXGBGWVB5AXXNPIEJOJNSIDHV32TZA6KCFMJ7ZRNOS5QESMQ24PGLLHTHKA4QD2WTXSCW4VZABDY5VI4MOVPCOD7YYGVJG7CFFYLP7SFRTJRUYNI543H3RALKKM6AJ3OWX6EHCWRDBP2N3JUPPBASUEX3YSWZM72IGEM6FS5UTVTE6OAA5HJLXBDNKY7QP4GZUKFXIXJGB334BKMSPNCC2FP6Y6YJSYSLGQOOLTVXQBUVEOYD5TK35B3QLERAV464UWHHOQBJCH5MHLEVPZDTAGHBZKZZYZKOG4P6RUN2QNWFKPQG57MKDCTTLQSQ35W7VCIXUQZMCT64NL4YMFFDGG7EZW3J62CRHIBOXVF5QZXVQIIJ6LN2JDLWL4UBB6OCVOKH2RRPC7QMTMU3MRGTMHXH2C4YE22UHUC65V5ARFZFWJAM6XPKPEDZIIVRH7GFV2LWASJSDLR4ZNM6M5IDSAPK2O6IK3SXEAEPDWVDRR2V4JYP7DA2VE34IUXBN76IWGNGGTBVDXTM7OEBNJJTYBHN227YQ4K2EMF7JXNGR54ECKQS7PCK3FT7JAYRTYWLWSOWMTZYADU5FO4ENVLD6B7Q3GRIW5C5EYHPPQFJSJ5UILIV73D3BGLCJM2BZZOOW6AGSUR3APWNLPUHOBMSECXT3SSY452AFEI7VQ5MSV7EOMAY4HFLHHDFJY3R72GRXKBWYVJ6A3X5RIMKONOCKDPW36UJC6SDFQKP3RVPTBQUUMY34TG3NH3IKE5AF26UXWDG6WBBBHZNXJENOZPSQEHZYKVZI7KGF4L6BSNSTNSE2NQ647ILTATLKQ6QL3WXUCEXEWZEBT255J4QPFBCWE74YWXJOYCJGINOHTFVTZTVAOIB5LJ3ZBLOK4QAR4O2UOGHKXRHB74MDKUTPRCS4FX7ZCYZUY2MGUO6NT5YQFVFGPAE5XLL7CDRLIRQX5G5U2HXQQJKCL54JLMWP5EDCGPCZO2J2ZSPHAAOTUV3QRWVMPYH6DM2FC3ULUTA556AVGJHWRBNCX7MPMEZMJFTIHHFZ23YA2KSHMB6ZVN6Q5YFSIQK6POKLDTXIAURD6WDVSKX4RZQDDQ4VM44MVHDOH7I2G5IG3CVHYDO7WFBRJZVYJIN63P2REL2IMWBJ7OGV6MGCSRTDPSM3NU7NBITUAXL2S6YM32YEEE7FW5ERV3F6KAQ7HBKXFD5IYXRPYGJWKNWITJWD3T5BOMCNNKD2BPO26QIS4S3EQGPLXVHSB4UEKYT7TC25F3AJEZBVY6MWWPGOUBZAHVNHPEFNZLSACHR3KRYY5K6E4H7RQNKSN6EKLQW77ELDGTDJQ2R3ZWPXCAWUUZ4ATW5NP4IOFNCGC7U3WTI66CBFIJPXRFNSZ7UQMIZ4LF3JHLGJ44AB2OSXOCG2VR7A7YNTIULOROSMDXXYCUZE62EFUK75R5QTFREWNA44XHLPA"
+  },
+  {
+    "id": "keybytes-1024",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "ANFJDWA7M2W7IO4CZEIFPHXFFRZ3UAKIR7LB2ZFL6I4YBRYOKWOOGKTRXD7UNDOUDNRKT4BXP3CQYU424EUG7NX5ISF5EGLAU7XDK7GDBJIZRXZGNW2PWQUJ2ALV5JPMGN5MCCCPS3OSI25S7FAIPTQVLSR6UMLYX4DE3FG3EJU3B5Z6QXGBGWVB5AXXNPIEJOJNSIDHV32TZA6KCFMJ7ZRNOS5QESMQ24PGLLHTHKA4QD2WTXSCW4VZABDY5VI4MOVPCOD7YYGVJG7CFFYLP7SFRTJRUYNI543H3RALKKM6AJ3OWX6EHCWRDBP2N3JUPPBASUEX3YSWZM72IGEM6FS5UTVTE6OAA5HJLXBDNKY7QP4GZUKFXIXJGB334BKMSPNCC2FP6Y6YJSYSLGQOOLTVXQBUVEOYD5TK35B3QLERAV464UWHHOQBJCH5MHLEVPZDTAGHBZKZZYZKOG4P6RUN2QNWFKPQG57MKDCTTLQSQ35W7VCIXUQZMCT64NL4YMFFDGG7EZW3J62CRHIBOXVF5QZXVQIIJ6LN2JDLWL4UBB6OCVOKH2RRPC7QMTMU3MRGTMHXH2C4YE22UHUC65V5ARFZFWJAM6XPKPEDZIIVRH7GFV2LWASJSDLR4ZNM6M5IDSAPK2O6IK3SXEAEPDWVDRR2V4JYP7DA2VE34IUXBN76IWGNGGTBVDXTM7OEBNJJTYBHN227YQ4K2EMF7JXNGR54ECKQS7PCK3FT7JAYRTYWLWSOWMTZYADU5FO4ENVLD6B7Q3GRIW5C5EYHPPQFJSJ5UILIV73D3BGLCJM2BZZOOW6AGSUR3APWNLPUHOBMSECXT3SSY452AFEI7VQ5MSV7EOMAY4HFLHHDFJY3R72GRXKBWYVJ6A3X5RIMKONOCKDPW36UJC6SDFQKP3RVPTBQUUMY34TG3NH3IKE5AF26UXWDG6WBBBHZNXJENOZPSQEHZYKVZI7KGF4L6BSNSTNSE2NQ647ILTATLKQ6QL3WXUCEXEWZEBT255J4QPFBCWE74YWXJOYCJGINOHTFVTZTVAOIB5LJ3ZBLOK4QAR4O2UOGHKXRHB74MDKUTPRCS4FX7ZCYZUY2MGUO6NT5YQFVFGPAE5XLL7CDRLIRQX5G5U2HXQQJKCL54JLMWP5EDCGPCZO2J2ZSPHAAOTUV3QRWVMPYH6DM2FC3ULUTA556AVGJHWRBNCX7MPMEZMJFTIHHFZ23YA2KSHMB6ZVN6Q5YFSIQK6POKLDTXIAURD6WDVSKX4RZQDDQ4VM44MVHDOH7I2G5IG3CVHYDO7WFBRJZVYJIN63P2REL2IMWBJ7OGV6MGCSRTDPSM3NU7NBITUAXL2S6YM32YEEE7FW5ERV3F6KAQ7HBKXFD5IYXRPYGJWKNWITJWD3T5BOMCNNKD2BPO26QIS4S3EQGPLXVHSB4UEKYT7TC25F3AJEZBVY6MWWPGOUBZAHVNHPEFNZLSACHR3KRYY5K6E4H7RQNKSN6EKLQW77ELDGTDJQ2R3ZWPXCAWUUZ4ATW5NP4IOFNCGC7U3WTI66CBFIJPXRFNSZ7UQMIZ4LF3JHLGJ44AB2OSXOCG2VR7A7YNTIULOROSMDXXYCUZE62EFUK75R5QTFREWNA44XHLPA",
+      "algorithm": "SHA512",
+      "type": "hotp",
+      "digits": 10,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-0",
+    "entry": {
+      "name": "Почта 🦊",
+      "issuer": "Компания 日本",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-1",
+    "entry": {
+      "name": "a+b@example.invalid",
+      "issuer": "A+B",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-2",
+    "entry": {
+      "name": "100% literal",
+      "issuer": "% issuer",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-3",
+    "entry": {
+      "name": "slash/a",
+      "issuer": "slash/b",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-4",
+    "entry": {
+      "name": "name:part",
+      "issuer": "issuer",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-5",
+    "entry": {
+      "name": "Name",
+      "issuer": "Issuer:Division",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-6",
+    "entry": {
+      "name": " percent%2F text ",
+      "issuer": "issuer",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-7",
+    "entry": {
+      "name": "",
+      "issuer": "",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-8",
+    "entry": {
+      "name": "account",
+      "issuer": "",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-9",
+    "entry": {
+      "name": "a?b#c&d=e",
+      "issuer": "Org & more",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-10",
+    "entry": {
+      "name": "é ñ ü",
+      "issuer": "😀 例",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-label-11",
+    "entry": {
+      "name": "a\\b",
+      "issuer": "back\\slash",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-unrepresentable-0",
+    "entry": {
+      "name": "name:part",
+      "issuer": "",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-unrepresentable-1",
+    "entry": {
+      "name": "",
+      "issuer": "Issuer",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-unrepresentable-2",
+    "entry": {
+      "name": "Name",
+      "issuer": " issuer ",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-hotp-nondefault-period",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 17,
+      "counter": "9007199254740993"
+    },
+    "time": "59"
+  },
+  {
+    "id": "uri-totp-dormant-counter",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 30,
+      "counter": "9223372036854775807"
+    },
+    "time": "59"
+  },
+  {
+    "id": "strict-uri-0",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&algorithm=MD5",
+    "strictReject": "unknown algorithm"
+  },
+  {
+    "id": "strict-uri-1",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&digits=3",
+    "strictReject": "digits outside bounds"
+  },
+  {
+    "id": "strict-uri-2",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&digits=bad",
+    "strictReject": "malformed digits"
+  },
+  {
+    "id": "strict-uri-3",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&period=0",
+    "strictReject": "zero period"
+  },
+  {
+    "id": "strict-uri-4",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&period=3601",
+    "strictReject": "period too large"
+  },
+  {
+    "id": "strict-uri-5",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&counter=bad",
+    "strictReject": "invalid counter"
+  },
+  {
+    "id": "strict-uri-6",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&issuer=Different",
+    "strictReject": "conflicting issuer"
+  },
+  {
+    "id": "strict-uri-7",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&secret=MY",
+    "strictReject": "duplicate secret"
+  },
+  {
+    "id": "strict-uri-8",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&unknown=1",
+    "strictReject": "unknown field"
+  },
+  {
+    "id": "strict-uri-9",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&counter=-1",
+    "strictReject": "negative counter"
+  },
+  {
+    "id": "strict-uri-10",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&counter=9223372036854775808",
+    "strictReject": "counter overflow"
+  },
+  {
+    "id": "strict-uri-11",
+    "link": "otpauth://totp/Issuer:Account?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&digits=6&digits=8",
+    "strictReject": "duplicate digits"
+  },
+  {
+    "id": "strict-entry-negative-hotp",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 30,
+      "counter": "-1"
+    },
+    "time": "59",
+    "strictReject": "negative counter"
+  },
+  {
+    "id": "strict-entry-hotp-period-zero",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "hotp",
+      "digits": 6,
+      "period": 0,
+      "counter": "0"
+    },
+    "time": "59",
+    "strictReject": "period outside bounds"
+  },
+  {
+    "id": "strict-entry-digits-low",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 3,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "strictReject": "digits outside bounds"
+  },
+  {
+    "id": "strict-entry-digits-high",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 11,
+      "period": 30,
+      "counter": "0"
+    },
+    "time": "59",
+    "strictReject": "digits outside bounds"
+  },
+  {
+    "id": "strict-entry-period-low",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 0,
+      "counter": "0"
+    },
+    "time": "59",
+    "strictReject": "period outside bounds"
+  },
+  {
+    "id": "strict-entry-period-high",
+    "entry": {
+      "name": "RFC fixture",
+      "issuer": "Thronium test",
+      "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "algorithm": "SHA1",
+      "type": "totp",
+      "digits": 6,
+      "period": 3601,
+      "counter": "0"
+    },
+    "time": "59",
+    "strictReject": "period outside bounds"
+  }
+]

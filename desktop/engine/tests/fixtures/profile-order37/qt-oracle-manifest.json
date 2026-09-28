@@ -1,0 +1,26 @@
+{
+  "source": "src/database/entities/Group.cpp",
+  "sourceSha256": "eaeeb128d035c982b5b3d9b2179decffed7914de7d9e9a6eae2e6c91444ff1a6",
+  "exactExtract": "Group::EmplaceProfile body without changes",
+  "extractSha256": "954db1f57c9f82f8d57d994122485649a05baa817ed5f6bc3332bcbb90354c8f",
+  "sourceLine": 174,
+  "command": [
+    "c++",
+    "-std=c++20",
+    "-fPIC",
+    "-O0",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "/tmp/thronium-profile-order37-public-tests/desktop/engine/tests/fixtures/profile-order37/qt-emplace-oracle.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Core",
+    "-o",
+    "/tmp/thronium-profile-order37-public-tests/qt-emplace37-oracle"
+  ],
+  "binarySha256": "be1228c2fbfecec67c52d52ff1b64475b4e0f3d087a9d32a4e02171e25fb5afd",
+  "casesSha256": "28da78516c6fcd83765e80b355e61134c467d05f97d817554f5db8513a108736",
+  "qtVersion": "6.11.2",
+  "caseCount": 28,
+  "scope": "QList and exact method body; adapted standalone Group storage only, no repository/UI/DB/network execution. Negative indices excluded because Qt GUI supplies valid row indexes."
+}

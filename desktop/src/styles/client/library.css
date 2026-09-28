@@ -1,0 +1,349 @@
+/* Flat server list, with subscription usage anchored below it. */
+.library-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-left: 1px solid var(--border);
+  background: var(--panel);
+  padding: 29px 28px 21px;
+}
+.library-heading {
+  margin-bottom: 21px;
+}
+.library-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.connection-count {
+  color: var(--faint);
+  background: var(--raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-s);
+  padding: 1px 6px;
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+}
+.library-heading .button {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 10px;
+  background: var(--panel);
+  border-color: var(--border);
+  gap: 5px;
+}
+.library-heading .button .icon {
+  width: 14px;
+  height: 14px;
+}
+.library-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.library-search .search-field {
+  flex: 1;
+  padding: 10px 11px;
+  border-radius: var(--radius-m);
+  background: var(--shell);
+  border: 1px solid var(--border);
+}
+.library-search .search-field input {
+  width: 100%;
+  font-size: 10px;
+}
+.library-search .search-field > .icon {
+  height: 14px;
+  width: 14px;
+}
+.library-search .search-field kbd {
+  border: 0;
+  padding: 0 3px;
+  font-size: 10px;
+}
+.library-search > .icon-button {
+  height: 32px;
+  width: 28px;
+}
+.library-search > .icon-button .icon {
+  height: 16px;
+  width: 16px;
+}
+.library-tabs {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 20px;
+  border-bottom: 1px solid var(--border);
+  flex: none;
+}
+.library-tabs > button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 0 12px;
+  background: none;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 550;
+}
+.library-tabs > button .icon {
+  width: 12px;
+  height: 12px;
+}
+.library-tabs > button.active {
+  color: var(--text);
+  font-weight: 700;
+}
+.library-tabs > button.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--text);
+}
+.connections-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0 -10px;
+  padding: 0 10px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  overscroll-behavior: contain;
+}
+.subscription-group {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.subscription-group-head {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 1px 12px;
+}
+.subscription-collapse {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+}
+.subscription-collapse > .icon {
+  width: 11px;
+  height: 11px;
+  color: var(--faint);
+  transition: transform var(--motion-fast);
+}
+.subscription-collapse[aria-expanded='false'] > .icon {
+  transform: rotate(-90deg);
+}
+.subscription-collapse > span {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  min-width: 0;
+}
+.subscription-collapse strong {
+  font-size: 10px;
+  font-weight: 650;
+  color: var(--muted);
+}
+.subscription-collapse small {
+  color: var(--faint);
+  font-size: 8px;
+  white-space: nowrap;
+}
+.subscription-group-head > .icon-button {
+  height: 25px;
+  width: 24px;
+}
+.subscription-group-head > .icon-button > .icon {
+  height: 13px;
+  width: 13px;
+}
+.connection-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 62px;
+  border: 1px solid transparent;
+  border-bottom-color: var(--border-soft);
+  border-radius: 0;
+  transition: background var(--motion-fast);
+}
+.connection-row:hover {
+  background: var(--shell);
+  border-radius: var(--radius-m);
+}
+.connection-row.selected {
+  background: rgba(var(--accent-rgb), 0.06);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: var(--radius-m);
+}
+.connection-row-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  padding: 13px 7px 13px 12px;
+  background: none;
+  text-align: left;
+  border-radius: var(--radius-s);
+}
+.connection-row-button > .flag {
+  width: 25px;
+  height: 18px;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--muted) 4%, transparent);
+}
+.row-server-info {
+  flex: 1;
+  min-width: 0;
+}
+.row-server-info > strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.row-server-info > small {
+  display: block;
+  color: var(--muted);
+  font-size: 8px;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.row-server-info > .row-stats {
+  margin-top: 2px;
+}
+.row-security-warn {
+  display: inline-flex;
+  vertical-align: -1px;
+  margin-right: 3px;
+  color: var(--warning);
+}
+.row-security-warn .icon {
+  width: 9px;
+  height: 9px;
+}
+.row-current-dot {
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.row-ping {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font:
+    9px ui-monospace,
+    monospace;
+  color: var(--success);
+  white-space: nowrap;
+  margin-left: 8px;
+}
+.row-ping > .icon {
+  width: 11px;
+  height: 11px;
+}
+.connection-row > .favorite-button {
+  display: flex;
+  width: 24px;
+  height: 28px;
+  margin-right: 9px;
+  color: var(--faint);
+  opacity: 0;
+}
+.connection-row:hover > .favorite-button,
+.connection-row:focus-within > .favorite-button,
+.connection-row > .favorite-button.is-favorite {
+  opacity: 1;
+}
+.connection-row > .favorite-button .icon {
+  height: 12px;
+  width: 12px;
+}
+.connection-row > .favorite-button.is-favorite {
+  color: var(--accent);
+}
+.connection-row > .favorite-button.is-favorite .icon {
+  fill: currentColor;
+  fill-opacity: 0.15;
+}
+.client-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 42px 10px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+.client-empty > .icon {
+  width: 25px;
+  height: 25px;
+}
+.client-empty > p,
+.client-empty .text-button {
+  font-size: 10px;
+}
+.client-empty .text-button {
+  margin-top: 7px;
+}
+.library-footer {
+  flex: none;
+  padding: 18px 1px 0;
+  border-top: 1px solid var(--border);
+}
+.disconnected .session-card {
+  --card-bg: var(--panel);
+  --card-muted: var(--muted);
+}
+.disconnected .session-card .power-button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: none;
+}
+.disconnected .connection-path {
+  opacity: 0.35;
+}
+.disconnected .session-metrics strong {
+  color: var(--muted);
+}
+.disconnected .live-indicator .status-dot {
+  background: var(--faint);
+}
+.disconnected .row-current-dot {
+  background: var(--faint);
+}
+.connecting .session-card .power-button {
+  animation: none;
+  opacity: 0.7;
+}
+
+@media (min-height: 970px) {
+  .app-shell {
+    margin: calc((100dvh - 900px) / 2) auto;
+  }
+}

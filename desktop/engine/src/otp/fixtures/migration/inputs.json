@@ -1,0 +1,1017 @@
+[
+  {
+    "id": "export-SHA1-6-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-6-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-6-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-6-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-8-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-8-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-8-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA1-8-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-6-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-6-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-6-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-6-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-8-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "totp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-8-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-8-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA256-8-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA256",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-6-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-6-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-6-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-6-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-8-totp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "totp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-8-hotp-0",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-8-hotp-9007199254740993",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9007199254740993"
+      }
+    ]
+  },
+  {
+    "id": "export-SHA512-8-hotp-9223372036854775807",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9223372036854775807"
+      }
+    ]
+  },
+  {
+    "id": "export-mixed-ordered",
+    "entries": [
+      {
+        "name": "First",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      },
+      {
+        "name": "Второй 🦊",
+        "issuer": "Сервис:日本",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA512",
+        "type": "hotp",
+        "digits": 8,
+        "period": 30,
+        "counter": "9007199254740993"
+      },
+      {
+        "name": " /%+ : account ",
+        "issuer": " with spaces ",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ]
+  },
+  {
+    "id": "lossy-export-digits4",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 4,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-digits5",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 5,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-digits7",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 7,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-digits9",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 9,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-digits10",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 10,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-totp-period17",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 17,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-hotp-period17",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 6,
+        "period": 17,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-totp-counter7",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "7"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-empty-name",
+    "entries": [
+      {
+        "name": "",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "lossy-export-negative-hotp",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "hotp",
+        "digits": 6,
+        "period": 30,
+        "counter": "-1"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "export-skips-invalid-secret",
+    "entries": [
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      },
+      {
+        "name": "Account",
+        "issuer": "Fixture",
+        "secret": "bad!",
+        "algorithm": "SHA1",
+        "type": "totp",
+        "digits": 6,
+        "period": 30,
+        "counter": "0"
+      }
+    ],
+    "strictExportReject": true
+  },
+  {
+    "id": "export-empty",
+    "entries": [],
+    "strictExportReject": true
+  },
+  {
+    "id": "unknown-algorithm-0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAAoATACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-algorithm-4",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAQoATACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-algorithm-99",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIGMoATACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-algorithm-None",
+    "link": "otpauth-migration://offline?data=CiwKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlKAEwAhABGAEgAA%3D%3D",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-digits-0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoADACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-digits-3",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoAzACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-digits-8",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoCDACEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-digits-None",
+    "link": "otpauth-migration://offline?data=CiwKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEwAhABGAEgAA%3D%3D",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-type-0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATAAEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-type-3",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATADEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-type-99",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATBjEAEYASAA",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "unknown-type-None",
+    "link": "otpauth-migration://offline?data=CiwKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoARABGAEgAA%3D%3D",
+    "strictReject": "unsupported or missing enum"
+  },
+  {
+    "id": "duplicate-entry-1",
+    "link": "otpauth-migration://offline?data=CjsKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAAKCW90aGVyLWtleRABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-2",
+    "link": "otpauth-migration://offline?data=CjwKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAASCm90aGVyLW5hbWUQARgBIAA%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-3",
+    "link": "otpauth-migration://offline?data=Cj4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAAaDG90aGVyLWlzc3VlchABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-4",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAAgAhABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-5",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAAoAhABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-6",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAAwARABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-entry-7",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACOAA4BxABGAEgAA%3D%3D",
+    "strictReject": "duplicate singular field"
+  },
+  {
+    "id": "duplicate-header-2",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKAgQAQ%3D%3D",
+    "strictReject": "duplicate singular header"
+  },
+  {
+    "id": "duplicate-header-3",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKAgYAQ%3D%3D",
+    "strictReject": "duplicate singular header"
+  },
+  {
+    "id": "duplicate-header-4",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKAggAQ%3D%3D",
+    "strictReject": "duplicate singular header"
+  },
+  {
+    "id": "duplicate-header-5",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKAgoAQ%3D%3D",
+    "strictReject": "duplicate singular header"
+  },
+  {
+    "id": "unknown-inner-field",
+    "link": "otpauth-migration://offline?data=CjAKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACQAEQARgBIAA%3D",
+    "strictReject": "unknown field"
+  },
+  {
+    "id": "unknown-outer-field",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAMgZvcGFxdWU%3D",
+    "strictReject": "unknown field"
+  },
+  {
+    "id": "inner-wrong-wire",
+    "link": "otpauth-migration://offline?data=Ci8KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlKAEwAiIBeBABGAEgAA%3D%3D",
+    "strictReject": "wrong wire type"
+  },
+  {
+    "id": "outer-wrong-wire",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACGAEgABIBeA%3D%3D",
+    "strictReject": "wrong wire type"
+  },
+  {
+    "id": "secret-absent",
+    "link": "otpauth-migration://offline?data=ChgSB0FjY291bnQaB0ZpeHR1cmUgASgBMAIQARgBIAA%3D",
+    "strictReject": "missing secret"
+  },
+  {
+    "id": "secret-empty",
+    "link": "otpauth-migration://offline?data=ChoKABIHQWNjb3VudBoHRml4dHVyZSABKAEwAhABGAEgAA%3D%3D",
+    "strictReject": "empty secret"
+  },
+  {
+    "id": "one-valid-one-empty",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACChoKABIHQWNjb3VudBoHRml4dHVyZSABKAEwAhABGAEgAA%3D%3D",
+    "strictReject": "empty secret in batch"
+  },
+  {
+    "id": "counter-negative",
+    "link": "otpauth-migration://offline?data=CjkKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATABOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQARgBIAA%3D",
+    "strictReject": "negative counter"
+  },
+  {
+    "id": "counter-overflow",
+    "link": "otpauth-migration://offline?data=CjkKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATABOICAgICAgICAgAEQARgBIAA%3D",
+    "strictReject": "counter beyond i64MAX"
+  },
+  {
+    "id": "invalid-utf8-name",
+    "link": "otpauth-migration://offline?data=CigKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgH%2FGgdGaXh0dXJlIAEoATACEAEYASAA",
+    "strictReject": "invalid UTF8"
+  },
+  {
+    "id": "invalid-label-control",
+    "link": "otpauth-migration://offline?data=CjEKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgpsaW5lCmJyZWFrGgdGaXh0dXJlIAEoATACEAEYASAA",
+    "strictReject": "label control"
+  },
+  {
+    "id": "oversized-secret",
+    "link": "otpauth-migration://offline?data=CpwICoEIeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgSB0FjY291bnQaB0ZpeHR1cmUgASgBMAIQARgBIAA%3D",
+    "strictReject": "secret beyond1024"
+  },
+  {
+    "id": "oversized-label",
+    "link": "otpauth-migration://offline?data=CqkEChQxMjM0NTY3ODkwMTIzNDU2Nzg5MBKBBHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eBoHRml4dHVyZSABKAEwAhABGAEgAA%3D%3D",
+    "strictReject": "label beyond512"
+  },
+  {
+    "id": "varint-truncated",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAgA%3D%3D",
+    "strictReject": "truncated varint"
+  },
+  {
+    "id": "varint-overflow",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAEICAgICAgICAgAI%3D",
+    "strictReject": "overflow varint"
+  },
+  {
+    "id": "varint-elevenbytes",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAEICAgICAgICAgIAA",
+    "strictReject": "overlong varint"
+  },
+  {
+    "id": "length-truncated",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATA%3D",
+    "strictReject": "truncated length field"
+  },
+  {
+    "id": "length-overflow",
+    "link": "otpauth-migration://offline?data=Cv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwE%3D",
+    "strictReject": "overflow length"
+  },
+  {
+    "id": "zero-field-tag",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAAAE%3D",
+    "strictReject": "illegal field0"
+  },
+  {
+    "id": "group-wire",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAMzQ%3D",
+    "strictReject": "group wire unsupported"
+  },
+  {
+    "id": "trailing-zero",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAAA%3D%3D",
+    "strictReject": "invalid trailing byte"
+  },
+  {
+    "id": "missing-version",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACGAEgAA%3D%3D",
+    "strictReject": "version required"
+  },
+  {
+    "id": "future-version",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAIYASAA",
+    "strictReject": "unknown version"
+  },
+  {
+    "id": "zero-version",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAAYASAA",
+    "strictReject": "unknown version"
+  },
+  {
+    "id": "missing-size",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEgAA%3D%3D",
+    "strictReject": "batch_size required"
+  },
+  {
+    "id": "zero-size",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYACAA",
+    "strictReject": "invalid batch size"
+  },
+  {
+    "id": "huge-size",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYgQIgAA%3D%3D",
+    "strictReject": "fragment limit"
+  },
+  {
+    "id": "negative-size",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEY%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FASAA",
+    "strictReject": "negative size"
+  },
+  {
+    "id": "index-equals-size",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAB",
+    "strictReject": "invalid batch index"
+  },
+  {
+    "id": "missing-index-default0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAQ%3D%3D"
+  },
+  {
+    "id": "hotp-missing-counter-default0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATABEAEYASAA"
+  },
+  {
+    "id": "nonminimal-varint",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACGAEgABCBAA%3D%3D"
+  },
+  {
+    "id": "batch-id--2147483648",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKICAgID4%2F%2F%2F%2F%2FwE%3D"
+  },
+  {
+    "id": "batch-id-0",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKAA%3D"
+  },
+  {
+    "id": "batch-id-2147483647",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKP%2F%2F%2F%2F8H"
+  },
+  {
+    "id": "batch-id-overflow",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAAKICAgIAI",
+    "strictReject": "outside signed int32"
+  },
+  {
+    "id": "empty-label-defaults",
+    "link": "otpauth-migration://offline?data=ChwKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwIAEoATACEAEYASAA"
+  },
+  {
+    "id": "base64-plus-slash-padding",
+    "link": "otpauth-migration://offline?data=CpsCCoACAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA=="
+  },
+  {
+    "id": "base64-percent-encoded",
+    "link": "otpauth-migration://offline?data=CpsCCoACAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0%2BP0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn%2BAgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq%2BwsbKztLW2t7i5uru8vb6%2FwMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t%2Fg4eLj5OXm5%2Bjp6uvs7e7v8PHy8%2FT19vf4%2Bfr7%2FP3%2B%2FxIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA%3D%3D"
+  },
+  {
+    "id": "base64-unpadded",
+    "link": "otpauth-migration://offline?data=CpsCCoACAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA"
+  },
+  {
+    "id": "invalid-base64-bad-character",
+    "link": "otpauth-migration://offline?data=CpsCCoACAA!ECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA==",
+    "strictReject": "strict base64"
+  },
+  {
+    "id": "invalid-base64-bad-padding",
+    "link": "otpauth-migration://offline?data=CpsCCoACAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA===",
+    "strictReject": "strict base64"
+  },
+  {
+    "id": "invalid-base64-newline",
+    "link": "otpauth-migration://offline?data=CpsCCoACAA\nECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA==",
+    "strictReject": "strict base64"
+  },
+  {
+    "id": "invalid-uri-wrong-host",
+    "link": "otpauth-migration://other-host?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAA",
+    "strictReject": "URI shape"
+  },
+  {
+    "id": "invalid-uri-path",
+    "link": "otpauth-migration://offline/path?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAA",
+    "strictReject": "URI shape"
+  },
+  {
+    "id": "invalid-uri-duplicate-data",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAA&data=CpsCCoACAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/xIHQmluYXJ5eBoHRml4dHVyZSABKAEwAhABGAEgAA==",
+    "strictReject": "URI shape"
+  },
+  {
+    "id": "invalid-uri-unknown-query",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAA&future=1",
+    "strictReject": "URI shape"
+  },
+  {
+    "id": "invalid-uri-fragment",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYASAA#ignored",
+    "strictReject": "URI shape"
+  },
+  {
+    "id": "batch-two-fragment-0",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assembly": "requires complete2"
+  },
+  {
+    "id": "batch-two-fragment-1",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assembly": "requires complete2"
+  },
+  {
+    "id": "qt-parseany-reverse-batch",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B"
+    ],
+    "assemblyOrder": [
+      "Batch part0",
+      "Batch part1"
+    ]
+  },
+  {
+    "id": "assembly-incomplete",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B"
+    ],
+    "strictAssemblyReject": true
+  },
+  {
+    "id": "assembly-duplicate-index",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B"
+    ],
+    "strictAssemblyReject": true
+  },
+  {
+    "id": "assembly-conflicting-duplicate-index",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=CkMKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEhxEaWZmZXJlbnQgcGF5bG9hZCBzYW1lIGluZGV4GgdGaXh0dXJlIAEoATACEAEYAiAAKO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwE%3D\notpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=CkMKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEhxEaWZmZXJlbnQgcGF5bG9hZCBzYW1lIGluZGV4GgdGaXh0dXJlIAEoATACEAEYAiAAKO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwE%3D",
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MRoHRml4dHVyZSABKAEwAhABGAIgASjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B"
+    ],
+    "strictAssemblyReject": true
+  },
+  {
+    "id": "assembly-conflicting-size",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAyABKO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwE%3D",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAyABKO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwE%3D"
+    ],
+    "strictAssemblyReject": true
+  },
+  {
+    "id": "assembly-missing-id",
+    "link": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiAA",
+    "parseAny": "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiAA\notpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiAB",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiAA",
+      "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiAB"
+    ],
+    "strictAssemblyReject": true
+  },
+  {
+    "id": "assembly-different-ids",
+    "link": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+    "parseAny": "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B\notpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiABKBI%3D",
+    "assemblyLinks": [
+      "otpauth-migration://offline?data=CjIKFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgtCYXRjaCBwYXJ0MBoHRml4dHVyZSABKAEwAhABGAIgACjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8B",
+      "otpauth-migration://offline?data=Ci4KFDEyMzQ1Njc4OTAxMjM0NTY3ODkwEgdBY2NvdW50GgdGaXh0dXJlIAEoATACEAEYAiABKBI%3D"
+    ],
+    "strictAssemblyReject": true
+  }
+]

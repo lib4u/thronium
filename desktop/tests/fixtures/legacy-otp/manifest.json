@@ -1,0 +1,16 @@
+{
+  "qtRuntime": "6.11.2",
+  "partsMask": 9,
+  "profiles": {
+    "blocked-profiles": 14,
+    "blocked-otp": 13
+  },
+  "otp": {
+    "blocked-profiles": 6,
+    "blocked-otp": 13
+  },
+  "sha256": {
+    "blocked-otp.thrbackup": "be3bc31709e4f95901c8004fe21967ae2ce9ed389b7c9cab43d72d44eb81e9ef",
+    "blocked-profiles.thrbackup": "8979c33f999dd3b5cacfe21e0d61990962482e44623ba63c1a66a01b69483177"
+  }
+}

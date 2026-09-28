@@ -1,0 +1,166 @@
+name: Thronium build
+# Release builds for Linux (deb, rpm, AppImage) and Windows (NSIS installer,
+# x86_64 and ARM64). A `v*` tag also publishes them as a draft release.
+#
+# Windows signing turns on when the repository has the secrets: either
+# THRONIUM_SIGN_THUMBPRINT for a certificate the runner can reach, or the Azure
+# Trusted Signing set AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID,
+# TRUSTED_SIGNING_ENDPOINT, TRUSTED_SIGNING_ACCOUNT, TRUSTED_SIGNING_PROFILE.
+# Without them the build is unsigned (desktop/scripts/windows_signing.py).
+on:
+  pull_request:
+    paths:
+      - 'desktop/**'
+      - 'core/server/**'
+      - '.github/workflows/thronium-build.yml'
+  push:
+    branches: [main]
+    tags: ['v*']
+    paths:
+      - 'desktop/**'
+      - 'core/server/**'
+      - '.github/workflows/thronium-build.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: thronium-build-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4.3.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.21.1'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: core/server/go.mod
+          cache-dependency-path: core/server/go.sum
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libwebkit2gtk-4.1-dev libgtk-3-dev libsoup-3.0-dev libglib2.0-dev libdbus-1-dev \
+            libayatana-appindicator3-dev librsvg2-dev libxdo-dev libssl-dev gsettings-desktop-schemas \
+            pkg-config file patchelf clang lld python3-venv python3-pip
+      - name: Install tested Rust toolchain
+        run: rustup toolchain install 1.98.0 --profile minimal && rustup default 1.98.0
+      - uses: actions/cache@v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            desktop/src-tauri/target
+          key: thronium-linux-1.98.0-${{ hashFiles('desktop/engine/Cargo.lock', 'desktop/src-tauri/Cargo.lock') }}
+      - run: npm ci
+      - name: Build the core, the application and the packages
+        run: npm run release:linux
+      - name: Test the core
+        working-directory: core/server
+        run: go test -count=1 -ldflags=-X=ThroneCore/parentcheck.expectedParentName=Thronium ./internal/...
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thronium-linux-x86_64
+          path: |
+            desktop/src-tauri/target/release/bundle/deb/*.deb
+            desktop/src-tauri/target/release/bundle/rpm/*.rpm
+            desktop/src-tauri/target/release/bundle/appimage/*.AppImage
+          if-no-files-found: error
+
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x86_64
+            runner: windows-latest
+          - arch: aarch64
+            runner: windows-11-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 120
+    env:
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      TRUSTED_SIGNING_ENDPOINT: ${{ secrets.TRUSTED_SIGNING_ENDPOINT }}
+      TRUSTED_SIGNING_ACCOUNT: ${{ secrets.TRUSTED_SIGNING_ACCOUNT }}
+      TRUSTED_SIGNING_PROFILE: ${{ secrets.TRUSTED_SIGNING_PROFILE }}
+      THRONIUM_SIGN_THUMBPRINT: ${{ secrets.THRONIUM_SIGN_THUMBPRINT }}
+    defaults:
+      run:
+        working-directory: desktop
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4.3.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.21.1'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: core/server/go.mod
+          cache-dependency-path: core/server/go.sum
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tested Rust toolchain
+        run: rustup toolchain install 1.98.0 --profile minimal --component clippy && rustup default 1.98.0
+      - uses: actions/cache@v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            desktop/engine/target
+            desktop/src-tauri/target
+          key: thronium-windows-${{ matrix.arch }}-1.98.0-${{ hashFiles('desktop/engine/Cargo.lock', 'desktop/src-tauri/Cargo.lock') }}
+      - run: npm ci
+      - name: Frontend unit tests
+        run: npm run test:unit
+      - name: Core Windows packages
+        working-directory: core/server
+        run: go test -count=1 "-ldflags=-X=ThroneCore/parentcheck.expectedParentName=Thronium" ./internal/winservice ./internal/winjob ./internal/process ./internal/endpointprobe ./internal/boxdns
+      - name: Check Engine targets
+        run: cargo clippy --locked --manifest-path engine/Cargo.toml --all-targets -j 2
+      - name: Test Engine library
+        run: cargo test --locked --manifest-path engine/Cargo.toml --lib -j 2 -- --test-threads=2
+      - name: Prepare Azure Trusted Signing
+        if: env.TRUSTED_SIGNING_ENDPOINT != ''
+        run: |
+          cargo install trusted-signing-cli --locked
+          "THRONIUM_SIGN_COMMAND=trusted-signing-cli -e $env:TRUSTED_SIGNING_ENDPOINT -a $env:TRUSTED_SIGNING_ACCOUNT -c $env:TRUSTED_SIGNING_PROFILE -d Thronium %1" >> $env:GITHUB_ENV
+      - name: Build the core, the application and the installer
+        run: python scripts/windows_checkpoint.py ci-${{ matrix.arch }} --installer --release --arch ${{ matrix.arch }} --jobs 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thronium-windows-${{ matrix.arch }}
+          path: |
+            desktop/test-results/windows/ci-${{ matrix.arch }}/build/*
+            desktop/test-results/windows/ci-${{ matrix.arch }}/binaries.json
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [linux, windows]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Publish a draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          find artifacts -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*.AppImage' -o -name '*-setup.exe' \) -print
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --draft --generate-notes \
+            $(find artifacts -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*.AppImage' -o -name '*-setup.exe' \))

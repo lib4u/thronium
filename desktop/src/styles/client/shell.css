@@ -1,0 +1,157 @@
+/* Application layout and visual language. */
+
+body {
+  display: flow-root;
+  min-height: 100dvh;
+  background: var(--bg);
+}
+.app-shell {
+  display: block;
+  max-width: 1240px;
+  height: calc(100dvh - 64px);
+  max-height: 900px;
+  min-height: 590px;
+  margin: 32px auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--shell);
+  box-shadow: var(--shadow-shell);
+}
+.sidebar {
+  display: none;
+}
+.workspace {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: none;
+  height: 76px;
+  padding: 0 31px;
+  gap: 25px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+.client-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -1.1px;
+}
+.client-wordmark > img {
+  width: 31px;
+  height: 31px;
+}
+.wordmark-period {
+  color: var(--accent);
+}
+.primary-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-self: stretch;
+  gap: 25px;
+  margin: 0 0 0 auto;
+}
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+  background: none;
+  font-size: 11px;
+  font-weight: 550;
+  white-space: nowrap;
+}
+.nav-link > .icon {
+  width: 15px;
+  height: 15px;
+}
+.nav-link > span {
+  display: inline;
+}
+.nav-link:hover {
+  background: none;
+  color: var(--text);
+}
+.nav-link.active {
+  background: none;
+  color: var(--text);
+  border: 0;
+  font-weight: 700;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  inset-inline: 0;
+  height: 2px;
+  background: var(--accent);
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  margin-left: 10px;
+}
+.topbar-actions > .icon-button {
+  width: 28px;
+  height: 28px;
+}
+.topbar-actions .icon {
+  width: 16px;
+  height: 16px;
+}
+.icon-button {
+  border-radius: var(--radius-s);
+}
+.button {
+  border-radius: var(--radius-m);
+  font-size: 11px;
+}
+.button.primary {
+  box-shadow: none;
+}
+.panel {
+  border-radius: var(--radius-l);
+}
+.toast-stack {
+  left: 50%;
+  bottom: 44px;
+}
+.toast {
+  border-radius: var(--radius-m);
+}
+.workspace > main:not(.client-workspace) {
+  padding: 31px 39px;
+  width: 100%;
+  max-width: none;
+  flex: 1;
+  overflow: auto;
+}
+.page-heading h1 {
+  font-size: 27px;
+}
+.page-heading .subtitle {
+  font-size: 11px;
+}
+.page-heading .button {
+  margin-top: 0;
+}

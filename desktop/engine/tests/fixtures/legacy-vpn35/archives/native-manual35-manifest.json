@@ -1,0 +1,77 @@
+{
+  "preparedOnly": true,
+  "actualReader35Pending": true,
+  "staticNoAuthOrCodeGeneration": true,
+  "writerSha256": "7af55e5af478187635857444fbfa2d213b81fe5284689c3528526f55d66d6273",
+  "originalArchiveCount": 8,
+  "additionalArchiveCount": 1,
+  "sourceDdlSha256": {
+    "GroupsRepo.cpp": "0a8f010b81871ee8d0035e15e9b6345a20600e0291f1e5ffb9f19ecdff7b4a9b",
+    "ProfilesRepo.cpp": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49",
+    "OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "RoutesRepo.cpp": "7edbc9ba86491f8fd27c67e4f8cafe306fa8237447b03fa48c52d3e317b31eb6",
+    "SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee"
+  },
+  "archives": {
+    "default-policy-parts-01.thrbackup": {
+      "parts": 1,
+      "sha256": "8a917d460901f9cf0b29d119ce8d3ad3caaf3a653819a6a3935bb5c82c8df28d",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/default-policy-parts-01.thrbackup",
+      "originalUnchanged": true
+    },
+    "default-policy-parts-08.thrbackup": {
+      "parts": 8,
+      "sha256": "f9d99b5a5bd08f7cb50a39efea58ba3e06ef64641deab863f8b43319936ff9c5",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/default-policy-parts-08.thrbackup",
+      "originalUnchanged": true
+    },
+    "default-policy-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "41b9c220a4127e3eb8eaafcc96647e12f7f7e990143508ac5ce9690fbd89f357",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/default-policy-parts-09.thrbackup",
+      "originalUnchanged": true
+    },
+    "default-policy-parts-31.thrbackup": {
+      "parts": 31,
+      "sha256": "41a92fc7717d753799cf80326e057e81ca44ec4e9836d35f0704ad2a00a97a17",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/default-policy-parts-31.thrbackup",
+      "originalUnchanged": true
+    },
+    "policy-off-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "50404fdabe3f7549bbd13d35d029c14aad5fd0cc93a4fed470328901b51ae967",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/policy-off-parts-09.thrbackup",
+      "originalUnchanged": true
+    },
+    "missing-otp-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "f7d9767b0f6c0254026c18f35b279258440a091372c19d8db4b087d6755a1abc",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/missing-otp-parts-09.thrbackup",
+      "originalUnchanged": true
+    },
+    "invalid-otp-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "d004abd9fdb1a9708e8ac1243181b73ed89585f4c13934323f64389cd5fb087d",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn34-fixtures/prepared/fixtures/archives/invalid-otp-parts-09.thrbackup",
+      "originalUnchanged": true
+    },
+    "complete-schema-default-policy-parts-31.thrbackup": {
+      "parts": 31,
+      "sha256": "c57a51938ccf5362a1b3ce53d3fadf0a4299189a1653fdd11aa52fc5511fffc4",
+      "source": "desktop/test-results/continuous-migration-validation/legacy-vpn35-full-schema-fixture/archives/complete-schema-default-policy-parts-31.thrbackup",
+      "originalUnchanged": true
+    },
+    "manual-ovpn-only-parts-01.thrbackup": {
+      "parts": 1,
+      "sha256": "c50016b96636d3c65d06644fea1696f8d42f2c778b8fc52d10a48145223edd16",
+      "profiles": [
+        17
+      ],
+      "sourceOtpId": 41,
+      "otpRows": 0,
+      "manualAllowed": true,
+      "longName": "Ручное подтверждение VPN — Длинное имя тестового профиля Длинное имя тестового профиля Длинное имя тестового профиля Длинное имя тестового профиля Длинное имя тестового профиля Длинное имя тестового профиля Длинное имя тестового профиля 🦊",
+      "qtVersion": "6.11.2"
+    }
+  }
+}

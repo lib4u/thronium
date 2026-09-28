@@ -1,0 +1,138 @@
+.editor-layout {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 24px;
+}
+.editor-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.editor-nav button {
+  background: transparent;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-m);
+  font-size: 11px;
+  color: var(--muted);
+}
+.editor-nav button.active {
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+  font-weight: 650;
+}
+.editor-content {
+  min-width: 0;
+}
+.editor-content > [hidden] {
+  display: none;
+}
+.editor-card {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  margin-top: 14px;
+}
+.editor-card summary {
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.editor-card[open] summary {
+  margin-bottom: 17px;
+}
+.editor-type {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.editor-modal .modal-body {
+  padding-top: 18px;
+}
+.library-pane .group-strip {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: -5px 0 13px;
+}
+.group-strip select {
+  font-size: 11px;
+  height: 33px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+.group-strip .icon-button {
+  width: 28px;
+  height: 28px;
+}
+.library-tools {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  align-items: center;
+}
+.library-tabs .library-tools > button {
+  padding: 6px;
+  border: 0;
+}
+.library-tabs .library-tools .icon {
+  width: 14px;
+  height: 14px;
+}
+.connection-row .row-more {
+  flex: none;
+  width: 26px;
+  height: 30px;
+  margin-right: 5px;
+}
+.connection-row .favorite-button {
+  width: 26px;
+}
+.group-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 15px 0;
+}
+.group-row > .icon {
+  color: var(--accent);
+}
+.group-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.group-row strong {
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.group-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+.chain-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 11px;
+}
+.chain-row > span {
+  flex: 1;
+}
+.chain-row > b {
+  color: var(--accent);
+  font-weight: 600;
+}
+.chain-row .icon-button {
+  height: 25px;
+  width: 25px;
+}

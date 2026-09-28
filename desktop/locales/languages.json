@@ -1,0 +1,7 @@
+{
+  "source": "en",
+  "languages": [
+    { "code": "en", "locale": "en-US", "name": "English", "installer": "English" },
+    { "code": "ru", "locale": "ru-RU", "name": "Русский", "installer": "Russian" }
+  ]
+}

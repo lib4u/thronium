@@ -1,0 +1,11 @@
+{
+  "writer": "desktop/tests/thrbackup_writer.py: byte for byte the Qt6 QDataStream Qt_6_0 little-endian writer",
+  "data": "Synthetic loopback profiles only; archives are never executed by this fixture generator.",
+  "validProfiles": 13,
+  "validGroups": 4,
+  "sha256": {
+    "blocked.thrbackup": "008d69847034c230136e5bcfe0a9a3db185eed0f66101a483edf23dfd313166c",
+    "no-profiles.thrbackup": "6d534d081cf4044a227a71fadfad0d89879b4fa2ab99e3832dd25da36a8178c5",
+    "valid.thrbackup": "0d2fa53f6e97e19dfebb7f908fd1c0ab729619c11aa0b80403dd91e68c470f41"
+  }
+}

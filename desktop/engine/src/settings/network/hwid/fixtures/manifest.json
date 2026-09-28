@@ -1,0 +1,30 @@
+{
+  "scope": "Original request-header block; GetDeviceDetails replaced by constants, no network get and no system identifiers read",
+  "source": "src/global/HTTPRequestHelper.cpp",
+  "sourceSHA256": "00ce68cff903f4a551616871d70872a918cd61a832c45bf8a19e91aa19c832d9",
+  "blockSHA256": "dd97385a924fe099a3882e8b0438854bb70a6290a5a1a2cbe6ebca2a7f3a295c",
+  "qtRuntime": "6.11.2",
+  "caseCount": 20,
+  "compiler": [
+    "g++",
+    "-std=c++20",
+    "-fPIC",
+    "-O1",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "-I<qt-sdk>/usr/include/qt6/QtNetwork",
+    "desktop/engine/src/settings/network/hwid/fixtures/oracle.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Network",
+    "-lQt6Core",
+    "-o",
+    "/tmp/thronium-synthetic-hwid-oracle"
+  ],
+  "executableSHA256": "24b91646914d0b281d7d6b5069e8b765a0a8a6d6743cf6d326960d5b7b85894e",
+  "files": {
+    "inputs.json": "2715453c79591f53d3f6d262765f35ca08d23452139aa77df49e594d6a8b3d7f",
+    "oracle.cpp": "6d36c5eccd250054d1ccdf67ad1fa8e443a867aaf5431236185b89bf43de2523",
+    "golden.json": "414325f16f7bcaf71ba704a36fd8610b64ed92e407f582a957689f208a0b9b5e"
+  }
+}

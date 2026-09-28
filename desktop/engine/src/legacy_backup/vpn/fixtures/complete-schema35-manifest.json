@@ -1,0 +1,30 @@
+{
+  "file": "complete-schema-default-policy-parts-31.thrbackup",
+  "sha256": "c57a51938ccf5362a1b3ce53d3fadf0a4299189a1653fdd11aa52fc5511fffc4",
+  "originalSevenUnchanged": true,
+  "qtVersion": "6.11.2",
+  "writerSha256": "7af55e5af478187635857444fbfa2d213b81fe5284689c3528526f55d66d6273",
+  "sourceDdlSha256": {
+    "GroupsRepo.cpp": "0a8f010b81871ee8d0035e15e9b6345a20600e0291f1e5ffb9f19ecdff7b4a9b",
+    "ProfilesRepo.cpp": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49",
+    "OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "RoutesRepo.cpp": "7edbc9ba86491f8fd27c67e4f8cafe306fa8237447b03fa48c52d3e317b31eb6",
+    "SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee"
+  },
+  "scope": "synthetic exact source DDL with empty route/settings tables; no source provider, file paths or OTP generation",
+  "replacesAsPositive": "default-policy-parts-31.thrbackup remains an invalid-schema negative",
+  "baselineReader": "PASS corrected31; original31 legacy_backup_invalid_schema; original7 SHA unchanged",
+  "files": {
+    "make_legacy_vpn35_full_archive.py": "d64df9b35cbca7f195cd6aa57c09732ba7ec3fecb49309e60de7dd717fddecdd",
+    "baseline34-read.log": "21f17fe8f614b6efd4ce0df1ede344fe68e20d53e21ab1c24359afc94b9e8f4b",
+    "baseline34-summary.json": "2f0ecd12abc1b48e51cd0725f2af6348dce1b15f5a995866d659b8e1d6fe1f33",
+    "archives/complete-schema-default-policy-parts-31.thrbackup": "c57a51938ccf5362a1b3ce53d3fadf0a4299189a1653fdd11aa52fc5511fffc4",
+    "archives/full-schema35-manifest.json": "f37a2278c1e70a089b818b3ddebe9335b6e744577d11cf3fcc2c6dde8306df21",
+    "source-ddl/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "source-ddl/RoutesRepo.cpp": "7edbc9ba86491f8fd27c67e4f8cafe306fa8237447b03fa48c52d3e317b31eb6",
+    "source-ddl/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "source-ddl/ProfilesRepo.cpp": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49",
+    "source-ddl/GroupsRepo.cpp": "0a8f010b81871ee8d0035e15e9b6345a20600e0291f1e5ffb9f19ecdff7b4a9b"
+  },
+  "runtime35Acceptance": false
+}

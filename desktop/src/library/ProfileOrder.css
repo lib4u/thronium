@@ -1,0 +1,53 @@
+.connection-row > .profile-order-handle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  min-height: 36px;
+  padding: 0;
+  color: var(--faint);
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  border-radius: var(--radius-s);
+}
+.profile-order-handle > .icon {
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+.profile-order-handle:focus-visible {
+  outline: var(--focus-width) solid var(--accent);
+  outline-offset: -2px;
+  color: var(--accent);
+}
+.profile-order-handle:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.profile-order-handle:active:not(:disabled) {
+  cursor: grabbing;
+}
+.connection-row[data-profile-dragging='true'] {
+  opacity: 0.55;
+}
+.connection-row[data-profile-drop]::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 1;
+}
+.connection-row[data-profile-drop='before']::after {
+  top: -1px;
+}
+.connection-row[data-profile-drop='after']::after {
+  bottom: -1px;
+}
+.connection-row > .profile-order-handle + .connection-row-button {
+  padding-left: 3px;
+}

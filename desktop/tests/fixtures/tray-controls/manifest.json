@@ -1,0 +1,13 @@
+{
+  "source": "rules.go",
+  "generator": "go run ../../desktop/tests/fixtures/tray-controls/rules.go (cwd core/server)",
+  "syntheticRule": {
+    "ip_cidr": [
+      "127.0.0.1/32"
+    ]
+  },
+  "formatVersion": 1,
+  "sourceSha256": "97348f349c1077da7bede3eead84602e84affc3611558e3e2a5e4cf2ffee2314",
+  "srsSha256": "642045ad3597d11e07623355c37c8ce528414ceb4710e1c58940e1ef24276f4f",
+  "srsBytes": 29
+}

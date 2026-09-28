@@ -1,0 +1,2012 @@
+{
+  "cases": [
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-000",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-001",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-002",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-003",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-004",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-005",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-006",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-007",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-008",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-009",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-010",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-011",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-012",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-013",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-014",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-015",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-016",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-017",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-018",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-019",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-020",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-021",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-022",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-023",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-024",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-025",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-026",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-027",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-028",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-029",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-030",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-031",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-032",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-033",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-sequence"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-034",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_method": "wrong-ack"
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-035",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-036",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-037",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-038",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-039",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-040",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-041",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-042",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-043",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-044",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": false,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-045",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-046",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-047",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-048",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-049",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-050",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-051",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-052",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": ""
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "spoof-053",
+      "settings": {
+        "tls_spoof": "  default.fixture.invalid  ",
+        "tls_spoof_default_on": true,
+        "tls_spoof_method": "  wrong-sequence  "
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": false,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-absent-False",
+      "settings": {
+        "tls_tricks_default_on": false
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-absent-True",
+      "settings": {
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true
+      },
+      "tricksOn": true
+    },
+    {
+      "built": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-True-False",
+      "settings": {
+        "tls_tricks_default_on": false
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "tricksOn": true
+    },
+    {
+      "built": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-True-True",
+      "settings": {
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "tricksOn": true
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-False-False",
+      "settings": {
+        "tls_tricks_default_on": false
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "tricks",
+      "id": "tricks-False-True",
+      "settings": {
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-absent-False-built-in",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-absent-False-custom",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-absent-True-built-in",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-absent-True-custom",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-True-False-built-in",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-True-False-custom",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-True-True-built-in",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": true,
+      "group": "fragment",
+      "id": "fragment-True-True-custom",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": true,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-False-False-built-in",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-False-False-custom",
+      "settings": {
+        "fragment_default_on": false,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-False-True-built-in",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "built-in"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "fragment",
+      "id": "fragment-False-True-custom",
+      "settings": {
+        "fragment_default_on": true,
+        "fragment_implementation": "custom"
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tls": {
+        "enabled": true,
+        "fragment": false,
+        "fragment_fallback_delay": "17ms"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "empty-global",
+      "settings": {
+        "tls_spoof": " \t ",
+        "tls_spoof_method": " wrong-ack "
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "  "
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "own-whitespace",
+      "settings": {
+        "tls_spoof_default_on": false
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "spoof": "  "
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": "  "
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true
+      },
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "method-without-sni",
+      "settings": {},
+      "spoofOn": false,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_method": "wrong-ack"
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {},
+      "fragmentOn": false,
+      "group": "spoof",
+      "id": "disabled",
+      "settings": {
+        "tls_spoof_default_on": true
+      },
+      "spoofOn": true,
+      "stored": {},
+      "tls": {
+        "enabled": false,
+        "spoof": "own.fixture.invalid",
+        "spoof_enabled": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid"
+      },
+      "fragmentOn": false,
+      "group": "non-parity-preservation",
+      "id": "tricks-empty-object",
+      "settings": {
+        "tls_spoof": "default.fixture.invalid",
+        "tls_spoof_default_on": true,
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {}
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid"
+      },
+      "fragmentOn": false,
+      "group": "non-parity-preservation",
+      "id": "tricks-bool-old-thronium",
+      "settings": {
+        "tls_spoof": "default.fixture.invalid",
+        "tls_spoof_default_on": true,
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": true
+      },
+      "tricksOn": false
+    },
+    {
+      "built": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "fragmentOn": false,
+      "group": "non-parity-preservation",
+      "id": "spoof-null",
+      "settings": {
+        "tls_spoof": "default.fixture.invalid",
+        "tls_spoof_default_on": true,
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": false,
+      "stored": {
+        "enabled": true,
+        "spoof_enabled": false
+      },
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": null
+      },
+      "tricksOn": true
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid",
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      },
+      "fragmentOn": false,
+      "group": "non-parity-preservation",
+      "id": "spoof-number",
+      "settings": {
+        "tls_spoof": "default.fixture.invalid",
+        "tls_spoof_default_on": true,
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true
+      },
+      "tls": {
+        "enabled": true,
+        "spoof": 42
+      },
+      "tricksOn": true
+    },
+    {
+      "built": {
+        "enabled": true,
+        "spoof": "default.fixture.invalid"
+      },
+      "fragmentOn": false,
+      "group": "non-parity-preservation",
+      "id": "unknown-neighbor",
+      "settings": {
+        "tls_spoof": "default.fixture.invalid",
+        "tls_spoof_default_on": true,
+        "tls_tricks_default_on": true
+      },
+      "spoofOn": true,
+      "stored": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "future": true,
+          "mixedcase_sni": false
+        }
+      },
+      "tricksOn": false
+    }
+  ],
+  "qtRuntime": "6.11.2"
+}

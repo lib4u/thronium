@@ -1,0 +1,1372 @@
+[
+    {
+        "includeSettings": false,
+        "name": "constructor-absent-defaults",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "minimum-clamps",
+        "qtCore": {
+            "active_size": 1,
+            "bench_interval": "10s",
+            "dial_retries": 0,
+            "expected": 1,
+            "interrupt_exist_connections": true,
+            "interval": "10s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 2,
+            "tag": "oracle-selector",
+            "tolerance": 0,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "5s"
+        },
+        "qtNormalized": {
+            "active_size": 1,
+            "balance": false,
+            "balance_interval_sec": 5,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 10,
+            "build_limit": 1,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 0,
+            "exclude_unavailable": true,
+            "expected": 1,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 10,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 0,
+            "sampling": 2,
+            "test_url": "",
+            "tolerance_ms": 0,
+            "type": "autoselector",
+            "watch_interval_sec": 5
+        },
+        "settings": {
+        },
+        "source": {
+            "active_size": -1,
+            "balance_interval_sec": -1,
+            "bench_interval_sec": -1,
+            "build_limit": -1,
+            "dial_retries": -1,
+            "expected": -1,
+            "gid": 7,
+            "interval_sec": -1,
+            "last_built": [
+                12,
+                11
+            ],
+            "max_rtt_ms": -1,
+            "name": "Qt selector 🦊",
+            "pool_cap": -1,
+            "result_validity_mins": -1,
+            "sampling": -1,
+            "tolerance_ms": -1,
+            "type": "autoselector",
+            "watch_interval_sec": -1
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "maximum-budget-clamps",
+        "qtCore": {
+            "active_size": 500,
+            "bench_interval": "600s",
+            "dial_retries": 5,
+            "expected": 500,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "max_rtt": "9999ms",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 60,
+            "tag": "oracle-selector",
+            "tolerance": 65535,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 500,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 500,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 5,
+            "exclude_unavailable": true,
+            "expected": 500,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 9999,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 3000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 60,
+            "test_url": "",
+            "tolerance_ms": 65535,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "active_size": 99999,
+            "build_limit": 99999,
+            "dial_retries": 99,
+            "expected": 99999,
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "max_rtt_ms": 9999,
+            "name": "Qt selector 🦊",
+            "pool_cap": 99999,
+            "sampling": 99,
+            "tolerance_ms": 65535,
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "expected-expands-active",
+        "qtCore": {
+            "active_size": 7,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 7,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 7,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 50,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 7,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "active_size": 1,
+            "build_limit": 50,
+            "expected": 7,
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "pool-limits-ready-size",
+        "qtCore": {
+            "active_size": 2,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 2,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 2,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 2,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 2,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 2,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "active_size": 1,
+            "build_limit": 500,
+            "expected": 8,
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "pool_cap": 2,
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "watch-minimum",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "20s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "5s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 20,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 5
+        },
+        "settings": {
+        },
+        "source": {
+            "gid": 7,
+            "interval_sec": 20,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector",
+            "watch_interval_sec": 0
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "watch-ceiling",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "10s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "10s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 10,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 10
+        },
+        "settings": {
+        },
+        "source": {
+            "gid": 7,
+            "interval_sec": 10,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector",
+            "watch_interval_sec": 300
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "bench-follows-interval",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "1800s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "1800s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 1800,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 1800,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "bench_interval_sec": 1,
+            "gid": 7,
+            "interval_sec": 1800,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "balance-rotate-default",
+        "qtCore": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval": "30s",
+            "balance_mode": "rotate",
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "balance": true,
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "balance-connection",
+        "qtCore": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval": "42s",
+            "balance_mode": "connection",
+            "bench_interval": "600s",
+            "dial_retries": 0,
+            "expected": 3,
+            "interrupt_exist_connections": false,
+            "interval": "300s",
+            "max_rtt": "2500ms",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval_sec": 42,
+            "balance_mode": "connection",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 0,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": false,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 2500,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "balance": true,
+            "balance_interval_sec": 42,
+            "balance_mode": "connection",
+            "dial_retries": 0,
+            "gid": 7,
+            "interrupt_on_switch": false,
+            "last_built": [
+                12,
+                11
+            ],
+            "max_rtt_ms": 2500,
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "balance-unknown-mode-normalizes",
+        "qtCore": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval": "5s",
+            "balance_mode": "rotate",
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": true,
+            "balance_interval_sec": 5,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "balance": true,
+            "balance_interval_sec": 1,
+            "balance_mode": "future",
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "balance-disabled-fields-omitted",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 600,
+            "balance_mode": "connection",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "balance": false,
+            "balance_interval_sec": 600,
+            "balance_mode": "connection",
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": true,
+        "name": "selected-global-fallbacks",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "connectivity_url": "http://127.0.0.1:19000/source-online",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://127.0.0.1:19000/source-probe",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+            "direct_test_url": "http://127.0.0.1:19000/source-online",
+            "test_latency_url": "http://127.0.0.1:19000/source-probe"
+        },
+        "source": {
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": true,
+        "name": "explicit-urls-override-selected-globals",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "connectivity_url": "http://127.0.0.1:19000/explicit-online",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "https://probe.invalid/explicit",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "http://127.0.0.1:19000/explicit-online",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "https://probe.invalid/explicit",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+            "direct_test_url": "https://online.invalid/global",
+            "test_latency_url": "https://probe.invalid/global"
+        },
+        "source": {
+            "connectivity_url": "http://127.0.0.1:19000/explicit-online",
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "test_url": "https://probe.invalid/explicit",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "excluded-globals-use-constructor",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+            "direct_test_url": "http://127.0.0.1:19000/excluded-online",
+            "test_latency_url": "http://127.0.0.1:19000/excluded"
+        },
+        "source": {
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "excluded-malformed-globals-ignored",
+        "qtCore": {
+            "active_size": 8,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 3,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 8,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 300,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 3,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": -1,
+            "pool": [
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+            "direct_test_url": "invalid excluded value",
+            "enable_warp": "true",
+            "test_latency_url": "invalid excluded value"
+        },
+        "source": {
+            "gid": 7,
+            "last_built": [
+                12,
+                11
+            ],
+            "name": "Qt selector 🦊",
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "pin-and-ranked-order",
+        "qtCore": {
+            "active_size": 1,
+            "bench_interval": "600s",
+            "dial_retries": 2,
+            "expected": 1,
+            "interrupt_exist_connections": true,
+            "interval": "300s",
+            "outbounds": [
+                "source-12",
+                "source-11"
+            ],
+            "pinned": "source-11",
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 1,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 600,
+            "build_limit": 1,
+            "connectivity_url": "",
+            "country_filter": "ZZ",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 1,
+            "gid": 7,
+            "history": [
+                {
+                    "builds": 3,
+                    "fails": 1,
+                    "first": 1,
+                    "id": 13,
+                    "last": 2,
+                    "name": "Old"
+                }
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 300,
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 1750000000,
+            "max_rtt_ms": 0,
+            "name": "Qt selector 🦊",
+            "name_filter": "(?<=Qt-only)match",
+            "pinned_id": 11,
+            "pool": [
+                11,
+                13,
+                12
+            ],
+            "pool_cap": 1000,
+            "pool_ranked_at": 1750000001,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "build_limit": 1,
+            "country_filter": "ZZ",
+            "gid": 7,
+            "history": [
+                {
+                    "builds": 3,
+                    "fails": 1,
+                    "first": 1,
+                    "id": 13,
+                    "last": 2,
+                    "name": "Old"
+                }
+            ],
+            "last_built": [
+                12,
+                11
+            ],
+            "last_built_at": 1750000000,
+            "name": "Qt selector 🦊",
+            "name_filter": "(?<=Qt-only)match",
+            "pinned_id": 11,
+            "pool": [
+                11,
+                13,
+                12
+            ],
+            "pool_ranked_at": 1750000001,
+            "type": "autoselector"
+        }
+    },
+    {
+        "includeSettings": false,
+        "name": "single-member-maxima-normalize",
+        "qtCore": {
+            "active_size": 1,
+            "bench_interval": "2147483647s",
+            "dial_retries": 2,
+            "expected": 1,
+            "interrupt_exist_connections": true,
+            "interval": "2147483647s",
+            "max_rtt": "2147483647ms",
+            "outbounds": [
+                "source-11"
+            ],
+            "pinned": "source-11",
+            "sampling": 10,
+            "tag": "oracle-selector",
+            "tolerance": 300,
+            "type": "auto-selector",
+            "url": "http://cp.cloudflare.com/",
+            "watch_interval": "15s"
+        },
+        "qtNormalized": {
+            "active_size": 1,
+            "balance": false,
+            "balance_interval_sec": 30,
+            "balance_mode": "rotate",
+            "bench_interval_sec": 2147483647,
+            "build_limit": 1,
+            "connectivity_url": "",
+            "country_filter": "",
+            "dial_retries": 2,
+            "exclude_unavailable": true,
+            "expected": 1,
+            "gid": 7,
+            "history": [
+            ],
+            "interrupt_on_switch": true,
+            "interval_sec": 2147483647,
+            "last_built": [
+                11
+            ],
+            "last_built_at": 0,
+            "max_rtt_ms": 2147483647,
+            "name": "Qt selector 🦊",
+            "name_filter": "",
+            "pinned_id": 11,
+            "pool": [
+            ],
+            "pool_cap": 1,
+            "pool_ranked_at": 0,
+            "result_validity_mins": 1440,
+            "sampling": 10,
+            "test_url": "",
+            "tolerance_ms": 300,
+            "type": "autoselector",
+            "watch_interval_sec": 15
+        },
+        "settings": {
+        },
+        "source": {
+            "active_size": 500,
+            "bench_interval_sec": 1,
+            "expected": 500,
+            "gid": 7,
+            "interval_sec": 2147483647,
+            "last_built": [
+                11
+            ],
+            "max_rtt_ms": 2147483647,
+            "name": "Qt selector 🦊",
+            "pinned_id": 11,
+            "pool_cap": 1,
+            "type": "autoselector"
+        }
+    }
+]

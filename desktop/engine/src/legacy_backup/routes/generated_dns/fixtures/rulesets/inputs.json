@@ -1,0 +1,274 @@
+[
+  {
+    "id": "rule-set-direct-v6-false-raw-False",
+    "settings": {
+      "dns_final_out": "direct",
+      "direct_dns_disable_ipv6": "false",
+      "remote_dns_disable_ipv6": "false"
+    },
+    "raw": false,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-direct-v6-false-raw-True",
+    "settings": {
+      "dns_final_out": "direct",
+      "direct_dns_disable_ipv6": "false",
+      "remote_dns_disable_ipv6": "false"
+    },
+    "raw": true,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-direct-v6-true-raw-False",
+    "settings": {
+      "dns_final_out": "direct",
+      "direct_dns_disable_ipv6": "true",
+      "remote_dns_disable_ipv6": "true"
+    },
+    "raw": false,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-direct-v6-true-raw-True",
+    "settings": {
+      "dns_final_out": "direct",
+      "direct_dns_disable_ipv6": "true",
+      "remote_dns_disable_ipv6": "true"
+    },
+    "raw": true,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-remote-v6-false-raw-False",
+    "settings": {
+      "dns_final_out": "remote",
+      "direct_dns_disable_ipv6": "false",
+      "remote_dns_disable_ipv6": "false"
+    },
+    "raw": false,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-remote-v6-false-raw-True",
+    "settings": {
+      "dns_final_out": "remote",
+      "direct_dns_disable_ipv6": "false",
+      "remote_dns_disable_ipv6": "false"
+    },
+    "raw": true,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-remote-v6-true-raw-False",
+    "settings": {
+      "dns_final_out": "remote",
+      "direct_dns_disable_ipv6": "true",
+      "remote_dns_disable_ipv6": "true"
+    },
+    "raw": false,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rule-set-remote-v6-true-raw-True",
+    "settings": {
+      "dns_final_out": "remote",
+      "direct_dns_disable_ipv6": "true",
+      "remote_dns_disable_ipv6": "true"
+    },
+    "raw": true,
+    "raw_route": {
+      "final": -2
+    },
+    "rules": [
+      {
+        "order": 0,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -2,
+          "action": "route",
+          "rule_set_json": "[\"geosite-openai\",\"geoip-private\"]",
+          "domain_suffix_json": "[\"one.invalid\"]"
+        }
+      },
+      {
+        "order": 1,
+        "kind": 0,
+        "columns": {
+          "outbound_id": -1,
+          "action": "route",
+          "rule_set_json": "[\"geosite-private\"]",
+          "domain_json": "[\"two.invalid\"]"
+        }
+      }
+    ]
+  }
+]

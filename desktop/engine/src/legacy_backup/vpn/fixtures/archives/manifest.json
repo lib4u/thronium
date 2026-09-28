@@ -1,0 +1,64 @@
+{
+  "writerSource": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "sourceDdl": {
+    "ProfilesRepo.cpp": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49",
+    "GroupsRepo.cpp": "0a8f010b81871ee8d0035e15e9b6345a20600e0291f1e5ffb9f19ecdff7b4a9b",
+    "OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c"
+  },
+  "profilesOrder": [
+    41,
+    17
+  ],
+  "sourceBindings": {
+    "17": 41,
+    "41": 17
+  },
+  "otpNamesDeliberatelyEqual": true,
+  "counter": 9007199254740993,
+  "archives": {
+    "default-policy-parts-01.thrbackup": {
+      "parts": 1,
+      "sha256": "8a917d460901f9cf0b29d119ce8d3ad3caaf3a653819a6a3935bb5c82c8df28d"
+    },
+    "default-policy-parts-08.thrbackup": {
+      "parts": 8,
+      "sha256": "f9d99b5a5bd08f7cb50a39efea58ba3e06ef64641deab863f8b43319936ff9c5"
+    },
+    "default-policy-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "41b9c220a4127e3eb8eaafcc96647e12f7f7e990143508ac5ce9690fbd89f357"
+    },
+    "default-policy-parts-31.thrbackup": {
+      "parts": 31,
+      "sha256": "41a92fc7717d753799cf80326e057e81ca44ec4e9836d35f0704ad2a00a97a17"
+    },
+    "policy-off-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "50404fdabe3f7549bbd13d35d029c14aad5fd0cc93a4fed470328901b51ae967"
+    },
+    "missing-otp-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "f7d9767b0f6c0254026c18f35b279258440a091372c19d8db4b087d6755a1abc"
+    },
+    "invalid-otp-parts-09.thrbackup": {
+      "parts": 9,
+      "sha256": "d004abd9fdb1a9708e8ac1243181b73ed89585f4c13934323f64389cd5fb087d"
+    }
+  },
+  "qtWriter": "6.11.2",
+  "writerCommand": [
+    "c++",
+    "-std=c++20",
+    "-fPIC",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "desktop/engine/src/legacy_backup/golden_writer.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Core",
+    "-o",
+    "/tmp/thronium-legacy-vpn34-tests/golden-writer"
+  ],
+  "writerSha256": "7af55e5af478187635857444fbfa2d213b81fe5284689c3528526f55d66d6273",
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a"
+}

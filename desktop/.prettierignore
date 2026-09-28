@@ -1,0 +1,8 @@
+node_modules/
+dist/
+vendor/
+.tools/
+test-results/
+src/settings/catalog.json
+src/**/generated/
+contracts/generated/

@@ -1,0 +1,492 @@
+{
+  "qtRuntime": "6.11.2",
+  "writerSHA256": "5963d3607a703be1e686b6457095b77da61d7b77d915447a2b8d640e31f24bb3",
+  "oracleSHA256": "cdfa0ebd23ccb59723922a4572bb22c8649ca5a01b19b95bb693acc8a4ce7dce",
+  "routeSchemaSHA256": "7edbc9ba86491f8fd27c67e4f8cafe306fa8237447b03fa48c52d3e317b31eb6",
+  "cases": [
+    {
+      "name": "direct",
+      "parts": 7,
+      "sha256": "8c02ce637dbc5f67903ffb6c9cd6eef258654b32f7e7b5bc9bd62dfc2d5b1dae",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-direct"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-remote",
+            "type": "tcp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-local",
+            "type": "tcp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bootstrap",
+      "parts": 7,
+      "sha256": "556444a4ab560b8409cd0cd02cb19266ac1533bbd74364ca8adbe4133b0be143",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "tcp://resolver.fixture.invalid:8855",
+        "core_box_underlying_dns": "quic://127.0.0.1:8854",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-direct"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-remote",
+            "type": "tcp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "resolver.fixture.invalid",
+            "server_port": 8855,
+            "tag": "dns-direct",
+            "type": "tcp"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8854,
+            "tag": "dns-local",
+            "type": "quic"
+          }
+        ]
+      }
+    },
+    {
+      "name": "both",
+      "parts": 7,
+      "sha256": "aa390c9c191e36fd18c9e303652b5a9cdc0a13c1dbf9758334349967a0305a55",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "quic://127.0.0.1:8854",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-direct"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-remote",
+            "type": "tcp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8854,
+            "tag": "dns-local",
+            "type": "quic"
+          }
+        ]
+      }
+    },
+    {
+      "name": "default-port",
+      "parts": 7,
+      "sha256": "22f920f966eb7b2151157d9ed76579af70b15c88ecb2d0ab23122bdab7383070",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1",
+        "core_box_underlying_dns": "quic://127.0.0.2",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-direct"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-remote",
+            "type": "tcp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.2",
+            "tag": "dns-local",
+            "type": "quic"
+          }
+        ]
+      }
+    },
+    {
+      "name": "direct-hostname",
+      "parts": 7,
+      "sha256": "a692965f2d2ac65c78e934aecc9b85e7321ab3ff870f4c94412c9ac0ad238e32",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://resolver.fixture.invalid:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-direct"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-remote",
+            "type": "tcp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "resolver.fixture.invalid",
+            "server_port": 8853,
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-local",
+            "type": "tcp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bootstrap-hostname",
+      "parts": 7,
+      "sha256": "e674d32621b4123cd1ef708c1b9c03320e22b6c86b3247a38a425239fdb43d48",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "quic://resolver.fixture.invalid",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": "legacy_dns_bootstrap_hostname_unsupported"
+    },
+    {
+      "name": "remote-quic",
+      "parts": 7,
+      "sha256": "1c4cf83a78cf48550dd2c63f3951b9e63caac9c671c3d2e4781d49d419032044",
+      "settings": {
+        "remote_dns": "quic://127.0.0.1:8853",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "remote",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-remote"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-remote",
+            "type": "quic"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-local",
+            "type": "tcp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "remote-udp",
+      "parts": 7,
+      "sha256": "cdd372ba2394b8c9d644539e742c3cd841d182aac43db8ba3330a352c7b4c519",
+      "settings": {
+        "remote_dns": "127.0.0.1:8853",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "remote",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": null,
+      "expectedDNS": {
+        "cache_capacity": 65536,
+        "disable_cache": true,
+        "rules": [
+          {
+            "action": "predefined",
+            "answer": [
+              "*. IN A 127.0.0.1"
+            ],
+            "domain": "localhost",
+            "query_type": "A",
+            "rcode": "NOERROR"
+          },
+          {
+            "action": "predefined",
+            "domain": "localhost",
+            "query_type": "AAAA",
+            "rcode": "NXDOMAIN"
+          },
+          {
+            "action": "route",
+            "server": "dns-remote"
+          }
+        ],
+        "servers": [
+          {
+            "detour": "proxy",
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-remote",
+            "type": "udp"
+          },
+          {
+            "domain_resolver": "dns-local",
+            "server": "127.0.0.1",
+            "server_port": 8853,
+            "tag": "dns-direct",
+            "type": "quic"
+          },
+          {
+            "server": "127.0.0.1",
+            "server_port": 8855,
+            "tag": "dns-local",
+            "type": "tcp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "no-settings",
+      "parts": 3,
+      "sha256": "514b9051a291d736de3f463c2691810233f18b65f6a17134da91f56138566c90",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": "legacy_route_parts_required"
+    },
+    {
+      "name": "no-routes",
+      "parts": 5,
+      "sha256": "91cc803b5ba2d97584a22aa12b1e6c654b1003b5efec50381810fbf26116c402",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.1:8855",
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "tcp://127.0.0.1:8855",
+        "dns_final_out": "direct",
+        "dns_disable_cache": "true",
+        "use_dns_object": "false",
+        "dns_object": "inactive-fixture-secret-not-json"
+      },
+      "expectedError": "legacy_route_parts_required"
+    }
+  ]
+}

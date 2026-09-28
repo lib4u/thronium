@@ -1,0 +1,118 @@
+{
+  "qtRuntime": "6.11.2",
+  "fields": [
+    "enable_warp",
+    "warp_private_key",
+    "warp_public_key",
+    "warp_ifc_addrs",
+    "warp_ep",
+    "warp_reserved"
+  ],
+  "modes": {
+    "valid": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "disabled": {
+      "enable_warp": "false",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "empty": {
+      "enable_warp": "false",
+      "warp_private_key": "",
+      "warp_public_key": "",
+      "warp_ifc_addrs": "[]",
+      "warp_ep": "",
+      "warp_reserved": "[]",
+      "log_auto_scroll": "true"
+    },
+    "off-only": {
+      "enable_warp": "false",
+      "log_auto_scroll": "true"
+    },
+    "incomplete": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "bad-key": {
+      "enable_warp": "true",
+      "warp_private_key": "private-invalid-canary74",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "bad-reserved": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[0,128,255]",
+      "log_auto_scroll": "true"
+    },
+    "ipv6-endpoint": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "[::1]:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "unknown-column": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    },
+    "excluded-settings": {
+      "enable_warp": "true",
+      "warp_private_key": "CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=",
+      "warp_public_key": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk=",
+      "warp_ifc_addrs": "[\"172.16.0.2/32\", \"2606:4700:110:8c5a::2/128\"]",
+      "warp_ep": "engage.cloudflareclient.com:2408",
+      "warp_reserved": "[\"0\", \"128\", \"255\"]",
+      "log_auto_scroll": "true"
+    }
+  },
+  "description": "Actual Qt6 QDataStream archives, original SQLite DDL and QStringList JSON; synthetic keys; no network.",
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "src/configs/sub/warp.cpp": "f9652f5283fa4e95e34323b2f01c7444ccb1af863cc57ccf5a84fefb41a0637a",
+    "src/configs/generate.cpp": "3ecda90ce0ad6f9a02ebbd3c9780467e6065d5db620ddf9531dfd17518948a65"
+  },
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "sha256": {
+    "bad-key.thrbackup": "43c659c623be01819e77aae7cb9699fb32b8ed29c17db755022a632b11848602",
+    "bad-reserved.thrbackup": "e915bffc6489aa97bafbcd3c918a9e829d20909331641338893f8cf54467ba0b",
+    "disabled.thrbackup": "a38e733a9818f28b666126d81356b5d2d0c6db674dced34a7831e2ed28f42624",
+    "empty.thrbackup": "dc08648a3a1fc8556f89b2fa0e9f7ccc49dcb51e260c62000bd0db80fc8be033",
+    "excluded-settings.thrbackup": "e24ec39b6cf554bc1850befb16d55a3166c1586f361b712fe939336abe86a7f6",
+    "incomplete.thrbackup": "b640316f2f7fb3b71a04a8ed126cece72dce78f0338263f470649f643fdf61bf",
+    "ipv6-endpoint.thrbackup": "f8afc980db4664ea0ef06a8ab44f9f226c814185a61a03b5def8409be5fe523f",
+    "off-only.thrbackup": "ded694b2f4b78b24e80ca1654fdf12c762a53ed971341dc4021a5c6042c72b74",
+    "unknown-column.thrbackup": "6f956fc48102278359ff9c2ab2aca7e504cb84d09ece312dddf964778922d176",
+    "valid.thrbackup": "bf1d9003a0ff7d447cdc194e921d322b30c4629d2d905f0cefd16c0ce39c687e"
+  }
+}

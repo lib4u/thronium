@@ -1,0 +1,107 @@
+.auto-select-card {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  background: var(--panel);
+  overflow: hidden;
+}
+.auto-select-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: 0;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.auto-select-main:hover:not(:disabled) {
+  background: var(--hover);
+}
+.auto-select-main:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.auto-select-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-m);
+  background: var(--raised);
+  color: var(--accent);
+  flex: none;
+}
+.auto-select-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+}
+.auto-select-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+.auto-select-heading strong {
+  font-size: 14px;
+}
+.auto-select-badge {
+  padding: 2px 7px;
+  border-radius: var(--radius-s);
+  background: var(--raised);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 500;
+}
+.auto-select-text small {
+  font-size: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.auto-select-indicator {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border-strong, var(--border));
+  border-radius: 50%;
+  flex: none;
+}
+.auto-select-main[aria-pressed='true'] .auto-select-indicator {
+  border: 5px solid var(--accent);
+}
+.auto-select-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+}
+.auto-select-count {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  min-width: 0;
+}
+.auto-select-count > .icon-host {
+  flex: none;
+}
+.auto-select-count .icon {
+  width: 14px;
+  height: 14px;
+}
+.auto-select-count small {
+  display: block;
+  font-size: inherit;
+  margin-top: 3px;
+}
+.auto-select-footer .text-button {
+  flex: none;
+}

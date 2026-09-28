@@ -1,0 +1,70 @@
+.selector-history {
+  scroll-margin-top: 80px;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  min-width: 0;
+}
+.selector-history summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.selector-history label {
+  display: grid;
+  gap: 8px;
+  font-size: 11px;
+  margin: 14px 0;
+}
+.selector-history select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background: var(--panel);
+  color: var(--text);
+  padding: 8px 10px;
+}
+.selector-history-built ol {
+  max-height: 240px;
+  overflow: auto;
+  padding-left: 24px;
+  font-size: 12px;
+}
+.selector-history-built li {
+  padding: 4px 0;
+  overflow-wrap: anywhere;
+}
+.selector-history-entries {
+  max-height: 480px;
+  overflow: auto;
+  margin: 12px 0;
+}
+.selector-history-entries article {
+  border-top: 1px solid var(--border);
+  padding: 12px 0;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.selector-history-entries small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+.selector-history-entries p {
+  margin: 6px 0;
+}
+.selector-history-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+.selector-history .text-button {
+  max-width: 100%;
+  white-space: normal;
+  text-align: start;
+}

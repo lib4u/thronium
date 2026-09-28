@@ -1,0 +1,726 @@
+{
+  "provenance": "Manually specified truth rows and pinned-core source semantics, independent of UI model. Placeholder substitution only: destinationPort and destinationRange.",
+  "http": [
+    {
+      "name": "and-00",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "ip_version": 6
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "and-01",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "ip_version": 4
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "and-10",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 6
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "and-11",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 4
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "or-00",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "ip_version": 6
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "or-01",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "ip_version": 4
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "or-10",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 6
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "or-11",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 4
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "not-leaf-true",
+      "condition": {
+        "network": "tcp",
+        "invert": true
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "not-leaf-false",
+      "condition": {
+        "network": "udp",
+        "invert": true
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "not-and-true",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 4
+          }
+        ],
+        "invert": true
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "not-and-false",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 6
+          }
+        ],
+        "invert": true
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "not-or-true",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "ip_version": 6
+          }
+        ],
+        "invert": true
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "not-or-false",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "ip_version": 6
+          }
+        ],
+        "invert": true
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-000",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 6
+              },
+              {
+                "port": 1,
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-001",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 6
+              },
+              {
+                "port": "$destinationPort",
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-010",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 4
+              },
+              {
+                "port": 1,
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-011",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "udp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 4
+              },
+              {
+                "port": "$destinationPort",
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-100",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 6
+              },
+              {
+                "port": 1,
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-101",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 6
+              },
+              {
+                "port": "$destinationPort",
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-110",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 4
+              },
+              {
+                "port": 1,
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "nested-A-and-B-or-not-C-111",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_version": 4
+              },
+              {
+                "port": "$destinationPort",
+                "invert": true
+              }
+            ]
+          }
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "flat-destination-address-fields-are-or",
+      "condition": {
+        "domain": [
+          "never-match.invalid"
+        ],
+        "ip_cidr": [
+          "127.0.0.0/8"
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "explicit-and-destination-address-fields",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "domain": [
+              "never-match.invalid"
+            ]
+          },
+          {
+            "ip_cidr": [
+              "127.0.0.0/8"
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "flat-destination-port-fields-are-or",
+      "condition": {
+        "port": [
+          1
+        ],
+        "port_range": [
+          "$destinationRange"
+        ]
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "explicit-and-destination-port-fields",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "port": [
+              1
+            ]
+          },
+          {
+            "port_range": [
+              "$destinationRange"
+            ]
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "flat-source-address-fields-are-or",
+      "condition": {
+        "source_ip_cidr": [
+          "192.0.2.0/24"
+        ],
+        "source_ip_is_private": true
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "explicit-and-source-address-fields",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "source_ip_cidr": [
+              "192.0.2.0/24"
+            ]
+          },
+          {
+            "source_ip_is_private": true
+          }
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "different-flat-groups-are-and",
+      "condition": {
+        "ip_cidr": [
+          "127.0.0.0/8"
+        ],
+        "port": [
+          1
+        ]
+      },
+      "expectedMatched": false
+    },
+    {
+      "name": "false-private-switch-disables-condition",
+      "condition": {
+        "ip_is_private": false,
+        "network": "tcp"
+      },
+      "expectedMatched": true
+    },
+    {
+      "name": "root-unconditional-action",
+      "condition": {},
+      "expectedMatched": true
+    },
+    {
+      "name": "root-implicit-route-action",
+      "condition": {
+        "network": "tcp"
+      },
+      "expectedMatched": true,
+      "omitAction": true
+    }
+  ],
+  "invalid": [
+    {
+      "name": "nested-action-route",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "action": "route"
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-action-empty",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "action": ""
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-outbound-direct",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "outbound": "direct"
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-outbound-empty",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "outbound": ""
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-override-port-zero",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "override_port": 0
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-nested-reject",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "action": "reject"
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "nested-logical-action",
+      "condition": {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "type": "logical",
+            "mode": "and",
+            "rules": [
+              {
+                "network": "tcp"
+              }
+            ],
+            "action": "reject"
+          }
+        ]
+      },
+      "expectedErrorContains": "nested rules"
+    },
+    {
+      "name": "empty-logical",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": []
+      },
+      "expectedErrorContains": ""
+    },
+    {
+      "name": "unknown-logical-mode",
+      "condition": {
+        "type": "logical",
+        "mode": "xor",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      },
+      "expectedErrorContains": ""
+    },
+    {
+      "name": "missing-logical-mode",
+      "condition": {
+        "type": "logical",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      },
+      "expectedErrorContains": ""
+    },
+    {
+      "name": "empty-child",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {}
+        ]
+      },
+      "expectedErrorContains": ""
+    },
+    {
+      "name": "null-child",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          null
+        ]
+      },
+      "expectedErrorContains": ""
+    },
+    {
+      "name": "match-field-on-logical-root",
+      "condition": {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ],
+        "network": "tcp"
+      },
+      "expectedErrorContains": ""
+    }
+  ]
+}

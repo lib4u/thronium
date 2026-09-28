@@ -1,0 +1,124 @@
+.auto-select-config .settings-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+}
+.auto-select-config-section + .auto-select-config-section {
+  margin-top: 22px;
+}
+.auto-select-config .feature-field {
+  min-width: 0;
+  margin: 0;
+}
+.auto-select-config .auto-select-wide {
+  grid-column: 1 / -1;
+}
+.auto-select-config .field-help {
+  line-height: 1.5;
+}
+.auto-select-config .setting-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+}
+@media (max-width: 600px) {
+  .auto-select-config .settings-field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.auto-select-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.auto-select-config .auto-select-failover {
+  justify-content: space-between;
+  gap: 20px;
+  margin: 22px 0;
+}
+.auto-select-failover strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.auto-select-failover small {
+  display: block;
+  margin-top: 4px;
+}
+.auto-select-failover input {
+  appearance: none;
+  cursor: pointer;
+  width: 34px;
+  height: 20px;
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: var(--radius-l);
+  background: var(--field, var(--panel));
+  position: relative;
+  flex: none;
+}
+.auto-select-failover input:before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform var(--motion-fast);
+}
+.auto-select-failover input:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.auto-select-failover input:checked:before {
+  transform: translateX(14px);
+  background: white;
+}
+.auto-select-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 20px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background: var(--raised);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.auto-select-info > .icon-host {
+  flex: none;
+  color: var(--accent);
+}
+.auto-select-info .icon {
+  width: 16px;
+  height: 16px;
+}
+.auto-select-advanced {
+  border-top: 1px solid var(--border);
+}
+.auto-select-advanced > summary {
+  padding: 16px 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.auto-select-advanced > summary::marker {
+  color: var(--muted);
+}
+.auto-select-advanced-body {
+  padding: 3px 0 8px;
+}
+.auto-select-advanced-body > .text-button {
+  margin-top: 20px;
+}
+.auto-select-advanced h3 {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}

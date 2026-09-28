@@ -1,0 +1,32 @@
+{
+  "scope": "Exact local TLS ParseFromJson/Build/ExportToJson and tri-state functions, original field declarations/defaults; no network. Fragment matrix records source behavior without changing explicit TFO priority. Non-parity cases identify known Qt coercions which desktop must preserve or reject instead.",
+  "sources": {
+    "src/configs/common/TLS.cpp": "6f77ff2806cb8462865a0e867f0c05decba6c4bc996e588d76ac3113a0d6b904",
+    "include/configs/common/TLS.h": "0448a06e5d4eb02dc34ff9377f6ccad858670e101281a8a493730361f993dc07",
+    "src/global/Utils.cpp": "4fe6f299f257b4c523cb3a1d8858ac3bfca1c7ec6d310581162445357ac9832e",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/configs/common/Outbound.cpp": "09ed8e4f10c29b49bef770e4d5c6de3f1804ab992c30de3646e3774f8e9e6a6e"
+  },
+  "caseCount": 81,
+  "qtRuntime": "6.11.2",
+  "command": [
+    "g++",
+    "-std=c++20",
+    "-fPIC",
+    "-O1",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "desktop/engine/src/settings/runtime/tls/fixtures/oracle.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Core",
+    "-o",
+    "/tmp/thronium-profile-tls-oracle"
+  ],
+  "executableSHA256": "7c91481dfe995b00460928f126e49b5f6ada424e215b8a26953385361dd9638e",
+  "files": {
+    "inputs.json": "364d81c8aebafb8304c83a28f76cdff3154f95a38d101997f61f92d20b2b2f60",
+    "oracle.cpp": "2dbc88a01faf299c1282a1375aca0b63a92a2c6b73b728ddeb4ac4e3c0802fea",
+    "golden.json": "a7d161bd6ec9e63c73e329f894c645931be94590e2a79034c0c2e481fe0475f5"
+  }
+}

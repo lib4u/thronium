@@ -1,0 +1,762 @@
+[
+  {
+    "key": "disable_tray",
+    "section": "system",
+    "field": "disable_tray"
+  },
+  {
+    "key": "random_inbound_port",
+    "section": "inbound",
+    "field": "random_inbound_port"
+  },
+  {
+    "key": "mux_padding",
+    "section": "presets",
+    "field": "mux_padding"
+  },
+  {
+    "key": "mux_default_on",
+    "section": "presets",
+    "field": "mux_default_on"
+  },
+  {
+    "key": "fragment_default_on",
+    "section": "presets",
+    "field": "fragment_default_on"
+  },
+  {
+    "key": "tls_tricks_default_on",
+    "section": "presets",
+    "field": "tls_tricks_default_on"
+  },
+  {
+    "key": "tls_spoof_default_on",
+    "section": "presets",
+    "field": "tls_spoof_default_on"
+  },
+  {
+    "key": "quic_disable_path_mtu_discovery",
+    "section": "presets",
+    "field": "quic_disable_path_mtu_discovery"
+  },
+  {
+    "key": "net_use_proxy",
+    "section": "network",
+    "field": "net_use_proxy"
+  },
+  {
+    "key": "remember_enable",
+    "section": "system",
+    "field": "remember_enable"
+  },
+  {
+    "key": "skip_cert",
+    "section": "security",
+    "field": "skip_cert"
+  },
+  {
+    "key": "fakedns",
+    "section": "dns",
+    "field": "servers"
+  },
+  {
+    "key": "fakeip_disable_ipv6",
+    "section": "dns",
+    "field": "servers"
+  },
+  {
+    "key": "direct_dns_disable_ipv6",
+    "section": "dns",
+    "field": "rules"
+  },
+  {
+    "key": "remote_dns_disable_ipv6",
+    "section": "dns",
+    "field": "rules"
+  },
+  {
+    "key": "disable_traffic_stats",
+    "section": "logging",
+    "field": "disable_traffic_stats"
+  },
+  {
+    "key": "disable_traffic_aggregation",
+    "section": "logging",
+    "field": "disable_traffic_aggregation"
+  },
+  {
+    "key": "vpn_ipv6",
+    "section": "tun",
+    "field": "vpn_ipv6"
+  },
+  {
+    "key": "vpn_strict_route",
+    "section": "tun",
+    "field": "vpn_strict_route"
+  },
+  {
+    "key": "vpn_auto_redirect",
+    "section": "tun",
+    "field": "vpn_auto_redirect"
+  },
+  {
+    "key": "vpn_l3_bridge",
+    "section": "tun",
+    "field": "vpn_l3_bridge"
+  },
+  {
+    "key": "sub_clear",
+    "section": "subscriptions",
+    "field": "sub_clear"
+  },
+  {
+    "key": "sub_show_change_popup",
+    "section": "subscriptions",
+    "field": "sub_show_change_popup"
+  },
+  {
+    "key": "net_insecure",
+    "section": "network",
+    "field": "net_insecure"
+  },
+  {
+    "key": "sub_send_hwid",
+    "section": "subscriptions",
+    "field": "sub_send_hwid"
+  },
+  {
+    "key": "start_minimal",
+    "section": "system",
+    "field": "start_minimal"
+  },
+  {
+    "key": "enable_ntp",
+    "section": "core",
+    "field": "enable_ntp"
+  },
+  {
+    "key": "enable_dns_server",
+    "section": "intercept",
+    "field": "enable_dns_server"
+  },
+  {
+    "key": "dns_server_listen_lan",
+    "section": "intercept",
+    "field": "dns_server_listen_lan"
+  },
+  {
+    "key": "enable_redirect",
+    "section": "intercept",
+    "field": "enable_redirect"
+  },
+  {
+    "key": "enable_stats",
+    "section": "logging",
+    "field": "enable_stats"
+  },
+  {
+    "key": "disable_privilege_req",
+    "section": "tun",
+    "field": "tun_request_permission"
+  },
+  {
+    "key": "enable_tun_routing",
+    "section": "tun",
+    "field": "enable_tun_routing"
+  },
+  {
+    "key": "use_mozilla_certs",
+    "section": "security",
+    "field": "use_mozilla_certs"
+  },
+  {
+    "key": "allow_beta_update",
+    "section": "system",
+    "field": "allow_beta_update"
+  },
+  {
+    "key": "adblock_enable",
+    "section": "intercept",
+    "field": "adblock_enable"
+  },
+  {
+    "key": "show_system_dns",
+    "section": "logging",
+    "field": "show_system_dns"
+  },
+  {
+    "key": "use_custom_icons",
+    "section": "system",
+    "field": "use_custom_icons"
+  },
+  {
+    "key": "follow_status_in_taskbar",
+    "section": "system",
+    "field": "follow_status_in_taskbar"
+  },
+  {
+    "key": "xray_mux_default_on",
+    "section": "presets",
+    "field": "xray_mux_default_on"
+  },
+  {
+    "key": "use_dns_object",
+    "section": "dns",
+    "field": "json"
+  },
+  {
+    "key": "skip_delete_confirmation",
+    "section": "security",
+    "field": "skip_delete_confirmation"
+  },
+  {
+    "key": "show_config_security",
+    "section": "appearance",
+    "field": "show_config_security"
+  },
+  {
+    "key": "log_enable_include",
+    "section": "logging",
+    "field": "log_enable_include"
+  },
+  {
+    "key": "log_enable_exclude",
+    "section": "logging",
+    "field": "log_enable_exclude"
+  },
+  {
+    "key": "log_auto_scroll",
+    "section": "logging",
+    "field": "log_auto_scroll"
+  },
+  {
+    "key": "enable_warp",
+    "section": "intercept",
+    "field": "enable_warp"
+  },
+  {
+    "key": "enable_dns_routing",
+    "section": "dns",
+    "field": "enable_dns_routing"
+  },
+  {
+    "key": "inbound_auth",
+    "section": "inbound",
+    "field": "inbound_auth"
+  },
+  {
+    "key": "allow_stopping_active_profile",
+    "section": "subscriptions",
+    "field": "allow_stopping_active_profile"
+  },
+  {
+    "key": "disable_mixed_inbound",
+    "section": "inbound",
+    "field": "disable_mixed_inbound"
+  },
+  {
+    "key": "url_scheme_auto_register",
+    "section": "system",
+    "field": "url_scheme_auto_register"
+  },
+  {
+    "key": "reset_proxy_on_disable_sp",
+    "section": "inbound",
+    "field": "reset_proxy_on_disable_sp"
+  },
+  {
+    "key": "dns_disable_cache",
+    "section": "dns",
+    "field": "disable_cache"
+  },
+  {
+    "key": "dns_disable_expire",
+    "section": "dns",
+    "field": "disable_expire"
+  },
+  {
+    "key": "dns_reverse_mapping",
+    "section": "dns",
+    "field": "reverse_mapping"
+  },
+  {
+    "key": "disable_private_range_bypass",
+    "section": "tun",
+    "field": "disable_private_range_bypass"
+  },
+  {
+    "key": "dns_optimistic",
+    "section": "dns",
+    "field": "optimistic.enabled"
+  },
+  {
+    "key": "dns_use_hosts",
+    "section": "dns",
+    "field": "servers"
+  },
+  {
+    "key": "dns_predefined_enable",
+    "section": "dns",
+    "field": "rules"
+  },
+  {
+    "key": "connection_sort_asc",
+    "section": "logging",
+    "field": "connection_sort_asc"
+  },
+  {
+    "key": "inbound_socks_port",
+    "section": "inbound",
+    "field": "inbound_socks_port"
+  },
+  {
+    "key": "mux_concurrency",
+    "section": "presets",
+    "field": "mux_concurrency"
+  },
+  {
+    "key": "test_concurrent",
+    "section": "testing",
+    "field": "test_concurrent"
+  },
+  {
+    "key": "language",
+    "section": "appearance",
+    "field": "language"
+  },
+  {
+    "key": "font_size",
+    "section": "appearance",
+    "field": "font_size"
+  },
+  {
+    "key": "max_log_line",
+    "section": "logging",
+    "field": "max_log_line"
+  },
+  {
+    "key": "connection_sort",
+    "section": "logging",
+    "field": "connection_sort"
+  },
+  {
+    "key": "traffic_stats_retention_days",
+    "section": "logging",
+    "field": "traffic_stats_retention_days"
+  },
+  {
+    "key": "sub_auto_update",
+    "section": "subscriptions",
+    "field": "sub_auto_update"
+  },
+  {
+    "key": "route_auto_update",
+    "section": "core",
+    "field": "route_auto_update"
+  },
+  {
+    "key": "vpn_mtu",
+    "section": "tun",
+    "field": "vpn_mtu"
+  },
+  {
+    "key": "ntp_server_port",
+    "section": "core",
+    "field": "ntp_server_port"
+  },
+  {
+    "key": "dns_server_listen_port",
+    "section": "intercept",
+    "field": "dns_server_listen_port"
+  },
+  {
+    "key": "redirect_listen_port",
+    "section": "intercept",
+    "field": "redirect_listen_port"
+  },
+  {
+    "key": "core_box_clash_api",
+    "section": "core",
+    "field": "core_box_clash_api"
+  },
+  {
+    "key": "core_box_api_port",
+    "section": "core",
+    "field": "core_box_api_port"
+  },
+  {
+    "key": "speed_test_mode",
+    "section": "testing",
+    "field": "speed_test_mode"
+  },
+  {
+    "key": "speed_test_timeout_ms",
+    "section": "testing",
+    "field": "speed_test_timeout_ms"
+  },
+  {
+    "key": "url_test_timeout_ms",
+    "section": "testing",
+    "field": "url_test_timeout_ms"
+  },
+  {
+    "key": "xray_mux_concurrency",
+    "section": "presets",
+    "field": "xray_mux_concurrency"
+  },
+  {
+    "key": "ruleset_mirror",
+    "section": "core",
+    "field": "ruleset_mirror"
+  },
+  {
+    "key": "core_dns_in_port",
+    "section": "core",
+    "field": "core_dns_in_port"
+  },
+  {
+    "key": "dns_cache_capacity",
+    "section": "dns",
+    "field": "cache_capacity"
+  },
+  {
+    "key": "h2_max_concurrent_streams",
+    "section": "presets",
+    "field": "h2_max_concurrent_streams"
+  },
+  {
+    "key": "quic_initial_packet_size",
+    "section": "presets",
+    "field": "quic_initial_packet_size"
+  },
+  {
+    "key": "user_agent2",
+    "section": "subscriptions",
+    "field": "user_agent"
+  },
+  {
+    "key": "test_url",
+    "section": "testing",
+    "field": "test_url"
+  },
+  {
+    "key": "direct_test_url",
+    "section": "testing",
+    "field": "direct_test_url"
+  },
+  {
+    "key": "inbound_address",
+    "section": "inbound",
+    "field": "inbound_address"
+  },
+  {
+    "key": "log_level",
+    "section": "logging",
+    "field": "log_level"
+  },
+  {
+    "key": "log_file_level",
+    "section": "logging",
+    "field": "log_file_level"
+  },
+  {
+    "key": "mux_protocol",
+    "section": "presets",
+    "field": "mux_protocol"
+  },
+  {
+    "key": "fragment_implementation",
+    "section": "presets",
+    "field": "fragment_implementation"
+  },
+  {
+    "key": "fragment_size",
+    "section": "presets",
+    "field": "fragment_size"
+  },
+  {
+    "key": "fragment_sleep",
+    "section": "presets",
+    "field": "fragment_sleep"
+  },
+  {
+    "key": "tls_spoof",
+    "section": "presets",
+    "field": "tls_spoof"
+  },
+  {
+    "key": "tls_spoof_method",
+    "section": "presets",
+    "field": "tls_spoof_method"
+  },
+  {
+    "key": "h2_idle_timeout",
+    "section": "presets",
+    "field": "h2_idle_timeout"
+  },
+  {
+    "key": "h2_keep_alive_period",
+    "section": "presets",
+    "field": "h2_keep_alive_period"
+  },
+  {
+    "key": "h2_stream_receive_window",
+    "section": "presets",
+    "field": "h2_stream_receive_window"
+  },
+  {
+    "key": "h2_connection_receive_window",
+    "section": "presets",
+    "field": "h2_connection_receive_window"
+  },
+  {
+    "key": "theme",
+    "section": "appearance",
+    "field": "theme"
+  },
+  {
+    "key": "custom_inbound",
+    "section": "inbound",
+    "field": "custom_inbound"
+  },
+  {
+    "key": "font",
+    "section": "appearance",
+    "field": "font"
+  },
+  {
+    "key": "hk_mw",
+    "section": "system",
+    "field": "hotkey_mainwindow"
+  },
+  {
+    "key": "hk_group",
+    "section": "system",
+    "field": "hotkey_group"
+  },
+  {
+    "key": "hk_route",
+    "section": "system",
+    "field": "hotkey_route"
+  },
+  {
+    "key": "hk_spmenu",
+    "section": "system",
+    "field": "hotkey_system_proxy_menu"
+  },
+  {
+    "key": "hk_toggle",
+    "section": "system",
+    "field": "hotkey_toggle_system_proxy"
+  },
+  {
+    "key": "vpn_impl",
+    "section": "tun",
+    "field": "vpn_implementation"
+  },
+  {
+    "key": "vpn_tun_ipv4_cidr",
+    "section": "tun",
+    "field": "vpn_tun_ipv4_cidr"
+  },
+  {
+    "key": "vpn_tun_ipv6_cidr",
+    "section": "tun",
+    "field": "vpn_tun_ipv6_cidr"
+  },
+  {
+    "key": "sub_custom_hwid_params",
+    "section": "subscriptions",
+    "field": "sub_custom_hwid_params"
+  },
+  {
+    "key": "utlsFingerprint",
+    "section": "presets",
+    "field": "utlsFingerprint"
+  },
+  {
+    "key": "core_box_clash_listen_addr",
+    "section": "core",
+    "field": "core_box_clash_listen_addr"
+  },
+  {
+    "key": "core_box_clash_api_secret",
+    "section": "core",
+    "field": "core_box_clash_api_secret"
+  },
+  {
+    "key": "core_box_api_secret",
+    "section": "core",
+    "field": "core_box_api_secret"
+  },
+  {
+    "key": "core_box_underlying_dns",
+    "section": "core",
+    "field": "core_box_underlying_dns"
+  },
+  {
+    "key": "ntp_server_address",
+    "section": "core",
+    "field": "ntp_server_address"
+  },
+  {
+    "key": "ntp_interval",
+    "section": "core",
+    "field": "ntp_interval"
+  },
+  {
+    "key": "ntp_outbound",
+    "section": "core",
+    "field": "ntp_outbound"
+  },
+  {
+    "key": "dns_v4_resp",
+    "section": "intercept",
+    "field": "dns_v4_resp"
+  },
+  {
+    "key": "dns_v6_resp",
+    "section": "intercept",
+    "field": "dns_v6_resp"
+  },
+  {
+    "key": "redirect_listen_address",
+    "section": "intercept",
+    "field": "redirect_listen_address"
+  },
+  {
+    "key": "proxy_scheme",
+    "section": "inbound",
+    "field": "proxy_scheme"
+  },
+  {
+    "key": "xray_log_level",
+    "section": "logging",
+    "field": "xray_log_level"
+  },
+  {
+    "key": "xray_geoip_url",
+    "section": "core",
+    "field": "xray_geoip_url"
+  },
+  {
+    "key": "xray_geosite_url",
+    "section": "core",
+    "field": "xray_geosite_url"
+  },
+  {
+    "key": "remote_dns",
+    "section": "dns",
+    "field": "servers"
+  },
+  {
+    "key": "direct_dns",
+    "section": "dns",
+    "field": "servers"
+  },
+  {
+    "key": "dns_object",
+    "section": "dns",
+    "field": "json"
+  },
+  {
+    "key": "dns_optimistic_timeout",
+    "section": "dns",
+    "field": "optimistic.timeout"
+  },
+  {
+    "key": "dns_query_timeout",
+    "section": "dns",
+    "field": "timeout"
+  },
+  {
+    "key": "dns_final_out",
+    "section": "dns",
+    "field": "final"
+  },
+  {
+    "key": "domain_strategy",
+    "section": "dns",
+    "field": "strategy"
+  },
+  {
+    "key": "outbound_domain_strategy",
+    "section": "dns",
+    "field": "outbound"
+  },
+  {
+    "key": "simple_dl_url",
+    "section": "testing",
+    "field": "simple_dl_url"
+  },
+  {
+    "key": "warp_private_key",
+    "section": "intercept",
+    "field": "warp_private_key"
+  },
+  {
+    "key": "warp_public_key",
+    "section": "intercept",
+    "field": "warp_public_key"
+  },
+  {
+    "key": "warp_ep",
+    "section": "intercept",
+    "field": "warp_ep"
+  },
+  {
+    "key": "inbound_user",
+    "section": "inbound",
+    "field": "inbound_user"
+  },
+  {
+    "key": "inbound_pass",
+    "section": "inbound",
+    "field": "inbound_pass"
+  },
+  {
+    "key": "dns_server_rules",
+    "section": "intercept",
+    "field": "dns_server_rules"
+  },
+  {
+    "key": "dns_predefined_rules",
+    "section": "dns",
+    "field": "rules"
+  },
+  {
+    "key": "log_include_keyword",
+    "section": "logging",
+    "field": "log_include_keyword"
+  },
+  {
+    "key": "log_include_regex",
+    "section": "logging",
+    "field": "log_include_regex"
+  },
+  {
+    "key": "log_exclude_keyword",
+    "section": "logging",
+    "field": "log_exclude_keyword"
+  },
+  {
+    "key": "log_exclude_regex",
+    "section": "logging",
+    "field": "log_exclude_regex"
+  },
+  {
+    "key": "warp_ifc_addrs",
+    "section": "intercept",
+    "field": "warp_ifc_addrs"
+  },
+  {
+    "key": "vpn_private_ranges",
+    "section": "tun",
+    "field": "vpn_private_ranges"
+  },
+  {
+    "key": "warp_reserved",
+    "section": "intercept",
+    "field": "warp_reserved"
+  }
+]

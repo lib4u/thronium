@@ -1,0 +1,119 @@
+{
+  "qtRuntime": "6.11.2",
+  "writer": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "ddlSource": "src/database/OtpProfilesRepo.cpp",
+  "ddlSha256": "05fe8f67b27127aecb87421f0c9a55ef49e0b72ff76254d24c1c6db1f9888130",
+  "sourceSha256": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+  "partsMask": 8,
+  "validEntries": 6,
+  "blockedEntries": 13,
+  "order": [
+    40,
+    10,
+    20,
+    30,
+    60,
+    50
+  ],
+  "codeAt59": [
+    "1170354518",
+    "46119246",
+    "90693936",
+    "94287082",
+    "0478761491",
+    "3611"
+  ],
+  "rows": [
+    {
+      "id": 30,
+      "name": "RFC SHA1 TOTP",
+      "issuer": "Fixture 日本",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojq",
+      "algorithm": 0,
+      "type": 0,
+      "digits": 8,
+      "period": 30,
+      "counter": 0,
+      "sort_order": 7,
+      "created_at": 1,
+      "updated_at": 2
+    },
+    {
+      "id": 10,
+      "name": "RFC SHA256 TOTP",
+      "issuer": "Fixture +%",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgeza",
+      "algorithm": 1,
+      "type": 0,
+      "digits": 8,
+      "period": 30,
+      "counter": 0,
+      "sort_order": 0,
+      "created_at": 1,
+      "updated_at": 2
+    },
+    {
+      "id": 20,
+      "name": "RFC SHA512 TOTP",
+      "issuer": "Fixture 🦊",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgna",
+      "algorithm": 2,
+      "type": 0,
+      "digits": 8,
+      "period": 30,
+      "counter": 0,
+      "sort_order": 0,
+      "created_at": 1,
+      "updated_at": 2
+    },
+    {
+      "id": 40,
+      "name": "Large SHA1 HOTP",
+      "issuer": "Fixture",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojq",
+      "algorithm": 0,
+      "type": 1,
+      "digits": 10,
+      "period": 17,
+      "counter": 9007199254740993,
+      "sort_order": -1,
+      "created_at": 1,
+      "updated_at": 2
+    },
+    {
+      "id": 50,
+      "name": "Largest SHA256 HOTP",
+      "issuer": "Fixture",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgeza",
+      "algorithm": 1,
+      "type": 1,
+      "digits": 4,
+      "period": 1,
+      "counter": 9223372036854775807,
+      "sort_order": 9,
+      "created_at": 1,
+      "updated_at": 2
+    },
+    {
+      "id": 60,
+      "name": "Largest SHA512 HOTP",
+      "issuer": "Fixture",
+      "secret": "gezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgnbvgy3tqojqgezdgna",
+      "algorithm": 2,
+      "type": 1,
+      "digits": 10,
+      "period": 3600,
+      "counter": 9223372036854775807,
+      "sort_order": 8,
+      "created_at": 1,
+      "updated_at": 2
+    }
+  ],
+  "sha256": {
+    "blocked.thrbackup": "df5be99c21891cac68e0363a1e85ce7a409759dcf07d48d138480b1e308877ac",
+    "excluded-otp.thrbackup": "bf808876ed4947538f23fb2d91087123310f49f94ca6188335da6683c3ab27a8",
+    "old-no-sort.thrbackup": "7f42b916e23d0cba08c6608244819cf5d661b771f3dd20b580b9539fec65912a",
+    "unknown-column.thrbackup": "b3df097147e3cf5240f0641a93bb97fe81c4753ff3257b4144ba626684a573a6",
+    "valid.thrbackup": "d6ce99a7d620d9190d767d3cd7b872d4f4800c1089cd5e8400b7039a5b84878c"
+  }
+}

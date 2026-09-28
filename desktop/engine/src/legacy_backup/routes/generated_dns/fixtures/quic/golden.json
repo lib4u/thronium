@@ -1,0 +1,1881 @@
+{
+  "qtRuntime": "6.11.2",
+  "cases": [
+    {
+      "id": "direct_dns-quic://dns.fixture.invalid-xray-False",
+      "settings": {
+        "direct_dns": "quic://dns.fixture.invalid"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://dns.fixture.invalid-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:8853-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:8853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 8853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:8853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:8853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 8853,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://bootstrap.fixture.invalid"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expectedError": "legacy_dns_bootstrap_hostname_unsupported",
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "bootstrap.fixture.invalid",
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-quic://1.1.1.1:8853-xray-False",
+      "settings": {
+        "remote_dns": "quic://1.1.1.1:8853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "1.1.1.1",
+              "server_port": 8853,
+              "tag": "dns-remote",
+              "type": "quic"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-quic://1.1.1.1:8853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-False",
+      "settings": {
+        "remote_dns": "quic://dns.fixture.invalid:8853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "server_port": 8853,
+              "tag": "dns-remote",
+              "type": "quic"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-192.0.2.53:5353-xray-False",
+      "settings": {
+        "remote_dns": "192.0.2.53:5353"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "192.0.2.53",
+              "server_port": 5353,
+              "tag": "dns-remote",
+              "type": "udp"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-192.0.2.53:5353-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://dns.fixture.invalid-xray-True",
+      "settings": {
+        "direct_dns": "quic://dns.fixture.invalid"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://dns.fixture.invalid-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:8853-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:8853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 8853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:8853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:8853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 8853,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:8853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://bootstrap.fixture.invalid"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expectedError": "legacy_dns_bootstrap_hostname_unsupported",
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "bootstrap.fixture.invalid",
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://bootstrap.fixture.invalid-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-quic://1.1.1.1:8853-xray-True",
+      "settings": {
+        "remote_dns": "quic://1.1.1.1:8853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "1.1.1.1",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-quic://1.1.1.1:8853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-True",
+      "settings": {
+        "remote_dns": "quic://dns.fixture.invalid:8853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-quic://dns.fixture.invalid:8853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote_dns-192.0.2.53:5353-xray-True",
+      "settings": {
+        "remote_dns": "192.0.2.53:5353"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote_dns-192.0.2.53:5353-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:1-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:1"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 1,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:1-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:65535-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:65535"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 65535,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:65535-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:00853-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:00853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:00853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:1"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 1,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:65535"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 65535,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-False",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:00853"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 853,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "both-quic-xray-False",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "quic://127.0.0.2:8854"
+      },
+      "proxyUsesXray": false,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 8853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 8854,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "both-quic-xray-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:1-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:1"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 1,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:1-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:65535-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:65535"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 65535,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:65535-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct_dns-quic://127.0.0.1:00853-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:00853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct_dns-quic://127.0.0.1:00853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:1"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 1,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:1-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:65535"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 65535,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:65535-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-True",
+      "settings": {
+        "core_box_underlying_dns": "quic://127.0.0.2:00853"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 853,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "core_box_underlying_dns-quic://127.0.0.2:00853-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "both-quic-xray-True",
+      "settings": {
+        "direct_dns": "quic://127.0.0.1:8853",
+        "core_box_underlying_dns": "quic://127.0.0.2:8854"
+      },
+      "proxyUsesXray": true,
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 8853,
+              "tag": "dns-direct",
+              "type": "quic"
+            },
+            {
+              "server": "127.0.0.2",
+              "server_port": 8854,
+              "tag": "dns-local",
+              "type": "quic"
+            }
+          ]
+        },
+        "error": "",
+        "id": "both-quic-xray-True",
+        "xrayStrategy": "UseIP"
+      }
+    }
+  ]
+}

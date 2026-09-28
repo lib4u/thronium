@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""Imported Qt routing/DNS packet flow through an owned core and local fixtures."""
+import argparse
+import hashlib
+import json
+import pathlib
+import shutil
+import subprocess
+import tempfile
+
+desktop = pathlib.Path(__file__).resolve().parents[1]
+host = next(line[6:] for line in subprocess.check_output(['rustc', '-vV'], text=True).splitlines() if line.startswith('host: '))
+suffix = '.exe' if 'windows' in host else ''
+parser = argparse.ArgumentParser()
+parser.add_argument('--core', type=pathlib.Path, default=desktop / 'src-tauri/binaries' / f'ThroniumCore-{host}{suffix}')
+parser.add_argument('--artifacts', type=pathlib.Path, default=desktop / 'test-results/legacy-routing-validation')
+args = parser.parse_args()
+core = args.core.resolve()
+if not core.is_file():
+    raise SystemExit('Missing core: provide --core or build the sidecar first')
+artifacts = args.artifacts.resolve()
+artifacts.mkdir(parents=True, exist_ok=True)
+summary = artifacts / 'legacy-routing-core-summary.json'
+summary.unlink(missing_ok=True)
+with (artifacts / 'legacy-routing-core.log').open('w') as log:
+    def run(command, limit=240):
+        log.write('$ ' + ' '.join(map(str, command)) + '\n')
+        log.flush()
+        try:
+            result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, timeout=limit)
+        except subprocess.TimeoutExpired as error:
+            output = error.stdout or ''
+            if isinstance(output, bytes):
+                output = output.decode(errors='replace')
+            log.write(output + f'\nFAILED: timeout after {limit} seconds\n')
+            log.flush()
+            raise
+        log.write(result.stdout)
+        log.flush()
+        print(result.stdout, end='', flush=True)
+        result.check_returncode()
+        return result.stdout
+    run(['cargo', 'build', '--offline', '--locked', '--manifest-path', str(desktop / 'engine/Cargo.toml'), '--bin', 'legacy-routing-smoke', '-j', '2'])
+    with tempfile.TemporaryDirectory(prefix='thronium-legacy-routing-') as folder:
+        folder = pathlib.Path(folder)
+        shutil.copy2(core, folder / ('ThroniumCore' + suffix))
+        shutil.copy2(desktop / 'engine/target/debug' / ('legacy-routing-smoke' + suffix), folder / ('Thronium' + suffix))
+        hashes = {name: hashlib.sha256((folder / (name + suffix)).read_bytes()).hexdigest() for name in ['Thronium', 'ThroniumCore']}
+        (artifacts / 'legacy-routing-core-binaries.json').write_text(json.dumps(hashes, indent=2) + '\n')
+        output = run([str(folder / ('Thronium' + suffix))], 120)
+        checks = [line[5:] for line in output.splitlines() if line.startswith('PASS ')]
+        observations = [json.loads(line[13:]) for line in output.splitlines() if line.startswith('OBSERVATIONS ')]
+        if len(checks) != 7 or len(observations) != 1:
+            raise SystemExit('Incomplete fixture result')
+        source_files = ['engine/src/bin/legacy-routing-smoke.rs', 'scripts/test_legacy_routing.py', 'engine/src/legacy_backup/routes/mod.rs', 'engine/src/legacy_backup/routes/rules.rs', 'engine/src/legacy_backup/routes/dns.rs', 'engine/src/routing/legacy_context.rs']
+        source_hashes = {name: hashlib.sha256((desktop / name).read_bytes()).hexdigest() for name in source_files}
+        summary.write_text(json.dumps({'checks': len(checks), 'passed': checks, 'observations': observations[0], 'binaries': hashes, 'sources': source_hashes, 'scope': 'Actual local CONNECT, SOCKS5, UDP DNS and TCP DNS; no TUN, OS proxy or remote traffic'}, indent=2) + '\n')
+print(f'Legacy routing packet-flow report: {summary}')

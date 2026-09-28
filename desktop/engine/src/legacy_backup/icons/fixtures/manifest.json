@@ -1,0 +1,48 @@
+{
+  "qtRuntime": "6.11.2",
+  "colors": {
+    "Off": [
+      221,
+      40,
+      120,
+      255
+    ],
+    "Throne": [
+      30,
+      180,
+      70,
+      255
+    ],
+    "Proxy": [
+      60,
+      90,
+      240,
+      255
+    ],
+    "Tun": [
+      240,
+      160,
+      20,
+      255
+    ],
+    "Dns": [
+      40,
+      180,
+      180,
+      255
+    ],
+    "Proxy-Dns": [
+      160,
+      40,
+      180,
+      255
+    ]
+  },
+  "sha256": {
+    "valid.thrbackup": "76833830f126ad5b29c82ea231c77eae10e96e3f7409aae7ecb06af4d6032c85",
+    "corrupt.thrbackup": "097870c25035dce04cb8dc29f119cc1d21c6a32a1d73dd10eeaadcb76a276bed",
+    "missing-part.thrbackup": "2c551f2ad445140d7f9957f7baa99b0fd3106ab8f7988bf513aab0201116c479"
+  },
+  "writerSHA256": "7e525410d1eb064e2a1438c560ba7e4ee1c0a0053f79160e39c26bbe7fa5cea8",
+  "executableSHA256": "81fca86e668eed5c6e5cb88014b9b97f4f1dfb781b263b321eb7ea771c418b68"
+}

@@ -1,0 +1,107 @@
+.resource-heading {
+  align-items: flex-start;
+  gap: 16px;
+}
+.resource-heading > div {
+  min-width: 0;
+}
+.resource-heading button {
+  flex: none;
+}
+.resource-processes,
+.resource-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 18px 0;
+}
+.resource-process {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+}
+.resource-process h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.resource-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.resource-core .resource-dot {
+  background: var(--text);
+}
+.resource-process dl {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+.resource-process dt {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.resource-process dd {
+  margin: 0;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.resource-process .field-hint {
+  margin: 0;
+}
+.resource-chart > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.resource-chart svg {
+  display: block;
+  width: 100%;
+  height: 72px;
+  overflow: hidden;
+}
+.resource-chart-axis {
+  stroke: var(--border);
+  stroke-width: 1;
+  fill: none;
+}
+.resource-line {
+  stroke: var(--accent);
+  stroke-width: 2;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.resource-line.resource-core {
+  stroke: var(--text);
+  stroke-dasharray: 4 3;
+}
+.resource-scope {
+  margin-top: 12px;
+}
+@media (max-width: 600px) {
+  .resource-processes,
+  .resource-charts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .resource-heading {
+    flex-wrap: wrap;
+  }
+  .resource-process dd {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Qt Throne blocks and whole files the engine tests assert on. Refresh with desktop/scripts/freeze_qt_snapshot.py.",
+  "upstream": {
+    "repository": "throneproj/Throne",
+    "commit": "69f8c5b8301165ac4363a97884bb8fa3c57f4da5"
+  },
+  "extracts": [
+    {
+      "file": "settings-repo-init-maps.cpp",
+      "path": "src/database/SettingsRepo.cpp",
+      "marker": "void SettingsRepo::initMaps() {",
+      "line": 22,
+      "sha256": "13a4d03c71db2fbef9d2847c58c30c9afcc68aabaf296a55528287c179e59685",
+      "sourceSha256": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee"
+    },
+    {
+      "file": "generate-warp-profile.cpp",
+      "path": "src/configs/generate.cpp",
+      "marker": "std::shared_ptr<Profile> getWarpProfile() {",
+      "line": 456,
+      "sha256": "fec6e0c2d4b81274e7c5a92d1f50bf5a44d333209ee6ba3537a1c2c1470e674b",
+      "sourceSha256": "3ecda90ce0ad6f9a02ebbd3c9780467e6065d5db620ddf9531dfd17518948a65"
+    },
+    {
+      "file": "group-updater-refresh.cpp",
+      "path": "src/configs/sub/GroupUpdater.cpp",
+      "marker": "void GroupUpdater::refresh(int gid, bool showDiff) {",
+      "line": 276,
+      "sha256": "513de94ebcac7d5a9099f49d6d10de8863ec04dc52bf649bedc432c02046fd11",
+      "sourceSha256": "69ee2d50a31cd4b8b429c4d2544d9ce16eebe665145979382373966f06ef44f4"
+    },
+    {
+      "file": "mainwindow-setup-minutes.cpp",
+      "path": "src/ui/mainWindow/mainwindow_setup.cpp",
+      "marker": "const auto minutesOf = [](int v)",
+      "line": 1096,
+      "sha256": "6dfd12921c33d1c8385f1354e76f96544b2de1fa5239120fcd8dd462d8f9df8c",
+      "sourceSha256": "3b311e0a94b09a668aa532ac4f3cdc92a2727e8e7939f2272a4121928f41fd1f"
+    },
+    {
+      "file": "global-otp.cpp",
+      "path": "src/global/OTP.cpp",
+      "verbatim": true,
+      "sha256": "cb0c088564610ae2c9d8211c763e185c5310d29e0f6b77307bc402422b75f79f",
+      "sourceSha256": "cb0c088564610ae2c9d8211c763e185c5310d29e0f6b77307bc402422b75f79f"
+    },
+    {
+      "file": "global-otp.hpp",
+      "path": "include/global/OTP.hpp",
+      "verbatim": true,
+      "sha256": "e689b7ecf440bf762efd9b65f7e84c3d58deb007112ff6812acaec6ac5ea34d0",
+      "sourceSha256": "e689b7ecf440bf762efd9b65f7e84c3d58deb007112ff6812acaec6ac5ea34d0"
+    }
+  ]
+}

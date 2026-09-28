@@ -1,0 +1,85 @@
+.power-button {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 109px;
+  height: 109px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, color-mix(in srgb, var(--accent) 45%, white), var(--accent) 70%);
+  box-shadow:
+    0 0 0 8px rgba(var(--accent-rgb), 0.035),
+    0 9px 30px rgba(var(--accent-rgb), 0.09),
+    inset 0 1px 1px var(--highlight);
+  color: var(--accent-ink);
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s;
+}
+.power-button .icon {
+  width: 39px;
+  height: 39px;
+  stroke-width: 1.65;
+}
+.power-button:hover {
+  transform: scale(1.035);
+  box-shadow:
+    0 0 0 11px rgba(var(--accent-rgb), 0.045),
+    0 9px 35px rgba(var(--accent-rgb), 0.15),
+    inset 0 1px 1px var(--highlight);
+}
+.selected-server {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  text-align: left;
+  transition: background var(--motion-fast);
+}
+.selected-server:hover {
+  background: var(--hover);
+}
+.selected-server strong {
+  font-size: 11px;
+  font-weight: 650;
+}
+.selected-server small {
+  font-size: 8px;
+  color: var(--muted);
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.selected-server > .icon {
+  width: 12px;
+  height: 12px;
+  color: var(--muted);
+}
+.latency {
+  color: var(--accent);
+  font-size: 9px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.endpoint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.endpoint strong,
+.endpoint small {
+  display: block;
+}
+.endpoint strong {
+  font-size: 10px;
+  font-weight: 600;
+  margin: 2px 0;
+}
+.endpoint small {
+  font-size: 8px;
+  color: var(--muted);
+}

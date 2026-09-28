@@ -1,0 +1,71 @@
+[package]
+name = "thronium-desktop"
+version = "0.1.0"
+description = "Thronium desktop client for ThroneCore"
+license = "GPL-3.0-only"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+thronium-engine = { path = "../engine" }
+tokio = { version = "1", features = ["sync", "rt-multi-thread", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-dialog = "2"
+tauri-plugin-clipboard-manager = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-autostart = "2"
+tauri-plugin-deep-link = "2"
+tauri-plugin-notification = "2"
+rqrr = "0.10"
+qrcode = { version = "0.14.1", default-features = false }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "bmp", "webp"] }
+base64 = "0.22"
+# Used by storage, tray routing and settings on every platform.
+dirs = "6"
+tempfile = "3"
+sha2 = "0.10"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+libc = "0.2"
+gtk = "0.18"
+gdkx11 = "0.18"
+ashpd = { version = "0.13", default-features = false, features = ["tokio", "screenshot"] }
+
+# Windows keeps one process per library itself (`instance/windows.rs`).
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+tauri-plugin-single-instance = "2"
+
+[target.'cfg(any(target_os = "windows", target_os = "macos"))'.dependencies]
+screenshots = "0.8"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_Registry", "Win32_Foundation", "Win32_System_Diagnostics_ToolHelp", "Win32_System_ProcessStatus", "Win32_System_SystemInformation", "Win32_System_Threading", "Win32_System_Com", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging", "Win32_Security", "Win32_System_DataExchange", "Win32_System_LibraryLoader", "Win32_System_Shutdown", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_HiDpi", "Win32_Graphics_Gdi"] }
+
+[patch.crates-io]
+rfd = { path = "../vendor/rfd" }
+
+[[bin]]
+name = "Thronium"
+path = "src/main.rs"
+
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

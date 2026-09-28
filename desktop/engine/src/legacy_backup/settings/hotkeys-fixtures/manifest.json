@@ -1,0 +1,103 @@
+{
+  "qtRuntime": "6.11.2",
+  "fields": [
+    "hotkey_mainwindow",
+    "hotkey_group",
+    "hotkey_route",
+    "hotkey_system_proxy_menu",
+    "hotkey_toggle_system_proxy"
+  ],
+  "sourceKeys": {
+    "hotkey_mainwindow": "hk_mw",
+    "hotkey_group": "hk_group",
+    "hotkey_route": "hk_route",
+    "hotkey_system_proxy_menu": "hk_spmenu",
+    "hotkey_toggle_system_proxy": "hk_toggle"
+  },
+  "qtDefaults": {
+    "hk_mw": "",
+    "hk_group": "",
+    "hk_route": "",
+    "hk_spmenu": "",
+    "hk_toggle": ""
+  },
+  "modes": {
+    "valid": {
+      "hk_mw": "Ctrl+Shift+M",
+      "hk_group": "Meta+G",
+      "hk_route": "Alt+F2",
+      "hk_spmenu": "Ctrl+Alt+PgUp",
+      "hk_toggle": "Shift+Return"
+    },
+    "defaults": {
+      "hk_mw": "",
+      "hk_group": "",
+      "hk_route": "",
+      "hk_spmenu": "",
+      "hk_toggle": ""
+    },
+    "duplicate": {
+      "hk_mw": "Ctrl+Shift+M",
+      "hk_group": "Meta+G",
+      "hk_route": "Ctrl+Shift+M",
+      "hk_spmenu": "Ctrl+Alt+PgUp",
+      "hk_toggle": "Shift+Return"
+    },
+    "bad-key": {
+      "hk_mw": "Ctrl+Shift+M",
+      "hk_group": "Ctrl+Launch (0)",
+      "hk_route": "Alt+F2",
+      "hk_spmenu": "Ctrl+Alt+PgUp",
+      "hk_toggle": "Shift+Return"
+    },
+    "sparse": {
+      "hk_toggle": "Ctrl+Alt+P"
+    }
+  },
+  "expected": {
+    "valid": {
+      "hotkey_mainwindow": "Ctrl+Shift+M",
+      "hotkey_group": "Super+G",
+      "hotkey_route": "Alt+F2",
+      "hotkey_system_proxy_menu": "Ctrl+Alt+PageUp",
+      "hotkey_toggle_system_proxy": "Shift+Enter"
+    },
+    "defaults": {
+      "hotkey_mainwindow": "",
+      "hotkey_group": "",
+      "hotkey_route": "",
+      "hotkey_system_proxy_menu": "",
+      "hotkey_toggle_system_proxy": ""
+    },
+    "sparse": {
+      "hotkey_toggle_system_proxy": "Ctrl+Alt+P"
+    }
+  },
+  "notices": {
+    "valid": [
+      "legacy_hotkeys_registered"
+    ],
+    "defaults": [],
+    "sparse": [
+      "legacy_hotkeys_registered"
+    ]
+  },
+  "blocked": {
+    "duplicate": "legacy_hotkeys_duplicate",
+    "bad-key": "legacy_settings_value_invalid"
+  },
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "src/ui/mainWindow/mainwindow_hotkeys.cpp": "fca4347934cdff2f86e0fada4b559eddebc5228a676a98778104f253282f33af"
+  },
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "sha256": {
+    "bad-key.thrbackup": "7bd0d37c69321f1c1eeec42d760e795b42a70fc50568e4e5d2b0b09dad2a3550",
+    "defaults.thrbackup": "81274e95d38a368ee6d60dd2d4b6623aae4a3f8952a3e5f4963bdf23152d370a",
+    "duplicate.thrbackup": "7f9df75dc422eb8a727e3e25eb27852e5c6433c045fbd1ebd60cd9ce08acc125",
+    "sparse.thrbackup": "6c7bc287ecc38bf43e16332468728d440d2ce341ad24905a0f538fb11a716746",
+    "valid.thrbackup": "e1814505f46f322e76f6222da6f447f724e10efdb60ad1a798ce3bcdc4e3a3df"
+  }
+}

@@ -1,0 +1,7032 @@
+{
+  "qtRuntime": "6.11.2",
+  "cases": [
+    {
+      "id": "defaults",
+      "settings": {},
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "defaults",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "predefined-order-aliases-dupes",
+      "settings": {
+        "dns_predefined_rules": "[\"# comment\", \"127.0.0.2 Example.Invalid. ALIAS.invalid # tail\", \"::1 example.invalid\", \"127.0.0.2 example.invalid\", \"127.0.0.3 EXAMPLE.invalid\", \"::ffff:192.0.2.5 mapped.invalid\", \"::192.0.2.6 compatible.invalid\"]"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2",
+                "*. IN A 127.0.0.3"
+              ],
+              "domain": "example.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::1"
+              ],
+              "domain": "example.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "alias.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "alias.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": "mapped.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::ffff:192.0.2.5"
+              ],
+              "domain": "mapped.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "compatible.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::192.0.2.6"
+              ],
+              "domain": "compatible.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "predefined-order-aliases-dupes",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "predefined-ipv6-boundaries",
+      "settings": {
+        "dns_predefined_rules": "[\":: boundary0.invalid\", \"::1 boundary1.invalid\", \"::2 boundary2.invalid\", \"::ff boundary3.invalid\", \"::ffff boundary4.invalid\", \"::1:0 boundary5.invalid\", \"::1:1 boundary6.invalid\", \"::ffff:ffff boundary7.invalid\", \"::ffff:0:1 boundary8.invalid\", \"::abcd:0:1 boundary9.invalid\"]"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "domain": "boundary0.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::"
+              ],
+              "domain": "boundary0.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary1.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::1"
+              ],
+              "domain": "boundary1.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary2.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::2"
+              ],
+              "domain": "boundary2.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary3.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::ff"
+              ],
+              "domain": "boundary3.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary4.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::ffff"
+              ],
+              "domain": "boundary4.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary5.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::0.1.0.0"
+              ],
+              "domain": "boundary5.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary6.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::0.1.0.1"
+              ],
+              "domain": "boundary6.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary7.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::255.255.255.255"
+              ],
+              "domain": "boundary7.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary8.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::ffff:0.0.0.1"
+              ],
+              "domain": "boundary8.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "boundary9.invalid",
+              "query_type": "A",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN AAAA ::abcd:0:1"
+              ],
+              "domain": "boundary9.invalid",
+              "query_type": "AAAA",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "predefined-ipv6-boundaries",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "predefined-empty",
+      "settings": {
+        "dns_predefined_rules": "[]"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "predefined-empty",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "predefined-off",
+      "settings": {
+        "dns_predefined_enable": "false",
+        "dns_predefined_rules": "[\"bad ignored\"]"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "predefined-off",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "raw-uses-stored-selectors",
+      "settings": {
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "raw": true,
+      "raw_route": {
+        "rules": [
+          {
+            "domain": "not-a-dns-selector.invalid",
+            "outbound": -1
+          }
+        ]
+      },
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "raw-uses-stored-selectors",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "follow-disabled",
+      "settings": {
+        "enable_dns_routing": "false",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "follow-disabled",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-False-hosts-False-v6-disabled-False",
+      "settings": {
+        "fakedns": "false",
+        "dns_use_hosts": "false",
+        "fakeip_disable_ipv6": "false",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-False-hosts-False-v6-disabled-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-False-hosts-False-v6-disabled-True",
+      "settings": {
+        "fakedns": "false",
+        "dns_use_hosts": "false",
+        "fakeip_disable_ipv6": "true",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-False-hosts-False-v6-disabled-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-False-hosts-True-v6-disabled-False",
+      "settings": {
+        "fakedns": "false",
+        "dns_use_hosts": "true",
+        "fakeip_disable_ipv6": "false",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "disable_cache": true,
+              "preferred_by": [
+                "dns-hosts"
+              ],
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-hosts"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-hosts",
+              "type": "hosts"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-False-hosts-True-v6-disabled-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-False-hosts-True-v6-disabled-True",
+      "settings": {
+        "fakedns": "false",
+        "dns_use_hosts": "true",
+        "fakeip_disable_ipv6": "true",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "disable_cache": true,
+              "preferred_by": [
+                "dns-hosts"
+              ],
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-hosts"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-hosts",
+              "type": "hosts"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-False-hosts-True-v6-disabled-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-True-hosts-False-v6-disabled-False",
+      "settings": {
+        "fakedns": "true",
+        "dns_use_hosts": "false",
+        "fakeip_disable_ipv6": "false",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "independent_cache": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-fake"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "inet4_range": "198.18.0.0/15",
+              "inet6_range": "fc00::/18",
+              "tag": "dns-fake",
+              "type": "fakeip"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-True-hosts-False-v6-disabled-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-True-hosts-False-v6-disabled-True",
+      "settings": {
+        "fakedns": "true",
+        "dns_use_hosts": "false",
+        "fakeip_disable_ipv6": "true",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "independent_cache": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-fake"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "inet4_range": "198.18.0.0/15",
+              "tag": "dns-fake",
+              "type": "fakeip"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-True-hosts-False-v6-disabled-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-True-hosts-True-v6-disabled-False",
+      "settings": {
+        "fakedns": "true",
+        "dns_use_hosts": "true",
+        "fakeip_disable_ipv6": "false",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "independent_cache": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "disable_cache": true,
+              "preferred_by": [
+                "dns-hosts"
+              ],
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-hosts"
+            },
+            {
+              "action": "route",
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-fake"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-hosts",
+              "type": "hosts"
+            },
+            {
+              "inet4_range": "198.18.0.0/15",
+              "inet6_range": "fc00::/18",
+              "tag": "dns-fake",
+              "type": "fakeip"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-True-hosts-True-v6-disabled-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "fakeip-True-hosts-True-v6-disabled-True",
+      "settings": {
+        "fakedns": "true",
+        "dns_use_hosts": "true",
+        "fakeip_disable_ipv6": "true",
+        "dns_predefined_rules": "[\"127.0.0.2 pinned.fixture.invalid\"]",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "independent_cache": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "pinned.fixture.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "pinned.fixture.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "disable_cache": true,
+              "preferred_by": [
+                "dns-hosts"
+              ],
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-hosts"
+            },
+            {
+              "action": "route",
+              "query_type": [
+                "A",
+                "AAAA"
+              ],
+              "server": "dns-fake"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-hosts",
+              "type": "hosts"
+            },
+            {
+              "inet4_range": "198.18.0.0/15",
+              "tag": "dns-fake",
+              "type": "fakeip"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "fakeip-True-hosts-True-v6-disabled-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "whitespace-selectors",
+      "settings": {},
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" \", \"\\t\"]",
+            "domain_suffix_json": "[]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "whitespace-selectors",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-localhost",
+      "settings": {
+        "direct_dns": "localhost"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-localhost",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-127.0.0.1",
+      "settings": {
+        "direct_dns": "127.0.0.1"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "tag": "dns-direct",
+              "type": "udp"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-127.0.0.1",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-tcp://127.0.0.1:5300",
+      "settings": {
+        "direct_dns": "tcp://127.0.0.1:5300"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.1",
+              "server_port": 5300,
+              "tag": "dns-direct",
+              "type": "tcp"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-tcp://127.0.0.1:5300",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-tls://dns.fixture.invalid:853",
+      "settings": {
+        "direct_dns": "tls://dns.fixture.invalid:853"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "server_port": 853,
+              "tag": "dns-direct",
+              "type": "tls"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-tls://dns.fixture.invalid:853",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-https://dns.fixture.invalid:443/custom?q=one%2Ftwo",
+      "settings": {
+        "direct_dns": "https://dns.fixture.invalid:443/custom?q=one%2Ftwo"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "path": "/custom?q=one%2Ftwo",
+              "server": "dns.fixture.invalid",
+              "server_port": 443,
+              "tag": "dns-direct",
+              "type": "https"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-https://dns.fixture.invalid:443/custom?q=one%2Ftwo",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "direct-h3://dns.fixture.invalid:8443/dns-query",
+      "settings": {
+        "direct_dns": "h3://dns.fixture.invalid:8443/dns-query"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "dns.fixture.invalid",
+              "server_port": 8443,
+              "tag": "dns-direct",
+              "type": "h3"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "direct-h3://dns.fixture.invalid:8443/dns-query",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-127.0.0.2:5301",
+      "settings": {
+        "remote_dns": "127.0.0.2:5301"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.2",
+              "server_port": 5301,
+              "tag": "dns-remote",
+              "type": "udp"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-127.0.0.2:5301",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-quic://127.0.0.2:8853",
+      "settings": {
+        "remote_dns": "quic://127.0.0.2:8853"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.2",
+              "server_port": 8853,
+              "tag": "dns-remote",
+              "type": "quic"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-quic://127.0.0.2:8853",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-quic://dns.fixture.invalid",
+      "settings": {
+        "remote_dns": "quic://dns.fixture.invalid"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "tag": "dns-remote",
+              "type": "quic"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-quic://dns.fixture.invalid",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-tcp://127.0.0.2:5301",
+      "settings": {
+        "remote_dns": "tcp://127.0.0.2:5301"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "127.0.0.2",
+              "server_port": 5301,
+              "tag": "dns-remote",
+              "type": "tcp"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-tcp://127.0.0.2:5301",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-tls://dns.fixture.invalid:8853",
+      "settings": {
+        "remote_dns": "tls://dns.fixture.invalid:8853"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "server": "dns.fixture.invalid",
+              "server_port": 8853,
+              "tag": "dns-remote",
+              "type": "tls"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-tls://dns.fixture.invalid:8853",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-https://dns.fixture.invalid:4443/custom?a=%2B%40%5B%5D",
+      "settings": {
+        "remote_dns": "https://dns.fixture.invalid:4443/custom?a=%2B%40%5B%5D"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/custom?a=%2B%40%5B%5D",
+              "server": "dns.fixture.invalid",
+              "server_port": 4443,
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-https://dns.fixture.invalid:4443/custom?a=%2B%40%5B%5D",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "remote-h3://dns.fixture.invalid:8843/dns-query",
+      "settings": {
+        "remote_dns": "h3://dns.fixture.invalid:8843/dns-query"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "dns.fixture.invalid",
+              "server_port": 8843,
+              "tag": "dns-remote",
+              "type": "h3"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "remote-h3://dns.fixture.invalid:8843/dns-query",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "bootstrap-localhost",
+      "settings": {
+        "core_box_underlying_dns": "localhost"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "bootstrap-localhost",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "bootstrap-127.0.0.3",
+      "settings": {
+        "core_box_underlying_dns": "127.0.0.3"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.3",
+              "tag": "dns-local",
+              "type": "udp"
+            }
+          ]
+        },
+        "error": "",
+        "id": "bootstrap-127.0.0.3",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "bootstrap-tcp://127.0.0.3:5303",
+      "settings": {
+        "core_box_underlying_dns": "tcp://127.0.0.3:5303"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "server": "127.0.0.3",
+              "server_port": 5303,
+              "tag": "dns-local",
+              "type": "tcp"
+            }
+          ]
+        },
+        "error": "",
+        "id": "bootstrap-tcp://127.0.0.3:5303",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "final-direct-guards-False-False",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-direct-guards-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "final-direct-guards-False-True",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-direct-guards-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "final-direct-guards-True-False",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-direct-guards-True-False",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "final-direct-guards-True-True",
+      "settings": {
+        "dns_final_out": "direct",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-direct-guards-True-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "final-remote-guards-False-False",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-remote-guards-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "final-remote-guards-False-True",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "false",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-remote-guards-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "final-remote-guards-True-False",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "false"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-remote-guards-True-False",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "final-remote-guards-True-True",
+      "settings": {
+        "dns_final_out": "remote",
+        "direct_dns_disable_ipv6": "true",
+        "remote_dns_disable_ipv6": "true"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "final-remote-guards-True-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "cache-False-False-False-False",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-False-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-False-False-True",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-False-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-False-True-False",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "optimistic": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-False-True-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-False-True-True",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "optimistic": {
+            "enabled": true,
+            "timeout": "1.25s"
+          },
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-False-True-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-True-False-False",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-True-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-True-False-True",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-True-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-True-True-False",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-True-True-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-False-True-True-True",
+      "settings": {
+        "dns_disable_cache": "false",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-False-True-True-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-False-False-False",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-False-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-False-False-True",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-False-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-False-True-False",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-False-True-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-False-True-True",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "false",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-False-True-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-True-False-False",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-True-False-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-True-False-True",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "false",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-True-False-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-True-True-False",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-True-True-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "cache-True-True-True-True",
+      "settings": {
+        "dns_disable_cache": "true",
+        "dns_disable_expire": "true",
+        "dns_optimistic": "true",
+        "dns_optimistic_timeout": "1.25s",
+        "dns_cache_capacity": "2048",
+        "dns_query_timeout": "250ms",
+        "dns_reverse_mapping": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 2048,
+          "disable_cache": true,
+          "disable_expire": true,
+          "reverse_mapping": true,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ],
+          "timeout": "250ms"
+        },
+        "error": "",
+        "id": "cache-True-True-True-True",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "strategy-empty-cap-False",
+      "settings": {
+        "default_domain_strategy": "",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-empty-cap-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "strategy-empty-cap-True",
+      "settings": {
+        "default_domain_strategy": "",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-empty-cap-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "strategy-as_is-cap-False",
+      "settings": {
+        "default_domain_strategy": "as_is",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "as_is",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-as_is-cap-False",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "strategy-as_is-cap-True",
+      "settings": {
+        "default_domain_strategy": "as_is",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-as_is-cap-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "strategy-prefer_ipv4-cap-False",
+      "settings": {
+        "default_domain_strategy": "prefer_ipv4",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "prefer_ipv4",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-prefer_ipv4-cap-False",
+        "xrayStrategy": "UseIPv4v6"
+      }
+    },
+    {
+      "id": "strategy-prefer_ipv4-cap-True",
+      "settings": {
+        "default_domain_strategy": "prefer_ipv4",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-prefer_ipv4-cap-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "strategy-prefer_ipv6-cap-False",
+      "settings": {
+        "default_domain_strategy": "prefer_ipv6",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "prefer_ipv6",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-prefer_ipv6-cap-False",
+        "xrayStrategy": "UseIPv6v4"
+      }
+    },
+    {
+      "id": "strategy-prefer_ipv6-cap-True",
+      "settings": {
+        "default_domain_strategy": "prefer_ipv6",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-prefer_ipv6-cap-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "strategy-ipv4_only-cap-False",
+      "settings": {
+        "default_domain_strategy": "ipv4_only",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-ipv4_only-cap-False",
+        "xrayStrategy": "ForceIPv4"
+      }
+    },
+    {
+      "id": "strategy-ipv4_only-cap-True",
+      "settings": {
+        "default_domain_strategy": "ipv4_only",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-ipv4_only-cap-True",
+        "xrayStrategy": "ForceIPv4"
+      }
+    },
+    {
+      "id": "strategy-ipv6_only-cap-False",
+      "settings": {
+        "default_domain_strategy": "ipv6_only",
+        "direct_dns_disable_ipv6": "false"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv6_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-ipv6_only-cap-False",
+        "xrayStrategy": "ForceIPv6"
+      }
+    },
+    {
+      "id": "strategy-ipv6_only-cap-True",
+      "settings": {
+        "default_domain_strategy": "ipv6_only",
+        "direct_dns_disable_ipv6": "true"
+      },
+      "rules": [],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "strategy-ipv6_only-cap-True",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "oldalias-direct-ipv4_only",
+      "settings": {
+        "direct_dns_strategy": "ipv4_only",
+        "default_domain_strategy": "prefer_ipv6",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "predefined",
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "oldalias-direct-ipv4_only",
+        "xrayStrategy": "UseIPv4"
+      }
+    },
+    {
+      "id": "oldalias-remote-ipv4_only",
+      "settings": {
+        "remote_dns_strategy": "ipv4_only",
+        "default_domain_strategy": "prefer_ipv6",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "prefer_ipv6",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "predefined",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "query_type": [
+                "AAAA"
+              ]
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "oldalias-remote-ipv4_only",
+        "xrayStrategy": "UseIPv6v4"
+      }
+    },
+    {
+      "id": "oldalias-direct-prefer_ipv6",
+      "settings": {
+        "direct_dns_strategy": "prefer_ipv6",
+        "default_domain_strategy": "prefer_ipv6",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "prefer_ipv6",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "oldalias-direct-prefer_ipv6",
+        "xrayStrategy": "UseIPv6v4"
+      }
+    },
+    {
+      "id": "oldalias-remote-",
+      "settings": {
+        "remote_dns_strategy": "",
+        "default_domain_strategy": "prefer_ipv6",
+        "dns_final_out": "direct"
+      },
+      "rules": [
+        {
+          "order": 4,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -1,
+            "action": "route",
+            "domain_json": "[\"remote.fixture.invalid\"]",
+            "domain_keyword_json": "[\"remote\"]",
+            "network": "tcp"
+          }
+        },
+        {
+          "order": 2,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "domain_json": "[\" LOCAL.fixture.invalid \", \"local.fixture.invalid\"]",
+            "domain_suffix_json": "[\"local.invalid\"]",
+            "port_json": "[443]",
+            "invert": 1
+          }
+        },
+        {
+          "order": 1,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -3,
+            "action": "route",
+            "domain_json": "[\"blocked.invalid\"]"
+          }
+        },
+        {
+          "order": 3,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "sniff",
+            "domain_json": "[\"ignored.invalid\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "prefer_ipv6",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "LOCAL.fixture.invalid",
+                "local.fixture.invalid"
+              ],
+              "domain_keyword": [],
+              "domain_regex": [],
+              "domain_suffix": [
+                "local.invalid"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "domain": [
+                "remote.fixture.invalid"
+              ],
+              "domain_keyword": [
+                "remote"
+              ],
+              "domain_regex": [],
+              "domain_suffix": [],
+              "server": "dns-remote"
+            },
+            {
+              "action": "route",
+              "server": "dns-direct"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "oldalias-remote-",
+        "xrayStrategy": "UseIPv6v4"
+      }
+    },
+    {
+      "id": "explicit-strategy-prefer_ipv6",
+      "settings": {
+        "use_dns_object": "true",
+        "dns_object": "{}",
+        "direct_dns_disable_ipv6": "true",
+        "default_domain_strategy": "prefer_ipv6"
+      },
+      "rules": [],
+      "strategyOnly": true,
+      "expected": {
+        "directStrategy": "prefer_ipv6",
+        "dns": {},
+        "error": "",
+        "id": "explicit-strategy-prefer_ipv6",
+        "xrayStrategy": "UseIPv6v4"
+      }
+    },
+    {
+      "id": "explicit-strategy-ipv4_only",
+      "settings": {
+        "use_dns_object": "true",
+        "dns_object": "{}",
+        "direct_dns_disable_ipv6": "true",
+        "default_domain_strategy": "ipv4_only"
+      },
+      "rules": [],
+      "strategyOnly": true,
+      "expected": {
+        "directStrategy": "ipv4_only",
+        "dns": {},
+        "error": "",
+        "id": "explicit-strategy-ipv4_only",
+        "xrayStrategy": "ForceIPv4"
+      }
+    },
+    {
+      "id": "blocked-invalid-predefined",
+      "settings": {
+        "dns_predefined_rules": "[\"127.0.0.2 good.invalid\", \"invalid invalid\"]"
+      },
+      "rules": [],
+      "expectedError": "legacy_dns_predefined_unsupported",
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "blocked-invalid-predefined",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "blocked-unicode-predefined",
+      "settings": {
+        "dns_predefined_rules": "[\"127.0.0.2 \\u041f\\u0440\\u0438\\u043c\\u0435\\u0440.invalid\"]"
+      },
+      "rules": [],
+      "expectedError": "legacy_dns_predefined_unsupported",
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.2"
+              ],
+              "domain": "\u043f\u0440\u0438\u043c\u0435\u0440.invalid",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "\u043f\u0440\u0438\u043c\u0435\u0440.invalid",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "blocked-unicode-predefined",
+        "xrayStrategy": "UseIP"
+      }
+    },
+    {
+      "id": "named-ruleset-private",
+      "settings": {},
+      "rules": [
+        {
+          "order": 0,
+          "kind": 0,
+          "columns": {
+            "outbound_id": -2,
+            "action": "route",
+            "rule_set_json": "[\"geosite-private\"]"
+          }
+        }
+      ],
+      "expected": {
+        "directStrategy": "",
+        "dns": {
+          "cache_capacity": 65536,
+          "rules": [
+            {
+              "action": "predefined",
+              "answer": [
+                "*. IN A 127.0.0.1"
+              ],
+              "domain": "localhost",
+              "query_type": "A",
+              "rcode": "NOERROR"
+            },
+            {
+              "action": "predefined",
+              "domain": "localhost",
+              "query_type": "AAAA",
+              "rcode": "NXDOMAIN"
+            },
+            {
+              "action": "route",
+              "rule_set": [
+                "geosite-private"
+              ],
+              "server": "dns-direct"
+            },
+            {
+              "action": "route",
+              "server": "dns-remote"
+            }
+          ],
+          "servers": [
+            {
+              "detour": "proxy",
+              "domain_resolver": "dns-local",
+              "path": "/dns-query",
+              "server": "8.8.8.8",
+              "tag": "dns-remote",
+              "type": "https"
+            },
+            {
+              "domain_resolver": "dns-local",
+              "tag": "dns-direct",
+              "type": "local"
+            },
+            {
+              "tag": "dns-local",
+              "type": "local"
+            }
+          ]
+        },
+        "error": "",
+        "id": "named-ruleset-private",
+        "xrayStrategy": "UseIP"
+      }
+    }
+  ]
+}

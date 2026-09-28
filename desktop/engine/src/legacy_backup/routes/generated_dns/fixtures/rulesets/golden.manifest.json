@@ -1,0 +1,298 @@
+{
+  "extracts": [
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "namespace tags {",
+      "line": 43,
+      "sha256": "b51fe5c0b3d9e84ddecccf5b6da24da58d3cd73d41ec3d68bb0a24294281c8c9"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "struct DomainSelectors {",
+      "line": 84,
+      "sha256": "10404f6b793eac4599ddb29b99bf3c6acf3a9653219f3a8e70df9199350fdb06"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "struct SelectorSink {",
+      "line": 96,
+      "sha256": "66797b88cad9a79d1f1d17c0b857b5f3af4fd826925c5daeb904824a9dac12ec"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "SelectorSink sinkFor(",
+      "line": 105,
+      "sha256": "e7646ad7a53ad17f4271b0d345c679da7d76bf6b3d3b4e9268ef4f4c40b92ffd"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "void parseSelectorList(",
+      "line": 115,
+      "sha256": "fcfbde45f9c4c11b79214e5cf60d5474bc465774a8184270a07576569d290e5a"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "struct DNSDeps {",
+      "line": 137,
+      "sha256": "b37b51fb322ced46e128d1f2118ea91a0890e89248b97db1f7bb8e0a3b52bf18"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "void appendDnsRoute(",
+      "line": 371,
+      "sha256": "a5e8d9c398d27a35ae0fcca7483b0d1efc8e0d1f2339475ac22bb85aedc89944"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "void appendDnsRoutingRules(",
+      "line": 385,
+      "sha256": "2354310cb5b6b62237329a0fbc49317e41f9a7362eae7c239176cd99470ceb47"
+    },
+    {
+      "path": "include/configs/generate.h",
+      "marker": "struct PredefinedDNSEntry {",
+      "line": 100,
+      "sha256": "02ab49bc62aa6d01d787b02f2e190609dd70c58f32020f7c03e16a685cacabb1"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "bool ParsePredefinedDNS(",
+      "line": 2233,
+      "sha256": "32880350e32c56be9336fc354f4413f0bd4f5abdd6003ea9c916312e6e2ebcef"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "QJsonObject buildDnsObj(",
+      "line": 731,
+      "sha256": "2f1c0e60490764874fa66636bcba2c3808503b57193b6e8a3e360a844ef52769"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "QString upgradeUdpDnsToDoH(",
+      "line": 800,
+      "sha256": "12b3867246fef7a1c278af72e4d9d62178c63f70a3e299f0554163ea4cc80914"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "void buildDNSSection(",
+      "line": 822,
+      "sha256": "78085aa49830162f5acdce2886aaf885c00e081f3c7836c66277ecad2fc4595f"
+    },
+    {
+      "path": "src/configs/common/xrayStreamSetting.cpp",
+      "marker": "QString getDirectDomainStrategy(",
+      "line": 901,
+      "sha256": "3cae6c41bef771dd3a10be08e2d880bf56b8031d938cc10fbae4a61cf6b08deb"
+    },
+    {
+      "path": "src/configs/common/xrayStreamSetting.cpp",
+      "marker": "QString getXrayOutboundDomainStrategy(",
+      "line": 908,
+      "sha256": "0da0206d9052dd7370ad8954e153773ed5997dc2ef2a19743e4c5f821e32da3a"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "core_box_underlying_dns",
+      "line": 283,
+      "sha256": "04151c85946211197c0ba1a852aa34bce7f94cd12a945c4efc10552fc70bc2ec"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "default_domain_strategy",
+      "line": 195,
+      "sha256": "94ebf795f6324b06bf54b0b976a31a95d977a2e35ea678d6537f5199c7c2f4c2"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "direct_dns",
+      "line": 178,
+      "sha256": "a25ed75121fc89aafd99c709782956259dfb11c3868e20f8635024e1876b53aa"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "direct_dns_disable_ipv6",
+      "line": 179,
+      "sha256": "1694ed037cb44448d98f614e4745a6041054bc36a690336553762fd201e109b7"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_cache_capacity",
+      "line": 180,
+      "sha256": "fdb912572bdaaae4a3ceadc6e0b60af25d6015c399497594dfebab62c58b7fa3"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_disable_cache",
+      "line": 181,
+      "sha256": "5f4886458e0670990b63b1332ee3137588bbc72a1eed12098df0a93087121bd4"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_disable_expire",
+      "line": 182,
+      "sha256": "519dd6f245bf842cfbb6c882e966c2afc07c8a9563df6c27c8691c204d1c7f54"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_final_out",
+      "line": 187,
+      "sha256": "0894689c02fff6f21c81d6f6848310c931155792eab518aca572281d04173f87"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_object",
+      "line": 186,
+      "sha256": "ed876d0103c37cb7e16b03294b3d460af45960c1e8dc9a23fbe75f72826fed82"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_optimistic",
+      "line": 188,
+      "sha256": "5bd749b4e941592d95200b777f425f7c299747b3fcbd4d1f0abb02999c991040"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_optimistic_timeout",
+      "line": 189,
+      "sha256": "35fd2c0c02a205bed0c8e6972e8f176b3a9d19c75222b451218fdfe264931e93"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_predefined_enable",
+      "line": 192,
+      "sha256": "71d192c2804b9a7a7b5be19b0a06bf6ff4a110d72fd2cc87ae2f759f0c51fb89"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_predefined_rules",
+      "line": 193,
+      "sha256": "3fb1caca997160ffe6ad82a9e83ea13866caf9cfd90eccc720049321a096139c"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_query_timeout",
+      "line": 190,
+      "sha256": "eba8e578cb42abb9e0894c4059c9e2b770beec0aca270020ff29fda9f4760512"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_reverse_mapping",
+      "line": 183,
+      "sha256": "47e2d0a4e1d53b17add4acba331f0ad5ac18e672544caaf1d42f766a411da3f6"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_use_hosts",
+      "line": 191,
+      "sha256": "c986393fe7e412235a1ee79bbf7efe8bd9cd326751d629f4d33510166bcc948f"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_v4_resp",
+      "line": 259,
+      "sha256": "c189b4b8eebbef6dede5391225fe765f5e1acf2dbd7db88793893c48a61693db"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "dns_v6_resp",
+      "line": 260,
+      "sha256": "adc23ff12090ee4165c27cc03405903a2819294cfb5ae131caded9321ab9b540"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "enable_dns_routing",
+      "line": 184,
+      "sha256": "dee614e17461583abe57212377a033c2fb7de8c59e77eeb596c868d31af969da"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "enable_dns_server",
+      "line": 256,
+      "sha256": "a9ad459fcc0ed6801fe5a79dd22d968ff17c5c7fbf632f79ab22e9608107f7cd"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "fake_dns",
+      "line": 215,
+      "sha256": "f3e9eca376f09cfd168c0cbd39b4fd6bef1bc3fcfc7e71b0fda22e3bb1210aa8"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "fakeip_disable_ipv6",
+      "line": 216,
+      "sha256": "55c7e7dca2fad4d8dbfff55d1f9db421cfbc6f608a1763a1ff5b0368b9bca68c"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "remote_dns",
+      "line": 176,
+      "sha256": "94d4f2591e80b51e36af488df61b24672980200cfac776c616fffca6573303a4"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "remote_dns_disable_ipv6",
+      "line": 177,
+      "sha256": "a667cfa2caa18e27fd96ea1f0f47369dbb7495d86ebe41ccc741737b41166324"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "spmode_vpn",
+      "line": 47,
+      "sha256": "1e70bf553030433f9bc56478f3ae1d1fa48c77e7143faf4a0b829d3c63cd6eda"
+    },
+    {
+      "path": "include/database/SettingsRepo.h",
+      "marker": "use_dns_object",
+      "line": 185,
+      "sha256": "c6d98848e930f9b943c0128c6fd9ec1d1ca3d10c15b33a827c4972cccbe4b2fc"
+    },
+    {
+      "path": "src/database/entities/RouteProfile.cpp",
+      "marker": "QStringList RouteProfile::get_direct_sites(",
+      "line": 697,
+      "sha256": "cb2a799325d0178a3a92e1ac812f6e1267639199ac64a3ed27604c7e1dff36b4"
+    },
+    {
+      "path": "src/database/entities/RouteProfile.cpp",
+      "marker": "QStringList RouteProfile::get_proxy_sites(",
+      "line": 721,
+      "sha256": "51a5968324cef66315608fe15da0cc1b9ff5791141227aa813037fbbd6ffdea1"
+    },
+    {
+      "path": "src/configs/generate.cpp",
+      "marker": "if (settings.enable_dns_routing) {",
+      "line": 651,
+      "sha256": "6d1e95f86bf373d5cb3cc7a9a624333fe05829224ffe47279f3d5ec520fcad1b"
+    },
+    {
+      "path": "src/database/SettingsRepo.cpp",
+      "marker": "if (key == \"direct_dns_strategy\") {",
+      "line": 244,
+      "sha256": "49ef2b3d6b3830f6f85e37fd5194cc344b6e07921a4e0bea10bf2746c49aebbd"
+    },
+    {
+      "path": "src/database/SettingsRepo.cpp",
+      "marker": "if (key == \"remote_dns_strategy\") {",
+      "line": 248,
+      "sha256": "b29ab55dd360b6517aed05410c55e6488551da793c382651c923ebd446e71ab9"
+    }
+  ],
+  "cppSha256": "b121ff9ce1c29661f0c6076f8429d79a7d36b0a53879dffda92974c2bc252847",
+  "compiler": [
+    "g++",
+    "-std=c++20",
+    "-fPIC",
+    "-O1",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "-I<qt-sdk>/usr/include/qt6/QtNetwork",
+    "desktop/.tools/migration-build-tmp/rulesets-oracle82f4.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Network",
+    "-lQt6Core",
+    "-o",
+    "desktop/.tools/migration-build-tmp/rulesets-oracle82f4"
+  ],
+  "context": "Linux local/system proxy; no TUN, Xray, endpoints, external core, network I/O; raw flag deliberately does not alter stored Qt DNS selectors"
+}

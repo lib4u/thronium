@@ -1,0 +1,166 @@
+.route-tabs {
+  margin-top: 22px;
+}
+.routing-pending {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: var(--radius-l);
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+.route-target {
+  max-width: 245px;
+}
+.route-condition-list {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0;
+}
+.route-condition {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.8fr) minmax(180px, 1.2fr) 30px;
+  gap: 12px;
+  align-items: start;
+}
+.route-advanced summary {
+  font-size: 13px;
+  cursor: pointer;
+  margin: 12px 0 18px;
+}
+.route-rule-modal .feature-tabs {
+  margin-bottom: 18px;
+}
+.route-rule-modal .feature-field {
+  margin-bottom: 16px;
+}
+.route-rule-modal [aria-invalid='true'] {
+  border-color: var(--danger);
+}
+.routing-json {
+  width: 100%;
+  min-height: 330px;
+}
+.route-simple-target {
+  margin-bottom: 16px;
+}
+.route-profile-row {
+  flex-wrap: wrap;
+}
+.route-profile-row strong {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.routing-table .route-rule-name small {
+  max-width: 540px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.routing-table .route-rule-name {
+  min-width: 200px;
+}
+@media (max-width: 600px) {
+  .routing-pending {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .route-condition {
+    grid-template-columns: minmax(0, 1fr) 30px;
+  }
+  .route-condition > select {
+    grid-column: 1;
+  }
+  .route-condition > div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .route-condition > button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .route-target {
+    max-width: 180px;
+  }
+}
+.routing-resources {
+  min-width: 0;
+}
+.resource-view .feature-tabs {
+  margin: 0;
+}
+.routing-resources > .feature-panel + .feature-panel {
+  margin-top: 20px;
+}
+.routing-resources .feature-panel-head {
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.routing-resources .feature-panel-head .feature-toolbar {
+  margin: 0;
+  gap: 10px;
+}
+.resource-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+}
+.resource-description {
+  flex: 1;
+  min-width: 0;
+}
+.resource-description strong,
+.resource-description small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.resource-description strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.resource-description small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.resource-empty {
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.resource-notice,
+.resource-hint {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.resource-modal .feature-field > label {
+  font-size: 12px;
+  color: var(--muted);
+}
+.resource-modal [aria-invalid='true'] {
+  border-color: var(--danger);
+}
+.resource-modal .field-error {
+  color: var(--danger);
+}
+@media (max-width: 600px) {
+  .resource-row {
+    flex-wrap: wrap;
+  }
+  .resource-row > .route-actions {
+    margin-left: auto;
+  }
+  .routing-resources .feature-panel-head .feature-toolbar {
+    width: 100%;
+  }
+  .routing-resources .feature-panel-head .button {
+    white-space: normal;
+  }
+}

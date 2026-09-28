@@ -1,0 +1,98 @@
+{
+  "result": "Qt 6.11.2: 37 cases; only absent-id OTP adapter calls=31",
+  "sources": {
+    "src/configs/outbounds/openvpn.cpp": "df160fb3e9c968d871bb6ea47ac66116f9fef4fdf3c1e50623b222efd33f75c1",
+    "src/configs/outbounds/openconnect.cpp": "a170ca44b6d4dcba09f27ad31e209a915e650ea8b9017e6406638dce5967e433",
+    "include/configs/outbounds/openvpn.h": "1f7c552bc913c0681d2808084d491935aa8a3fc06975255d7d842d9e74530709",
+    "include/configs/outbounds/openconnect.h": "3f5a643c32b6fe52527462ec81f5ae60ec5383eb6df9bbe3e0b938fc51faaf1f",
+    "src/configs/common/Outbound.cpp": "09ed8e4f10c29b49bef770e4d5c6de3f1804ab992c30de3646e3774f8e9e6a6e",
+    "include/configs/common/Outbound.h": "5566eb70a2d36ff1f85d1afe39704ca76b29411f3883aee0eb68fb459769af3e",
+    "src/configs/common/DialFields.cpp": "40e5c620eae2f8f2f34a889ef3284e39699d753d5a6b384e6c6d2740aa98e0d9",
+    "include/configs/common/DialFields.h": "7751220d2566e395e031f99e6951cbb415f8367497625b1fdbff058e46e4a0d6",
+    "src/global/Utils.cpp": "4fe6f299f257b4c523cb3a1d8858ac3bfca1c7ec6d310581162445357ac9832e",
+    "include/global/Utils.hpp": "455b922e6e46d24d88d1c5049519db81e703ab35f8c04c8c87971e51dfb3a233",
+    "src/global/OtpPlaceholder.cpp": "1a11af1370991fade56502db8b13388377ee5c686c13052dd52d9f23e0768850",
+    "src/configs/common/utils.cpp": "08617ab29870d678ee9637bee3270ccdaf985766b80a22ec6e9bf45b05561685"
+  },
+  "extracts": [
+    {
+      "path": "include/global/Utils.hpp",
+      "marker": "inline QString UnwrapIPV6Host(",
+      "line": 195,
+      "sha256": "93ad3824c16ba25aa13b95578f60ddd6ebe1e1bf4fa9a6a61e98f84dcd3b3c55"
+    },
+    {
+      "path": "include/global/Utils.hpp",
+      "marker": "inline QString WrapIPV6Host(",
+      "line": 199,
+      "sha256": "ad4cd834ff9bf66714d356db724a722162d753e99d3375410d6251842ff8b464"
+    },
+    {
+      "path": "src/global/Utils.cpp",
+      "marker": "QJsonArray QListStr2QJsonArray(",
+      "line": 110,
+      "sha256": "3c9c30beb5d24e18d49e7b99f65af6916d8a7270bd49422a8badff9b53eae40f"
+    },
+    {
+      "path": "src/global/Utils.cpp",
+      "marker": "QList<QString> QJsonArray2QListString(",
+      "line": 135,
+      "sha256": "08e62ae4ed36d273adbba9873bca5d62813fb6bdbc20a4b7f799a3f154db7a7a"
+    },
+    {
+      "path": "src/global/Utils.cpp",
+      "marker": "bool IsIpAddressV6(",
+      "line": 254,
+      "sha256": "9d9887d4031028552dba4d5d31b2097edfedd5d03d10c9fc98d03c93e9d8676b"
+    },
+    {
+      "path": "src/configs/common/Outbound.cpp",
+      "marker": "bool outbound::ParseFromJson(",
+      "line": 94,
+      "sha256": "33936cd0453f1ae7fa6e1aa7c76d693bd20515a54fb4c1248ae9b733989239fe"
+    },
+    {
+      "path": "src/configs/common/Outbound.cpp",
+      "marker": "QJsonObject outbound::ExportToJson(",
+      "line": 116,
+      "sha256": "22118d6f9d4f85e17b43007b91e62a0f088366837f285dacc95c24a86f6b71de"
+    },
+    {
+      "path": "src/configs/common/utils.cpp",
+      "marker": "void mergeJsonObjects(",
+      "line": 16,
+      "sha256": "2bc3110ae55b6607ffb385fb890f07075c7a2db1ec2ee5a2dc6edd5394091a26"
+    },
+    {
+      "path": "src/global/OtpPlaceholder.cpp",
+      "marker": "QString SubstituteOtp(",
+      "line": 20,
+      "sha256": "6f6360ac1bb4186de957fb7d1aec3346eb8ed5729a7169fb772d242367cc538a"
+    }
+  ],
+  "command": [
+    "c++",
+    "-std=c++20",
+    "-fPIC",
+    "-O0",
+    "-I/tmp/thronium-legacy-vpn34-tests/adapter",
+    "-I<throne>",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "-I<qt-sdk>/usr/include/qt6/QtNetwork",
+    "/tmp/thronium-legacy-vpn34-tests/fixtures/oracle.cpp",
+    "<throne>/src/configs/outbounds/openvpn.cpp",
+    "<throne>/src/configs/outbounds/openconnect.cpp",
+    "<throne>/src/configs/common/DialFields.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Core",
+    "-lQt6Network",
+    "-o",
+    "/tmp/thronium-legacy-vpn34-tests/qt-oracle"
+  ],
+  "casesSha256": "5a6fb019f1476efd94e9c16779c7f66b05b60adb5091607e959710133ac2fd94",
+  "inputsSha256": "cc0bd05480e004ec7a32020fe77a97e73ad0f65fe352ae4e567783223a5e00f0",
+  "boundary": "Unmodified OVPN/OC .cpp and headers plus DialFields .cpp/header; exact extracted Outbound Parse/Export and helpers. Adapter base class strips unrelated UI/network methods. Build only otp_profile_id=-1 and no overrides. Bound/placeholder cases are Parse/Export only; no OTP store, code generation, reservation, network, file imports, or host path access.",
+  "binarySha256": "1b5952cd6511e52b147c28da23a6aab774bd9c4bc5c3ac2d3b7229486d20a4ca"
+}

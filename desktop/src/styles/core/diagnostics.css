@@ -1,0 +1,63 @@
+.log-level {
+  color: var(--accent);
+  font-size: 8px;
+}
+.log-level.warning {
+  color: var(--warning);
+}
+.log-level.error {
+  color: var(--danger);
+}
+.settings-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.settings-panel {
+  padding: 21px 23px;
+}
+.setting-label {
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.setting-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 3px;
+}
+.setting-row strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+.setting-row p {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.settings-note {
+  display: flex;
+  gap: 9px;
+  background: var(--sidebar);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-m);
+  color: var(--faint);
+  padding: 12px;
+  margin-top: 19px;
+  font-size: 9px;
+  line-height: 1.7;
+}
+.settings-note .icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin-top: 2px;
+}

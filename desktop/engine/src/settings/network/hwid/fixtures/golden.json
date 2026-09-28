@@ -1,0 +1,220 @@
+{
+  "cases": [
+    {
+      "custom": "",
+      "enabled": false,
+      "headers": {},
+      "name": "disabled"
+    },
+    {
+      "custom": "",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "defaults"
+    },
+    {
+      "custom": "hwid=manual,os=CustomOS,osVersion=1,model=CustomModel",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "CustomModel",
+        "x-device-os": "CustomOS",
+        "x-hwid": "manual",
+        "x-ver-os": "1"
+      },
+      "name": "all-custom"
+    },
+    {
+      "custom": "hwid=",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "empty-hwid"
+    },
+    {
+      "custom": "hwid=,os=,osversion=,model=",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "all-empty"
+    },
+    {
+      "custom": "hwid=   , model= ",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "spaces-empty"
+    },
+    {
+      "custom": "hwid=first,HWID=second",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "second",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "last-valid"
+    },
+    {
+      "custom": "hwid=first,HWID=",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "first",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "last-empty"
+    },
+    {
+      "custom": "hwid=,HWID=second",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "second",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "first-empty"
+    },
+    {
+      "custom": " HWID = custom id , osVersion = x ",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "custom id",
+        "x-ver-os": "x"
+      },
+      "name": "trim-case"
+    },
+    {
+      "custom": "hwid=first=second",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "first=second",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "embedded-equals"
+    },
+    {
+      "custom": "unknown=discard",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "unknown"
+    },
+    {
+      "custom": "hwid",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "missing-equals"
+    },
+    {
+      "custom": "=value",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "empty-key"
+    },
+    {
+      "custom": "hwid=a\nb",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "newline"
+    },
+    {
+      "custom": "hwid=a\rb",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "cr"
+    },
+    {
+      "custom": "hwid=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "999-ascii"
+    },
+    {
+      "custom": "hwid=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "1000-ascii"
+    },
+    {
+      "custom": "model=Локальная машина 日本",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "Локальная машина 日本",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "unicode"
+    },
+    {
+      "custom": "model=😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "enabled": true,
+      "headers": {
+        "x-device-model": "fixture-model",
+        "x-device-os": "Linux",
+        "x-hwid": "fixture-id",
+        "x-ver-os": "fixture-kernel"
+      },
+      "name": "unicode-limit"
+    }
+  ],
+  "qtRuntime": "6.11.2"
+}

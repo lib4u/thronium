@@ -1,0 +1,1833 @@
+[
+  {
+    "id": "language",
+    "section": "appearance",
+    "label": "settings.language_6f66532",
+    "default": "ru",
+    "kind": "text",
+    "group": "main",
+    "options": ["ru", "en"],
+    "preference": "/language"
+  },
+  {
+    "id": "theme",
+    "section": "appearance",
+    "label": "settings.theme_980586a",
+    "default": "light",
+    "kind": "text",
+    "group": "main",
+    "options": ["light", "dark", "system"],
+    "preference": "/theme"
+  },
+  {
+    "id": "font",
+    "section": "appearance",
+    "label": "settings.custom_font_57ef750",
+    "default": "",
+    "kind": "text",
+    "group": "advanced",
+    "hint": "settings.leave_empty_to_use_the_standard_thronium_font_40caeb4"
+  },
+  {
+    "id": "font_size",
+    "section": "appearance",
+    "label": "settings.interface_scale_f758a97",
+    "default": 12,
+    "kind": "number",
+    "group": "main",
+    "min": 10,
+    "max": 24,
+    "hint": "settings.changes_the_size_of_text_controls_and_spacing_to_cf33228"
+  },
+  {
+    "id": "compact",
+    "section": "appearance",
+    "label": "settings.compact_server_list_b677602",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list",
+    "hint": "settings.reduces_row_spacing_so_more_servers_fit_in_the_l_51f58af"
+  },
+  {
+    "id": "reduce_motion",
+    "section": "appearance",
+    "label": "settings.reduce_interface_animations_6f75e34",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "id": "connection_mode",
+    "section": "inbound",
+    "label": "settings.connection_mode_4ba5d58",
+    "default": "local",
+    "kind": "text",
+    "group": "main",
+    "options": ["local", "system-proxy", "tun"],
+    "preference": "/connectionMode"
+  },
+  {
+    "id": "inbound_address",
+    "section": "inbound",
+    "label": "settings.listen_address_6b4cef5",
+    "default": "127.0.0.1",
+    "kind": "ip",
+    "group": "main"
+  },
+  {
+    "id": "inbound_socks_port",
+    "section": "inbound",
+    "label": "settings.socks_http_port_e58aaa9",
+    "default": 2080,
+    "kind": "number",
+    "group": "main",
+    "min": 1,
+    "max": 65535,
+    "preference": "/inboundPort"
+  },
+  {
+    "id": "inbound_auth",
+    "section": "inbound",
+    "label": "settings.proxy_authentication_1872b2c",
+    "default": false,
+    "kind": "bool",
+    "group": "authentication"
+  },
+  {
+    "id": "inbound_user",
+    "section": "inbound",
+    "label": "settings.username_b80b698",
+    "default": "",
+    "kind": "text",
+    "group": "authentication"
+  },
+  {
+    "id": "inbound_pass",
+    "section": "inbound",
+    "label": "settings.password_8714570",
+    "default": "",
+    "kind": "secret",
+    "group": "authentication"
+  },
+  {
+    "id": "disable_mixed_inbound",
+    "section": "inbound",
+    "label": "settings.disable_socks_http_240aa53",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "id": "custom_inbound",
+    "section": "inbound",
+    "label": "settings.additional_inbounds_json_a803cc7",
+    "default": [],
+    "kind": "json",
+    "group": "advanced"
+  },
+  {
+    "id": "vpn_implementation",
+    "section": "tun",
+    "label": "settings.stack_dd78a50",
+    "default": "gvisor",
+    "kind": "text",
+    "group": "main",
+    "options": ["system", "gvisor", "mixed"],
+    "preference": "/tun/stack",
+    "byPlatform": { "windows": { "default": "system" } }
+  },
+  {
+    "id": "vpn_mtu",
+    "section": "tun",
+    "label": "settings.mtu_aeb4832",
+    "default": 1500,
+    "kind": "number",
+    "group": "main",
+    "min": 1280,
+    "max": 9000,
+    "preference": "/tun/mtu"
+  },
+  {
+    "id": "vpn_ipv6",
+    "section": "tun",
+    "label": "settings.ipv6_aab6cb7",
+    "default": false,
+    "kind": "bool",
+    "group": "main",
+    "preference": "/tun/ipv6"
+  },
+  {
+    "id": "vpn_strict_route",
+    "section": "tun",
+    "label": "settings.strict_route_a6b1d4f",
+    "default": false,
+    "kind": "bool",
+    "group": "main",
+    "preference": "/tun/strictRoute",
+    "byPlatform": { "windows": { "default": true } }
+  },
+  {
+    "id": "tun_dns_hijack",
+    "section": "tun",
+    "label": "settings.capture_dns_in_tun_98d4a24",
+    "default": true,
+    "kind": "bool",
+    "group": "main",
+    "preference": "/tun/dnsHijack"
+  },
+  {
+    "id": "tun_system_dns",
+    "platforms": ["linux", "windows"],
+    "section": "tun",
+    "label": "settings.system_dns_linux_66b8f26",
+    "default": "disabled",
+    "kind": "text",
+    "group": "main",
+    "options": ["disabled", "resolved", "resolvconf", "interface"],
+    "preference": "/tun/systemDns",
+    "hint": "settings.send_system_dns_through_the_app_rules_choose_you_eddf76a",
+    "byPlatform": {
+      "linux": { "options": ["disabled", "resolved", "resolvconf"] },
+      "windows": {
+        "options": ["disabled", "interface"],
+        "label": "settings.system_dns_windows",
+        "hint": "settings.system_dns_windows_hint"
+      }
+    }
+  },
+  {
+    "id": "tun_request_permission",
+    "platforms": ["linux"],
+    "section": "tun",
+    "label": "settings.request_system_permission_78b8769",
+    "default": true,
+    "kind": "bool",
+    "group": "main",
+    "preference": "/tun/requestPermission"
+  },
+  {
+    "id": "tun_auto_reconnect",
+    "section": "tun",
+    "label": "settings.reconnect_after_a_failure_c71a0fe",
+    "default": true,
+    "kind": "bool",
+    "group": "main",
+    "preference": "/tun/autoReconnect"
+  },
+  {
+    "id": "vpn_private_ranges",
+    "section": "tun",
+    "label": "settings.excluded_networks_796d2bd",
+    "default": [
+      "10.0.0.0/8",
+      "172.16.0.0/12",
+      "192.168.0.0/16",
+      "169.254.0.0/16",
+      "224.0.0.0/4",
+      "fc00::/7",
+      "fe80::/10",
+      "ff00::/8"
+    ],
+    "kind": "list",
+    "group": "main",
+    "preference": "/tun/excludeAddresses"
+  },
+  {
+    "id": "ping_method",
+    "section": "testing",
+    "label": "settings.ping_method_5b1ce1a",
+    "default": "auto",
+    "kind": "text",
+    "group": "ping",
+    "options": ["auto", "http", "tcp", "icmp"],
+    "preference": "/ping/method",
+    "hint": "settings.used_by_all_ping_buttons_changes_apply_to_the_ne_7b7404b"
+  },
+  {
+    "id": "test_url",
+    "section": "testing",
+    "label": "settings.latency_test_url_fba8882",
+    "default": "https://www.gstatic.com/generate_204",
+    "kind": "url",
+    "group": "ping",
+    "preference": "/ping/url"
+  },
+  {
+    "id": "url_test_timeout_ms",
+    "section": "testing",
+    "label": "settings.ping_timeout_ms_8f29218",
+    "default": 3000,
+    "kind": "number",
+    "group": "ping",
+    "min": 100,
+    "max": 10000,
+    "preference": "/ping/timeoutMs"
+  },
+  {
+    "id": "test_concurrent",
+    "section": "testing",
+    "label": "settings.concurrent_tests_82a7a97",
+    "default": 1,
+    "kind": "number",
+    "group": "ping",
+    "min": 1,
+    "max": 10
+  },
+  {
+    "id": "log_level",
+    "section": "logging",
+    "label": "settings.sing_box_log_level_b54af99",
+    "default": "warn",
+    "kind": "text",
+    "group": "main",
+    "options": ["trace", "debug", "info", "warn", "error", "fatal", "panic"]
+  },
+  {
+    "id": "xray_log_level",
+    "section": "core",
+    "label": "settings.xray_log_level_4975004",
+    "default": "warning",
+    "kind": "text",
+    "group": "xray",
+    "options": ["debug", "info", "warning", "error", "none"],
+    "subgroup": "main"
+  },
+  {
+    "id": "max_log_line",
+    "section": "logging",
+    "label": "settings.log_buffer_lines_dcdfb24",
+    "default": 2000,
+    "kind": "number",
+    "group": "main",
+    "min": 100,
+    "max": 20000
+  },
+  {
+    "id": "log_auto_scroll",
+    "section": "logging",
+    "label": "settings.scroll_to_new_messages_f0c97d7",
+    "default": true,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "id": "log_enable_include",
+    "section": "logging",
+    "label": "settings.include_filters_cdd0308",
+    "default": false,
+    "kind": "bool",
+    "group": "filters"
+  },
+  {
+    "id": "log_include_keyword",
+    "section": "logging",
+    "label": "settings.include_keywords_8fd64f9",
+    "default": [],
+    "kind": "list",
+    "group": "filters"
+  },
+  {
+    "id": "log_include_regex",
+    "section": "logging",
+    "label": "settings.include_regular_expressions_9a07405",
+    "default": [],
+    "kind": "list",
+    "group": "filters"
+  },
+  {
+    "id": "log_enable_exclude",
+    "section": "logging",
+    "label": "settings.exclude_filters_b64dab6",
+    "default": false,
+    "kind": "bool",
+    "group": "filters"
+  },
+  {
+    "id": "log_exclude_keyword",
+    "section": "logging",
+    "label": "settings.exclude_keywords_78122c1",
+    "default": [],
+    "kind": "list",
+    "group": "filters"
+  },
+  {
+    "id": "log_exclude_regex",
+    "section": "logging",
+    "label": "settings.exclude_regular_expressions_a46a4e9",
+    "default": [],
+    "kind": "list",
+    "group": "filters"
+  },
+  {
+    "id": "disable_traffic_stats",
+    "section": "logging",
+    "label": "settings.disable_connection_statistics_97a3220",
+    "default": false,
+    "kind": "bool",
+    "group": "statistics"
+  },
+  {
+    "id": "vless_core",
+    "section": "core",
+    "label": "settings.default_vless_core_09bf59e",
+    "default": "xray",
+    "kind": "text",
+    "group": "main",
+    "options": ["xray", "sing-box"],
+    "preference": "/vlessCore"
+  },
+  {
+    "id": "core_box_clash_enabled",
+    "section": "core",
+    "label": "settings.enable_clash_api_4beb4f3",
+    "default": false,
+    "kind": "bool",
+    "group": "clash"
+  },
+  {
+    "id": "core_box_clash_listen_addr",
+    "section": "core",
+    "label": "settings.clash_api_address_95817bd",
+    "default": "127.0.0.1",
+    "kind": "ip",
+    "group": "clash"
+  },
+  {
+    "id": "core_box_clash_api",
+    "section": "core",
+    "label": "settings.clash_api_port_83ec5c1",
+    "default": 9090,
+    "kind": "number",
+    "group": "clash",
+    "min": 1,
+    "max": 65535
+  },
+  {
+    "id": "core_box_clash_api_secret",
+    "section": "core",
+    "label": "settings.clash_api_secret_0afc587",
+    "default": "",
+    "kind": "secret",
+    "group": "clash"
+  },
+  {
+    "id": "core_box_clash_ui",
+    "section": "core",
+    "label": "settings.dashboard_directory_e223ec2",
+    "default": "",
+    "kind": "text",
+    "group": "clash"
+  },
+  {
+    "id": "core_box_api_enabled",
+    "section": "core",
+    "label": "settings.enable_sing_box_api_af92e69",
+    "default": false,
+    "kind": "bool",
+    "group": "api"
+  },
+  {
+    "id": "core_box_api_port",
+    "section": "core",
+    "label": "settings.sing_box_api_port_0f7fc04",
+    "default": 9091,
+    "kind": "number",
+    "group": "api",
+    "min": 1,
+    "max": 65535
+  },
+  {
+    "id": "core_box_api_secret",
+    "section": "core",
+    "label": "settings.sing_box_api_secret_7f55d45",
+    "default": "",
+    "kind": "secret",
+    "group": "api"
+  },
+  {
+    "id": "enable_ntp",
+    "section": "core",
+    "label": "settings.ntp_time_synchronization_cbdf91e",
+    "default": false,
+    "kind": "bool",
+    "group": "ntp"
+  },
+  {
+    "id": "ntp_server_address",
+    "section": "core",
+    "label": "settings.ntp_server_9bf8b47",
+    "default": "time.apple.com",
+    "kind": "text",
+    "group": "ntp"
+  },
+  {
+    "id": "ntp_server_port",
+    "section": "core",
+    "label": "settings.ntp_port_75ddc4c",
+    "default": 123,
+    "kind": "number",
+    "group": "ntp",
+    "min": 1,
+    "max": 65535
+  },
+  {
+    "id": "ntp_interval",
+    "section": "core",
+    "label": "settings.ntp_interval_41ddf59",
+    "default": "30m",
+    "kind": "text",
+    "group": "ntp"
+  },
+  {
+    "id": "ntp_outbound",
+    "section": "core",
+    "label": "settings.ntp_outbound_f126f86",
+    "default": "direct",
+    "kind": "text",
+    "group": "ntp",
+    "options": ["direct", "proxy"]
+  },
+  {
+    "id": "mux_default_on",
+    "section": "presets",
+    "label": "settings.sing_box_multiplexing_e350151",
+    "default": false,
+    "kind": "bool",
+    "group": "mux"
+  },
+  {
+    "id": "mux_protocol",
+    "section": "presets",
+    "label": "settings.mux_protocol_b6c2980",
+    "default": "smux",
+    "kind": "text",
+    "group": "mux",
+    "options": ["smux", "yamux", "h2mux"]
+  },
+  {
+    "id": "mux_padding",
+    "section": "presets",
+    "label": "settings.mux_padding_e2277ab",
+    "default": false,
+    "kind": "bool",
+    "group": "mux"
+  },
+  {
+    "id": "mux_concurrency",
+    "section": "presets",
+    "label": "settings.mux_connections_65b3278",
+    "default": 8,
+    "kind": "number",
+    "group": "mux",
+    "min": 1,
+    "max": 1024
+  },
+  {
+    "id": "xray_mux_default_on",
+    "section": "core",
+    "label": "settings.xray_multiplexing_16941cb",
+    "default": false,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.defaults_for_profiles_without_a_mux_override_xht_9ac9e15",
+    "subgroup": "mux"
+  },
+  {
+    "id": "xray_mux_concurrency",
+    "section": "core",
+    "label": "settings.xray_mux_connections_fb9de18",
+    "default": 8,
+    "kind": "number",
+    "group": "xray",
+    "min": -1,
+    "max": 1024,
+    "hint": "settings.streams_per_tcp_connection_0_uses_the_core_defau_fa05578",
+    "dependsOn": "xray_mux_default_on",
+    "subgroup": "mux"
+  },
+  {
+    "id": "utlsFingerprint",
+    "section": "presets",
+    "label": "settings.tls_fingerprint_8bf6ea0",
+    "default": "",
+    "kind": "text",
+    "group": "tls"
+  },
+  {
+    "id": "fragment_default_on",
+    "section": "presets",
+    "label": "settings.tls_fragmentation_4626abb",
+    "default": false,
+    "kind": "bool",
+    "group": "tls"
+  },
+  {
+    "id": "fragment_implementation",
+    "section": "presets",
+    "label": "settings.fragmentation_method_7db0313",
+    "default": "built-in",
+    "kind": "text",
+    "group": "tls",
+    "options": ["built-in", "custom"]
+  },
+  {
+    "id": "fragment_size",
+    "section": "presets",
+    "label": "settings.fragment_size_ab96c19",
+    "default": "10-100",
+    "kind": "text",
+    "group": "tls"
+  },
+  {
+    "id": "fragment_sleep",
+    "section": "presets",
+    "label": "settings.fragment_delay_ms_1be8976",
+    "default": "2-5",
+    "kind": "text",
+    "group": "tls"
+  },
+  {
+    "id": "tls_tricks_default_on",
+    "section": "presets",
+    "label": "settings.mixed_case_sni_63198fd",
+    "default": false,
+    "kind": "bool",
+    "group": "tls"
+  },
+  {
+    "id": "tls_spoof_default_on",
+    "section": "presets",
+    "label": "settings.enable_tls_spoof_ec010ac",
+    "default": false,
+    "kind": "bool",
+    "group": "tls"
+  },
+  {
+    "id": "tls_spoof",
+    "section": "presets",
+    "label": "settings.tls_spoof_host_8cbcb6f",
+    "default": "",
+    "kind": "text",
+    "group": "tls"
+  },
+  {
+    "id": "tls_spoof_method",
+    "section": "presets",
+    "label": "settings.tls_spoof_method_652b15a",
+    "default": "",
+    "kind": "text",
+    "group": "tls",
+    "options": ["", "wrong-sequence", "wrong-checksum", "wrong-ack", "wrong-md5", "wrong-timestamp"]
+  },
+  {
+    "id": "h2_idle_timeout",
+    "section": "presets",
+    "label": "settings.http_2_idle_timeout_c657226",
+    "default": "",
+    "kind": "text",
+    "group": "http2"
+  },
+  {
+    "id": "h2_keep_alive_period",
+    "section": "presets",
+    "label": "settings.http_2_keep_alive_period_ba0becd",
+    "default": "",
+    "kind": "text",
+    "group": "http2"
+  },
+  {
+    "id": "h2_stream_receive_window",
+    "section": "presets",
+    "label": "settings.http_2_stream_receive_window_cb373be",
+    "default": "",
+    "kind": "text",
+    "group": "http2"
+  },
+  {
+    "id": "h2_connection_receive_window",
+    "section": "presets",
+    "label": "settings.http_2_connection_receive_window_41e9833",
+    "default": "",
+    "kind": "text",
+    "group": "http2"
+  },
+  {
+    "id": "h2_max_concurrent_streams",
+    "section": "presets",
+    "label": "settings.http_2_streams_0_default_e5e9e0a",
+    "default": 0,
+    "kind": "number",
+    "group": "http2",
+    "min": 0,
+    "max": 65535
+  },
+  {
+    "id": "quic_initial_packet_size",
+    "section": "presets",
+    "label": "settings.quic_initial_packet_0_default_08fef75",
+    "default": 0,
+    "kind": "number",
+    "group": "quic",
+    "min": 0,
+    "max": 65535
+  },
+  {
+    "id": "quic_disable_path_mtu_discovery",
+    "section": "presets",
+    "label": "settings.disable_quic_path_mtu_discovery_09f8ea5",
+    "default": false,
+    "kind": "bool",
+    "group": "quic"
+  },
+  {
+    "id": "skip_cert",
+    "section": "security",
+    "label": "settings.skip_tls_certificate_verification_by_default_09729fd",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "id": "use_mozilla_certs",
+    "section": "security",
+    "label": "settings.use_mozilla_certificates_57b8c35",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "id": "close_behavior",
+    "section": "system",
+    "label": "settings.when_closing_the_window_d0fa043",
+    "default": "quit",
+    "kind": "text",
+    "group": "main",
+    "options": ["quit", "background"],
+    "preference": "/closeBehavior"
+  },
+  {
+    "section": "network",
+    "id": "net_use_proxy",
+    "label": "settings.use_connected_vpn_for_downloads_fefc6ca",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "network",
+    "id": "net_insecure",
+    "label": "settings.skip_certificate_verification_for_downloads_944542b",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "network",
+    "id": "network_timeout",
+    "label": "settings.download_timeout_seconds_3fb7a73",
+    "default": 30,
+    "kind": "number",
+    "group": "main",
+    "min": 5,
+    "max": 300
+  },
+  {
+    "section": "subscriptions",
+    "id": "user_agent",
+    "label": "settings.default_user_agent_45f91e7",
+    "default": "Throne/Thronium-0.1.0",
+    "kind": "text",
+    "group": "main"
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_auto_update",
+    "label": "settings.update_interval_minutes_0_manual_a4af0a9",
+    "default": 0,
+    "kind": "number",
+    "group": "main",
+    "min": 0,
+    "max": 43200
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_update_mode",
+    "label": "settings.subscription_update_mode",
+    "hint": "settings.subscription_update_mode_hint",
+    "default": "reconcile",
+    "kind": "text",
+    "group": "main",
+    "options": ["reconcile", "recreate"]
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_clear",
+    "label": "settings.remove_servers_missing_from_subscription_1d4055b",
+    "default": true,
+    "kind": "bool",
+    "group": "main",
+    "disabledWhen": {
+      "field": "sub_update_mode",
+      "values": ["recreate"]
+    }
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_show_change_popup",
+    "label": "settings.show_update_results_0d0cbc4",
+    "default": true,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_send_hwid",
+    "label": "settings.send_device_identifier_11206a6",
+    "hint": "settings.adds_device_headers_when_updating_subscriptions__14a10db",
+    "default": false,
+    "kind": "bool",
+    "group": "hwid"
+  },
+  {
+    "section": "subscriptions",
+    "id": "sub_custom_hwid_params",
+    "label": "settings.device_parameters_comma_separated_key_value_f4863c1",
+    "hint": "settings.keys_hwid_os_osversion_model_example_os_linux_mo_37e48ed",
+    "default": "",
+    "kind": "text",
+    "group": "hwid"
+  },
+  {
+    "section": "testing",
+    "id": "direct_test_url",
+    "label": "settings.internet_check_url_without_proxy_empty_os_status_380d8c0",
+    "default": "",
+    "kind": "optional-url",
+    "group": "main"
+  },
+  {
+    "section": "testing",
+    "id": "speed_test_mode",
+    "label": "settings.speed_test_8e386fe",
+    "default": "full",
+    "kind": "text",
+    "group": "speed",
+    "options": ["full", "download", "upload", "simple"]
+  },
+  {
+    "section": "testing",
+    "id": "speed_test_timeout_ms",
+    "label": "settings.speed_test_duration_ms_ed8a211",
+    "default": 5000,
+    "kind": "number",
+    "group": "speed",
+    "min": 1000,
+    "max": 120000
+  },
+  {
+    "section": "testing",
+    "id": "simple_dl_url",
+    "label": "settings.download_file_url_32cf499",
+    "default": "https://cachefly.cachefly.net/1mb.test",
+    "kind": "url",
+    "group": "speed"
+  },
+  {
+    "section": "testing",
+    "id": "periodic_tests_enabled",
+    "label": "settings.periodic_checks",
+    "default": false,
+    "kind": "bool",
+    "group": "periodic",
+    "hint": "settings.periodic_checks_hint"
+  },
+  {
+    "section": "testing",
+    "id": "periodic_tests_interval_min",
+    "label": "settings.periodic_interval_minutes",
+    "default": 30,
+    "kind": "number",
+    "group": "periodic",
+    "min": 1,
+    "max": 1440
+  },
+  {
+    "section": "testing",
+    "id": "periodic_tests_kind",
+    "label": "settings.periodic_kind",
+    "default": "latency",
+    "kind": "text",
+    "group": "periodic",
+    "hint": "settings.periodic_speed_hint",
+    "options": ["latency", "ip", "speed"]
+  },
+  {
+    "section": "logging",
+    "id": "log_file_enabled",
+    "label": "settings.write_diagnostic_log_to_file_fad59e0",
+    "default": false,
+    "kind": "bool",
+    "group": "file"
+  },
+  {
+    "section": "logging",
+    "id": "log_file_level",
+    "label": "settings.file_log_level_b20286d",
+    "default": "debug",
+    "kind": "text",
+    "group": "file",
+    "options": ["trace", "debug", "info", "warn", "error"]
+  },
+  {
+    "section": "logging",
+    "id": "enable_stats",
+    "label": "settings.show_active_connections_93a1473",
+    "default": true,
+    "kind": "bool",
+    "group": "statistics"
+  },
+  {
+    "section": "logging",
+    "id": "disable_traffic_aggregation",
+    "label": "settings.disable_traffic_history_38354ab",
+    "default": false,
+    "kind": "bool",
+    "group": "statistics"
+  },
+  {
+    "section": "logging",
+    "id": "traffic_stats_retention_days",
+    "label": "settings.history_retention_days_77a38f7",
+    "default": 90,
+    "kind": "number",
+    "group": "statistics",
+    "min": 1,
+    "max": 3650
+  },
+  {
+    "section": "logging",
+    "id": "connection_sort",
+    "label": "settings.connection_sort_d3c8d55",
+    "default": "created",
+    "kind": "text",
+    "group": "statistics",
+    "options": ["created", "upload", "download", "destination", "process"]
+  },
+  {
+    "section": "logging",
+    "id": "connection_sort_asc",
+    "label": "settings.ascending_order_1ab90d4",
+    "default": false,
+    "kind": "bool",
+    "group": "statistics"
+  },
+  {
+    "section": "core",
+    "id": "xray_geoip_url",
+    "label": "settings.geoip_source_cc5f14b",
+    "default": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat",
+    "kind": "url",
+    "group": "xray",
+    "subgroup": "geodata"
+  },
+  {
+    "section": "core",
+    "id": "xray_geosite_url",
+    "label": "settings.geosite_source_5705a65",
+    "default": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat",
+    "kind": "url",
+    "group": "xray",
+    "subgroup": "geodata"
+  },
+  {
+    "section": "core",
+    "id": "route_auto_update",
+    "label": "settings.rule_set_update_interval_minutes_0_per_set_d5435ec",
+    "default": 0,
+    "kind": "number",
+    "group": "geodata",
+    "min": 0,
+    "max": 43200
+  },
+  {
+    "section": "core",
+    "id": "core_box_api_dashboard",
+    "label": "settings.sing_box_api_dashboard_5cf9a7b",
+    "default": false,
+    "kind": "bool",
+    "group": "api"
+  },
+  {
+    "section": "core",
+    "id": "core_box_underlying_dns",
+    "label": "settings.underlying_dns_ip_or_url_empty_system_8621bbf",
+    "default": "",
+    "kind": "text",
+    "group": "advanced"
+  },
+  {
+    "section": "inbound",
+    "id": "random_inbound_port",
+    "label": "settings.choose_a_free_port_when_connecting_67a420c",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "section": "inbound",
+    "id": "proxy_scheme",
+    "label": "settings.proxy_address_format_b26d932",
+    "default": "{ip}:{port}",
+    "kind": "text",
+    "group": "advanced"
+  },
+  {
+    "section": "logging",
+    "id": "show_system_dns",
+    "label": "settings.show_dns_connections_in_diagnostics_05789a7",
+    "default": false,
+    "kind": "bool",
+    "group": "statistics"
+  },
+  {
+    "section": "security",
+    "id": "skip_delete_confirmation",
+    "label": "settings.delete_profiles_without_confirmation_f0330f8",
+    "default": false,
+    "kind": "bool",
+    "group": "confirmations"
+  },
+  {
+    "section": "appearance",
+    "id": "show_config_security",
+    "label": "settings.transport_and_tls_in_server_details_5affff8",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list",
+    "hint": "settings.adds_connection_details_below_the_server_name_fo_7518521"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_address",
+    "label": "settings.list_show_address",
+    "default": true,
+    "kind": "bool",
+    "group": "server-list"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_port",
+    "label": "settings.list_show_port",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_protocol",
+    "label": "settings.list_show_protocol",
+    "default": true,
+    "kind": "bool",
+    "group": "server-list"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_latency",
+    "label": "settings.list_show_latency",
+    "default": true,
+    "kind": "bool",
+    "group": "server-list"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_ip",
+    "label": "settings.list_show_ip",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list",
+    "hint": "settings.list_show_ip_hint"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_speed",
+    "label": "settings.list_show_speed",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list",
+    "hint": "settings.list_show_speed_hint"
+  },
+  {
+    "section": "appearance",
+    "id": "list_show_traffic",
+    "label": "settings.list_show_traffic",
+    "default": false,
+    "kind": "bool",
+    "group": "server-list",
+    "hint": "settings.list_show_traffic_hint"
+  },
+  {
+    "section": "appearance",
+    "id": "auto_select_enabled",
+    "label": "settings.show_auto_select",
+    "default": true,
+    "kind": "bool",
+    "group": "server-list",
+    "preference": "/autoSelect/enabled"
+  },
+  {
+    "section": "system",
+    "id": "use_custom_icons",
+    "label": "settings.use_custom_tray_icons_cbc53dd",
+    "default": false,
+    "kind": "bool",
+    "group": "tray"
+  },
+  {
+    "section": "system",
+    "id": "start_minimal",
+    "label": "settings.start_minimized_cfad091",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "disable_tray",
+    "label": "settings.disable_tray_icon_0b6e3e0",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "system_notifications",
+    "label": "settings.system_notifications",
+    "hint": "settings.system_notifications_hint",
+    "default": true,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "remember_enable",
+    "label": "settings.connect_to_the_last_server_on_startup_09c5e80",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "autostart",
+    "label": "settings.start_at_login_338e1e5",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "url_scheme_auto_register",
+    "label": "settings.handle_throne_and_thronium_links_5a348a1",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "follow_status_in_taskbar",
+    "label": "settings.show_connection_status_in_taskbar_85d530d",
+    "default": true,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "section": "system",
+    "id": "allow_beta_update",
+    "label": "settings.check_prerelease_versions_d98ccb8",
+    "default": false,
+    "kind": "bool",
+    "group": "updates"
+  },
+  {
+    "section": "system",
+    "id": "hotkey_mainwindow",
+    "label": "settings.show_or_hide_window_f1f8282",
+    "default": "",
+    "kind": "text",
+    "group": "hotkeys"
+  },
+  {
+    "section": "system",
+    "id": "hotkey_group",
+    "label": "settings.open_subscriptions_7faa842",
+    "default": "",
+    "kind": "text",
+    "group": "hotkeys"
+  },
+  {
+    "section": "system",
+    "id": "hotkey_route",
+    "label": "settings.open_routing_2162636",
+    "default": "",
+    "kind": "text",
+    "group": "hotkeys"
+  },
+  {
+    "section": "system",
+    "id": "hotkey_system_proxy_menu",
+    "label": "settings.open_proxy_settings_f04558f",
+    "default": "",
+    "kind": "text",
+    "group": "hotkeys"
+  },
+  {
+    "section": "system",
+    "id": "hotkey_toggle_system_proxy",
+    "label": "settings.toggle_system_proxy_8149939",
+    "default": "",
+    "kind": "text",
+    "group": "hotkeys"
+  },
+  {
+    "section": "intercept",
+    "id": "enable_dns_server",
+    "label": "settings.enable_local_dns_server_7460ca3",
+    "default": false,
+    "kind": "bool",
+    "group": "dns-server"
+  },
+  {
+    "section": "intercept",
+    "id": "dns_server_listen_lan",
+    "label": "settings.listen_for_dns_on_lan_8b355ee",
+    "default": false,
+    "kind": "bool",
+    "group": "dns-server"
+  },
+  {
+    "section": "intercept",
+    "id": "dns_server_listen_port",
+    "label": "settings.dns_server_port_7976ec5",
+    "default": 53,
+    "kind": "number",
+    "group": "dns-server",
+    "min": 1,
+    "max": 65535
+  },
+  {
+    "section": "intercept",
+    "id": "dns_v4_resp",
+    "label": "settings.ipv4_for_intercepted_domains_4dcde3a",
+    "default": "127.0.0.1",
+    "kind": "ip",
+    "group": "dns-server"
+  },
+  {
+    "section": "intercept",
+    "id": "dns_v6_resp",
+    "label": "settings.ipv6_for_intercepted_domains_3440416",
+    "default": "::1",
+    "kind": "ip",
+    "group": "dns-server"
+  },
+  {
+    "section": "intercept",
+    "id": "dns_server_rules",
+    "label": "settings.intercepted_domains_976c11f",
+    "default": [],
+    "kind": "list",
+    "group": "dns-server"
+  },
+  {
+    "section": "intercept",
+    "id": "enable_redirect",
+    "label": "settings.enable_redirect_inbound_49dbafb",
+    "default": false,
+    "kind": "bool",
+    "group": "redirect"
+  },
+  {
+    "section": "intercept",
+    "id": "redirect_listen_address",
+    "label": "settings.redirect_address_319a4a8",
+    "default": "127.0.0.1",
+    "kind": "ip",
+    "group": "redirect"
+  },
+  {
+    "section": "intercept",
+    "id": "redirect_listen_port",
+    "label": "settings.redirect_port_4345890",
+    "default": 443,
+    "kind": "number",
+    "group": "redirect",
+    "min": 1,
+    "max": 65535
+  },
+  {
+    "section": "intercept",
+    "id": "enable_warp",
+    "label": "settings.warp_through_the_selected_server_b4d86c9",
+    "default": false,
+    "kind": "bool",
+    "group": "warp",
+    "hint": "settings.warp_routing_hint"
+  },
+  {
+    "section": "intercept",
+    "id": "warp_private_key",
+    "label": "settings.warp_private_key_5ba320d",
+    "default": "",
+    "kind": "secret",
+    "group": "warp"
+  },
+  {
+    "section": "intercept",
+    "id": "warp_public_key",
+    "label": "settings.warp_public_key_5b6c04a",
+    "default": "",
+    "kind": "text",
+    "group": "warp"
+  },
+  {
+    "section": "intercept",
+    "id": "warp_ep",
+    "label": "settings.warp_endpoint_host_port_ea41467",
+    "default": "engage.cloudflareclient.com:2408",
+    "kind": "text",
+    "group": "warp"
+  },
+  {
+    "section": "intercept",
+    "id": "warp_ifc_addrs",
+    "label": "settings.warp_interface_addresses_8937ded",
+    "default": [],
+    "kind": "list",
+    "group": "warp"
+  },
+  {
+    "section": "intercept",
+    "id": "warp_reserved",
+    "label": "settings.reserved_3_numbers_afdb434",
+    "default": [],
+    "kind": "list",
+    "group": "warp"
+  },
+  {
+    "section": "intercept",
+    "id": "adblock_enable",
+    "label": "settings.block_advertisements_using_geosite_8f7e83c",
+    "default": false,
+    "kind": "bool",
+    "group": "blocking"
+  },
+  {
+    "section": "intercept",
+    "id": "adblock_ruleset_url",
+    "label": "settings.blocklist_rule_set_source_0da4bd7",
+    "default": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+    "kind": "url",
+    "group": "blocking"
+  },
+  {
+    "id": "vpn_tun_ipv4_cidr",
+    "section": "tun",
+    "label": "settings.tun_ipv4_address_prefix_f971067",
+    "default": "172.19.0.1/30",
+    "kind": "text",
+    "group": "advanced"
+  },
+  {
+    "id": "vpn_tun_ipv6_cidr",
+    "section": "tun",
+    "label": "settings.tun_ipv6_address_prefix_c95f8cb",
+    "default": "fdfe:dcba:9876::1/126",
+    "kind": "text",
+    "group": "advanced"
+  },
+  {
+    "id": "vpn_l3_bridge",
+    "platforms": ["linux"],
+    "section": "tun",
+    "label": "settings.bridge_direct_traffic_at_layer_3_7f59a1c",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "id": "disable_private_range_bypass",
+    "section": "tun",
+    "label": "settings.route_private_networks_through_tun_da22bdc",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "id": "enable_tun_routing",
+    "section": "tun",
+    "label": "settings.bypass_direct_ip_routing_rules_in_the_kernel_3b2c36c",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "section": "core",
+    "id": "ruleset_mirror",
+    "label": "settings.rule_set_download_mirror_88e36dc",
+    "default": "github",
+    "kind": "text",
+    "group": "geodata",
+    "options": ["github", "cloudflare", "gcore", "quantil", "fastly", "cdn"]
+  },
+  {
+    "section": "core",
+    "id": "core_dns_in_port",
+    "label": "settings.local_core_dns_port_0_disabled_aae98fb",
+    "default": 0,
+    "kind": "number",
+    "group": "advanced",
+    "min": 0,
+    "max": 65535
+  },
+  {
+    "section": "inbound",
+    "id": "reset_proxy_on_disable_sp",
+    "label": "settings.reconnect_when_system_proxy_is_turned_off_32f056d",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "section": "subscriptions",
+    "id": "allow_stopping_active_profile",
+    "label": "settings.allow_disconnecting_to_replace_or_remove_the_act_da1c12a",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "section": "tun",
+    "id": "vpn_auto_redirect",
+    "platforms": ["linux"],
+    "label": "settings.automatic_redirect_linux_nftables_3d9346c",
+    "default": false,
+    "kind": "bool",
+    "group": "advanced"
+  },
+  {
+    "id": "enable_dns_routing",
+    "section": "dns",
+    "label": "settings.follow_domain_routing_rules_7f5be66",
+    "default": false,
+    "kind": "bool",
+    "group": "main"
+  },
+  {
+    "id": "dns_routing_direct",
+    "section": "dns",
+    "label": "settings.direct_dns_server_tag_6563b1c",
+    "default": "dns-direct",
+    "kind": "text",
+    "group": "main"
+  },
+  {
+    "id": "dns_routing_proxy",
+    "section": "dns",
+    "label": "settings.vpn_dns_server_tag_4f16e20",
+    "default": "dns-remote",
+    "kind": "text",
+    "group": "main"
+  },
+  {
+    "id": "custom_icon_directory",
+    "section": "system",
+    "label": "settings.tray_icons_folder_a070b6c",
+    "default": "",
+    "kind": "text",
+    "group": "tray",
+    "hint": "settings.png_files_off_png_throne_png_proxy_png_tun_png_l_f50a222"
+  },
+  {
+    "id": "xray_access_log",
+    "section": "core",
+    "label": "settings.log_connections_4e82969",
+    "default": true,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.show_connection_events_in_diagnostics_ae958f1",
+    "subgroup": "main"
+  },
+  {
+    "id": "xray_dns_log",
+    "section": "core",
+    "label": "settings.log_xray_dns_queries_2fcf5ed",
+    "default": false,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.applies_to_queries_handled_by_xray_dns_7e8ccfd",
+    "subgroup": "main"
+  },
+  {
+    "id": "xray_log_mask_address",
+    "section": "core",
+    "label": "settings.mask_ip_addresses_in_logs_e64a535",
+    "default": "",
+    "kind": "text",
+    "group": "xray",
+    "options": ["", "quarter", "half", "full"],
+    "subgroup": "main"
+  },
+  {
+    "id": "xray_mux_xudp_concurrency",
+    "section": "core",
+    "label": "settings.xudp_concurrency_b3d4eab",
+    "default": 0,
+    "kind": "number",
+    "group": "xray",
+    "min": -1,
+    "max": 1024,
+    "hint": "settings.0_follows_tcp_mux_1_uses_the_protocol_s_own_udp__550350b",
+    "dependsOn": "xray_mux_default_on",
+    "subgroup": "mux"
+  },
+  {
+    "id": "xray_mux_udp443",
+    "section": "core",
+    "label": "settings.quic_udp_443_with_mux_74ce99c",
+    "default": "reject",
+    "kind": "text",
+    "group": "xray",
+    "options": ["reject", "allow", "skip"],
+    "dependsOn": "xray_mux_default_on",
+    "subgroup": "mux"
+  },
+  {
+    "id": "xray_tcp_fast_open",
+    "section": "core",
+    "label": "settings.tcp_fast_open_9653922",
+    "default": "default",
+    "kind": "text",
+    "group": "xray",
+    "options": ["default", "enabled", "disabled"],
+    "hint": "settings.requires_support_from_the_operating_system_and_s_e23317c",
+    "subgroup": "xray-tcp"
+  },
+  {
+    "id": "xray_tcp_keep_alive_idle",
+    "section": "core",
+    "label": "settings.tcp_keepalive_idle_seconds_f9f34cb",
+    "default": 0,
+    "kind": "number",
+    "group": "xray",
+    "min": -1,
+    "max": 86400,
+    "hint": "settings.0_keeps_the_system_default_1_disables_keepalive_1db93ec",
+    "subgroup": "xray-tcp"
+  },
+  {
+    "id": "xray_tcp_keep_alive_interval",
+    "section": "core",
+    "label": "settings.tcp_keepalive_interval_seconds_ee40bcd",
+    "default": 0,
+    "kind": "number",
+    "group": "xray",
+    "min": -1,
+    "max": 86400,
+    "hint": "settings.0_keeps_the_system_default_1_disables_keepalive_1db93ec",
+    "subgroup": "xray-tcp"
+  },
+  {
+    "id": "xray_tcp_user_timeout",
+    "platforms": ["linux"],
+    "section": "core",
+    "label": "settings.tcp_acknowledgement_timeout_ms_6264181",
+    "default": 0,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 600000,
+    "hint": "settings.linux_0_keeps_the_operating_system_default_8760d8d",
+    "subgroup": "xray-tcp"
+  },
+  {
+    "id": "xray_tcp_mptcp",
+    "platforms": ["linux"],
+    "section": "core",
+    "label": "settings.multipath_tcp_463ed7d",
+    "default": false,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.requires_operating_system_and_server_support_6bcace1",
+    "subgroup": "xray-tcp"
+  },
+  {
+    "id": "xray_policy_enabled",
+    "section": "core",
+    "label": "settings.customize_connection_limits_9d39d04",
+    "default": false,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.for_user_level_0_when_disabled_xray_chooses_its__8b4b854",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_policy_handshake",
+    "section": "core",
+    "label": "settings.handshake_timeout_seconds_f13b943",
+    "default": 60,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 86400,
+    "dependsOn": "xray_policy_enabled",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_policy_conn_idle",
+    "section": "core",
+    "label": "settings.idle_timeout_seconds_333118e",
+    "default": 300,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 86400,
+    "dependsOn": "xray_policy_enabled",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_policy_uplink_only",
+    "section": "core",
+    "label": "settings.wait_after_download_closes_seconds_1a91c0f",
+    "default": 1,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 86400,
+    "dependsOn": "xray_policy_enabled",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_policy_downlink_only",
+    "section": "core",
+    "label": "settings.wait_after_upload_closes_seconds_42147f1",
+    "default": 1,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 86400,
+    "dependsOn": "xray_policy_enabled",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_policy_buffer_size",
+    "section": "core",
+    "label": "settings.buffer_per_request_kib_d4840a9",
+    "default": 512,
+    "kind": "number",
+    "group": "xray",
+    "min": 0,
+    "max": 65536,
+    "hint": "settings.0_disables_buffering_the_limit_applies_separatel_076bcd3",
+    "dependsOn": "xray_policy_enabled",
+    "subgroup": "xray-policy"
+  },
+  {
+    "id": "xray_api_enabled",
+    "section": "core",
+    "label": "settings.enable_xray_statistics_api_eb871b7",
+    "default": false,
+    "kind": "bool",
+    "group": "xray",
+    "hint": "settings.local_grpc_api_at_127_0_0_1_statsservice_and_ref_61d591d",
+    "subgroup": "xray-api"
+  },
+  {
+    "id": "xray_api_port",
+    "section": "core",
+    "label": "settings.xray_api_port_9ec4426",
+    "default": 10085,
+    "kind": "number",
+    "group": "xray",
+    "min": 1024,
+    "max": 65535,
+    "dependsOn": "xray_api_enabled",
+    "subgroup": "xray-api"
+  },
+  {
+    "id": "xray_stats_inbounds",
+    "section": "core",
+    "label": "settings.inbound_traffic_counters_eb590f8",
+    "default": true,
+    "kind": "bool",
+    "group": "xray",
+    "dependsOn": "xray_api_enabled",
+    "subgroup": "xray-api"
+  },
+  {
+    "id": "xray_stats_outbounds",
+    "section": "core",
+    "label": "settings.outbound_traffic_counters_3378b55",
+    "default": true,
+    "kind": "bool",
+    "group": "xray",
+    "dependsOn": "xray_api_enabled",
+    "subgroup": "xray-api"
+  },
+  {
+    "id": "singbox_connect_timeout",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.connection_timeout_s_4eb2b81",
+    "default": 0,
+    "kind": "number",
+    "min": 0,
+    "max": 86400,
+    "hint": "settings.0_keeps_the_core_default_73b7e94"
+  },
+  {
+    "id": "singbox_tcp_fast_open",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.tcp_fast_open_9653922",
+    "default": "default",
+    "kind": "select",
+    "options": ["default", "enabled", "disabled"],
+    "hint": "settings.not_inherited_with_custom_tls_fragmentation_3a29b49"
+  },
+  {
+    "id": "singbox_tcp_multi_path",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.multipath_tcp_463ed7d",
+    "default": "default",
+    "kind": "select",
+    "options": ["default", "enabled", "disabled"],
+    "hint": "settings.requires_support_from_the_os_and_remote_endpoint_f5f3055"
+  },
+  {
+    "id": "singbox_tcp_keep_alive",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.tcp_keepalive_b74cbf8",
+    "default": "default",
+    "kind": "select",
+    "options": ["default", "enabled", "disabled"]
+  },
+  {
+    "id": "singbox_tcp_keep_alive_idle",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.tcp_keepalive_initial_delay_s_da8548b",
+    "default": 0,
+    "kind": "number",
+    "min": 0,
+    "max": 86400,
+    "hint": "settings.0_keeps_the_core_default_73b7e94",
+    "disabledWhen": {
+      "field": "singbox_tcp_keep_alive",
+      "values": ["disabled"]
+    }
+  },
+  {
+    "id": "singbox_tcp_keep_alive_interval",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.tcp_keepalive_interval_s_6224923",
+    "default": 0,
+    "kind": "number",
+    "min": 0,
+    "max": 86400,
+    "hint": "settings.0_keeps_the_core_default_73b7e94",
+    "disabledWhen": {
+      "field": "singbox_tcp_keep_alive",
+      "values": ["disabled"]
+    }
+  },
+  {
+    "id": "singbox_udp_fragment",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-tcp",
+    "label": "settings.udp_fragmentation_e7f0487",
+    "default": "default",
+    "kind": "select",
+    "options": ["default", "enabled", "disabled"],
+    "hint": "settings.allows_ip_fragmentation_for_udp_packets_independ_acd5f23"
+  },
+  {
+    "id": "singbox_cache_enabled",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-cache",
+    "label": "settings.persistent_core_cache_79f7514",
+    "default": false,
+    "kind": "bool",
+    "hint": "settings.keeps_downloaded_rule_sets_between_connections_7fcafd9"
+  },
+  {
+    "id": "singbox_cache_store_fakeip",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-cache",
+    "label": "settings.persist_fakeip_mappings_db704b2",
+    "default": false,
+    "kind": "bool",
+    "dependsOn": "singbox_cache_enabled",
+    "hint": "settings.applies_when_fakeip_is_configured_in_dns_4e3bb4e"
+  },
+  {
+    "id": "singbox_cache_store_dns",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-cache",
+    "label": "settings.persist_dns_cache_c2b581e",
+    "default": false,
+    "kind": "bool",
+    "dependsOn": "singbox_cache_enabled",
+    "hint": "settings.restores_unexpired_dns_answers_after_reconnectin_c841811"
+  },
+  {
+    "id": "singbox_mux_limits",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-mux",
+    "label": "settings.mux_limits_2a7c02e",
+    "default": "default",
+    "kind": "select",
+    "options": ["default", "connections"],
+    "hint": "settings.applies_when_sing_box_multiplexing_is_enabled_in_3bdc235"
+  },
+  {
+    "id": "singbox_mux_max_connections",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-mux",
+    "label": "settings.maximum_mux_connections_f53d1f5",
+    "default": 4,
+    "kind": "number",
+    "min": 1,
+    "max": 1024,
+    "hint": "settings.maximum_simultaneous_connections_carrying_multip_871aa0a",
+    "dependsOn": "singbox_mux_limits",
+    "dependsValue": "connections"
+  },
+  {
+    "id": "singbox_mux_min_streams",
+    "section": "core",
+    "group": "singbox",
+    "subgroup": "singbox-mux",
+    "label": "settings.streams_before_opening_another_connection_1e88e50",
+    "default": 4,
+    "kind": "number",
+    "min": 1,
+    "max": 1024,
+    "hint": "settings.the_core_opens_another_connection_after_this_str_fe5a051",
+    "dependsOn": "singbox_mux_limits",
+    "dependsValue": "connections"
+  }
+]

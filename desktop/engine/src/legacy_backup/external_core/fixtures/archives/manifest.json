@@ -1,0 +1,123 @@
+{
+  "status": "Real Qt archives generated; converter expectations are planned until production activation.",
+  "writer": "<qt-golden-writer>",
+  "writerSHA256": "5963d3607a703be1e686b6457095b77da61d7b77d915447a2b8d640e31f24bb3",
+  "generatorSHA256": "c1af34be41a18bac857a76f91774d097568abec6f0fb05d0e03e0523f7668a1f",
+  "archives": {
+    "standalone-parts-00.thrbackup": {
+      "partsMask": 0,
+      "sourceSQLite": "standalone.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "profiles-excluded-by-Parts; never-import-or-execute-source-profiles",
+      "sha256": "44796fc1e898a0d91b02672160f41e9c48b5449f110dee6fb52b800cc31d3244"
+    },
+    "standalone-parts-01.thrbackup": {
+      "partsMask": 1,
+      "sourceSQLite": "standalone.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "accept3profiles1group",
+      "sha256": "271826af6a6c42605779cf75114705aa5c45909782af5f7371ad5609b854db18"
+    },
+    "standalone-parts-05.thrbackup": {
+      "partsMask": 5,
+      "sourceSQLite": "standalone.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "accept3profiles1group",
+      "sha256": "93f5a655fc880309d06d5d12e77acc2629ac0bf72887ce440902460142fc3d7c"
+    },
+    "standalone-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "standalone.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "accept3profiles1group",
+      "sha256": "95a87703cbb470692ff77b61a626f5c53d9e4e850c71c27a8858a96adc97dabb"
+    },
+    "chain-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "chain.sqlite",
+      "sourceProfiles": 4,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "legacy_chain_hop_unsupported",
+      "sha256": "9db83b60c84420bb501f6f8d44feb620c7e6ef8d59458e9dcc8a0d48dd8fb4ca"
+    },
+    "containing-front-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "containing-front.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "legacy_group_chain_unsupported",
+      "sha256": "a8b696cc0abff8b8730f175bfb360878b8a616c921adc6330b11b9fc644e4aa9"
+    },
+    "other-empty-group-front-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "other-empty-group-front.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 2,
+      "plannedConverterOutcome": "legacy_group_chain_unsupported",
+      "sha256": "ea7cd3fb04c135a3d357e1abcc953da9180763b51d40e2049f35ad3fde724957"
+    },
+    "selector-member-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "selector-member.sqlite",
+      "sourceProfiles": 4,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "legacy_selector_member_unsupported",
+      "sha256": "a2e8631b010ffc1db2244bc01e13245616e0dad7223c7c54a2ba2eb7d591ef20"
+    },
+    "selector-pool-only-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "selector-pool-only.sqlite",
+      "sourceProfiles": 4,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "accept4profiles1group-with-explicit-last-built",
+      "sha256": "0d4344b984a031fb8f77121671f916d3a5fbada012dabd342e10ff43b4be746f"
+    },
+    "route-target-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "route-target.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "accept-profiles; selected-routes-legacy_route_target_unsupported",
+      "sha256": "ac9149674014f83c0deda6ae15ca2b2d4a229550f6bee3996fe95394cacd1d18"
+    },
+    "missing-port-parts-30.thrbackup": {
+      "partsMask": 30,
+      "sourceSQLite": "missing-port.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "profiles-excluded-by-Parts; never-import-or-execute-source-profiles",
+      "sha256": "951cacf7923d81e8fa91e6cfa60b0a9fd349f6300993de1e0b623cbb4122dd87"
+    },
+    "missing-port-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "missing-port.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "legacy-external-port-error; Parts30-excludes-profiles",
+      "sha256": "5dc5f6615de42de9c7bbbac7f1c8a89c7cfd7e0950dfb415ffacf25ed32ef163"
+    },
+    "relative-path-parts-31.thrbackup": {
+      "partsMask": 31,
+      "sourceSQLite": "relative-path.sqlite",
+      "sourceProfiles": 3,
+      "sourceGroups": 1,
+      "plannedConverterOutcome": "legacy-external-path-error",
+      "sha256": "0ef741ec1963f54650de526e23041207d17f4d83720ec40ba1b987ca3184523a"
+    }
+  },
+  "sqliteSHA256": {
+    "chain.sqlite": "604768d909430e3139a385881d3a7632e023e512bdbfe6540f8c4f4a8d4720fa",
+    "containing-front.sqlite": "b26c9b1da257147b8a27f2cb760299750f391713137eebf50e8c7f8fb0cedc73",
+    "missing-port.sqlite": "967778bb7bb3da533c3c1e426b149252f681ef05752acdf61799e4f395f24237",
+    "other-empty-group-front.sqlite": "60a2c6cd1a47b3ed48018956bb21e9d2751466242ed3f3c227d363307616b10e",
+    "relative-path.sqlite": "8ab069af198829ab501f38bd4c2a1421fc11df520b43461d704c7ed77be80493",
+    "route-target.sqlite": "c01a96d551f1072e617038d8a7e5a7107e0fb528c3caa1d66d1d86f0feb51e4c",
+    "selector-member.sqlite": "41733387f17970014fe346ac3609faeeea0ecc7bcb16d4be58ab97648bf864b9",
+    "selector-pool-only.sqlite": "986bf15c3742ff8209a676d4e4efb16f9fecdb4c7c482b2f6a4dc8211432c07a",
+    "standalone.sqlite": "a5f01b0643cd6b43127ef23004df165d1e4fc613aa1cef3be90d24b8a02edc3a"
+  }
+}

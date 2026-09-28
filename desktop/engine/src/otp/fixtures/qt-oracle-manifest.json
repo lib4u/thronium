@@ -1,0 +1,31 @@
+{
+  "description": "Unmodified original OTP.cpp/header linked directly; DTO-only harness, synthetic fixtures, no system clock/network/store",
+  "sources": {
+    "src/global/OTP.cpp": "cb0c088564610ae2c9d8211c763e185c5310d29e0f6b77307bc402422b75f79f",
+    "include/global/OTP.hpp": "e689b7ecf440bf762efd9b65f7e84c3d58deb007112ff6812acaec6ac5ea34d0"
+  },
+  "compiler": "g++ (GCC) 16.1.1 20260515 (Red Hat 16.1.1-2)",
+  "command": [
+    "g++",
+    "-std=c++20",
+    "-fPIC",
+    "-O1",
+    "-I<throne>",
+    "-I<qt-sdk>/usr/include/qt6",
+    "-I<qt-sdk>/usr/include/qt6/QtCore",
+    "<throne>/src/global/OTP.cpp",
+    "desktop/engine/src/otp/fixtures/qt-oracle.cpp",
+    "-L<qt-sdk>/usr/lib64",
+    "-Wl,-rpath,<qt-sdk>/usr/lib64",
+    "-lQt6Core",
+    "-o",
+    "/tmp/thronium-otp-oracle"
+  ],
+  "binarySha256": "ead504b0e247592f4f2e4635132f3c83a4341e383c88d7d15873cf49b7cae504",
+  "sourceDrift": [],
+  "generatorSha256": {
+    "desktop/engine/src/otp/fixtures/qt-oracle.cpp": "db0463aef5695a6213c3b0d9342dfc715bc20e0490a1074e9903d2c08765b768",
+    "desktop/engine/src/otp/fixtures/qt_oracle.py": "b75d7c93065fcb2a7635c40cfe68d4fcf7c65a9a6bc9b862204ea2f5de5c2373"
+  },
+  "generatorNote": "The Qt oracle program that produced golden.json lives in git history; only its output is kept."
+}

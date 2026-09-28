@@ -1,0 +1,157 @@
+{
+  "qtRuntime": "6.11.2",
+  "writer": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "description": "Actual Qt6 container; original SettingsRepo SQLite DDL and QStringList JSON schema. Synthetic source URLs only; no network or application data.",
+  "fields": [
+    "xray_geoip_url",
+    "xray_geosite_url",
+    "xray_geoip_url_history",
+    "xray_geosite_url_history"
+  ],
+  "sourceRows": {
+    "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+    "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+    "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+    "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+    "log_auto_scroll": "true"
+  },
+  "history": [
+    "https://assets.thronium.test/private-history73/2/geosite.dat",
+    "https://assets.thronium.test/private-history73/1/geosite.dat",
+    "https://assets.thronium.test/private-history73/2/geosite.dat",
+    "https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat",
+    "https://mirror.thronium.test/private-history73/0/geosite.dat"
+  ],
+  "sourceDefaults": {
+    "xray_geoip_url": "https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat",
+    "xray_geosite_url": "https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat"
+  },
+  "modes": {
+    "valid": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "clear-site-history": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geosite_url_history": "[]"
+      }
+    },
+    "explicit-empty-sources": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "",
+        "xray_geosite_url": "",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "bad-json": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"private-json73\",",
+        "log_auto_scroll": "true"
+      }
+    },
+    "bad-history-type": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[42]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "too-many": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-source73/geosite.dat\", \"https://assets.thronium.test/private-source73/geosite.dat\", \"https://assets.thronium.test/private-source73/geosite.dat\", \"https://assets.thronium.test/private-source73/geosite.dat\", \"https://assets.thronium.test/private-source73/geosite.dat\", \"https://assets.thronium.test/private-source73/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "http-url": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "http://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "credential-url": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://private-user73:private-password73@assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "unknown-column": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "bad-sqlite-type": {
+      "partsMask": 4,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    },
+    "excluded-settings": {
+      "partsMask": 8,
+      "sourceRows": {
+        "xray_geoip_url": "https://assets.thronium.test/private-source73/geoip.dat",
+        "xray_geosite_url": "https://assets.thronium.test/private-source73/geosite.dat",
+        "xray_geoip_url_history": "[\"https://assets.thronium.test/private-source73/geoip.dat\"]",
+        "xray_geosite_url_history": "[\"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://assets.thronium.test/private-history73/1/geosite.dat\", \"https://assets.thronium.test/private-history73/2/geosite.dat\", \"https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat\", \"https://mirror.thronium.test/private-history73/0/geosite.dat\"]",
+        "log_auto_scroll": "true"
+      }
+    }
+  },
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c"
+  },
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "ddlSha256": "45310d279b655a71f7394f88edc86cbce8f87535dea0f147033839dcebaca903",
+  "sha256": {
+    "bad-history-type.thrbackup": "6f506ea7467d736aa5555fefd3548a7eb13d3fdccd3cea4316adcfacb7879321",
+    "bad-json.thrbackup": "c747f2deaeb0c59ff5df08083d1354fdf0c4e3383d9ba0f69a1cc674630cb0e5",
+    "bad-sqlite-type.thrbackup": "14c74aa1617cc9d71d065a7d9ca75faf0adbfc0ee3a3f0db7e2314cb45abf9de",
+    "clear-site-history.thrbackup": "ba804d788dc8bc080c970a22b10780ca24a85dcc638a2efd6e1eeaffe29f46f6",
+    "credential-url.thrbackup": "1756c262ca4765b6d05752fd01845447d121e49cf0ccd8dab6dd051eec696477",
+    "excluded-settings.thrbackup": "950859c439654e282a104fd4307a4de0fddb267b4564ddb6ef665f9a79ca9120",
+    "explicit-empty-sources.thrbackup": "e29a1912e44016e9e668f99baf19a1b30f41e55c187ae170484572ef39047b41",
+    "http-url.thrbackup": "12636cdbbfb5de01ba9eb6cbc8a3d329f9632572ed0fe8f808f9c8578714b496",
+    "too-many.thrbackup": "161223db8215973abb3908342e06cf4892a74291e508de119d8510e6feaf9e2f",
+    "unknown-column.thrbackup": "e0741297eb5064b93020c12f321dc687712466d51c68823e7093ffccc85d7e8e",
+    "valid.thrbackup": "7dc0189cfce92d40c6184bc990be18eb545e59860274ffac0bf64d67d2621273"
+  }
+}

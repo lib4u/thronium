@@ -1,0 +1,296 @@
+/* One compact surface for adding connections and editing existing profiles. */
+.desktop-modal.compact-profile-modal {
+  width: min(860px, calc(100vw - 32px));
+  max-width: 860px;
+  border-radius: var(--radius-xl);
+}
+.compact-profile-modal > .modal-head {
+  padding: 20px 22px 16px;
+  gap: 16px;
+}
+.compact-profile-modal > .modal-head h2 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.compact-profile-modal > .modal-head p {
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.compact-profile-modal > .modal-head .icon-button {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.compact-profile-modal > .modal-body {
+  padding: 18px 22px;
+}
+.compact-profile-modal > .modal-footer {
+  padding: 12px 22px;
+  gap: 10px;
+  min-height: 60px;
+}
+.compact-profile-modal .button {
+  min-height: 34px;
+  padding: 8px 12px;
+  font-size: 11px;
+  border-radius: var(--radius-m);
+}
+.compact-profile-modal .button .icon {
+  width: 15px;
+  height: 15px;
+}
+.compact-profile-modal .text-button {
+  font-size: 11px;
+  min-height: 30px;
+}
+.compact-profile-modal .feature-field {
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.compact-profile-modal .feature-field > span,
+.compact-profile-modal .feature-field > label {
+  font-size: 11px;
+  line-height: 1.4;
+}
+.compact-profile-modal .text-input {
+  font-size: 12px;
+  padding: 8px 10px;
+  min-height: 36px;
+  border-radius: var(--radius-m);
+}
+.compact-profile-modal select.text-input {
+  padding-right: 30px;
+}
+.compact-profile-modal .text-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.12);
+}
+.compact-profile-modal .text-input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+.compact-profile-modal button:focus-visible,
+.compact-profile-modal .import-file-button:focus-within {
+  outline-offset: 2px;
+}
+.compact-profile-modal .field-hint {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.connection-add-panels > [hidden] {
+  display: none;
+}
+.connection-add-modal .import-destination {
+  max-width: 310px;
+}
+.connection-add-modal textarea.import-source {
+  min-height: 150px;
+  height: 150px;
+  line-height: 1.6;
+}
+.connection-add-modal .import-source-actions {
+  gap: 8px;
+}
+.connection-add-modal .import-summary {
+  padding: 4px 0 12px;
+  font-size: 12px;
+}
+.connection-add-modal .import-summary span,
+.connection-add-modal .import-row small {
+  font-size: 11px;
+}
+.connection-add-modal .import-row {
+  padding: 12px;
+  border-radius: var(--radius-m);
+}
+.connection-add-modal .import-row-actions {
+  gap: 12px;
+  padding-top: 6px;
+}
+.connection-add-modal .import-toggle {
+  font-size: 12px;
+  padding-block: 6px;
+}
+.compact-profile-modal .editor-type {
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+.compact-profile-modal .editor-layout {
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 18px;
+}
+.compact-profile-modal .editor-nav {
+  gap: 3px;
+}
+.compact-profile-modal .editor-nav button {
+  font-size: 11px;
+  padding: 8px 10px;
+  border-radius: var(--radius-s);
+  line-height: 1.4;
+}
+.compact-profile-modal .feature-section {
+  margin-bottom: 14px;
+}
+.compact-profile-modal .feature-section h3 {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.compact-profile-modal .feature-fields {
+  gap: 12px 16px;
+}
+.compact-profile-modal .feature-fields > .feature-field,
+.compact-profile-modal .editor-type > .feature-field {
+  margin: 0;
+}
+.compact-profile-modal .field-multiline {
+  min-height: 72px;
+}
+.compact-profile-modal .desktop-json {
+  min-height: 240px;
+  height: 260px;
+  font-size: 11px;
+}
+.compact-profile-modal .field-reveal {
+  min-height: 20px;
+  padding: 0;
+  font-size: 10px;
+}
+.compact-profile-modal .editor-import {
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+.compact-profile-modal .editor-import > .field-hint {
+  font-size: 10px;
+}
+@media (max-width: 600px) {
+  .desktop-modal.compact-profile-modal {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    border-radius: var(--radius-l);
+  }
+  .compact-profile-modal > .modal-head {
+    padding: 16px 16px 12px;
+  }
+  .compact-profile-modal > .modal-body {
+    padding: 14px 16px;
+  }
+  .compact-profile-modal > .modal-footer {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .connection-add-modal .import-destination {
+    max-width: none;
+  }
+  .connection-add-modal textarea.import-source {
+    min-height: 130px;
+    height: 130px;
+  }
+  .compact-profile-modal .editor-type {
+    grid-template-columns: 1fr 1fr;
+  }
+  .compact-profile-modal .editor-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .compact-profile-modal .editor-nav {
+    flex-direction: row;
+    overflow: auto;
+    position: static;
+  }
+  .compact-profile-modal .editor-nav button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .compact-profile-modal .feature-fields {
+    grid-template-columns: 1fr;
+  }
+  .compact-profile-modal .desktop-json {
+    min-height: 170px;
+    height: 200px;
+  }
+  .compact-profile-modal .editor-import {
+    align-items: flex-start;
+  }
+}
+
+/* Keep protocol/group above the tabs, with the VLESS override beside the section title. */
+.compact-profile-modal .editor-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.compact-profile-modal .editor-section-heading h3 {
+  margin: 0;
+}
+.compact-profile-modal .editor-section-heading > .feature-field {
+  margin: 0 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.compact-profile-modal .editor-section-heading > .feature-field > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.compact-profile-modal #editor-vless-core {
+  width: auto;
+  min-width: 116px;
+  min-height: 30px;
+  padding-block: 5px;
+  font-size: 11px;
+}
+.compact-profile-modal .editor-core-label {
+  color: var(--muted);
+  font-size: 10px;
+}
+.compact-profile-modal .editor-running-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: var(--radius-m);
+  background: var(--raised);
+}
+.compact-profile-modal .editor-running-note p {
+  flex: 1;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.compact-profile-modal .editor-running-note .button {
+  flex: none;
+}
+@media (max-width: 500px) {
+  .compact-profile-modal .editor-section-heading > .feature-field {
+    margin-left: 0;
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+  .compact-profile-modal .editor-running-note {
+    flex-wrap: wrap;
+  }
+  .compact-profile-modal .editor-running-note p {
+    flex-basis: 100%;
+  }
+}
+.connection-add-modal .import-subscription-source {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 12px;
+  margin: 4px 0 8px;
+  font-size: 12px;
+}
+.connection-add-modal .import-subscription-source dt {
+  color: var(--muted);
+}
+.connection-add-modal .import-subscription-source dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}

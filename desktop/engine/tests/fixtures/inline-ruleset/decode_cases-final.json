@@ -1,0 +1,528 @@
+[
+  {
+    "name": "route-only-auth_user",
+    "rules": [
+      {
+        "network": "tcp",
+        "auth_user": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-clash_mode",
+    "rules": [
+      {
+        "network": "tcp",
+        "clash_mode": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-client",
+    "rules": [
+      {
+        "network": "tcp",
+        "client": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-geoip",
+    "rules": [
+      {
+        "network": "tcp",
+        "geoip": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-geosite",
+    "rules": [
+      {
+        "network": "tcp",
+        "geosite": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-inbound",
+    "rules": [
+      {
+        "network": "tcp",
+        "inbound": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-interface_address",
+    "rules": [
+      {
+        "network": "tcp",
+        "interface_address": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-ip_is_private",
+    "rules": [
+      {
+        "network": "tcp",
+        "ip_is_private": false
+      }
+    ]
+  },
+  {
+    "name": "route-only-ip_version",
+    "rules": [
+      {
+        "network": "tcp",
+        "ip_version": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-preferred_by",
+    "rules": [
+      {
+        "network": "tcp",
+        "preferred_by": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-protocol",
+    "rules": [
+      {
+        "network": "tcp",
+        "protocol": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-rule_set",
+    "rules": [
+      {
+        "network": "tcp",
+        "rule_set": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-rule_set_ip_cidr_match_source",
+    "rules": [
+      {
+        "network": "tcp",
+        "rule_set_ip_cidr_match_source": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-rule_set_ipcidr_match_source",
+    "rules": [
+      {
+        "network": "tcp",
+        "rule_set_ipcidr_match_source": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-source_geoip",
+    "rules": [
+      {
+        "network": "tcp",
+        "source_geoip": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-source_hostname",
+    "rules": [
+      {
+        "network": "tcp",
+        "source_hostname": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-source_ip_is_private",
+    "rules": [
+      {
+        "network": "tcp",
+        "source_ip_is_private": false
+      }
+    ]
+  },
+  {
+    "name": "route-only-source_mac_address",
+    "rules": [
+      {
+        "network": "tcp",
+        "source_mac_address": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-user",
+    "rules": [
+      {
+        "network": "tcp",
+        "user": ""
+      }
+    ]
+  },
+  {
+    "name": "route-only-user_id",
+    "rules": [
+      {
+        "network": "tcp",
+        "user_id": ""
+      }
+    ]
+  },
+  {
+    "name": "unsupported-action",
+    "rules": [
+      {
+        "network": "tcp",
+        "action": ""
+      }
+    ]
+  },
+  {
+    "name": "unsupported-outbound",
+    "rules": [
+      {
+        "network": "tcp",
+        "outbound": ""
+      }
+    ]
+  },
+  {
+    "name": "unsupported-override_port",
+    "rules": [
+      {
+        "network": "tcp",
+        "override_port": 0
+      }
+    ]
+  },
+  {
+    "name": "unsupported-adguard_domain",
+    "rules": [
+      {
+        "network": "tcp",
+        "adguard_domain": [
+          "||example.invalid^"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "empty-default",
+    "rules": [
+      {}
+    ]
+  },
+  {
+    "name": "invert-only",
+    "rules": [
+      {
+        "invert": true
+      }
+    ]
+  },
+  {
+    "name": "empty-group",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": []
+      }
+    ]
+  },
+  {
+    "name": "mode-missing",
+    "rules": [
+      {
+        "type": "logical",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "mode-xor",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "xor",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "null-child",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "name": "action-child",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp",
+            "action": "reject"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "match-on-group",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ],
+        "network": "tcp"
+      }
+    ]
+  },
+  {
+    "name": "query-type-name",
+    "rules": [
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "query-type-number",
+    "rules": [
+      {
+        "query_type": [
+          1,
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "name": "query-type-scalar-name",
+    "rules": [
+      {
+        "query_type": "A"
+      }
+    ]
+  },
+  {
+    "name": "query-type-scalar-number",
+    "rules": [
+      {
+        "query_type": 1
+      }
+    ]
+  },
+  {
+    "name": "query-type-mixed-list",
+    "rules": [
+      {
+        "query_type": [
+          "A",
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "name": "query-type-null",
+    "rules": [
+      {
+        "query_type": null
+      }
+    ]
+  },
+  {
+    "name": "query-type-empty-list",
+    "rules": [
+      {
+        "query_type": []
+      }
+    ]
+  },
+  {
+    "name": "query-type-list-null",
+    "rules": [
+      {
+        "query_type": [
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "name": "query-type-lower-name",
+    "rules": [
+      {
+        "query_type": "a"
+      }
+    ]
+  },
+  {
+    "name": "query-type-numeric-string",
+    "rules": [
+      {
+        "query_type": "1"
+      }
+    ]
+  },
+  {
+    "name": "query-type-zero",
+    "rules": [
+      {
+        "query_type": 0
+      }
+    ]
+  },
+  {
+    "name": "query-type-max",
+    "rules": [
+      {
+        "query_type": 65535
+      }
+    ]
+  },
+  {
+    "name": "query-type-overflow",
+    "rules": [
+      {
+        "query_type": 65536
+      }
+    ]
+  },
+  {
+    "name": "query-type-negative",
+    "rules": [
+      {
+        "query_type": -1
+      }
+    ]
+  },
+  {
+    "name": "query-type-fraction",
+    "rules": [
+      {
+        "query_type": 1.5
+      }
+    ]
+  },
+  {
+    "name": "query-type-unknown-name",
+    "rules": [
+      {
+        "query_type": "NOT-A-TYPE"
+      }
+    ]
+  },
+  {
+    "name": "query-type-null-with-network",
+    "rules": [
+      {
+        "query_type": null,
+        "network": "tcp"
+      }
+    ]
+  },
+  {
+    "name": "query-type-empty-list-with-network",
+    "rules": [
+      {
+        "query_type": [],
+        "network": "tcp"
+      }
+    ]
+  },
+  {
+    "name": "empty-set",
+    "rules": []
+  },
+  {
+    "name": "null-rules",
+    "rules": null
+  },
+  {
+    "name": "valid-inverted-leaf",
+    "rules": [
+      {
+        "network": "tcp",
+        "invert": true
+      }
+    ]
+  },
+  {
+    "name": "empty-alongside-network",
+    "rules": [
+      {},
+      {
+        "network": "tcp"
+      }
+    ]
+  },
+  {
+    "name": "empty-with-default-type",
+    "rules": [
+      {
+        "type": "default"
+      }
+    ]
+  },
+  {
+    "name": "query-type-star",
+    "rules": [
+      {
+        "query_type": "*"
+      }
+    ]
+  },
+  {
+    "name": "query-type-None",
+    "rules": [
+      {
+        "query_type": "None"
+      }
+    ]
+  },
+  {
+    "name": "query-type-bool",
+    "rules": [
+      {
+        "query_type": true
+      }
+    ]
+  }
+]

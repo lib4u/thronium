@@ -1,0 +1,277 @@
+[
+  {
+    "name": "openvpn-array-mixed-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "routes": [
+        " padded "
+      ],
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate": [
+          " padded "
+        ]
+      },
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-array-mixed"
+  },
+  {
+    "name": "openvpn-newline-mixed-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "routes": [
+        " padded "
+      ],
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate": [
+          " padded "
+        ]
+      },
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-newline-mixed"
+  },
+  {
+    "name": "openvpn-array-blank-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "routes": [],
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate": []
+      },
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-array-blank"
+  },
+  {
+    "name": "openvpn-newline-blank-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "routes": [],
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate": []
+      },
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-newline-blank"
+  },
+  {
+    "name": "openvpn-array-empty-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-array-empty"
+  },
+  {
+    "name": "openvpn-newline-empty-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "type": "openvpn",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openvpn-newline-empty"
+  },
+  {
+    "name": "openconnect-array-mixed-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate_authority": [
+          " padded "
+        ]
+      },
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-array-mixed"
+  },
+  {
+    "name": "openconnect-newline-mixed-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate_authority": [
+          " padded "
+        ]
+      },
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-newline-mixed"
+  },
+  {
+    "name": "openconnect-array-blank-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate_authority": []
+      },
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-array-blank"
+  },
+  {
+    "name": "openconnect-newline-blank-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "tls": {
+        "certificate_authority": []
+      },
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-newline-blank"
+  },
+  {
+    "name": "openconnect-array-empty-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-array-empty"
+  },
+  {
+    "name": "openconnect-newline-empty-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "openconnect-newline-empty"
+  },
+  {
+    "name": "oc-host-0-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "[[::1]]",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-0"
+  },
+  {
+    "name": "oc-host-1-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "[::1",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-1"
+  },
+  {
+    "name": "oc-host-2-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "::1]",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-2"
+  },
+  {
+    "name": "oc-host-3-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "::1",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-3"
+  },
+  {
+    "name": "oc-host-4-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "::1",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-4"
+  },
+  {
+    "name": "oc-host-5-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "fe80::1%eth0",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-5"
+  },
+  {
+    "name": "oc-host-6-export-reparse",
+    "source": {
+      "block_outside_dns": false,
+      "only_advertised_routes": true,
+      "server": "fe80::1%eth0",
+      "server_path": "login",
+      "server_port": 444,
+      "type": "openconnect",
+      "use_tunnel_dns": true
+    },
+    "originRawCase": "oc-host-6"
+  }
+]

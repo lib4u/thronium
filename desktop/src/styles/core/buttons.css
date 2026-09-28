@@ -1,0 +1,113 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 41px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  font-weight: 650;
+  font-size: 11px;
+  white-space: nowrap;
+  transition:
+    background 0.18s,
+    transform 0.18s,
+    border-color 0.18s;
+}
+.button .icon {
+  width: 16px;
+  height: 16px;
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.button.primary:hover {
+  filter: brightness(1.07);
+  box-shadow: 0 3px 20px rgba(var(--accent-rgb), 0.1);
+}
+.button.secondary {
+  background: var(--panel);
+  border-color: var(--border);
+  color: var(--text);
+}
+.button.secondary:hover {
+  background: var(--hover);
+  border-color: var(--faint);
+}
+.button.compact {
+  min-height: 37px;
+  padding: 8px 12px;
+}
+.button.danger {
+  background: var(--danger);
+  color: var(--danger-ink);
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-m);
+  background: transparent;
+  color: var(--muted);
+  flex: none;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+.icon-button .icon {
+  width: 17px;
+  height: 17px;
+}
+.icon-button:hover {
+  background: var(--raised);
+  color: var(--text);
+}
+.icon-button.active {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.09);
+}
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+.text-button .icon {
+  height: 14px;
+  width: 14px;
+}
+.text-button:hover {
+  opacity: 0.75;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 9px rgba(var(--accent-rgb), 0.25);
+}
+.count-badge {
+  background: var(--raised);
+  color: var(--muted);
+  padding: 1px 7px;
+  border-radius: var(--radius-s);
+  font-size: 10px;
+}

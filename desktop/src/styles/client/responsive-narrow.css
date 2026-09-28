@@ -1,0 +1,319 @@
+@media (max-width: 700px) {
+  body {
+    background: var(--shell);
+  }
+  .app-shell {
+    display: block;
+    min-height: 100dvh;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .workspace {
+    display: block;
+    height: auto;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    height: 61px;
+    padding: 0 21px;
+    z-index: 20;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  .client-wordmark {
+    font-size: 21px;
+    gap: 8px;
+  }
+  .client-wordmark > img {
+    width: 28px;
+    height: 28px;
+  }
+  .primary-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    gap: 4px;
+    margin: 0;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+  }
+  .nav-link {
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+    padding: 7px 3px;
+    min-height: 48px;
+    font-size: 8px;
+    border-radius: var(--radius-m);
+  }
+  .nav-link > .icon {
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+  }
+  .nav-link > span {
+    display: block;
+    font-size: 8px;
+  }
+  .nav-link.active {
+    background: var(--raised);
+    color: var(--text);
+  }
+  .nav-link.active::after {
+    display: none;
+  }
+  .topbar-actions {
+    gap: 8px;
+  }
+  .client-workspace {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 78px;
+  }
+  .session-pane {
+    display: flex;
+    padding: 25px 21px 23px;
+    overflow: visible;
+  }
+  .pane-heading {
+    margin-bottom: 18px;
+    min-height: 27px;
+  }
+  .pane-heading h1,
+  .pane-heading h2 {
+    font-size: 18px;
+  }
+  .live-indicator {
+    font-size: 9px;
+  }
+  .session-card {
+    padding: 20px;
+    border-radius: var(--radius-l);
+  }
+  .session-overline,
+  .session-timer {
+    font-size: 9px;
+  }
+  .destination-city {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+    margin-top: 12px;
+  }
+  .destination-country {
+    font-size: 9px;
+    margin-top: 9px;
+  }
+  #connected-protocol {
+    font-size: 8px;
+  }
+  .connection-path {
+    padding-block: 21px 17px;
+  }
+  .path-stop {
+    width: 65px;
+    gap: 7px;
+  }
+  .path-stop > span {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-m);
+  }
+  .path-stop small {
+    font-size: 7px;
+  }
+  .session-address {
+    font-size: 8px;
+    gap: 6px;
+    padding-top: 11px;
+  }
+  .session-card .power-button {
+    height: 43px;
+    font-size: 11px;
+    margin-top: 14px;
+  }
+  .session-description {
+    font-size: 8px;
+    margin-top: 11px;
+  }
+  .session-metrics {
+    padding-block: 21px;
+  }
+  .session-metrics strong {
+    font-size: 23px;
+  }
+  .session-metrics strong small {
+    font-size: 8px;
+  }
+  .session-metrics > div > span {
+    font-size: 8px;
+  }
+  .connection-option {
+    padding: 15px 12px;
+    gap: 9px;
+  }
+  .option-text strong {
+    font-size: 10px;
+  }
+  .option-text small {
+    display: block;
+    font-size: 7px;
+  }
+  .network-mode {
+    font-size: 8px;
+  }
+  .session-footer {
+    display: none;
+  }
+  .library-pane {
+    padding: 23px 21px 25px;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .library-heading .button {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+  .library-search {
+    gap: 7px;
+  }
+  .library-search .search-field {
+    padding: 11px;
+  }
+  .library-search .search-field input {
+    font-size: 10px;
+  }
+  .library-tabs {
+    margin-top: 20px;
+    gap: 24px;
+  }
+  .library-tabs > button {
+    font-size: 10px;
+    padding-bottom: 13px;
+  }
+  .connections-scroll {
+    overflow: visible;
+    padding-bottom: 19px;
+  }
+  .subscription-group-head {
+    padding-top: 18px;
+  }
+  .subscription-collapse strong {
+    font-size: 11px;
+  }
+  .subscription-collapse small {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+  .connection-row {
+    min-height: 64px;
+  }
+  .connection-row-button {
+    padding: 14px 6px 14px 10px;
+    gap: 10px;
+  }
+  .connection-row-button > .flag {
+    width: 24px;
+    height: 17px;
+  }
+  .row-server-info > strong {
+    font-size: 12px;
+  }
+  .row-server-info > small {
+    font-size: 7px;
+  }
+  .row-ping {
+    font-size: 8px;
+    margin-left: 4px;
+  }
+  .row-ping > .icon {
+    display: none;
+  }
+  .connection-row > .favorite-button {
+    width: 22px;
+    margin-right: 6px;
+    opacity: 0.55;
+  }
+  .connection-row > .favorite-button.is-favorite {
+    opacity: 1;
+  }
+  .library-footer {
+    padding-top: 18px;
+  }
+  .workspace > main:not(.client-workspace) {
+    padding: 25px 20px 98px;
+    overflow: visible;
+  }
+  .page-heading h1 {
+    font-size: 25px;
+  }
+  .page-heading .subtitle {
+    font-size: 10px;
+  }
+  .page-heading > .button {
+    font-size: 0;
+    margin-top: 0;
+  }
+  .page-heading > .button .icon {
+    width: 17px;
+    height: 17px;
+  }
+  .toast-stack {
+    bottom: 85px;
+  }
+}
+@media (max-width: 365px) {
+  .topbar {
+    padding-inline: 17px;
+  }
+  .session-pane,
+  .library-pane {
+    padding-inline: 17px;
+  }
+  .session-card {
+    padding: 18px;
+  }
+  .destination-city {
+    font-size: 30px;
+  }
+  .destination-country {
+    font-size: 8px;
+    gap: 5px;
+  }
+  #connected-protocol {
+    font-size: 7px;
+  }
+  .path-stop {
+    width: 57px;
+  }
+  .session-address {
+    font-size: 7px;
+    gap: 5px;
+  }
+  .session-metrics strong {
+    font-size: 21px;
+  }
+  .option-text small {
+    display: none;
+  }
+  .row-server-info > strong {
+    font-size: 11px;
+  }
+  .row-server-info > small {
+    font-size: 6px;
+  }
+  .connection-row-button {
+    gap: 8px;
+  }
+  .nav-link,
+  .nav-link > span {
+    font-size: 7px;
+  }
+}

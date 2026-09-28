@@ -1,0 +1,51 @@
+{
+  "description": "Qt Throne SQLite schemas and stored-key map the archive fixtures build synthetic databases with. Refresh with desktop/scripts/freeze_qt_snapshot.py.",
+  "upstream": {
+    "repository": "throneproj/Throne",
+    "commit": "69f8c5b8301165ac4363a97884bb8fa3c57f4da5"
+  },
+  "extracts": [
+    {
+      "file": "GroupsRepo.ddl.json",
+      "path": "src/database/GroupsRepo.cpp",
+      "blocks": 2,
+      "sha256": "2927a599e2265a91b1ba614e6287ea034e875950555f07b385e5dfaa422cfe3a",
+      "sourceSha256": "0a8f010b81871ee8d0035e15e9b6345a20600e0291f1e5ffb9f19ecdff7b4a9b"
+    },
+    {
+      "file": "ProfilesRepo.ddl.json",
+      "path": "src/database/ProfilesRepo.cpp",
+      "blocks": 1,
+      "sha256": "a81a3922b82d44d252ff3c2da8ea91018cbe19f503fe4f33d37caddb3360d7b6",
+      "sourceSha256": "8cfedb7d368539b97de1f3c3506120d607860d1f75b5f55db6b3d478041a3d49"
+    },
+    {
+      "file": "OtpProfilesRepo.ddl.json",
+      "path": "src/database/OtpProfilesRepo.cpp",
+      "blocks": 1,
+      "sha256": "bb568b54714e53f9eb74cb4ec22327a30c0537b7b7d9ee78cc0ba39145abe005",
+      "sourceSha256": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c"
+    },
+    {
+      "file": "RoutesRepo.ddl.json",
+      "path": "src/database/RoutesRepo.cpp",
+      "blocks": 2,
+      "sha256": "64b6d8f17b4d22801768ca1766ac2927643c69eaafc3e08a9f4579cc8d0d31c4",
+      "sourceSha256": "7edbc9ba86491f8fd27c67e4f8cafe306fa8237447b03fa48c52d3e317b31eb6"
+    },
+    {
+      "file": "SettingsRepo.ddl.json",
+      "path": "src/database/SettingsRepo.cpp",
+      "blocks": 1,
+      "sha256": "3a829183cd4b5255232e50313f24bc044dabe86c716dcab2916c66c1a33aa9dd",
+      "sourceSha256": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee"
+    },
+    {
+      "file": "SettingsRepo.members.json",
+      "path": "src/database/SettingsRepo.cpp",
+      "entries": 174,
+      "sha256": "5bc41b8dab420166823a81e100710e72e8cbb2ce976c69cd544dd800da05c706",
+      "sourceSha256": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee"
+    }
+  ]
+}

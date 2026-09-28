@@ -1,0 +1,13 @@
+{
+  "qtRuntime": "6.11.2",
+  "partsMask": 5,
+  "settings": 10,
+  "profileCounts": {
+    "blocked-profiles": 14,
+    "blocked-settings": 13
+  },
+  "sha256": {
+    "blocked-profiles.thrbackup": "cd18789ea54a003cd9107a474682285fa9d1fdcf3a1712ee36d2451f6f7396d2",
+    "blocked-settings.thrbackup": "a589e58103f30274135c2e9388900256a4c4e4b448b02d15e7f21436b827cb6b"
+  }
+}

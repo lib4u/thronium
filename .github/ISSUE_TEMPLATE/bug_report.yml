@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in Thronium does not work as it should
+labels: [bug]
+body:
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - Windows 11
+        - Windows 10
+        - macOS
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Thronium version
+      description: The release you installed, or the version of your build (desktop/package.json).
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Connection mode
+      options:
+        - Local proxy
+        - System proxy
+        - TUN
+        - Not connected
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Diagnostic log
+      description: Diagnostics → Log. Remove server addresses, passwords and subscription links before posting.
+      render: text

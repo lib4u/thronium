@@ -1,0 +1,201 @@
+{
+  "note": "Native suites that need more than `test_native.py --<suite>-only` inside the owned display. kind: hash \u2014 the wrapper takes the application and core hashes and runs inside the display, session bus and accessibility bus; hash-display \u2014 the same, inside the display only (it owns its session bus); app \u2014 only --application and --artifacts, inside the display; namespace \u2014 the wrapper starts the display itself (without --application when \"application\" is false) and is given the display and accessibility runners. args are added to the wrapper; a suite that needs fixtures of its own (peer binaries, roots) takes them after `--`.",
+  "suites": {
+    "recovery-core": {
+      "kind": "hash",
+      "wrapper": "scripts/test_core_recovery_native.py",
+      "args": ["--suite", "core"]
+    },
+    "recovery-system-proxy": {
+      "kind": "hash",
+      "wrapper": "scripts/test_core_recovery_native.py",
+      "args": ["--suite", "system-proxy"]
+    },
+    "recovery-kde": {
+      "kind": "hash",
+      "wrapper": "scripts/test_core_recovery_native.py",
+      "args": ["--suite", "kde"]
+    },
+    "legacy-backup": {
+      "kind": "hash",
+      "wrapper": "scripts/test_legacy_backup_native.py"
+    },
+    "legacy-otp-regression": {
+      "kind": "hash",
+      "wrapper": "scripts/test_legacy_otp_native.py"
+    },
+    "legacy-vpn-bindings": {
+      "kind": "hash",
+      "wrapper": "scripts/test_legacy_vpn_binding_native.py"
+    },
+    "legacy-quic-dns": {
+      "kind": "app",
+      "wrapper": "scripts/test_legacy_quic_dns_native.py"
+    },
+    "auto-select-simple": {
+      "kind": "hash",
+      "wrapper": "scripts/test_auto_select_simple_native.py"
+    },
+    "probes": {
+      "kind": "hash",
+      "wrapper": "scripts/test_probes_native.py"
+    },
+    "profile-order": {
+      "kind": "hash",
+      "wrapper": "scripts/test_profile_order_native.py"
+    },
+    "profile-tls": {
+      "kind": "hash",
+      "wrapper": "scripts/test_profile_tls_native.py"
+    },
+    "rfd-dialogs": {
+      "kind": "hash",
+      "wrapper": "scripts/test_rfd_native.py"
+    },
+    "vpn-policy": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_policy_native.py"
+    },
+    "vpn-probes": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_probes_native.py"
+    },
+    "vpn-auth": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_auth_native.py"
+    },
+    "vpn-auth-managed": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_auth_managed_native.py"
+    },
+    "vpn-credentials": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_credentials_native.py"
+    },
+    "vpn-credentials-managed": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_credentials_managed_native.py"
+    },
+    "vpn-credentials-system-proxy": {
+      "kind": "hash-display",
+      "wrapper": "scripts/test_vpn_credentials_system_proxy_native.py"
+    },
+    "vpn-otp-binding": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_otp_binding_native.py"
+    },
+    "vpn-otp-binding-managed": {
+      "kind": "hash",
+      "wrapper": "scripts/test_vpn_otp_binding_managed_native.py"
+    },
+    "ws-early-data": {
+      "kind": "hash",
+      "wrapper": "scripts/test_ws_early_data_native.py"
+    },
+    "wireguard-live": {
+      "kind": "hash",
+      "wrapper": "scripts/test_wireguard_live_native.py"
+    },
+    "wireguard-topology": {
+      "kind": "hash",
+      "wrapper": "scripts/test_wireguard_topology_native.py"
+    },
+    "awg-live": {
+      "kind": "hash",
+      "wrapper": "scripts/test_awg_live_native.py"
+    },
+    "awg-migration": {
+      "kind": "hash",
+      "wrapper": "scripts/test_awg_migration_native.py"
+    },
+    "dashboard": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_dashboard_native.py"
+    },
+    "fakeip-batch": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_fakeip_batch_native.py"
+    },
+    "full-sing-diagnostics": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_full_sing_diagnostics_native.py"
+    },
+    "full-xray-diagnostics": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_full_xray_diagnostics_native.py"
+    },
+    "full-xray-probes": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_full_xray_probes_native.py"
+    },
+    "geodata-assets": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_geodata_assets_native.py"
+    },
+    "geodata-history": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_geodata_history_native.py"
+    },
+    "legacy-geodata": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_legacy_geodata_native.py"
+    },
+    "legacy-warp": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_legacy_warp_native.py"
+    },
+    "openconnect-cstp": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_openconnect_cstp_native.py"
+    },
+    "openresolv": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_openresolv_native.py"
+    },
+    "openvpn-pending": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_openvpn_pending_native.py"
+    },
+    "portable": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_portable_native.py"
+    },
+    "secrets": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_secrets_native.py"
+    },
+    "speedtest-full": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_speedtest_full_native.py"
+    },
+    "system-dns": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_system_dns_native.py"
+    },
+    "trusttunnel": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_trusttunnel_native.py"
+    },
+    "tun-endpoint": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_tun_endpoint_native.py"
+    },
+    "vpn-diagnostics": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_vpn_diagnostics_native.py"
+    },
+    "warp-registration": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_warp_registration_native.py"
+    },
+    "wireguard-diagnostics": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_wireguard_diagnostics_native.py"
+    },
+    "dashboard-browser": {
+      "kind": "namespace",
+      "wrapper": "scripts/test_dashboard_browser.py",
+      "application": false
+    }
+  }
+}

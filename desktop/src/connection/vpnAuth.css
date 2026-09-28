@@ -1,0 +1,80 @@
+.vpn-endpoints {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-l);
+}
+.vpn-endpoints h2 {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.vpn-endpoints article + article {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+.vpn-endpoints article > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.vpn-endpoints strong,
+.vpn-endpoints p {
+  overflow-wrap: anywhere;
+}
+.vpn-endpoints small {
+  color: var(--muted);
+}
+.vpn-endpoints p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.vpn-auth-modal {
+  width: min(560px, calc(100vw - 20px));
+}
+.vpn-auth-modal .modal-head p {
+  overflow-wrap: anywhere;
+}
+.vpn-auth-modal .field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+.vpn-auth-modal .field > span {
+  overflow-wrap: anywhere;
+}
+.vpn-auth-modal .text-input {
+  width: 100%;
+  min-width: 0;
+}
+.vpn-otp-modal select.text-input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: none;
+}
+.vpn-server-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  font-size: 13px;
+}
+.vpn-auth-modal .modal-footer {
+  flex-wrap: wrap;
+}
+.vpn-auth-modal .modal-footer .button,
+.vpn-auth-modal .modal-footer .text-button {
+  white-space: normal;
+}
+.vpn-auth-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.vpn-auth-notice span {
+  flex: 1;
+}

@@ -1,0 +1,249 @@
+[
+  {
+    "name": "openvpn-array-mixed",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": [
+          "",
+          " ",
+          "\t",
+          " padded "
+        ]
+      },
+      "routes": [
+        "",
+        " ",
+        "\t",
+        " padded "
+      ]
+    }
+  },
+  {
+    "name": "openvpn-newline-mixed",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": "\n \n\t\n padded \n"
+      },
+      "routes": "\n \n\t\n padded \n"
+    }
+  },
+  {
+    "name": "openvpn-array-blank",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": [
+          " ",
+          "\t",
+          ""
+        ]
+      },
+      "routes": [
+        " ",
+        "\t",
+        ""
+      ]
+    }
+  },
+  {
+    "name": "openvpn-newline-blank",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": " \n\t\n"
+      },
+      "routes": " \n\t\n"
+    }
+  },
+  {
+    "name": "openvpn-array-empty",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": []
+      },
+      "routes": []
+    }
+  },
+  {
+    "name": "openvpn-newline-empty",
+    "source": {
+      "type": "openvpn",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate": "\n"
+      },
+      "routes": "\n"
+    }
+  },
+  {
+    "name": "openconnect-array-mixed",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": [
+          "",
+          " ",
+          "\t",
+          " padded "
+        ]
+      }
+    }
+  },
+  {
+    "name": "openconnect-newline-mixed",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": "\n \n\t\n padded \n"
+      }
+    }
+  },
+  {
+    "name": "openconnect-array-blank",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": [
+          " ",
+          "\t",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "name": "openconnect-newline-blank",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": " \n\t\n"
+      }
+    }
+  },
+  {
+    "name": "openconnect-array-empty",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": []
+      }
+    }
+  },
+  {
+    "name": "openconnect-newline-empty",
+    "source": {
+      "type": "openconnect",
+      "server": "vpn.fixture.invalid",
+      "server_port": 443,
+      "otp_profile_id": -1,
+      "tls": {
+        "certificate_authority": "\n"
+      }
+    }
+  },
+  {
+    "name": "oc-host-0",
+    "source": {
+      "type": "openconnect",
+      "server": "[[::1]]",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-1",
+    "source": {
+      "type": "openconnect",
+      "server": "[::1",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-2",
+    "source": {
+      "type": "openconnect",
+      "server": "::1]",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-3",
+    "source": {
+      "type": "openconnect",
+      "server": "[::1]",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-4",
+    "source": {
+      "type": "openconnect",
+      "server": "::1",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-5",
+    "source": {
+      "type": "openconnect",
+      "server": "fe80::1%eth0",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  },
+  {
+    "name": "oc-host-6",
+    "source": {
+      "type": "openconnect",
+      "server": "[fe80::1%eth0]",
+      "server_port": 444,
+      "server_path": "login",
+      "otp_profile_id": -1
+    }
+  }
+]

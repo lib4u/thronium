@@ -1,0 +1,96 @@
+[
+  {
+    "name": "tls_tricks=true",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "tls_tricks": true
+      }
+    }
+  },
+  {
+    "name": "tls_tricks=false",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "tls_tricks": false
+      }
+    }
+  },
+  {
+    "name": "tls_spoof_enabled=true",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": true
+      }
+    }
+  },
+  {
+    "name": "tls_spoof_enabled=false",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "spoof_enabled": false
+      }
+    }
+  },
+  {
+    "name": "object control true",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": true
+        }
+      }
+    }
+  },
+  {
+    "name": "object control false",
+    "groupId": "personal",
+    "kind": "sing-box-outbound",
+    "config": {
+      "type": "trojan",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "password": "fixture",
+      "tls": {
+        "enabled": true,
+        "tls_tricks": {
+          "mixedcase_sni": false
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,414 @@
+{
+  "qtRuntime": "6.11.2",
+  "groups": {
+    "testing": [
+      "direct_test_url"
+    ],
+    "logging": [
+      "log_auto_scroll",
+      "log_level",
+      "max_log_line",
+      "log_file_level",
+      "log_enable_include",
+      "log_enable_exclude",
+      "log_include_keyword",
+      "log_include_regex",
+      "log_exclude_keyword",
+      "log_exclude_regex",
+      "disable_traffic_stats",
+      "enable_stats",
+      "disable_traffic_aggregation",
+      "traffic_stats_retention_days",
+      "connection_sort",
+      "connection_sort_asc",
+      "show_system_dns"
+    ]
+  },
+  "sourceDefaults": {
+    "direct_test_url": "",
+    "log_auto_scroll": true,
+    "log_level": "info",
+    "max_log_line": 200,
+    "log_file_level": "debug",
+    "log_enable_include": false,
+    "log_enable_exclude": false,
+    "log_include_keyword": [],
+    "log_include_regex": [],
+    "log_exclude_keyword": [],
+    "log_exclude_regex": [],
+    "disable_traffic_stats": false,
+    "enable_stats": true,
+    "disable_traffic_aggregation": false,
+    "traffic_stats_retention_days": 90,
+    "connection_sort": 0,
+    "connection_sort_asc": false,
+    "show_system_dns": false
+  },
+  "modes": {
+    "valid": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 300,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?i)allow",
+        "pass"
+      ],
+      "log_exclude_keyword": [
+        "private-excluded82"
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": 7,
+      "connection_sort": 3,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "defaults": {
+      "direct_test_url": "",
+      "log_auto_scroll": true,
+      "log_level": "info",
+      "max_log_line": 200,
+      "log_file_level": "debug",
+      "log_enable_include": false,
+      "log_enable_exclude": false,
+      "log_include_keyword": [],
+      "log_include_regex": [],
+      "log_exclude_keyword": [],
+      "log_exclude_regex": [],
+      "disable_traffic_stats": false,
+      "enable_stats": true,
+      "disable_traffic_aggregation": false,
+      "traffic_stats_retention_days": 90,
+      "connection_sort": 0,
+      "connection_sort_asc": false,
+      "show_system_dns": false
+    },
+    "retention-minimum": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 300,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?i)allow",
+        "pass"
+      ],
+      "log_exclude_keyword": [
+        "private-excluded82"
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": -5,
+      "connection_sort": 3,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "bad-sort": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 300,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?i)allow",
+        "pass"
+      ],
+      "log_exclude_keyword": [
+        "private-excluded82"
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": 7,
+      "connection_sort": 7,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "bad-regex": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 300,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?=private-marker82)"
+      ],
+      "log_exclude_keyword": [
+        "private-excluded82"
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": 7,
+      "connection_sort": 3,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "bad-list": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 300,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?i)allow",
+        "pass"
+      ],
+      "log_exclude_keyword": [
+        42
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": 7,
+      "connection_sort": 3,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "bad-limit": {
+      "direct_test_url": "http://127.0.0.1:38182/private-marker82",
+      "log_auto_scroll": false,
+      "log_level": "debug",
+      "max_log_line": 99,
+      "log_file_level": "warn",
+      "log_enable_include": true,
+      "log_enable_exclude": true,
+      "log_include_keyword": [
+        "private-marker82",
+        "[literal]"
+      ],
+      "log_include_regex": [
+        "(?i)allow",
+        "pass"
+      ],
+      "log_exclude_keyword": [
+        "private-excluded82"
+      ],
+      "log_exclude_regex": [
+        "(?i)deny",
+        "reject"
+      ],
+      "disable_traffic_stats": true,
+      "enable_stats": false,
+      "disable_traffic_aggregation": true,
+      "traffic_stats_retention_days": 7,
+      "connection_sort": 3,
+      "connection_sort_asc": true,
+      "show_system_dns": true
+    },
+    "sparse": {
+      "direct_test_url": ""
+    }
+  },
+  "filterOracle": [
+    {
+      "lines": [
+        "ordinary",
+        " ",
+        "private-marker82"
+      ],
+      "matches": [
+        true,
+        false,
+        true
+      ],
+      "name": "disabled",
+      "settings": {}
+    },
+    {
+      "lines": [
+        "ordinary",
+        " "
+      ],
+      "matches": [
+        false,
+        false
+      ],
+      "name": "empty-include",
+      "settings": {
+        "log_enable_include": true
+      }
+    },
+    {
+      "lines": [
+        "ordinary"
+      ],
+      "matches": [
+        true
+      ],
+      "name": "empty-exclude",
+      "settings": {
+        "log_enable_exclude": true
+      }
+    },
+    {
+      "lines": [
+        "ordinary"
+      ],
+      "matches": [
+        true
+      ],
+      "name": "empty-keyword",
+      "settings": {
+        "log_enable_include": true,
+        "log_include_keyword": [
+          ""
+        ]
+      }
+    },
+    {
+      "lines": [
+        "ALLOW",
+        "PASS",
+        "ordinary"
+      ],
+      "matches": [
+        true,
+        true,
+        false
+      ],
+      "name": "joined-flags",
+      "settings": {
+        "log_enable_include": true,
+        "log_include_regex": [
+          "(?i)allow",
+          "pass"
+        ]
+      }
+    },
+    {
+      "lines": [
+        "DENY",
+        "REJECT",
+        "allow"
+      ],
+      "matches": [
+        false,
+        false,
+        true
+      ],
+      "name": "joined-exclusion",
+      "settings": {
+        "log_enable_exclude": true,
+        "log_exclude_regex": [
+          "(?i)deny",
+          "reject"
+        ]
+      }
+    },
+    {
+      "lines": [
+        "no",
+        "yes"
+      ],
+      "matches": [
+        true,
+        true
+      ],
+      "name": "empty-alternative",
+      "settings": {
+        "log_enable_include": true,
+        "log_include_regex": [
+          "",
+          "yes"
+        ]
+      }
+    },
+    {
+      "lines": [
+        "[literal]",
+        "literal",
+        "[literal] deny"
+      ],
+      "matches": [
+        true,
+        false,
+        false
+      ],
+      "name": "literal-and-exclusion",
+      "settings": {
+        "log_enable_exclude": true,
+        "log_enable_include": true,
+        "log_exclude_keyword": [
+          "deny"
+        ],
+        "log_include_keyword": [
+          "[literal]"
+        ]
+      }
+    }
+  ],
+  "sourceSha256": {
+    "src/database/SettingsRepo.cpp": "34c613da64e90149702bd5c55dcb245ff667a8ebe063db3ad00c8065eaa0a3ee",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/database/OtpProfilesRepo.cpp": "760a0552b72d71a138db3f2d98e6b3b0bc6a44d9e5b1067f420750f00524993c",
+    "include/ui/mainwindow.h": "8fbac51e6e8bb0d17a683874d1519a5b1fa770596307e1224e2e6812e8bfe30f",
+    "src/ui/mainWindow/mainwindow_log.cpp": "77cf7833ed46f0abe737177ca33f7e6b6cb8a615d0e9eec03e4c6271a80f2a45",
+    "src/ui/mainWindow/mainwindow_view.cpp": "da4963c2f2f5d390990b2c757fb42312448f67f2953d7fc09b7bb720544dbcd1"
+  },
+  "writerSourceSha256": "05352e32d763d9af1ae21e49c82fca0ea289587d8b8c472815d6a6282611358a",
+  "sha256": {
+    "bad-limit.thrbackup": "9c0be45acf8c0e614893dd39c9d681d309dc885dad357a5b2283a4feb19c4276",
+    "bad-list.thrbackup": "ba2625674daa9042ded2f09fb013d92cdfe211e074898189a5f1fc7805b3ba1d",
+    "bad-regex.thrbackup": "6567c1a6ba64592cea0127ee896f914356eda3bd74c95cd8343699c0ca6914de",
+    "bad-sort.thrbackup": "ae175c9002deed81628032ef629c784bc6af704ecd78b405905ec7f54f980d15",
+    "defaults.thrbackup": "20ade1200f8dea10c5e37d465657bbb7cf002f30bc3babd0b8c9c0a886341bce",
+    "retention-minimum.thrbackup": "2c6fd497b8c454b24aa00d49a9afa5d24ffdda839ab3e70e83139cb589fd6fb1",
+    "sparse.thrbackup": "a865336625172b1057b9ff468c62f8e77469816f648941db126c53fa1b2764f0",
+    "valid.thrbackup": "d499d3ce1d7c71634d34fa47cd64b3147bd7c600245c9ece9f931e21faac1423"
+  }
+}

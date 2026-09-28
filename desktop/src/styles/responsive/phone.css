@@ -1,0 +1,142 @@
+@media (max-width: 700px) {
+  body {
+    background: var(--shell);
+    font-size: 13px;
+  }
+  .app-shell {
+    display: block;
+    min-height: 100dvh;
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+  }
+  .sidebar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 20;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    border: 0;
+    border-top: 1px solid var(--border);
+    padding: 8px 9px calc(8px + env(safe-area-inset-bottom));
+    background: var(--sidebar);
+  }
+  .primary-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: space-around;
+  }
+  .nav-link {
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 48px;
+    padding: 6px 2px;
+    font-size: 8px;
+    border-radius: var(--radius-m);
+    justify-content: center;
+    white-space: nowrap;
+  }
+  .nav-link > .icon {
+    width: 19px;
+    height: 19px;
+  }
+  .topbar {
+    padding: 0 19px;
+    height: 62px;
+    position: relative;
+    background: var(--shell);
+  }
+  .topbar-actions {
+    gap: 8px;
+  }
+  .topbar-actions > .icon-button {
+    width: 28px;
+    height: 28px;
+  }
+  main {
+    padding: 25px 19px 98px;
+  }
+  .page-heading {
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+  h1 {
+    font-size: 29px;
+    letter-spacing: -1.1px;
+  }
+  .subtitle {
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 270px;
+    margin-top: 8px;
+  }
+  .page-heading > .button {
+    font-size: 0;
+    padding: 10px;
+    min-height: 35px;
+    gap: 0;
+    margin-top: 22px;
+    border-radius: var(--radius-m);
+  }
+  .page-heading > .button > .icon {
+    width: 17px;
+    height: 17px;
+  }
+  .power-button {
+    height: 114px;
+    width: 114px;
+  }
+  .power-button .icon {
+    height: 41px;
+    width: 41px;
+  }
+  .selected-server {
+    padding: 13px;
+    gap: 12px;
+  }
+  .selected-server .flag {
+    height: 24px;
+    width: 32px;
+  }
+  .selected-server strong {
+    font-size: 12px;
+  }
+  .selected-server small {
+    font-size: 8px;
+  }
+  .selected-server .latency {
+    font-size: 10px;
+  }
+  .selected-server > .icon {
+    width: 13px;
+    height: 13px;
+  }
+  .endpoint {
+    gap: 10px;
+  }
+  .endpoint strong {
+    font-size: 10px;
+  }
+  .endpoint small {
+    font-size: 8px;
+  }
+  .traffic-chart {
+    height: 125px;
+  }
+  .workspace-footer {
+    font-size: 8px;
+    line-height: 1.7;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 13px;
+  }
+  .workspace-footer .text-button {
+    font-size: 9px;
+  }
+}

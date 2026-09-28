@@ -1,0 +1,95 @@
+.app-shell {
+  max-width: 1580px;
+  margin: 16px auto;
+  min-height: calc(100vh - 32px);
+  display: grid;
+  grid-template-columns: 215px minmax(0, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  overflow: clip;
+  background: var(--shell);
+  box-shadow: var(--shadow);
+}
+.sidebar {
+  background: var(--sidebar);
+  border-right: 1px solid var(--border-soft);
+  padding: 28px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 16px;
+  height: calc(100vh - 34px);
+  min-height: 580px;
+  max-height: 1050px;
+}
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-link {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  min-height: 45px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+.nav-link .icon {
+  width: 18px;
+  height: 18px;
+}
+.nav-link:hover {
+  background: var(--raised);
+  color: var(--text);
+}
+.nav-link.active {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+  border-color: rgba(var(--accent-rgb), 0.07);
+}
+.workspace {
+  min-width: 0;
+}
+.topbar {
+  height: 66px;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  gap: 16px;
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+main {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 32px;
+}
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+.page-heading > .button {
+  margin-top: 12px;
+  flex: none;
+}

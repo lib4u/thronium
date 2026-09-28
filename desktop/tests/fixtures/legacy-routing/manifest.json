@@ -1,0 +1,956 @@
+{
+  "qtRuntime": "6.11.2",
+  "writer": "desktop/engine/src/legacy_backup/golden_writer.cpp",
+  "ddl": "src/database/RoutesRepo.cpp",
+  "profiles": 2,
+  "groups": 1,
+  "routes": 2,
+  "rules": 3,
+  "dns": {
+    "servers": [
+      {
+        "type": "udp",
+        "tag": "dns-direct",
+        "server": "127.0.0.1",
+        "server_port": 43530
+      },
+      {
+        "type": "https",
+        "tag": "dns-proxy",
+        "server": "127.0.0.2",
+        "server_port": 43531,
+        "path": "/dns-query",
+        "headers": {
+          "X-Fixture-Key": [
+            "legacy-route-dns-header-secret"
+          ]
+        },
+        "tls": {
+          "enabled": true,
+          "server_name": "fixture.invalid"
+        }
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          "fixture.invalid"
+        ],
+        "server": "dns-proxy"
+      }
+    ],
+    "final": "dns-direct",
+    "disable_cache": true
+  },
+  "raw": {
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "network": "tcp"
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "invert": true,
+            "rules": [
+              {
+                "domain": "blocked.invalid"
+              },
+              {
+                "port": 53
+              }
+            ]
+          }
+        ],
+        "outbound": -2
+      }
+    ],
+    "final": -2,
+    "find_process": false
+  },
+  "profileNames": [
+    "Imported route SOCKS 🦊",
+    "Imported route HTTP"
+  ],
+  "generatedOracle": {
+    "generated": {
+      "inputs": [
+        {
+          "id": "Imported structured routing 🇷🇺",
+          "settings": {
+            "dns_object": "{\"servers\": [{\"type\": \"udp\", \"tag\": \"dns-direct\", \"server\": \"127.0.0.1\", \"server_port\": 43530}, {\"type\": \"https\", \"tag\": \"dns-proxy\", \"server\": \"127.0.0.2\", \"server_port\": 43531, \"path\": \"/dns-query\", \"headers\": {\"X-Fixture-Key\": [\"legacy-route-dns-header-secret\"]}, \"tls\": {\"enabled\": true, \"server_name\": \"fixture.invalid\"}}], \"rules\": [{\"domain_suffix\": [\"fixture.invalid\"], \"server\": \"dns-proxy\"}], \"final\": \"dns-direct\", \"disable_cache\": true}",
+            "current_route_id": "2",
+            "remember_id": "41",
+            "default_domain_strategy": "prefer_ipv4",
+            "use_dns_object": "false",
+            "remote_dns": "tcp://127.0.0.1:43531",
+            "direct_dns": "127.0.0.1:43530",
+            "core_box_underlying_dns": "127.0.0.1:43530",
+            "dns_final_out": "direct",
+            "direct_dns_disable_ipv6": "true",
+            "remote_dns_disable_ipv6": "true",
+            "dns_disable_cache": "true",
+            "dns_predefined_rules": "[\"127.0.0.21 override.fixture.invalid alias.fixture.invalid\", \"::1 v6.fixture.invalid\"]"
+          },
+          "rules": [
+            {
+              "order": 0,
+              "kind": 1,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 0,
+                "name": "Auxiliary",
+                "type": 1,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"aux.fixture.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -1,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            },
+            {
+              "order": 4,
+              "kind": 2,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 4,
+                "name": "Direct",
+                "type": 2,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"local.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -2,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            },
+            {
+              "order": 8,
+              "kind": 3,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 8,
+                "name": "Reject",
+                "type": 3,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"blocked.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -3,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            }
+          ],
+          "raw": false,
+          "raw_route": {}
+        },
+        {
+          "id": "Imported raw 日本",
+          "settings": {
+            "dns_object": "{\"servers\": [{\"type\": \"udp\", \"tag\": \"dns-direct\", \"server\": \"127.0.0.1\", \"server_port\": 43530}, {\"type\": \"https\", \"tag\": \"dns-proxy\", \"server\": \"127.0.0.2\", \"server_port\": 43531, \"path\": \"/dns-query\", \"headers\": {\"X-Fixture-Key\": [\"legacy-route-dns-header-secret\"]}, \"tls\": {\"enabled\": true, \"server_name\": \"fixture.invalid\"}}], \"rules\": [{\"domain_suffix\": [\"fixture.invalid\"], \"server\": \"dns-proxy\"}], \"final\": \"dns-direct\", \"disable_cache\": true}",
+            "current_route_id": "2",
+            "remember_id": "41",
+            "default_domain_strategy": "prefer_ipv4",
+            "use_dns_object": "false",
+            "remote_dns": "tcp://127.0.0.1:43531",
+            "direct_dns": "127.0.0.1:43530",
+            "core_box_underlying_dns": "127.0.0.1:43530",
+            "dns_final_out": "direct",
+            "direct_dns_disable_ipv6": "true",
+            "remote_dns_disable_ipv6": "true",
+            "dns_disable_cache": "true",
+            "dns_predefined_rules": "[\"127.0.0.21 override.fixture.invalid alias.fixture.invalid\", \"::1 v6.fixture.invalid\"]"
+          },
+          "rules": [],
+          "raw": true,
+          "raw_route": {
+            "rules": [
+              {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                  {
+                    "network": "tcp"
+                  },
+                  {
+                    "type": "logical",
+                    "mode": "or",
+                    "invert": true,
+                    "rules": [
+                      {
+                        "domain": "blocked.invalid"
+                      },
+                      {
+                        "port": 53
+                      }
+                    ]
+                  }
+                ],
+                "outbound": -2
+              }
+            ],
+            "final": -2,
+            "find_process": false
+          }
+        }
+      ],
+      "results": [
+        {
+          "directStrategy": "ipv4_only",
+          "dns": {
+            "cache_capacity": 65536,
+            "disable_cache": true,
+            "rules": [
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "override.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "override.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "alias.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "alias.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "domain": "v6.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN AAAA ::1"
+                ],
+                "domain": "v6.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "local.invalid"
+                ],
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "local.invalid"
+                ],
+                "server": "dns-direct"
+              },
+              {
+                "action": "predefined",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "aux.fixture.invalid"
+                ],
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "aux.fixture.invalid"
+                ],
+                "server": "dns-remote"
+              },
+              {
+                "action": "predefined",
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "server": "dns-direct"
+              }
+            ],
+            "servers": [
+              {
+                "detour": "proxy",
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43531,
+                "tag": "dns-remote",
+                "type": "tcp"
+              },
+              {
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-direct",
+                "type": "udp"
+              },
+              {
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-local",
+                "type": "udp"
+              }
+            ]
+          },
+          "error": "",
+          "id": "Imported structured routing 🇷🇺",
+          "xrayStrategy": "UseIPv4"
+        },
+        {
+          "directStrategy": "ipv4_only",
+          "dns": {
+            "cache_capacity": 65536,
+            "disable_cache": true,
+            "rules": [
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "override.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "override.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "alias.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "alias.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "domain": "v6.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN AAAA ::1"
+                ],
+                "domain": "v6.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "server": "dns-direct"
+              }
+            ],
+            "servers": [
+              {
+                "detour": "proxy",
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43531,
+                "tag": "dns-remote",
+                "type": "tcp"
+              },
+              {
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-direct",
+                "type": "udp"
+              },
+              {
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-local",
+                "type": "udp"
+              }
+            ]
+          },
+          "error": "",
+          "id": "Imported raw 日本",
+          "xrayStrategy": "UseIPv4"
+        }
+      ],
+      "qtRuntime": "6.11.2"
+    },
+    "generated-local": {
+      "inputs": [
+        {
+          "id": "Imported structured routing 🇷🇺",
+          "settings": {
+            "dns_object": "{\"servers\": [{\"type\": \"udp\", \"tag\": \"dns-direct\", \"server\": \"127.0.0.1\", \"server_port\": 43530}, {\"type\": \"https\", \"tag\": \"dns-proxy\", \"server\": \"127.0.0.2\", \"server_port\": 43531, \"path\": \"/dns-query\", \"headers\": {\"X-Fixture-Key\": [\"legacy-route-dns-header-secret\"]}, \"tls\": {\"enabled\": true, \"server_name\": \"fixture.invalid\"}}], \"rules\": [{\"domain_suffix\": [\"fixture.invalid\"], \"server\": \"dns-proxy\"}], \"final\": \"dns-direct\", \"disable_cache\": true}",
+            "current_route_id": "2",
+            "remember_id": "41",
+            "default_domain_strategy": "prefer_ipv4",
+            "use_dns_object": "false",
+            "remote_dns": "tcp://127.0.0.1:43531",
+            "direct_dns": "localhost",
+            "core_box_underlying_dns": "127.0.0.1:43530",
+            "dns_final_out": "direct",
+            "direct_dns_disable_ipv6": "true",
+            "remote_dns_disable_ipv6": "true",
+            "dns_disable_cache": "true",
+            "dns_predefined_rules": "[\"127.0.0.21 override.fixture.invalid alias.fixture.invalid\", \"::1 v6.fixture.invalid\"]"
+          },
+          "rules": [
+            {
+              "order": 0,
+              "kind": 1,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 0,
+                "name": "Auxiliary",
+                "type": 1,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"aux.fixture.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -1,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            },
+            {
+              "order": 4,
+              "kind": 2,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 4,
+                "name": "Direct",
+                "type": 2,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"local.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -2,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            },
+            {
+              "order": 8,
+              "kind": 3,
+              "columns": {
+                "route_profile_id": 1,
+                "rule_order": 8,
+                "name": "Reject",
+                "type": 3,
+                "ip_version": null,
+                "network": null,
+                "protocol": null,
+                "inbound_json": null,
+                "domain_json": null,
+                "domain_suffix_json": "[\"blocked.invalid\"]",
+                "domain_keyword_json": null,
+                "domain_regex_json": null,
+                "source_ip_cidr_json": null,
+                "source_ip_is_private": 0,
+                "ip_cidr_json": null,
+                "ip_is_private": 0,
+                "source_port_json": null,
+                "source_port_range_json": null,
+                "port_json": null,
+                "port_range_json": null,
+                "process_name_json": null,
+                "process_path_json": null,
+                "process_path_regex_json": null,
+                "rule_set_json": null,
+                "invert": 0,
+                "outbound_id": -3,
+                "action": "route",
+                "reject_method": null,
+                "no_drop": 0,
+                "override_address": null,
+                "override_port": null,
+                "sniffers_json": null,
+                "sniff_override_dest": 0,
+                "strategy": null,
+                "wifi_ssid_json": null,
+                "wifi_bssid_json": null,
+                "tls_spoof": null,
+                "tls_spoof_method": null
+              }
+            }
+          ],
+          "raw": false,
+          "raw_route": {}
+        },
+        {
+          "id": "Imported raw 日本",
+          "settings": {
+            "dns_object": "{\"servers\": [{\"type\": \"udp\", \"tag\": \"dns-direct\", \"server\": \"127.0.0.1\", \"server_port\": 43530}, {\"type\": \"https\", \"tag\": \"dns-proxy\", \"server\": \"127.0.0.2\", \"server_port\": 43531, \"path\": \"/dns-query\", \"headers\": {\"X-Fixture-Key\": [\"legacy-route-dns-header-secret\"]}, \"tls\": {\"enabled\": true, \"server_name\": \"fixture.invalid\"}}], \"rules\": [{\"domain_suffix\": [\"fixture.invalid\"], \"server\": \"dns-proxy\"}], \"final\": \"dns-direct\", \"disable_cache\": true}",
+            "current_route_id": "2",
+            "remember_id": "41",
+            "default_domain_strategy": "prefer_ipv4",
+            "use_dns_object": "false",
+            "remote_dns": "tcp://127.0.0.1:43531",
+            "direct_dns": "localhost",
+            "core_box_underlying_dns": "127.0.0.1:43530",
+            "dns_final_out": "direct",
+            "direct_dns_disable_ipv6": "true",
+            "remote_dns_disable_ipv6": "true",
+            "dns_disable_cache": "true",
+            "dns_predefined_rules": "[\"127.0.0.21 override.fixture.invalid alias.fixture.invalid\", \"::1 v6.fixture.invalid\"]"
+          },
+          "rules": [],
+          "raw": true,
+          "raw_route": {
+            "rules": [
+              {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                  {
+                    "network": "tcp"
+                  },
+                  {
+                    "type": "logical",
+                    "mode": "or",
+                    "invert": true,
+                    "rules": [
+                      {
+                        "domain": "blocked.invalid"
+                      },
+                      {
+                        "port": 53
+                      }
+                    ]
+                  }
+                ],
+                "outbound": -2
+              }
+            ],
+            "final": -2,
+            "find_process": false
+          }
+        }
+      ],
+      "results": [
+        {
+          "directStrategy": "ipv4_only",
+          "dns": {
+            "cache_capacity": 65536,
+            "disable_cache": true,
+            "rules": [
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "override.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "override.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "alias.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "alias.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "domain": "v6.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN AAAA ::1"
+                ],
+                "domain": "v6.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "local.invalid"
+                ],
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "local.invalid"
+                ],
+                "server": "dns-direct"
+              },
+              {
+                "action": "predefined",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "aux.fixture.invalid"
+                ],
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "domain": [],
+                "domain_keyword": [],
+                "domain_regex": [],
+                "domain_suffix": [
+                  "aux.fixture.invalid"
+                ],
+                "server": "dns-remote"
+              },
+              {
+                "action": "predefined",
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "server": "dns-direct"
+              }
+            ],
+            "servers": [
+              {
+                "detour": "proxy",
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43531,
+                "tag": "dns-remote",
+                "type": "tcp"
+              },
+              {
+                "domain_resolver": "dns-local",
+                "tag": "dns-direct",
+                "type": "local"
+              },
+              {
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-local",
+                "type": "udp"
+              }
+            ]
+          },
+          "error": "",
+          "id": "Imported structured routing 🇷🇺",
+          "xrayStrategy": "UseIPv4"
+        },
+        {
+          "directStrategy": "ipv4_only",
+          "dns": {
+            "cache_capacity": 65536,
+            "disable_cache": true,
+            "rules": [
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "override.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "override.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN A 127.0.0.21"
+                ],
+                "domain": "alias.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "domain": "alias.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "domain": "v6.fixture.invalid",
+                "query_type": "A",
+                "rcode": "NXDOMAIN"
+              },
+              {
+                "action": "predefined",
+                "answer": [
+                  "*. IN AAAA ::1"
+                ],
+                "domain": "v6.fixture.invalid",
+                "query_type": "AAAA",
+                "rcode": "NOERROR"
+              },
+              {
+                "action": "predefined",
+                "query_type": [
+                  "AAAA"
+                ]
+              },
+              {
+                "action": "route",
+                "server": "dns-direct"
+              }
+            ],
+            "servers": [
+              {
+                "detour": "proxy",
+                "domain_resolver": "dns-local",
+                "server": "127.0.0.1",
+                "server_port": 43531,
+                "tag": "dns-remote",
+                "type": "tcp"
+              },
+              {
+                "domain_resolver": "dns-local",
+                "tag": "dns-direct",
+                "type": "local"
+              },
+              {
+                "server": "127.0.0.1",
+                "server_port": 43530,
+                "tag": "dns-local",
+                "type": "udp"
+              }
+            ]
+          },
+          "error": "",
+          "id": "Imported raw 日本",
+          "xrayStrategy": "UseIPv4"
+        }
+      ],
+      "qtRuntime": "6.11.2"
+    }
+  },
+  "dnsOracle": "desktop/engine/src/legacy_backup/routes/generated_dns/fixtures/qt-oracle-manifest.json",
+  "sha256": {
+    "blocked-route.thrbackup": "a7bd1653ae1d1ba2d363197def4cba88fbff419c72c70f1891c996b10ddc79e6",
+    "generated-blocked.thrbackup": "8fc6d938f55f4674ef72cbfd587a468ac2cada8472663bd21fe6d699fddcac4e",
+    "generated-local.thrbackup": "2c6fdf661ad4aae8ccbf3bf99f7dca8107a7e062b8afa11594684f11368dafd2",
+    "generated.thrbackup": "3343794db49f177d2f222d33556400b8267efca2b4055c2d0d6935f8070d64c4",
+    "mixed.thrbackup": "f60faf3fdac57e46f3e54424e3f683a40b6bc5d8884e2c7131456013a0b88d07",
+    "no-routes.thrbackup": "2c5ca38a81f3a1fde2e0afcd2ca5d195554506ef6654f8d29d178de3ae1ad58e",
+    "no-settings.thrbackup": "f75b8568bd498a445d2c49aa3d38b81ec6d6066cf8d4e01cfc2dabbeb0f3eed1",
+    "references-no-profiles.thrbackup": "596d43bddade32b66a78a170d44f82f94c1507b00d4f8c3705c110e233d45bec",
+    "routes-only.thrbackup": "da53d002819a32837c36a4ecee5cffec9439146f94b64bcd693beade9b041786"
+  }
+}

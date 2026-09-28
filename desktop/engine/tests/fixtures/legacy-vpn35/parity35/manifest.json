@@ -1,0 +1,29 @@
+{
+  "cases": 19,
+  "binarySha256": "1b5952cd6511e52b147c28da23a6aab774bd9c4bc5c3ac2d3b7229486d20a4ca",
+  "prior37Unchanged": true,
+  "onlyStaticQt": true,
+  "network": false,
+  "otpGenerated": false,
+  "result": "Qt 6.11.2: 19 cases; only absent-id OTP adapter calls=19",
+  "files": {
+    "export-reparse-differences.json": "27fc58fc0e3cee60ca0ff17af60065ab473dcaab0ff3415e3d7b6a2d03723a5a",
+    "export-reparse-run.log": "78e08b22842e8a24fa904833a1a80803803d423df7cc87039d0948268f28cdff",
+    "export-reparse-cases.json": "35995a1928871e8aeb8ab8607ae93dc92f6164d45e145ffde989e3d316430883",
+    "export-reparse-inputs.json": "829403a45066f358289d069ef299caacd2bf089839fd3f1057613f8e430ec3b6",
+    "run.log": "78e08b22842e8a24fa904833a1a80803803d423df7cc87039d0948268f28cdff",
+    "qt-cases.json": "99b826b241ecfefb7678d29c930965f19f26ef48baf7dedd5d9da808bac880aa",
+    "inputs.json": "13a9db5315583c23fb7f132c8d58eb22ac934484815eeec043ce96e10cadd9b2",
+    "prior-oracle-manifest.json": "5cba76f24344fc86d6a11d38c218869129e582514143250847030e19fb46ef70",
+    "oracle.cpp": "6c7d4eb8e778f1240e87027be32c9d3ea00cdb15f3771601670a0f869e0472e1",
+    "qt-oracle": "1b5952cd6511e52b147c28da23a6aab774bd9c4bc5c3ac2d3b7229486d20a4ca"
+  },
+  "exportReparseCases": 19,
+  "reparseDifferences": [
+    "openvpn-array-blank",
+    "openvpn-newline-blank",
+    "openconnect-array-blank",
+    "openconnect-newline-blank"
+  ],
+  "binaryAndWrapperMatchOriginalManifest": true
+}

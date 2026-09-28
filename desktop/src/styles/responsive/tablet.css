@@ -1,0 +1,117 @@
+@media (max-width: 1080px) {
+  .app-shell {
+    grid-template-columns: 170px minmax(0, 1fr);
+    margin: 10px;
+    border-radius: var(--radius-xl);
+  }
+  .sidebar {
+    height: calc(100vh - 22px);
+    top: 10px;
+    padding-inline: 10px;
+  }
+  .nav-link {
+    font-size: 10px;
+    gap: 8px;
+    padding-inline: 10px;
+  }
+  .nav-link .icon {
+    width: 16px;
+    height: 16px;
+  }
+  main {
+    padding: 23px;
+  }
+  .topbar {
+    padding: 0 23px;
+    height: 59px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .page-heading {
+    gap: 12px;
+  }
+  .page-heading .button {
+    font-size: 10px;
+  }
+  .subtitle {
+    font-size: 11px;
+  }
+  .selected-server {
+    padding: 10px;
+    gap: 8px;
+  }
+  .selected-server .flag {
+    width: 27px;
+    height: 20px;
+  }
+  .selected-server strong {
+    font-size: 10px;
+  }
+  .selected-server small {
+    font-size: 7px;
+  }
+  .selected-server .latency {
+    font-size: 8px;
+  }
+  .endpoint {
+    gap: 7px;
+  }
+  .endpoint strong {
+    font-size: 9px;
+  }
+  .endpoint small {
+    font-size: 7px;
+  }
+  .mode-card {
+    padding: 16px;
+  }
+  .mode-card > span:last-child {
+    font-size: 9px;
+  }
+  .mode-card > span:last-child br {
+    display: none;
+  }
+  .settings-layout {
+    gap: 14px;
+  }
+  .settings-panel {
+    padding: 18px;
+  }
+  .setting-row {
+    padding-block: 18px;
+  }
+  .toast-stack {
+    left: calc(50% + 85px);
+  }
+}
+@media (max-width: 880px) and (min-width: 701px) {
+  .app-shell {
+    grid-template-columns: 68px minmax(0, 1fr);
+  }
+  .sidebar {
+    padding: 23px 10px;
+  }
+  .nav-link > span {
+    display: none;
+  }
+  .primary-nav {
+    margin-top: 35px;
+    gap: 12px;
+  }
+  .nav-link {
+    justify-content: center;
+    padding: 12px;
+  }
+  .nav-link > .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .toast-stack {
+    left: calc(50% + 34px);
+  }
+  .page-heading > .button {
+    font-size: 9px;
+    padding-inline: 10px;
+  }
+}

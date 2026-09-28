@@ -1,0 +1,146 @@
+@media (max-width: 700px) {
+  .search-field {
+    padding: 11px;
+  }
+  .filter-row {
+    gap: 10px;
+  }
+  .filter-row > .muted {
+    font-size: 8px;
+  }
+  .mode-card {
+    padding: 17px 45px 17px 63px;
+    min-height: 92px;
+  }
+  .mode-icon {
+    position: absolute;
+    left: 17px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+  }
+  .mode-card > strong {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .mode-card > span:last-child {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .mode-card > span:last-child br {
+    display: none;
+  }
+  .mode-radio {
+    top: 22px;
+  }
+  .switch {
+    width: 27px;
+    height: 16px;
+  }
+  .switch:after {
+    width: 10px;
+    height: 10px;
+  }
+  .switch.active:after {
+    transform: translateX(11px);
+  }
+  .rules-footer {
+    padding: 13px 15px;
+    font-size: 9px;
+    gap: 6px;
+  }
+  .rules-notice {
+    padding: 10px 14px;
+    font-size: 9px;
+  }
+  .log-level {
+    font-size: 7px;
+  }
+  .settings-layout {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .settings-panel {
+    padding: 21px;
+  }
+
+  .setting-label {
+    font-size: 11px;
+  }
+  .setting-row {
+    padding: 20px 0;
+    gap: 14px;
+  }
+  .setting-row strong {
+    font-size: 11px;
+  }
+  .setting-row p {
+    font-size: 9px;
+    max-width: 210px;
+  }
+  .settings-note {
+    font-size: 10px;
+  }
+  .toast-stack {
+    bottom: 85px;
+    left: 50%;
+    width: max-content;
+    max-width: calc(100vw - 30px);
+  }
+  .toast {
+    font-size: 10px;
+    padding: 12px 14px;
+  }
+  .modal {
+    max-height: calc(100dvh - 32px);
+  }
+  .modal-head {
+    padding: 21px 20px 14px;
+  }
+  .modal-body {
+    padding: 4px 20px 20px;
+  }
+  .modal-footer {
+    padding: 14px 20px;
+  }
+  .modal-head h2 {
+    font-size: 20px;
+  }
+  .field-label {
+    font-size: 11px;
+  }
+  .text-input {
+    font-size: 12px;
+  }
+  .modal-footer .button {
+    font-size: 10px;
+  }
+  .settings-panel .switch {
+    width: 31px;
+    height: 18px;
+  }
+  .settings-panel .switch:after {
+    width: 12px;
+    height: 12px;
+  }
+  .settings-panel .switch.active:after {
+    transform: translateX(13px);
+  }
+}
+@media (max-width: 365px) {
+  main {
+    padding-inline: 14px;
+  }
+  .topbar {
+    padding-inline: 14px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .nav-link {
+    font-size: 7px;
+  }
+  .endpoint {
+    gap: 7px;
+  }
+}

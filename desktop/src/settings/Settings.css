@@ -1,0 +1,300 @@
+.settings-page {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.settings-page .settings-workbench {
+  grid-template-columns: 185px minmax(0, 1fr);
+  gap: 25px;
+}
+.settings-page .settings-sections {
+  position: sticky;
+  top: 0;
+  max-height: calc(100dvh - 170px);
+  overflow: auto;
+  align-self: start;
+}
+.settings-page .settings-sections button {
+  min-height: 39px;
+  flex-shrink: 0;
+}
+.settings-page .settings-sections button > span {
+  flex: 1;
+}
+.settings-draft-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.settings-page .settings-category {
+  padding: 24px;
+}
+.settings-page .feature-panel-head h2 {
+  margin: 0;
+}
+.settings-page .feature-panel-head p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.settings-page .settings-card {
+  margin: 16px 0 0;
+  padding: 15px;
+}
+.settings-page .settings-card > summary {
+  font-size: 11px;
+  font-weight: 600;
+}
+.settings-page .settings-subgroup {
+  margin-top: 20px;
+}
+.settings-page .settings-subgroup + .settings-subgroup {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.settings-page .settings-subgroup h3 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+}
+.settings-page .settings-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+  margin-top: 18px;
+}
+.settings-page .feature-field {
+  margin: 0;
+  min-width: 0;
+  gap: 7px;
+}
+.settings-page .feature-field > span {
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 550;
+}
+.settings-page .text-input {
+  width: 100%;
+  max-width: none;
+  min-height: 40px;
+  padding: 10px 12px;
+  margin: 0;
+  font-size: 12px;
+}
+.settings-page textarea {
+  resize: vertical;
+}
+.settings-page .settings-wide {
+  grid-column: 1/-1;
+}
+.settings-page .setting-toggle {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  font-size: 12px;
+}
+.settings-page .setting-toggle input {
+  appearance: none;
+  cursor: pointer;
+  width: 30px;
+  height: 18px;
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: var(--radius-l);
+  background: var(--field, var(--panel));
+  position: relative;
+  flex: none;
+}
+.settings-page .setting-toggle input:before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform var(--motion-fast);
+}
+.settings-page .setting-toggle input:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.settings-page .setting-toggle input:checked:before {
+  transform: translateX(12px);
+  background: white;
+}
+.settings-page .setting-toggle input:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.settings-page .setting-description {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.settings-page .settings-save {
+  padding-top: 18px;
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+}
+.settings-page .settings-save > span {
+  flex: 1;
+  color: var(--muted);
+  font-size: 10px;
+}
+.settings-page .settings-save .button {
+  min-height: 40px;
+}
+.settings-page .settings-conflict {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background: var(--raised, var(--panel));
+}
+.settings-page .settings-conflict p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.settings-page .settings-conflict .feature-toolbar {
+  flex-wrap: wrap;
+}
+.settings-page [data-conflict='true'] {
+  border-color: var(--accent);
+}
+.settings-page .settings-search-results {
+  display: grid;
+  gap: 7px;
+}
+.settings-page .settings-search-results button,
+.settings-page .settings-subscription {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: var(--radius-m);
+  text-align: left;
+}
+.settings-page .settings-search-results button > span,
+.settings-page .settings-subscription > span {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+}
+.settings-page .settings-search-results small,
+.settings-page .settings-subscription small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.settings-page .settings-subscriptions {
+  display: grid;
+  gap: 9px;
+}
+.settings-page .settings-scope {
+  padding: 20px 0;
+}
+.settings-page .settings-scope small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.settings-page [hidden] {
+  display: none !important;
+}
+html[data-compact='true'] .connection-row {
+  min-height: 45px;
+  padding-block: 0;
+}
+html[data-compact='true'] .connection-row-button {
+  padding-block: 7px;
+}
+html[data-reduce-motion='true'] *,
+html[data-reduce-motion='true'] *:before,
+html[data-reduce-motion='true'] *:after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+@media (max-width: 760px) {
+  .settings-page .settings-workbench {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .settings-page .settings-sections {
+    position: static;
+    max-height: none;
+    flex-direction: row;
+    overflow: auto;
+  }
+  .settings-page .settings-category {
+    padding: 18px;
+  }
+  .settings-page .settings-sections button {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 550px) {
+  .settings-page .settings-field-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .settings-page .settings-save {
+    flex-wrap: wrap;
+  }
+  .settings-page .settings-save > span {
+    flex-basis: 100%;
+  }
+  .settings-page .settings-save > button {
+    flex: 1;
+  }
+}
+
+.settings-extra-actions {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.settings-history {
+  max-height: 300px;
+  overflow: auto;
+  font-size: 11px;
+}
+.settings-history table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.settings-history th,
+.settings-history td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-page .settings-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+}
+.settings-page .settings-related .text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.storage-directory {
+  overflow-wrap: anywhere;
+}

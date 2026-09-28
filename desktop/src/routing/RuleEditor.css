@@ -1,0 +1,158 @@
+.desktop-modal.route-rule-modal {
+  width: min(830px, calc(100vw - 32px));
+}
+.route-rule-modal > .modal-head {
+  padding: 24px 24px 18px;
+}
+.route-rule-modal > .modal-body {
+  padding: 0 24px 22px;
+}
+.route-rule-modal > .modal-footer {
+  padding: 15px 24px;
+  gap: 9px;
+}
+.route-rule-modal .feature-field {
+  margin: 0;
+  gap: 7px;
+}
+.route-rule-modal .feature-field > span {
+  color: var(--text);
+  font-weight: 600;
+}
+.route-rule-modal .text-input {
+  width: 100%;
+  max-width: none;
+  min-height: 40px;
+  padding: 10px 12px;
+  margin: 0;
+  font-size: 12px;
+}
+.route-rule-modal .rule-section {
+  margin-top: 22px;
+}
+.route-rule-modal .rule-section h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 650;
+}
+.route-rule-modal .rule-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 24px;
+  margin-bottom: 14px;
+}
+.route-rule-modal .rule-section-head .text-button {
+  font-size: 11px;
+}
+.route-rule-modal .route-condition-list {
+  gap: 10px;
+  margin: 0 0 10px;
+}
+.route-rule-modal .route-condition {
+  grid-template-columns: 42% minmax(0, 1fr) 28px;
+  gap: 9px;
+  align-items: start;
+}
+.route-rule-modal .route-condition > div {
+  min-width: 0;
+}
+.route-rule-modal .route-condition .text-input {
+  font-size: 11px;
+}
+.route-rule-modal .route-condition > .icon-button {
+  width: 26px;
+  height: 26px;
+  margin-top: 7px;
+}
+.route-rule-modal #rule-add-condition {
+  font-size: 11px;
+  min-height: 30px;
+}
+.route-rule-modal .feature-check {
+  margin: 0;
+  align-items: center;
+}
+.route-rule-modal .feature-check input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+.route-rule-modal .rule-action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 22px;
+  margin-top: 16px;
+}
+.route-rule-modal .rule-action-grid > .feature-check {
+  align-self: center;
+  padding-top: 20px;
+}
+.route-rule-modal .route-advanced {
+  margin-top: 20px;
+}
+.route-rule-modal .route-advanced > summary {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.route-rule-modal .route-advanced[open] > summary {
+  margin-bottom: 14px;
+}
+.route-rule-modal .rule-action-grid .desktop-inline-error {
+  margin: 0;
+  font-size: 10px;
+}
+.route-rule-modal .rule-hint {
+  margin: 9px 0;
+  font-size: 10px;
+  color: var(--muted);
+}
+.route-rule-modal #rule-json {
+  min-height: 300px;
+  height: 42vh;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.route-rule-modal > .modal-footer .button {
+  min-height: 40px;
+  padding: 10px 16px;
+}
+@media (max-width: 600px) {
+  .desktop-modal.route-rule-modal {
+    width: calc(100vw - 20px);
+  }
+  .route-rule-modal > .modal-head,
+  .route-rule-modal > .modal-body,
+  .route-rule-modal > .modal-footer {
+    padding-inline: 16px;
+  }
+  .route-rule-modal .rule-action-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .route-rule-modal .rule-action-grid > .feature-check {
+    padding-top: 0;
+  }
+  .route-rule-modal .route-condition {
+    grid-template-columns: minmax(0, 1fr) 26px;
+    gap: 8px;
+  }
+  .route-rule-modal .route-condition > select {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .route-rule-modal .route-condition > div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .route-rule-modal .route-condition > button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .route-rule-modal > .modal-footer .button {
+    flex: 1;
+  }
+}

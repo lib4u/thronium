@@ -1,0 +1,206 @@
+/* The desktop webview is the window surface, without the prototype's outer card. */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--shell);
+}
+.app-shell {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.workspace {
+  height: 100%;
+}
+.topbar {
+  padding: 0 8px 0 28px;
+  gap: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.topbar .client-wordmark {
+  -webkit-user-drag: none;
+}
+.topbar .client-wordmark img {
+  -webkit-user-drag: none;
+}
+.window-controls {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 2px;
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+.window-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-s);
+  color: var(--muted);
+}
+.window-button:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.window-button:focus-visible {
+  outline-offset: -2px;
+}
+.window-button svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+.window-close:hover {
+  background: var(--danger-strong);
+  color: var(--on-danger-strong);
+}
+.window-resize-handles {
+  display: contents;
+}
+.window-resize {
+  position: fixed;
+  z-index: 100;
+}
+.window-resize-North,
+.window-resize-South {
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+.window-resize-North {
+  top: 0;
+}
+.window-resize-South {
+  bottom: 0;
+}
+.window-resize-East,
+.window-resize-West {
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+.window-resize-East {
+  right: 0;
+}
+.window-resize-West {
+  left: 0;
+}
+.window-resize-NorthEast,
+.window-resize-NorthWest,
+.window-resize-SouthEast,
+.window-resize-SouthWest {
+  width: 8px;
+  height: 8px;
+}
+.window-resize-NorthEast {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+.window-resize-NorthWest {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+.window-resize-SouthEast {
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+.window-resize-SouthWest {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .topbar {
+    height: 102px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: 55px 47px;
+    column-gap: 16px;
+    row-gap: 0;
+    padding-left: 22px;
+  }
+  .topbar .client-wordmark {
+    grid-area: 1 / 1;
+    justify-self: start;
+  }
+  .topbar .primary-nav {
+    grid-area: 2 / 1 / 3 / 4;
+    position: static;
+    justify-content: center;
+    margin: 0;
+    gap: 30px;
+  }
+  .topbar .nav-link > .icon {
+    display: inline-block;
+  }
+  .topbar .nav-link > span {
+    display: inline;
+  }
+  .topbar .nav-link > .icon-host {
+    display: contents;
+  }
+  .topbar .topbar-actions {
+    grid-area: 1 / 2;
+  }
+  .window-controls {
+    grid-area: 1 / 3;
+  }
+}
+@media (max-width: 700px) {
+  .app-shell {
+    height: auto;
+    min-height: 100dvh;
+  }
+  .workspace {
+    height: auto;
+  }
+  .topbar {
+    padding-left: 14px;
+    gap: 8px;
+  }
+  .topbar .client-wordmark {
+    font-size: 19px;
+    gap: 7px;
+  }
+  .topbar .client-wordmark > img {
+    width: 26px;
+    height: 26px;
+  }
+  .topbar-actions {
+    margin-left: auto;
+    gap: 2px;
+  }
+  .window-controls {
+    margin-left: 0;
+    padding-left: 6px;
+    gap: 0;
+  }
+  .window-button {
+    width: 30px;
+    height: 34px;
+  }
+}

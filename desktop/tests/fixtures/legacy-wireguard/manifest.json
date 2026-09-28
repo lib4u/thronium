@@ -1,0 +1,11 @@
+{
+  "writer": "desktop/tests/thrbackup_writer.py: byte for byte the Qt6 QDataStream Qt_6_0 little-endian writer",
+  "data": "Synthetic loopback WireGuard/AWG keys and endpoints only; generator never connects them.",
+  "validProfiles": 2,
+  "validGroups": 1,
+  "blockedProfiles": 5,
+  "sha256": {
+    "blocked.thrbackup": "523e9d545afefce91d664245d8743953934ab00345e41e70e553211bb0109f7b",
+    "valid.thrbackup": "d135f65235cb14967e23ca03fc7fcee64e14ef74611237b93eb6ef6c40bec331"
+  }
+}

@@ -1,0 +1,381 @@
+@media (max-width: 1300px) {
+  .app-shell {
+    margin: 20px;
+    height: calc(100dvh - 40px);
+    max-height: none;
+  }
+  .topbar {
+    padding-inline: 28px;
+    gap: 20px;
+    height: 69px;
+  }
+  .primary-nav {
+    gap: 21px;
+  }
+  .session-pane {
+    padding: 27px 28px 21px;
+  }
+  .library-pane {
+    padding: 27px 25px 21px;
+  }
+  .subscription-collapse > span {
+    gap: 9px;
+  }
+}
+@media (max-width: 1100px) {
+  .app-shell {
+    margin: 13px;
+    height: calc(100dvh - 26px);
+    border-radius: var(--radius-l);
+  }
+  .topbar {
+    height: 64px;
+    padding-inline: 25px;
+    gap: 16px;
+  }
+  .client-wordmark {
+    font-size: 20px;
+    gap: 8px;
+  }
+  .client-wordmark > img {
+    width: 28px;
+    height: 28px;
+  }
+  .primary-nav {
+    gap: 18px;
+  }
+  .nav-link {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .nav-link > .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .topbar-actions {
+    gap: 4px;
+    margin-left: 0;
+  }
+  .session-pane {
+    padding: 25px 23px 21px;
+  }
+  .library-pane {
+    padding: 25px 22px 20px;
+  }
+  .pane-heading {
+    margin-bottom: 19px;
+  }
+  .pane-heading h1,
+  .pane-heading h2 {
+    font-size: 17px;
+  }
+  .live-indicator {
+    font-size: 9px;
+  }
+  .session-card {
+    padding: 21px;
+  }
+  .destination-city {
+    font-size: 33px;
+  }
+  .destination-country {
+    font-size: 9px;
+    gap: 6px;
+  }
+  #connected-protocol {
+    font-size: 8px;
+  }
+  .session-card-top {
+    gap: 8px;
+  }
+  .session-overline,
+  .session-timer {
+    font-size: 9px;
+  }
+  .session-address {
+    font-size: 8px;
+  }
+  .path-stop {
+    width: 61px;
+  }
+  .path-stop small {
+    font-size: 7px;
+  }
+  .session-metrics {
+    padding-block: 20px;
+  }
+  .session-metrics > div {
+    padding-inline: 11px;
+  }
+  .session-metrics strong {
+    font-size: 22px;
+  }
+  .session-metrics strong small {
+    font-size: 8px;
+  }
+  .session-metrics > div > span {
+    font-size: 8px;
+  }
+  .connection-option {
+    padding: 13px 11px;
+    gap: 8px;
+  }
+  .option-text strong {
+    font-size: 9px;
+  }
+  .option-text small {
+    font-size: 7px;
+  }
+  .network-mode {
+    font-size: 8px;
+  }
+  .option-icon > .icon {
+    width: 15px;
+    height: 15px;
+  }
+  .session-footer {
+    font-size: 7px;
+    padding-top: 19px;
+  }
+  .connection-row-button {
+    padding-left: 10px;
+    gap: 9px;
+  }
+  .row-ping {
+    font-size: 8px;
+    margin-left: 5px;
+  }
+  .row-server-info > .row-stats {
+    margin-top: 1px;
+  }
+  .connection-row > .favorite-button {
+    margin-right: 5px;
+    width: 22px;
+  }
+  .subscription-collapse > span {
+    display: block;
+  }
+  .subscription-collapse small {
+    display: block;
+    margin-top: 3px;
+  }
+  .subscription-group-head {
+    padding-top: 16px;
+  }
+  .row-server-info > strong {
+    font-size: 11px;
+  }
+  .row-server-info > small {
+    font-size: 7px;
+  }
+  .library-tabs {
+    margin-top: 18px;
+  }
+  .toast-stack {
+    bottom: 28px;
+  }
+}
+@media (max-width: 890px) and (min-width: 701px) {
+  .topbar {
+    padding-inline: 21px;
+    gap: 12px;
+  }
+  .nav-link > .icon {
+    display: none;
+  }
+  .primary-nav {
+    gap: 15px;
+  }
+  .nav-link {
+    font-size: 9px;
+  }
+  .client-wordmark {
+    font-size: 18px;
+  }
+  .client-wordmark > img {
+    width: 25px;
+    height: 25px;
+  }
+  .topbar-actions > .icon-button {
+    width: 23px;
+  }
+  .client-workspace {
+    grid-template-columns: 48% minmax(0, 1fr);
+  }
+  .session-pane {
+    padding-inline: 18px;
+  }
+  .library-pane {
+    padding-inline: 17px;
+  }
+  .pane-heading h1,
+  .pane-heading h2 {
+    font-size: 15px;
+  }
+  .live-indicator {
+    font-size: 8px;
+  }
+  .session-card {
+    padding: 18px;
+  }
+  .destination-city {
+    font-size: 29px;
+  }
+  .destination-country {
+    gap: 5px;
+    font-size: 8px;
+  }
+  #connected-protocol {
+    font-size: 7px;
+  }
+  .path-stop {
+    width: 56px;
+  }
+  .session-address {
+    gap: 6px;
+    font-size: 7px;
+  }
+  .session-description {
+    font-size: 7px;
+  }
+  .session-metrics strong {
+    font-size: 20px;
+  }
+  .session-metrics strong small {
+    font-size: 7px;
+  }
+  .session-metrics > div > span {
+    font-size: 7px;
+  }
+  .session-metrics > div {
+    padding-inline: 9px;
+  }
+  .option-text small {
+    display: none;
+  }
+  .option-icon > .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .connection-option {
+    gap: 7px;
+    padding-inline: 10px;
+  }
+  .option-text strong {
+    font-size: 8px;
+  }
+  .session-footer {
+    font-size: 6px;
+  }
+  .row-ping > .icon {
+    display: none;
+  }
+  .row-server-info > small {
+    font-size: 6px;
+  }
+  .row-server-info > strong {
+    font-size: 10px;
+  }
+  .row-ping {
+    font-size: 7px;
+  }
+  .connection-row > .favorite-button {
+    width: 18px;
+    margin-right: 4px;
+  }
+  .connection-row-button > .flag {
+    width: 22px;
+    height: 16px;
+  }
+  .connection-row-button {
+    gap: 8px;
+    padding-left: 8px;
+  }
+  .library-search {
+    gap: 4px;
+  }
+  .library-search .search-field input {
+    font-size: 9px;
+  }
+  .library-search .search-field kbd {
+    display: none;
+  }
+  .library-search > .icon-button {
+    width: 23px;
+  }
+  .library-tabs {
+    gap: 18px;
+  }
+  .library-tabs > button {
+    font-size: 9px;
+  }
+}
+@media (max-height: 780px) and (min-width: 701px) {
+  .session-pane,
+  .library-pane {
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
+  .pane-heading {
+    margin-bottom: 16px;
+    min-height: 27px;
+  }
+  .session-card {
+    padding: 18px 21px;
+  }
+  .destination-city {
+    font-size: 31px;
+    margin-top: 9px;
+  }
+  .destination-country {
+    margin-top: 8px;
+  }
+  .connection-path {
+    padding-block: 17px 14px;
+  }
+  .path-stop {
+    gap: 6px;
+  }
+  .path-stop > span {
+    height: 30px;
+    width: 30px;
+    border-radius: var(--radius-m);
+  }
+  .path-line {
+    margin-top: 14px;
+  }
+  .session-address {
+    padding-top: 10px;
+  }
+  .session-card .power-button {
+    height: 39px;
+    margin-top: 12px;
+  }
+  .session-description {
+    margin-top: 9px;
+    font-size: 7px;
+  }
+  .session-metrics {
+    padding-block: 17px;
+  }
+  .session-metrics strong {
+    font-size: 21px;
+    margin-top: 6px;
+  }
+  .connection-option {
+    padding-block: 12px;
+  }
+  .option-text small {
+    display: none;
+  }
+  .session-footer {
+    padding-top: 16px;
+    font-size: 7px;
+  }
+  .connection-row {
+    min-height: 58px;
+  }
+  .connection-row-button {
+    padding-block: 11px;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "qtVersion": "6.11.2",
+  "cases": 18,
+  "sources": {
+    "include/configs/outbounds/autoselector.h": "0ae178051cca959d882b6ad53b14d6419c5356994941eb60ab4b573acb07eab0",
+    "src/configs/generate.cpp": "3ecda90ce0ad6f9a02ebbd3c9780467e6065d5db620ddf9531dfd17518948a65",
+    "include/database/SettingsRepo.h": "b68b84fe2c7bebeb267c24152a5c360837174b643c349e713f0f768886fada62",
+    "src/global/Utils.cpp": "4fe6f299f257b4c523cb3a1d8858ac3bfca1c7ec6d310581162445357ac9832e",
+    "include/global/Utils.hpp": "455b922e6e46d24d88d1c5049519db81e703ab35f8c04c8c87971e51dfb3a233"
+  },
+  "runtimeBlockSha256": "712e54e62f811cab3577c2006cee6943c7c91a9cb75d2165da9c9e1421bbcd04",
+  "arrayHelpersSha256": "f073764de8e5647d2abaab422bfdf83415c40c73db1d376760c9c048e84e2645",
+  "fixtures": {
+    "cases.json": "e6a0f8d6f5422d254cba32682e5ef5284c407ffa57b8defad45fc0289003b7c3"
+  },
+  "generatorSha256": {
+    "oracle.cpp": "3be4fb8cb17f04020d23a53aca7f01c25182006b644ee099a327a33c28d54dd3",
+    "outbound_stub.h": "113a4213703e869db2ed970065d337e76b6c28cb14784786035039bc51717712"
+  },
+  "boundary": "Actual Qt ParseFromJson/Normalize/ExportToJson header; actual extracted generate.cpp runtime block. Only unrelated outbound base/display stubbed. Selected-settings exclusion is fixture input, not upstream archive reader behavior.",
+  "generatorNote": "The Qt oracle program that produced cases.json lives in git history; only its output is kept."
+}

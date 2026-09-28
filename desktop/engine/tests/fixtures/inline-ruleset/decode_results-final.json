@@ -1,0 +1,476 @@
+[
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].auth_user: json: unknown field \"auth_user\"",
+    "name": "route-only-auth_user"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].clash_mode: json: unknown field \"clash_mode\"",
+    "name": "route-only-clash_mode"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].client: json: unknown field \"client\"",
+    "name": "route-only-client"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].geoip: json: unknown field \"geoip\"",
+    "name": "route-only-geoip"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].geosite: json: unknown field \"geosite\"",
+    "name": "route-only-geosite"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].inbound: json: unknown field \"inbound\"",
+    "name": "route-only-inbound"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].interface_address: json: unknown field \"interface_address\"",
+    "name": "route-only-interface_address"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].ip_is_private: json: unknown field \"ip_is_private\"",
+    "name": "route-only-ip_is_private"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].ip_version: json: unknown field \"ip_version\"",
+    "name": "route-only-ip_version"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].preferred_by: json: unknown field \"preferred_by\"",
+    "name": "route-only-preferred_by"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].protocol: json: unknown field \"protocol\"",
+    "name": "route-only-protocol"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].rule_set: json: unknown field \"rule_set\"",
+    "name": "route-only-rule_set"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].rule_set_ip_cidr_match_source: json: unknown field \"rule_set_ip_cidr_match_source\"",
+    "name": "route-only-rule_set_ip_cidr_match_source"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].rule_set_ipcidr_match_source: json: unknown field \"rule_set_ipcidr_match_source\"",
+    "name": "route-only-rule_set_ipcidr_match_source"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].source_geoip: json: unknown field \"source_geoip\"",
+    "name": "route-only-source_geoip"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].source_hostname: json: unknown field \"source_hostname\"",
+    "name": "route-only-source_hostname"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].source_ip_is_private: json: unknown field \"source_ip_is_private\"",
+    "name": "route-only-source_ip_is_private"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].source_mac_address: json: unknown field \"source_mac_address\"",
+    "name": "route-only-source_mac_address"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].user: json: unknown field \"user\"",
+    "name": "route-only-user"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].user_id: json: unknown field \"user_id\"",
+    "name": "route-only-user_id"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].action: json: unknown field \"action\"",
+    "name": "unsupported-action"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].outbound: json: unknown field \"outbound\"",
+    "name": "unsupported-outbound"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].override_port: json: unknown field \"override_port\"",
+    "name": "unsupported-override_port"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].adguard_domain: json: unknown field \"adguard_domain\"",
+    "name": "unsupported-adguard_domain"
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": null,
+    "name": "empty-default",
+    "ruleCount": 0
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "invert": true
+      }
+    ],
+    "error": "missing conditions",
+    "name": "invert-only",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "type": "logical",
+        "mode": "and"
+      }
+    ],
+    "error": "missing conditions",
+    "name": "empty-group",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "type": "logical",
+        "mode": "",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      }
+    ],
+    "error": "unknown logical mode: ",
+    "name": "mode-missing",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "type": "logical",
+        "mode": "xor",
+        "rules": [
+          {
+            "network": "tcp"
+          }
+        ]
+      }
+    ],
+    "error": "unknown logical mode: xor",
+    "name": "mode-xor",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].rules[0]: expected json object start, but starts with nil",
+    "name": "null-child"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].rules[0].action: json: unknown field \"action\"",
+    "name": "action-child"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].network: json: unknown field \"network\"",
+    "name": "match-on-group"
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ]
+      }
+    ],
+    "name": "query-type-name",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ]
+      }
+    ],
+    "name": "query-type-number",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "A"
+      }
+    ],
+    "name": "query-type-scalar-name",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "A"
+      }
+    ],
+    "name": "query-type-scalar-number",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ]
+      }
+    ],
+    "name": "query-type-mixed-list",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {}
+    ],
+    "error": "missing conditions",
+    "name": "query-type-null",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": null,
+    "name": "query-type-empty-list",
+    "ruleCount": 0
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "None"
+      }
+    ],
+    "name": "query-type-list-null",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: \"a\" | json: cannot unmarshal string into Go value of type []option.DNSQueryType)",
+    "name": "query-type-lower-name"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: \"1\" | json: cannot unmarshal string into Go value of type []option.DNSQueryType)",
+    "name": "query-type-numeric-string"
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "None"
+      }
+    ],
+    "name": "query-type-zero",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "Reserved"
+      }
+    ],
+    "name": "query-type-max",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: 65536 | json: cannot unmarshal number into Go value of type []option.DNSQueryType)",
+    "name": "query-type-overflow"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: -1 | json: cannot unmarshal number into Go value of type []option.DNSQueryType)",
+    "name": "query-type-negative"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: 1.5 | json: cannot unmarshal number into Go value of type []option.DNSQueryType)",
+    "name": "query-type-fraction"
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: \"NOT-A-TYPE\" | json: cannot unmarshal string into Go value of type []option.DNSQueryType)",
+    "name": "query-type-unknown-name"
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "network": "tcp"
+      }
+    ],
+    "name": "query-type-null-with-network",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "network": "tcp"
+      }
+    ],
+    "name": "query-type-empty-list-with-network",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": null,
+    "name": "empty-set",
+    "ruleCount": 0
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": null,
+    "name": "null-rules",
+    "ruleCount": 0
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "network": "tcp",
+        "invert": true
+      }
+    ],
+    "name": "valid-inverted-leaf",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {},
+      {
+        "network": "tcp"
+      }
+    ],
+    "error": "missing conditions",
+    "name": "empty-alongside-network",
+    "ruleCount": 2
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {}
+    ],
+    "error": "missing conditions",
+    "name": "empty-with-default-type",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: \"*\" | json: cannot unmarshal string into Go value of type []option.DNSQueryType)",
+    "name": "query-type-star"
+  },
+  {
+    "buildAccepted": true,
+    "decodeAccepted": true,
+    "decodedRules": [
+      {
+        "query_type": "None"
+      }
+    ],
+    "name": "query-type-None",
+    "ruleCount": 1
+  },
+  {
+    "buildAccepted": false,
+    "decodeAccepted": false,
+    "error": "rules[0].query_type: (unknown DNS query type: true | json: cannot unmarshal bool into Go value of type []option.DNSQueryType)",
+    "name": "query-type-bool"
+  }
+]

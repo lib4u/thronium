@@ -1,0 +1,239 @@
+.desktop-modal.import-flow.add-compact {
+  width: min(480px, calc(100vw - 32px));
+}
+.desktop-modal.import-flow.add-review {
+  width: min(700px, calc(100vw - 32px));
+}
+.desktop-modal.import-flow.add-manual {
+  width: min(830px, calc(100vw - 32px));
+}
+.import-flow > .modal-head {
+  padding: 24px 24px 14px;
+}
+.import-flow > .modal-head h2 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+.import-flow > .modal-head p {
+  font-size: 11px;
+  margin-top: 8px;
+}
+.import-flow > .modal-body {
+  padding: 14px 24px 22px;
+}
+.import-flow > .modal-footer {
+  padding: 15px 24px;
+}
+.import-flow .text-input {
+  min-height: 40px;
+  padding: 10px 12px;
+}
+.import-flow .feature-field {
+  margin-bottom: 16px;
+  gap: 7px;
+}
+.import-flow .feature-field small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+.import-flow .button {
+  min-height: 38px;
+  padding: 10px 15px;
+}
+.import-flow .add-methods {
+  display: grid;
+  gap: 4px;
+}
+.add-methods > button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  text-align: left;
+}
+.add-methods > button:hover,
+.add-methods > button:focus-visible {
+  background: var(--hover);
+}
+.add-methods > button > .icon-host .icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.add-methods > button > .icon-host:last-child {
+  margin-left: auto;
+}
+.add-methods > button > .icon-host:last-child .icon {
+  width: 12px;
+  margin-left: auto;
+}
+.add-methods strong {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+}
+.add-methods small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.add-back {
+  padding: 0 24px;
+}
+.add-back .text-button {
+  font-size: 10px;
+  color: var(--muted);
+  min-height: 24px;
+}
+.add-back .icon {
+  width: 13px;
+  height: 13px;
+}
+.import-method-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  background: var(--input-bg, var(--surface-subtle));
+  border-radius: var(--radius-m);
+  margin-bottom: 24px;
+}
+.import-method-tabs button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 5px;
+  border: 0;
+  border-radius: var(--radius-s);
+  color: var(--muted);
+  background: transparent;
+  font-size: 11px;
+  cursor: pointer;
+}
+.import-method-tabs button[aria-selected='true'] {
+  background: var(--hover);
+  color: var(--text);
+}
+.import-method-tabs .icon {
+  width: 13px;
+  height: 13px;
+}
+.import-flow textarea.import-source {
+  height: 94px;
+  min-height: 94px;
+  line-height: 1.6;
+}
+.import-flow .import-source-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 10px;
+  margin-top: -10px;
+  margin-bottom: 14px;
+}
+.import-flow .import-source-actions .field-hint {
+  margin: 0;
+}
+.import-flow .import-source-actions .text-button {
+  font-size: 10px;
+  padding: 0;
+}
+.import-flow .import-source-actions .icon {
+  width: 13px;
+  height: 13px;
+}
+.import-flow details.import-destination {
+  max-width: none;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 12px;
+}
+.import-flow details.import-destination summary {
+  cursor: pointer;
+  padding-block: 6px;
+}
+.import-flow details.import-destination .feature-field {
+  margin: 8px 0 0;
+}
+.import-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 14px;
+  border: 1px dashed var(--muted);
+  border-radius: var(--radius-m);
+  text-align: center;
+  color: var(--muted);
+}
+.import-dropzone.is-dragging {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+.import-dropzone > .icon-host .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  margin: 4px 0;
+}
+.import-dropzone strong {
+  font-size: 12px;
+  font-weight: 400;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.import-dropzone small {
+  font-size: 10px;
+}
+.import-qr-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.import-qr-actions .button {
+  flex: 1;
+}
+.import-read-success {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--accent);
+  margin-top: 12px;
+}
+.import-read-success .icon {
+  width: 14px;
+  height: 14px;
+}
+.import-file-problems {
+  display: grid;
+  gap: 4px;
+  margin: 12px 0 0;
+  padding-left: 18px;
+  font-size: 11px;
+  color: var(--danger);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 440px) {
+  .import-flow > .modal-head,
+  .import-flow > .modal-body,
+  .import-flow > .modal-footer {
+    padding-inline: 16px;
+  }
+  .add-back {
+    padding-inline: 16px;
+  }
+  .import-qr-actions {
+    flex-wrap: wrap;
+  }
+}

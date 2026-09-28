@@ -1,0 +1,3 @@
+[
+  "\n            CREATE TABLE IF NOT EXISTS otp_profiles (\n                id INTEGER PRIMARY KEY,\n                name TEXT NOT NULL DEFAULT '',\n                issuer TEXT NOT NULL DEFAULT '',\n                secret TEXT NOT NULL DEFAULT '',\n                algorithm INTEGER NOT NULL DEFAULT 0,\n                type INTEGER NOT NULL DEFAULT 0,\n                digits INTEGER NOT NULL DEFAULT 6,\n                period INTEGER NOT NULL DEFAULT 30,\n                counter INTEGER NOT NULL DEFAULT 0,\n                sort_order INTEGER NOT NULL DEFAULT 0,\n                created_at INTEGER NOT NULL DEFAULT (strftime('%s', 'now')),\n                updated_at INTEGER NOT NULL DEFAULT (strftime('%s', 'now'))\n            )\n        "
+]

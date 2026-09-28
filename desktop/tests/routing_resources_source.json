@@ -1,0 +1,7 @@
+{
+  "source": "native_smoke.py",
+  "blockSha256": "b589562ca60a9c43a85dc87f181c2f5dbcfa3a9d007c8f23aa215c0a8080646f",
+  "firstLine": "    click('[data-route-tab=\"dns\"]')",
+  "lastLine": "    check(command('routing')['profiles'][0]['route']['rule_set'] == rule_sets, 'rule-set JSON is validated and persisted')",
+  "unchangedAssertionCalls": 26
+}
