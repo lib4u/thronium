@@ -1,6 +1,6 @@
 # Developing Thronium
 
-Build requirements and release builds are in the [README](../README.md). This
+Build requirements and release builds are in the [README](../README.en.md). This
 guide covers the parts of the tree, the checks and the tools behind them. All
 commands run in `desktop/` unless stated otherwise.
 
