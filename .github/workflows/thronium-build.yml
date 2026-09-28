@@ -12,6 +12,7 @@ on:
     paths:
       - 'desktop/**'
       - 'core/server/**'
+      - '.gitattributes'
       - '.github/workflows/thronium-build.yml'
   push:
     branches: [main]
@@ -19,6 +20,7 @@ on:
     paths:
       - 'desktop/**'
       - 'core/server/**'
+      - '.gitattributes'
       - '.github/workflows/thronium-build.yml'
   workflow_dispatch:
 permissions:

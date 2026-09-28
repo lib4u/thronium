@@ -4,12 +4,14 @@ on:
     paths:
       - 'desktop/**'
       - 'core/server/**'
+      - '.gitattributes'
       - '.github/workflows/thronium-quality.yml'
   push:
     branches: [main]
     paths:
       - 'desktop/**'
       - 'core/server/**'
+      - '.gitattributes'
       - '.github/workflows/thronium-quality.yml'
   workflow_dispatch:
 permissions:
