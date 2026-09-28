@@ -256,12 +256,17 @@ async fn automatic_apply_requires_real_core_validation_and_errors_preserve_profi
             .await
             .err()
             .as_deref(),
-        Some("subscription_configuration_rejected")
+        // No Core here: the stage that failed names itself, not a Core rejection.
+        Some("core_missing")
     );
     assert_eq!(state(&e), before);
     assert!(e.store.library.profiles.is_empty());
-    e.fail_subscription_job(&id, &worker, "subscription_configuration_rejected")
+    e.fail_subscription_job(&id, &worker, "core_missing")
         .unwrap();
+    assert_eq!(
+        e.subscription_jobs.jobs[0].error.as_deref(),
+        Some("core_missing")
+    );
     assert!(e.store.library.profiles.is_empty());
     assert!(e.subscription_tickets.is_empty());
 }

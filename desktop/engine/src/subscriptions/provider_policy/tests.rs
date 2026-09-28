@@ -147,12 +147,14 @@ fn domain_strategies_position_resolve_and_unknown_values_stay_refused() {
 }
 
 #[test]
-fn chunked_lists_are_refused_before_any_policy_is_built() {
-    let chunked = provider(json!({"UseChunkFiles":"true","DirectSites":["domain:example.test"]}));
+fn chunk_files_are_a_loading_hint_that_changes_no_rule() {
+    let lists = json!({"DirectSites":["domain:example.test"]});
+    let mut chunked = lists.clone();
+    chunked["UseChunkFiles"] = json!("true");
     assert_eq!(
-        build(&chunked).unwrap_err(),
-        "subscription_chunk_files_unsupported"
+        build(&provider(chunked)).unwrap(),
+        build(&provider(lists)).unwrap()
     );
-    let inline = provider(json!({"UseChunkFiles":false}));
-    assert!(build(&inline).is_ok());
+    let invalid = provider(json!({"UseChunkFiles":"sometimes"}));
+    assert!(build(&invalid).is_err());
 }

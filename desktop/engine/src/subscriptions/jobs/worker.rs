@@ -385,29 +385,11 @@ impl Engine {
         error: &str,
     ) -> Result<(), String> {
         self.job_index(id, owner)?;
-        // Only fixed codes reach snapshots; parser errors and provider bodies may contain secrets.
-        let code = if matches!(
-            error,
-            "subscription_untransferred_parameters"
-                | "subscription_invalid_name_rules"
-                | "subscription_invalid_renamed_name"
-                | "subscription_filtered_empty"
-                | "subscription_invalid_profiles"
-                | "subscription_configuration_rejected"
-                | "subscription_changed"
-                | "subscription_proxy_unavailable"
-                | "subscription_timeout"
-                | "subscription_network_error"
-                | "subscription_empty"
-                | "subscription_too_large"
-                | "subscription_invalid_text"
-                | "subscription_redirect_error"
-                | "subscription_expired"
-                | "subscription_worker_interrupted"
-                | "subscription_http_error"
-        ) || error
-            .strip_prefix("subscription_http_")
-            .is_some_and(|c| c.len() == 3 && c.bytes().all(|v| v.is_ascii_digit()))
+        // Only registered codes reach snapshots; parser errors and provider bodies may contain secrets.
+        let code = if crate::ipc::registered(error).is_some()
+            || error
+                .strip_prefix("subscription_http_")
+                .is_some_and(|c| c.len() == 3 && c.bytes().all(|v| v.is_ascii_digit()))
         {
             error
         } else {

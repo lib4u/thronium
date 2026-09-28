@@ -103,15 +103,10 @@ def run(h):
         command('checkProfile', command('profile', {'id': demand}))
 
         group, response = subscribe('Happ chunked', 'chunked', True)
-        # Apply compiles the provider policy before publishing it, so an
-        # unusable policy is refused there rather than on the first connect.
-        reject('applySubscription', {'ticket': response['ticket'], 'useProviderRouting': True}, 'subscription_chunk_files_unsupported')
-        check(command('snapshot')['running'] is None and not any(p['groupId'] == group for p in command('snapshot')['profiles']),
-              'chunked provider lists are refused before the policy is published or any Core starts')
-        command('applySubscription', {'ticket': response['ticket'], 'useProviderRouting': False})
+        command('applySubscription', {'ticket': response['ticket'], 'useProviderRouting': True})
         chunked = member(group)
         command('checkProfile', command('profile', {'id': chunked}))
-        check(True, 'the same servers import and pass the real Core once provider routing is off')
+        check(True, 'UseChunkFiles is only a loading hint: the provider policy applies and passes the real Core')
 
         group, response = subscribe('Happ onadd', 'onadd', False)
         check(response['providerRouting']['enabled'] is True and response['providerRouting']['fakeDns'] is False,

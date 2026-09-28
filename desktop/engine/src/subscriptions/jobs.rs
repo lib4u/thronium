@@ -49,8 +49,9 @@ impl Validator {
                     *holder=Some(Rpc::spawn(&input.core,&input.directory).await?);
                 }
                 let rpc=holder.as_mut().unwrap();
-                crate::check_config(rpc,&request).await.map_err(|(_,error)|error)
-            }=>result.map_err(|_|"subscription_configuration_rejected".into()),
+                crate::check_config(rpc,&request).await.map_err(|_|"subscription_configuration_rejected".to_string())
+            // A stage before the core check keeps its own code; raw details stay here.
+            }=>result.map_err(|error:String|crate::ipc::registered(&error).unwrap_or("subscription_update_failed").into()),
         };
         if result.is_err() || input.last {
             holder.take();

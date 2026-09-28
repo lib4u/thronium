@@ -657,7 +657,6 @@ store_sync_uncertain
 store_write_failed
 subscription_cancelled
 subscription_changed
-subscription_chunk_files_unsupported
 subscription_configuration_rejected
 subscription_dns_unsupported
 subscription_domain_strategy_unsupported

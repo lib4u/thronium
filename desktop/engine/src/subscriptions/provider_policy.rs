@@ -1,7 +1,9 @@
 //! Translate Happ policy for managed outbounds. Full JSON owns its own policy.
 //! Upstream keys (dev-docs/routing.md) plus the provider header fields
 //! RouteOrder/UseChunkFiles; DomainStrategy maps Xray resolution timing onto
-//! positioned sing-box `resolve` actions.
+//! positioned sing-box `resolve` actions. UseChunkFiles only tells Happ to cut
+//! the used categories out of the geo files before its core loads them; the
+//! lists themselves stay inline or in Geoipurl/Geositeurl, so it changes nothing.
 use super::provider_routing::ProviderRouting;
 use crate::{geodata::Assets, proto::LoadConfigReq};
 use serde_json::{json, Value};
@@ -50,11 +52,7 @@ pub(crate) fn apply(
     // Unknown keys are ignored, as in the Qt client: an unrecognised extension
     // must not discard the policy the user already accepted for this group.
     c.as_object().ok_or("subscription_routing_invalid")?;
-    // Chunked site/IP lists live in separate downloads; the inline lists
-    // would be incomplete without them.
-    if boolean(&c["UseChunkFiles"], false)? {
-        return Err("subscription_chunk_files_unsupported".into());
-    }
+    boolean(&c["UseChunkFiles"], false)?;
     let fake_dns = boolean(&c["FakeDNS"], false)?;
     let order = c["RouteOrder"]
         .as_str()

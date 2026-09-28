@@ -316,7 +316,6 @@
   "routing_resource_write_failed": "Could not prepare the saved routing file. The cached copy is inaccessible or has changed.",
   "tun_full_config_inbound_unsupported": "A complete sing-box configuration with its own tun, redirect or tproxy inbound cannot run under the managed TUN. Remove that inbound: the application adds its own TUN listener.",
   "legacy_routing_inbound_missing": "This imported preset matches an additional inbound that is not defined. Add a listener with that tag in Settings → Inbound or edit the rule.",
-  "subscription_chunk_files_unsupported": "This subscription routing keeps its site and IP lists in separate chunk files, which are not supported yet.",
   "invalid_library_ids": "Imported groups or profiles use identifiers that already exist in the library.",
   "invalid_selection": "The selected profile does not exist in the library.",
   "invalid_group": "A group has no name or its name is too long.",

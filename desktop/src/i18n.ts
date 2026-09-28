@@ -139,7 +139,6 @@ const keys = {
   subscription_routing_invalid: 'errors.subscription_routing_invalid',
   subscription_dns_unsupported: 'errors.subscription_dns_unsupported',
   subscription_domain_strategy_unsupported: 'errors.subscription_domain_strategy_unsupported',
-  subscription_chunk_files_unsupported: 'errors.subscription_chunk_files_unsupported',
   geodata_download_failed: 'errors.geodata_download_failed',
   geodata_invalid_request: 'errors.geodata_invalid_request',
   geodata_busy: 'errors.geodata_busy',
