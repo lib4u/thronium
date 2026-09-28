@@ -1,6 +1,8 @@
 use super::*;
 use crate::legacy_backup::{SourceRow, SourceValue};
-use crate::store::{Profile, ProfileKind};
+#[cfg(target_os = "linux")]
+use crate::store::Profile;
+use crate::store::ProfileKind;
 fn encoded(byte: u8) -> String {
     STANDARD.encode([byte; 32])
 }

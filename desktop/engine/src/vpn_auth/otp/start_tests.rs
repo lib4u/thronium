@@ -1,10 +1,14 @@
 //! Before-Start OTP: placement rules, durable HOTP reservation between
 //! CheckConfig and Start, no code in views, and no replay of a spent request.
 use super::*;
-use crate::{store::ProfileKind, transport::Rpc, vpn_otp_bindings::SaveRequest, ProfileDraft};
+#[cfg(target_os = "linux")]
+use crate::transport::Rpc;
+use crate::{store::ProfileKind, vpn_otp_bindings::SaveRequest, ProfileDraft};
 use base64::{engine::general_purpose::STANDARD, Engine as _};
+#[cfg(target_os = "linux")]
 use prost::Message;
 use serde_json::json;
+#[cfg(target_os = "linux")]
 use std::sync::{Arc, Mutex};
 
 const SECRET: &str = "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ";
@@ -339,15 +343,18 @@ fn start_bindings_allow_connection_modes_but_require_explicit_primary_connects()
     assert_eq!(counter(&e, &hotp.0), "0");
 }
 
+#[cfg(target_os = "linux")]
 #[derive(Default)]
 struct Core {
     fail_start: bool,
     starts: Vec<Value>,
     tun_recovery: Vec<bool>,
 }
+#[cfg(target_os = "linux")]
 fn scripted(core: Arc<Mutex<Core>>) -> Rpc {
     scripted_mode(core, false)
 }
+#[cfg(target_os = "linux")]
 fn scripted_mode(core: Arc<Mutex<Core>>, managed: bool) -> Rpc {
     let handler = move |method: &str, payload: &[u8]| {
         let mut core = core.lock().unwrap();

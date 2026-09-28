@@ -40,7 +40,6 @@ fn profile(e: &mut Engine, kind: ProfileKind, config: serde_json::Value, name: &
     .unwrap()
 }
 
-#[cfg(target_os = "linux")]
 #[tokio::test]
 #[ignore = "requires THRONIUM_TEST_CORE, actual owned userspace OpenVPN/auth and held direct connection"]
 async fn actual_openvpn_pending_submit_cancel_full_json_and_session_guards() {

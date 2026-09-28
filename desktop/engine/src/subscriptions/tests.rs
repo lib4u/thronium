@@ -429,6 +429,8 @@ fn snapshots_redact_sources_and_legacy_groups_remain_readable() {
             0o600
         );
     }
+    #[cfg(not(unix))]
+    let _ = &dir;
 }
 
 #[test]

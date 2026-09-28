@@ -37,7 +37,7 @@ impl Rpc {
         rpc.managed = true;
         rpc
     }
-    #[cfg(test)]
+    #[cfg(all(test, target_os = "linux"))]
     pub(crate) fn scripted_local_test_rpc(
         handler: impl FnMut(&str, &[u8]) -> Vec<u8> + Send + 'static,
     ) -> Self {

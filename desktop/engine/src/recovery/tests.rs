@@ -1,6 +1,10 @@
 use super::*;
-use crate::{connection::ActiveConnection, proto, store::ProfileKind, ProfileDraft};
-use serde_json::{json, Value};
+use crate::{connection::ActiveConnection, proto};
+#[cfg(target_os = "linux")]
+use crate::{store::ProfileKind, ProfileDraft};
+use serde_json::json;
+#[cfg(target_os = "linux")]
+use serde_json::Value;
 
 fn active(id: &str) -> ActiveConnection {
     ActiveConnection {
@@ -287,6 +291,7 @@ async fn failed_automatic_spawn_is_terminal_and_clears_the_private_request() {
     );
 }
 
+#[cfg(target_os = "linux")]
 fn add(engine: &mut Engine, name: &str, kind: ProfileKind, config: Value) -> String {
     engine
         .save_profile(ProfileDraft {
@@ -300,6 +305,7 @@ fn add(engine: &mut Engine, name: &str, kind: ProfileKind, config: Value) -> Str
         .unwrap()
 }
 
+#[cfg(target_os = "linux")]
 async fn http(port: u16) {
     use tokio::io::{AsyncReadExt, AsyncWriteExt};
     let origin = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();

@@ -5,6 +5,7 @@ use serde_json::json;
 mod managed;
 #[cfg(target_os = "linux")]
 mod managed_runtime;
+#[cfg(target_os = "linux")]
 mod runtime;
 
 fn request() -> proto::LoadConfigReq {

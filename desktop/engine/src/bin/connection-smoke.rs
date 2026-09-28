@@ -210,6 +210,8 @@ async fn run(engine: &mut Engine, dir: &Path, core: &Path) -> Result<(), String>
             .is_err());
         println!("PASS a failed recovery reports disconnected and closes partial listeners");
     }
+    #[cfg(not(unix))]
+    let _ = core;
     engine.connect(&xray).await?;
     assert!(engine.snapshot().error.is_none());
     http(port).await;

@@ -51,6 +51,7 @@ async fn network_settings_validate_running_profile_and_keep_idle_selected_valida
     // its program included: it must exist, though it is never started here.
     let program = dir.path().join("external-core");
     std::fs::write(&program, "#!/bin/sh\nexit 0\n").unwrap();
+    #[cfg(unix)]
     {
         use std::os::unix::fs::PermissionsExt;
         std::fs::set_permissions(&program, std::fs::Permissions::from_mode(0o700)).unwrap();

@@ -1,5 +1,6 @@
 //! Independent path persistence and pinned CheckConfig proof. Never calls Start.
 use serde_json::{json, Value};
+#[cfg(target_os = "linux")]
 use std::path::PathBuf;
 use thronium_engine::{
     exports::{Format, ImportProfile},
