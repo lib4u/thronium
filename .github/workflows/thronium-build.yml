@@ -98,6 +98,7 @@ jobs:
       TRUSTED_SIGNING_ACCOUNT: ${{ secrets.TRUSTED_SIGNING_ACCOUNT }}
       TRUSTED_SIGNING_PROFILE: ${{ secrets.TRUSTED_SIGNING_PROFILE }}
       THRONIUM_SIGN_THUMBPRINT: ${{ secrets.THRONIUM_SIGN_THUMBPRINT }}
+      PYTHONUTF8: '1'
     defaults:
       run:
         working-directory: desktop

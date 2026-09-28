@@ -164,6 +164,9 @@ def main():
 
 
 if __name__ == '__main__':
+    if platform.system() == 'Windows' and not sys.flags.utf8_mode:
+        # The overlays read and write UTF-8 sources; Windows defaults to its ANSI code page.
+        sys.exit(subprocess.run([sys.executable, '-X', 'utf8', *sys.argv]).returncode)
     try:
         main()
     except (RuntimeError, subprocess.CalledProcessError) as error:
