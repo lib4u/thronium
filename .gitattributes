@@ -1,0 +1,2 @@
+# One line ending everywhere: fixtures and frozen sources are checked by hash.
+* text=auto eol=lf
