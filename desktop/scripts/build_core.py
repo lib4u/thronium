@@ -14,12 +14,23 @@ import shlex
 import shutil
 import subprocess
 import sys
-import venv
+import urllib.request
+import zipfile
 from core_overlay import prepare as prepare_overlay
 
 DESKTOP = pathlib.Path(__file__).resolve().parents[1]
 CORE = DESKTOP.parent / 'core/server'
 CACHE = DESKTOP / '.tools'
+# protoc from the protobuf release, one build per host; the Windows x64 one
+# also runs on Windows ARM64, where no prebuilt grpcio-tools exists.
+PROTOC_RELEASE = '35.1'
+PROTOC_SHA256 = {
+    'linux-x86_64': '6930ebf62bd4ea607b98fff052596c6ee564b9835b4ce172c75a3f53ae9d91b7',
+    'linux-aarch_64': '01bf9d08808c7f96678b63f4bd8efa559bb4f83d5a7a270d5edaf507f9d5d9cf',
+    'osx-x86_64': '537d73604a344ded6fc94e98e07e529d4fe3e4a0b09e59905353950fafc2a1f7',
+    'osx-aarch_64': '193289af0470c6a1aada357d4fba0bbf8d78bfaac8b5e42ca30af2ef75583de2',
+    'win64': '5d3ff218d7d91eea95f7569bcb5a98f3030f8996d44151279d9772edcff76082',
+}
 TAGS = 'with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_openvpn,with_openconnect,with_naive_outbound,badlinkname,tfogo_checklinkname0'
 
 
@@ -39,6 +50,30 @@ def source_commit():
 def run(args, cwd=CORE, env=None):
     print('+', shlex.join(map(str, args)), flush=True)
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
+
+
+def protoc(host):
+    """The pinned protoc for the Rust host triple, downloaded and checked on first use."""
+    arch = {'x86_64': 'x86_64', 'aarch64': 'aarch_64'}[host.split('-')[0]]
+    name = 'win64' if '-windows-' in host else ('osx-' if '-apple-' in host else 'linux-') + arch
+    folder = CACHE / f'protoc-{PROTOC_RELEASE}-{name}'
+    binary = folder / 'bin' / ('protoc.exe' if name == 'win64' else 'protoc')
+    if binary.exists():
+        return folder
+    url = ('https://github.com/protocolbuffers/protobuf/releases/download/'
+           f'v{PROTOC_RELEASE}/protoc-{PROTOC_RELEASE}-{name}.zip')
+    archive = CACHE / f'protoc-{PROTOC_RELEASE}-{name}.zip'
+    print('+ fetching', url, flush=True)
+    urllib.request.urlretrieve(url, archive)
+    if hashlib.sha256(archive.read_bytes()).hexdigest() != PROTOC_SHA256[name]:
+        archive.unlink()
+        raise RuntimeError('protoc archive does not match its pinned SHA-256')
+    with zipfile.ZipFile(archive) as zip_file:
+        zip_file.extractall(folder)
+    archive.unlink()
+    # zipfile drops the executable bit.
+    binary.chmod(0o755)
+    return folder
 
 
 def main():
@@ -83,14 +118,9 @@ def main():
         env['CC'] = shutil.which('clang')
         build_tags = TAGS
     CACHE.mkdir(exist_ok=True)
-    # A Windows venv keeps its interpreter in Scripts, and Go tools end in .exe.
-    windows_host = os.name == 'nt'
-    proto_python = CACHE / ('protobuf/Scripts/python.exe' if windows_host else 'protobuf/bin/python')
-    tool = lambda name: name + ('.exe' if windows_host else '')
-    if not proto_python.exists():
-        venv.create(CACHE / 'protobuf', with_pip=True)
-    if subprocess.run([proto_python, '-c', 'import grpc_tools.protoc'], capture_output=True).returncode:
-        run([proto_python, '-m', 'pip', 'install', 'grpcio-tools==1.83.1'])
+    # Go tools on a Windows host end in .exe.
+    tool = lambda name: name + ('.exe' if os.name == 'nt' else '')
+    protobuf = protoc(host)
     plugin_dir = CACHE / 'bin'
     plugin_dir.mkdir(exist_ok=True)
     # Match upstream's protobuf module; codegen remains host-native.
@@ -104,7 +134,7 @@ def main():
         if not (plugin_dir / tool(name)).exists():
             run(['go', 'install', f'{package}@{version}'], env=tools_env)
     gen = CORE / 'gen'
-    run([proto_python, '-m', 'grpc_tools.protoc', '-I', gen,
+    run([protobuf / 'bin' / tool('protoc'), '-I', gen, '-I', protobuf / 'include',
          f'--plugin=protoc-gen-go={plugin_dir / tool("protoc-gen-go")}',
          f'--plugin=protoc-gen-go-grpc={plugin_dir / tool("protoc-gen-go-grpc")}',
          f'--go_out={gen}', f'--go-grpc_out={gen}', gen / 'libcore.proto'])

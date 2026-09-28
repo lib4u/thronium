@@ -163,8 +163,8 @@ repository's scripts; nothing is installed system-wide.
 
 Tested on Fedora 44, x86_64. Requirements:
 
-- Node.js 22 with npm, Rust (stable, 1.98 or newer), Go 1.26, Python 3 with
-  `venv` and `pip`, Clang and LLVM LLD (the core links Cronet for NaïveProxy);
+- Node.js 22 with npm, Rust (stable, 1.98 or newer), Go 1.26, Python 3,
+  Clang and LLVM LLD (the core links Cronet for NaïveProxy);
 - the [Tauri prerequisites for Linux](https://v2.tauri.app/start/prerequisites/#linux):
   GTK 3 and WebKitGTK 4.1 development packages, `glib2`, `pkg-config`.
 

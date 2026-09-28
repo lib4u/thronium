@@ -166,8 +166,8 @@ core/server         ThroniumCore на Go: sing-box и Xray с форками п�
 
 Проверено на Fedora 44, x86_64. Нужны:
 
-- Node.js 22 с npm, Rust (stable, 1.98 или новее), Go 1.26, Python 3 с `venv`
-  и `pip`, Clang и LLVM LLD (ядро компонует Cronet для NaïveProxy);
+- Node.js 22 с npm, Rust (stable, 1.98 или новее), Go 1.26, Python 3,
+  Clang и LLVM LLD (ядро компонует Cronet для NaïveProxy);
 - [зависимости Tauri для Linux](https://v2.tauri.app/start/prerequisites/#linux):
   пакеты разработки GTK 3 и WebKitGTK 4.1, `glib2`, `pkg-config`.
 
