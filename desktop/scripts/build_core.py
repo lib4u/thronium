@@ -126,6 +126,14 @@ def main():
         flags += ['-extld=clang', f'-extldflags=-fuse-ld={linker}']
     elif goos == 'darwin':
         env['CGO_LDFLAGS'] = (env.get('CGO_LDFLAGS', '') + ' -weak_framework UniformTypeIdentifiers').strip()
+    # The overlays patch private copies of pinned modules, so a fresh module
+    # cache needs them before the build downloads the rest.
+    overlay_modules = ['github.com/sagernet/sing-box', 'github.com/sagernet/sing-tun',
+                       'github.com/sagernet/sing-openconnect', 'github.com/sagernet/sing-openvpn',
+                       'github.com/sagernet/wireguard-go', 'github.com/Mahdi-zarei/speedtest-go']
+    if goos == 'windows':
+        overlay_modules.append(f'github.com/sagernet/cronet-go/lib/windows_{goarch}')
+    run(['go', 'mod', 'download', *overlay_modules], env=env)
     overlay,overlay_hash = prepare_overlay(CORE,CACHE,env)
     # Tauri resolves a sidecar as <name>-<triple> plus the platform suffix.
     binary = DESKTOP / 'src-tauri/binaries' / f'ThroniumCore-{target_host}{".exe" if goos == "windows" else ""}'

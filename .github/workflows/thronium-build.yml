@@ -125,9 +125,6 @@ jobs:
       - run: npm ci
       - name: Frontend unit tests
         run: npm run test:unit
-      - name: Core Windows packages
-        working-directory: core/server
-        run: go test -count=1 "-ldflags=-X=ThroneCore/parentcheck.expectedParentName=Thronium" ./internal/winservice ./internal/winjob ./internal/process ./internal/endpointprobe ./internal/boxdns
       - name: Check Engine targets
         run: cargo clippy --locked --manifest-path engine/Cargo.toml --all-targets -j 2
       - name: Test Engine library
@@ -139,6 +136,9 @@ jobs:
           "THRONIUM_SIGN_COMMAND=trusted-signing-cli -e $env:TRUSTED_SIGNING_ENDPOINT -a $env:TRUSTED_SIGNING_ACCOUNT -c $env:TRUSTED_SIGNING_PROFILE -d Thronium %1" >> $env:GITHUB_ENV
       - name: Build the core, the application and the installer
         run: python scripts/windows_checkpoint.py ci-${{ matrix.arch }} --installer --release --arch ${{ matrix.arch }} --jobs 2
+      - name: Test the core Windows packages
+        working-directory: core/server
+        run: go test -count=1 "-ldflags=-X=ThroneCore/parentcheck.expectedParentName=Thronium" ./internal/winservice ./internal/winjob ./internal/process ./internal/endpointprobe ./internal/boxdns
       - uses: actions/upload-artifact@v4
         with:
           name: thronium-windows-${{ matrix.arch }}

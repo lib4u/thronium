@@ -124,6 +124,10 @@ func tcp(ctx context.Context, ip netip.Addr, port uint32, control socketControl)
 	return elapsed, nil
 }
 
+// Windows reports a refused connection as WSAECONNREFUSED, which is not
+// syscall.ECONNREFUSED there.
+const wsaConnRefused = syscall.Errno(10061)
+
 func errorCode(err error, method string) string {
 	if errors.Is(err, errEgress) {
 		return "probe_direct_unavailable"
@@ -141,7 +145,7 @@ func errorCode(err error, method string) string {
 		}
 		return "probe_timeout"
 	}
-	if method == "tcp" && errors.Is(err, syscall.ECONNREFUSED) {
+	if method == "tcp" && (errors.Is(err, syscall.ECONNREFUSED) || errors.Is(err, wsaConnRefused)) {
 		return "probe_connection_refused"
 	}
 	return "probe_unreachable"
