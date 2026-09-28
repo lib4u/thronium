@@ -57,6 +57,24 @@ func ownPipeSecurity(t *testing.T) {
 	t.Cleanup(func() { workerPipeSecurity = previous })
 }
 
+// processRunning is whether that exact process has not exited yet. An exited
+// one outlives its end while another process, such as an antivirus scanner,
+// still holds a handle to it.
+func processRunning(pid uint32, created uint64) bool {
+	process, err := windows.OpenProcess(windows.SYNCHRONIZE|windows.PROCESS_QUERY_LIMITED_INFORMATION, false, pid)
+	if err != nil {
+		return false
+	}
+	defer windows.CloseHandle(process)
+	var creation, exited, kernel, user windows.Filetime
+	if windows.GetProcessTimes(process, &creation, &exited, &kernel, &user) != nil ||
+		uint64(creation.HighDateTime)<<32|uint64(creation.LowDateTime) != created {
+		return false
+	}
+	event, _ := windows.WaitForSingleObject(process, 0)
+	return event == uint32(windows.WAIT_TIMEOUT)
+}
+
 func launch(t *testing.T) *windowsWorker {
 	t.Helper()
 	self, err := os.Executable()
@@ -87,8 +105,8 @@ func TestWorkerIsTheProcessStartedInItsJobAndAnswersInOrder(t *testing.T) {
 	default:
 		t.Fatal("worker survived close")
 	}
-	if processCreated(pid) == created {
-		t.Fatal("worker process still exists")
+	if processRunning(pid, created) {
+		t.Fatal("worker process still runs")
 	}
 }
 
