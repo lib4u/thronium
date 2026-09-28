@@ -735,7 +735,7 @@
     "section": "subscriptions",
     "id": "user_agent",
     "label": "settings.default_user_agent_45f91e7",
-    "default": "Throne/Thronium-0.1.0",
+    "default": "Throne/Thronium-0.1.1",
     "kind": "text",
     "group": "main"
   },

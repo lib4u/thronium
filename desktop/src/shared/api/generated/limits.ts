@@ -64,7 +64,7 @@ export const limits = {
   "poolRecheckSecondRetrySeconds": 120,
   "probeTimeoutMsMax": 10000,
   "probeTimeoutMsMin": 100,
-  "subscriptionUserAgent": "Throne/Thronium-0.1.0",
+  "subscriptionUserAgent": "Throne/Thronium-0.1.1",
   "tunMtuMax": 9000,
   "tunMtuMin": 1280,
   "vpnStatusTimeoutSeconds": 10

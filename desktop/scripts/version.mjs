@@ -34,6 +34,11 @@ const copies = [
     file: 'package-lock.json',
     pattern: /(\n {4}"": \{\n {6}"name": "thronium-desktop",\n {6}"version": ")([^"]*)(")/,
   },
+  // The subscription User-Agent the settings offer by default.
+  {
+    file: 'contracts/settings.catalog.json',
+    pattern: /("id": "user_agent",\n\s*"label": "[^"]*",\n\s*"default": "Throne\/Thronium-)([^"]*)(")/,
+  },
 ];
 
 const source = JSON.parse(read('package.json')).version;
