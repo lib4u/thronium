@@ -118,11 +118,34 @@ finder that asks before it removes, settings search, traffic statistics per
 profile and per application, `throne://` and `thronium://` links, light, dark
 and system themes, English and Russian.
 
-## Protocols
+## Supported protocols
 
-SOCKS, HTTP(S), Shadowsocks, Trojan, VMess, VLESS (sing-box and Xray), TUIC,
-Hysteria and Hysteria2, AnyTLS, Mieru, Snell, NaïveProxy, Juicity, TrustTunnel,
-ShadowTLS, WireGuard, AmneziaWG, SSH, OpenVPN, OpenConnect and Tailscale.
+- SOCKS
+- HTTP(S)
+- Shadowsocks
+- Trojan
+- VMess
+- VLESS
+- TUIC
+- Hysteria
+- Hysteria2
+- AnyTLS
+- Mieru
+- Snell
+- NaïveProxy
+- Juicity
+- TrustTunnel
+- ShadowTLS
+- WireGuard
+- AmneziaWG
+- Tailscale
+- SSH
+- Xray VLESS
+- OpenVPN/OpenConnect
+- Custom outbound (sing-box and Xray)
+- Custom config (sing-box and Xray)
+- Chaining outbounds
+- Extra core
 
 Connection modes: local proxy, system proxy (GNOME, KDE, Windows) and TUN
 (Linux through a privileged helper, Windows through the Thronium service) with

@@ -121,11 +121,34 @@ HOTP/TOTP, коды которого сами подставляются в фо
 трафика по профилям и приложениям, ссылки `throne://` и `thronium://`,
 светлая, тёмная и системная темы, русский и английский.
 
-## Протоколы
+## Поддерживаемые протоколы
 
-SOCKS, HTTP(S), Shadowsocks, Trojan, VMess, VLESS (sing-box и Xray), TUIC,
-Hysteria и Hysteria2, AnyTLS, Mieru, Snell, NaïveProxy, Juicity, TrustTunnel,
-ShadowTLS, WireGuard, AmneziaWG, SSH, OpenVPN, OpenConnect и Tailscale.
+- SOCKS
+- HTTP(S)
+- Shadowsocks
+- Trojan
+- VMess
+- VLESS
+- TUIC
+- Hysteria
+- Hysteria2
+- AnyTLS
+- Mieru
+- Snell
+- NaïveProxy
+- Juicity
+- TrustTunnel
+- ShadowTLS
+- WireGuard
+- AmneziaWG
+- Tailscale
+- SSH
+- Xray VLESS
+- OpenVPN/OpenConnect
+- Свой outbound (sing-box и Xray)
+- Своя конфигурация (sing-box и Xray)
+- Цепочки серверов
+- Внешнее ядро
 
 Способы подключения: локальный прокси, системный прокси (GNOME, KDE, Windows)
 и TUN (на Linux — через привилегированного помощника, на Windows — через
