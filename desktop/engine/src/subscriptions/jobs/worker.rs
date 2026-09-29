@@ -210,87 +210,11 @@ impl Engine {
         job.counts = Counts::of(&changes);
         job.counts.skipped = omitted.skipped;
         job.counts.warned = omitted.warned;
-        job.status = Status::Checking;
+        // Routing lists come first; a check without changed servers never starts.
+        job.status = Status::Geodata;
+        job.routing_failed = false;
         job.touched = Instant::now();
         Ok(job.total)
-    }
-    pub fn subscription_job_check_request(
-        &mut self,
-        id: &str,
-        owner: &str,
-    ) -> Result<ValidationRequest, String> {
-        let i = self.job_index(id, owner)?;
-        let job = &self.subscription_jobs.jobs[i];
-        if job.status != Status::Checking || job.checked >= job.total {
-            return Err("subscription_job_state".into());
-        }
-        let token = job.ticket.as_ref().ok_or("subscription_expired")?;
-        let ticket = self
-            .subscription_tickets
-            .get(token)
-            .ok_or("subscription_expired")?;
-        if ticket.stamp != self.subscription_stamp(&job.group_id)? {
-            return Err("subscription_changed".into());
-        }
-        let profile = ticket
-            .plan
-            .as_ref()
-            .and_then(|p| {
-                p.profiles
-                    .iter()
-                    .find(|p| p.id == job.validation[job.checked])
-            })
-            .cloned()
-            .ok_or("subscription_invalid_profiles")?;
-        let mut library = self.store.library.clone();
-        let group = library
-            .groups
-            .iter_mut()
-            .find(|g| g.id == ticket.group_id)
-            .ok_or("group_not_found")?;
-        group
-            .subscription
-            .as_mut()
-            .ok_or("subscription_missing")?
-            .metadata = ticket.metadata.clone();
-        let proxy = self.settings_download_proxy()?;
-        self.keep_job_alive(i);
-        let job = &self.subscription_jobs.jobs[i];
-        Ok(ValidationRequest {
-            core: self.core.clone(),
-            directory: self.data_dir.clone(),
-            proxy,
-            profile,
-            library,
-            checked: job.checked,
-            last: job.checked + 1 == job.total,
-        })
-    }
-    pub fn subscription_job_checked(
-        &mut self,
-        id: &str,
-        owner: &str,
-        checked: usize,
-    ) -> Result<(), String> {
-        let i = self.job_index(id, owner)?;
-        let job = &mut self.subscription_jobs.jobs[i];
-        if job.status != Status::Checking || job.checked != checked || checked >= job.total {
-            return Err("subscription_job_state".into());
-        }
-        job.checked += 1;
-        self.keep_job_alive(i);
-        Ok(())
-    }
-    #[cfg(test)]
-    pub(crate) async fn check_subscription_job(
-        &mut self,
-        id: &str,
-        owner: &str,
-    ) -> Result<(), String> {
-        let request = self.subscription_job_check_request(id, owner)?;
-        let checked = request.checked;
-        Validator::default().check(id, request).await?;
-        self.subscription_job_checked(id, owner, checked)
     }
     pub async fn apply_subscription_job_with_stop(
         &mut self,
@@ -299,7 +223,7 @@ impl Engine {
     ) -> Result<(), String> {
         let i = self.job_index(id, owner)?;
         let job = &self.subscription_jobs.jobs[i];
-        if job.status != Status::Checking || job.checked != job.total {
+        if !matches!(job.status, Status::Geodata | Status::Checking) || job.checked != job.total {
             return Err("subscription_validation_required".into());
         }
         let token = job.ticket.clone().ok_or("subscription_expired")?;
@@ -318,7 +242,7 @@ impl Engine {
     pub fn apply_subscription_job(&mut self, id: &str, owner: &str) -> Result<(), String> {
         let i = self.job_index(id, owner)?;
         let job = &self.subscription_jobs.jobs[i];
-        if job.status != Status::Checking || job.checked != job.total {
+        if !matches!(job.status, Status::Geodata | Status::Checking) || job.checked != job.total {
             return Err("subscription_validation_required".into());
         }
         let token = job.ticket.clone().ok_or("subscription_expired")?;
@@ -326,10 +250,16 @@ impl Engine {
             skipped: self.subscription_jobs.jobs[i].counts.skipped,
             warned: self.subscription_jobs.jobs[i].counts.warned,
         };
-        let changes = self.apply_subscription(&token)?;
-        let outcome = LastUpdate::of(&changes, omitted);
+        let review = self.subscription_tickets.get(&token).and_then(|t| t.review);
+        // Provider routing that failed the check is turned off, not kept broken.
+        let routing = self.subscription_jobs.jobs[i]
+            .routing_failed
+            .then_some(false);
+        let changes = self.apply_subscription_routing(&token, routing)?;
+        let outcome = LastUpdate::of(&changes, omitted).reviewed(review);
         let job = &mut self.subscription_jobs.jobs[i];
         job.status = outcome.status;
+        job.error = outcome.error;
         job.counts = outcome.counts;
         job.finished_at = Some(now());
         job.ticket = None;

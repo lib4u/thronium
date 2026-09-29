@@ -1,66 +1,6 @@
 //! FIFO subscription jobs. The native host owns scheduling, leases and commits;
 //! the webview supplies parsed drafts using the same parser as manual imports.
 use super::*;
-use crate::transport::Rpc;
-use std::path::PathBuf;
-
-pub struct ValidationRequest {
-    core: PathBuf,
-    directory: PathBuf,
-    proxy: Option<String>,
-    profile: Profile,
-    library: crate::store::Library,
-    pub checked: usize,
-    last: bool,
-}
-#[derive(Default)]
-pub struct Validator {
-    rpc: Mutex<Option<Rpc>>,
-    active: Mutex<Option<(String, watch::Sender<bool>)>>,
-}
-impl Validator {
-    pub async fn cancel(&self, id: &str) {
-        let active = self.active.lock().await;
-        if let Some((current, sender)) = &*active {
-            if current == id {
-                let _ = sender.send(true);
-            }
-        } else if let Ok(mut rpc) = self.rpc.try_lock() {
-            rpc.take();
-        }
-    }
-    pub async fn check(&self, id: &str, input: ValidationRequest) -> Result<(), String> {
-        let (sender, mut cancelled) = watch::channel(false);
-        {
-            let mut active = self.active.lock().await;
-            if active.is_some() {
-                return Err("subscription_download_busy".into());
-            }
-            *active = Some((id.into(), sender));
-        }
-        let mut holder = self.rpc.lock().await;
-        let result = tokio::select! {
-            biased;
-            _=cancelled.changed()=>Err("subscription_job_cancelled".into()),
-            result=async {
-                crate::geodata::prepare(&input.profile,&input.library,&input.directory,input.proxy.as_deref(),crate::geodata::Fetch::Download).await?;
-                let request=Engine::build_with_library(&input.profile,&input.library,&input.directory)?;
-                if holder.as_mut().is_none_or(|rpc|!rpc.is_alive()) {
-                    *holder=Some(Rpc::spawn(&input.core,&input.directory).await?);
-                }
-                let rpc=holder.as_mut().unwrap();
-                crate::check_config(rpc,&request).await.map_err(|_|"subscription_configuration_rejected".to_string())
-            // A stage before the core check keeps its own code; raw details stay here.
-            }=>result.map_err(|error:String|crate::ipc::registered(&error).unwrap_or("subscription_update_failed").into()),
-        };
-        if result.is_err() || input.last {
-            holder.take();
-        }
-        drop(holder);
-        *self.active.lock().await = None;
-        result
-    }
-}
 
 #[derive(Clone, Default, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -70,8 +10,9 @@ pub struct Counts {
     pub removed: usize,
     pub kept: usize,
     pub unchanged: usize,
-    /// Rows the parser could not turn into a profile. The remaining rows are
-    /// still imported, as in the Qt client; the update is never discarded.
+    /// Rows the parser could not turn into a profile, and changed servers the
+    /// Core rejected. The remaining rows are still imported, as in the Qt
+    /// client; the update is never discarded.
     #[serde(default)]
     pub skipped: usize,
     /// Imported rows that carry untransferred parameters.
@@ -102,6 +43,7 @@ impl Counts {
                 "removed" => c.removed += 1,
                 "kept" => c.kept += 1,
                 "unchanged" => c.unchanged += 1,
+                "rejected" => c.skipped += 1,
                 _ => {}
             }
         }
@@ -113,6 +55,9 @@ impl Counts {
 pub enum Status {
     Queued,
     Downloading,
+    /// Preparing the routing lists (geosite/geoip) the changed servers need.
+    Geodata,
+    /// The Core checks the changed configurations; no traffic is sent.
     Checking,
     Updated,
     Unchanged,
@@ -122,7 +67,10 @@ pub enum Status {
 }
 impl Status {
     fn active(self) -> bool {
-        matches!(self, Self::Queued | Self::Downloading | Self::Checking)
+        matches!(
+            self,
+            Self::Queued | Self::Downloading | Self::Geodata | Self::Checking
+        )
     }
 }
 #[derive(Clone, Serialize, Deserialize)]
@@ -138,9 +86,9 @@ impl LastUpdate {
     /// failing it: the profiles that parsed are already in the library.
     pub(super) fn of(changes: &[Change], omitted: Omitted) -> Self {
         let mut counts = Counts::of(changes);
-        counts.skipped = omitted.skipped;
+        counts.skipped += omitted.skipped;
         counts.warned = omitted.warned;
-        let status = if omitted.any() {
+        let status = if omitted.any() || counts.skipped > 0 {
             Status::NeedsReview
         } else if counts.added + counts.updated + counts.removed == 0 {
             Status::Unchanged
@@ -153,6 +101,14 @@ impl LastUpdate {
             error: None,
             counts,
         }
+    }
+    /// An applied update that left something out for a registered reason.
+    pub(super) fn reviewed(mut self, reason: Option<&'static str>) -> Self {
+        if let Some(reason) = reason {
+            self.status = Status::NeedsReview;
+            self.error = Some(reason.into());
+        }
+        self
     }
 }
 #[derive(Clone, Serialize)]
@@ -180,6 +136,9 @@ pub struct Job {
     source: Value,
     #[serde(skip)]
     validation: Vec<String>,
+    /// Provider routing failed the check; the update turns it off.
+    #[serde(skip)]
+    routing_failed: bool,
 }
 #[derive(Default)]
 pub struct Queue {
@@ -196,8 +155,10 @@ impl Queue {
 mod schedule;
 #[cfg(test)]
 mod tests;
+mod validation;
 mod worker;
 pub use schedule::*;
+pub use validation::{ValidationRequest, Validator, Verdict};
 const LEASE: Duration = Duration::from_secs(90);
 fn source(group: &Group) -> Value {
     json!([group.name, group.subscription.as_ref().map(|s| &s.settings)])

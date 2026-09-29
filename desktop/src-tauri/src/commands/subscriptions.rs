@@ -46,10 +46,16 @@ pub(super) async fn unlocked(
                 .map_err(|e| e.clone())?
                 .subscription_job_check_request(id, owner)?
         };
-        let checked = request.checked;
+        // The job shows whether routing lists are prepared or the Core checks.
+        let engine = &state.engine;
+        let stage = move |status| async move {
+            if let Ok(engine) = engine.lock().await.as_mut() {
+                let _ = engine.subscription_job_stage(id, owner, status);
+            }
+        };
         // One validation may download lists and start the Core for longer than
         // the job lease; renew it while the check is really running.
-        let check = state.validator.check(id, request);
+        let check = state.validator.check(id, request, stage);
         tokio::pin!(check);
         let mut renew = tokio::time::interval(std::time::Duration::from_secs(30));
         renew.tick().await;
@@ -63,14 +69,14 @@ pub(super) async fn unlocked(
                 }
             }
         };
-        result?;
+        let verdict = result?;
         return state
             .engine
             .lock()
             .await
             .as_mut()
             .map_err(|e| e.clone())?
-            .subscription_job_checked(id, owner, checked)
+            .subscription_job_checked(id, owner, verdict)
             .map(|_| Value::Null);
     }
     if name == "fetchSubscription" || name == "fetchSubscriptionJob" {

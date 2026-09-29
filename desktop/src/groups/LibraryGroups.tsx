@@ -13,6 +13,7 @@ import {
   bytes,
   intervalText,
   usedTraffic,
+  jobText,
   type Language,
 } from './messages';
 import { libraryBatch } from '../probes/messages';
@@ -343,7 +344,7 @@ export default function LibraryGroups({
                   onClick={() => (g.lastUpdate?.status === 'needs-review' && !job ? review(g.id) : tasks())}
                 >
                   {job
-                    ? `${gt(job.status)}${job.total ? ` · ${job.checked} / ${job.total}` : ''}`
+                    ? jobText(job, lang)
                     : error
                       ? message(error, lang, translateError)
                       : gt('needs-review')}
@@ -375,7 +376,9 @@ export default function LibraryGroups({
                     {total
                       ? t('noProfilesHint')
                       : g.subscribed
-                        ? gt('emptySubscriptionHint')
+                        ? job
+                          ? jobText(job, lang)
+                          : gt('emptySubscriptionHint')
                         : t('noProfilesHint')}
                   </p>
                   {total ? (

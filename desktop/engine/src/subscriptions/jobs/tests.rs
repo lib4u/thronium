@@ -1,6 +1,7 @@
 use super::*;
 use crate::store::ProfileKind;
 use std::path::Path;
+mod batch;
 
 #[test]
 fn individual_import_resumes_after_restart_and_explicit_cancel_stays_cancelled() {
@@ -468,7 +469,7 @@ fn a_long_validation_keeps_its_download_and_lease_alive() {
     let old = Instant::now() - Duration::from_secs(590);
     e.subscription_tickets.get_mut(&token).unwrap().used = old;
     e.subscription_jobs.jobs[i].touched = Instant::now() - LEASE + Duration::from_secs(5);
-    let request = e.subscription_job_check_request(&id, &worker).unwrap();
+    e.subscription_job_check_request(&id, &worker).unwrap();
     assert!(
         e.subscription_tickets[&token].used > old,
         "progress renews the review"
@@ -478,7 +479,7 @@ fn a_long_validation_keeps_its_download_and_lease_alive() {
     e.renew_subscription_job(&id, &worker).unwrap();
     e.queue_due_subscriptions();
     assert!(e.subscription_jobs.jobs[i].status.active());
-    e.subscription_job_checked(&id, &worker, request.checked)
+    e.subscription_job_checked(&id, &worker, Verdict::default())
         .unwrap();
     e.subscription_jobs.jobs[i].touched = Instant::now() - LEASE - Duration::from_secs(1);
     e.queue_due_subscriptions();

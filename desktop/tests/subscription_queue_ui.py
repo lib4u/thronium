@@ -130,7 +130,7 @@ def run(h):
         command('favorite', {'id': old[0]['id']})
         bodies['/ok'] = 'socks://alice:rotated@127.0.0.1:1081#Queued%20renamed\nsocks://alice:two@127.0.0.1:1082#Queued%20two'
         click('#subscription-update-all')
-        wait_for('return document.querySelectorAll("[data-subscription-job]").length===8 && document.querySelectorAll("[data-job-status=queued],[data-job-status=downloading],[data-job-status=checking]").length===0', timeout=30)
+        wait_for('return document.querySelectorAll("[data-subscription-job]").length===8 && document.querySelectorAll("[data-job-status=queued],[data-job-status=downloading],[data-job-status=geodata],[data-job-status=checking]").length===0', timeout=30)
         second = jobs()[4:]
         check(second[0]['checked'] == second[0]['total'] == 1, 'queue checks changed configurations and skips an unchanged profile')
         updated = members(good)

@@ -95,6 +95,7 @@ impl Engine {
                 ticket: None,
                 source: source(&group),
                 validation: vec![],
+                routing_failed: false,
             });
         }
         Ok(count)

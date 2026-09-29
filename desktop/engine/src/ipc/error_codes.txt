@@ -691,6 +691,8 @@ subscription_job_state
 subscription_missing
 subscription_network_error
 subscription_preview_required
+subscription_profiles_rejected
+subscription_provider_routing_failed
 subscription_proxy_unavailable
 subscription_queue_full
 subscription_redirect_error

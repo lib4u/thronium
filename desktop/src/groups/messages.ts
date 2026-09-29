@@ -2,7 +2,7 @@ import { formatDateTime } from '../shared/i18n/format.ts';
 import type { MessageKey, Language } from '../shared/i18n/index.ts';
 import { plural, translate } from '../shared/i18n/index.ts';
 import { errorCode } from '../shared/api/errors.ts';
-import type { Group, SubscriptionUsage } from '../api';
+import type { Group, SubscriptionJob, SubscriptionUsage } from '../api';
 export const messageKeys = {
   subscription_invalid_name_rules: 'subscriptions.name_rules_invalid',
   subscription_invalid_renamed_name: 'subscriptions.renamed_name_invalid',
@@ -33,7 +33,9 @@ export const messageKeys = {
   emptyQueue: 'subscriptions.no_updates_in_this_session_yet_ddd8bb1',
   queued: 'subscriptions.queued_8af393a',
   downloading: 'subscriptions.downloading_5408313',
-  checking: 'subscriptions.validating_11ff27e',
+  geodata: 'subscriptions.job_geodata',
+  checking: 'subscriptions.job_configuration_check',
+  checkingHint: 'subscriptions.job_configuration_check_hint',
   'needs-review': 'subscriptions.review_needed_41a616a',
   error: 'subscriptions.failed_462dea0',
   cancelled: 'subscriptions.cancelled_2f9561b',
@@ -56,6 +58,8 @@ export const messageKeys = {
   subscription_configuration_rejected:
     'subscriptions.the_core_rejected_a_changed_configuration_saved__288f630',
   subscription_update_failed: 'subscriptions.the_update_failed_saved_profiles_were_preserved_65db0ee',
+  subscription_profiles_rejected: 'subscriptions.profiles_rejected',
+  subscription_provider_routing_failed: 'subscriptions.provider_routing_failed',
   subscription_validation_required: 'subscriptions.changed_configurations_must_pass_validation_befo_4b22107',
   subscription_job_cancelled: 'subscriptions.this_update_was_cancelled_or_interrupted_884d18f',
   subscription_job_state: 'subscriptions.the_update_is_no_longer_ready_for_this_action_c2a4d13',
@@ -173,5 +177,11 @@ export function usageText(usage: SubscriptionUsage | null | undefined, lang: Lan
     .filter(Boolean)
     .join(' · ');
 }
+/** A job's stage; while geodata or the configuration check runs, how many servers it covers. */
+export const jobText = (job: SubscriptionJob, lang: Language) =>
+  tr(job.status, lang) +
+  ((job.status === 'geodata' || job.status === 'checking') && job.total
+    ? ` · ${plural(lang, 'subscriptions.job_servers', job.total)}`
+    : '');
 export const updatedText = (g: Group, lang: Language) =>
   g.updatedAt ? `${tr('last', lang)}: ${date(g.updatedAt, lang)}` : tr('never', lang);

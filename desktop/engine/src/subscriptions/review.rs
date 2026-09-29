@@ -38,6 +38,7 @@ impl Engine {
                 used: Instant::now(),
                 plan: None,
                 omitted: jobs::Omitted::default(),
+                review: None,
             },
         );
         Ok(response)
@@ -230,7 +231,8 @@ impl Engine {
         }
         subscription.metadata = ticket.metadata;
         subscription.updated_at = Some(now());
-        subscription.last_update = Some(jobs::LastUpdate::of(&plan.changes, ticket.omitted));
+        subscription.last_update =
+            Some(jobs::LastUpdate::of(&plan.changes, ticket.omitted).reviewed(ticket.review));
         if next.selected.is_none() || next.selection_dangling() {
             next.selected = next
                 .profiles

@@ -35,7 +35,8 @@ export default function useSubscriptionWorker() {
               warned: usable.filter((r) => r.warnings.length).length,
             },
           });
-          for (let i = 0; i < checks && active; i++) await command('checkSubscriptionJob', key);
+          // One call checks every changed server: geodata once, then one Core pass.
+          if (checks && active) await command('checkSubscriptionJob', key);
           if (active) await command('applySubscriptionJob', key);
         }
       } catch (e) {

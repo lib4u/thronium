@@ -4,15 +4,17 @@
 //! for a file. Windows says the same with an explicit list: only the account
 //! that runs this program, and inheritance from the parent folder switched off,
 //! so a library under `%LOCALAPPDATA%` does not quietly widen to whoever the
-//! parent folder allowed.
+//! parent folder allowed. A directory also lets SYSTEM read, as the parent
+//! folder did: the TUN core runs as SYSTEM and opens the rule sets and other
+//! files a configuration names there.
 
 /// The list Windows understands: full access for this account and nothing
 /// inherited. `P` protects the list from the parent, `OICI` hands it to the
-/// entries a directory will hold.
+/// entries a directory will hold, and `SY` may read them.
 #[cfg(any(windows, test))]
 fn descriptor(sid: &str, directory: bool) -> String {
     if directory {
-        format!("D:P(A;OICI;FA;;;{sid})")
+        format!("D:P(A;OICI;FA;;;{sid})(A;OICI;FR;;;SY)")
     } else {
         format!("D:P(A;;FA;;;{sid})")
     }
@@ -76,11 +78,11 @@ mod windows {
     use windows_sys::Win32::Foundation::{LocalFree, HANDLE};
     use windows_sys::Win32::Security::Authorization::{
         ConvertSidToStringSidW, ConvertStringSecurityDescriptorToSecurityDescriptorW,
-        SDDL_REVISION_1,
+        SetNamedSecurityInfoW, SDDL_REVISION_1, SE_FILE_OBJECT,
     };
     use windows_sys::Win32::Security::{
-        GetTokenInformation, SetFileSecurityW, TokenUser, DACL_SECURITY_INFORMATION,
-        PROTECTED_DACL_SECURITY_INFORMATION, TOKEN_QUERY, TOKEN_USER,
+        GetSecurityDescriptorDacl, GetTokenInformation, SetFileSecurityW, TokenUser, ACL,
+        DACL_SECURITY_INFORMATION, PROTECTED_DACL_SECURITY_INFORMATION, TOKEN_QUERY, TOKEN_USER,
     };
     use windows_sys::Win32::System::Threading::{GetCurrentProcess, OpenProcessToken};
 
@@ -191,15 +193,32 @@ mod windows {
         {
             return Err("storage_permissions_failed".into());
         }
-        let applied = unsafe {
-            SetFileSecurityW(
-                wide(path.as_os_str()).as_ptr(),
-                DACL_SECURITY_INFORMATION | PROTECTED_DACL_SECURITY_INFORMATION,
-                security,
-            )
-        };
+        let name = wide(path.as_os_str());
+        let information = DACL_SECURITY_INFORMATION | PROTECTED_DACL_SECURITY_INFORMATION;
+        // A directory hands the list on to what it already holds too, so files
+        // written under an earlier list follow it; failing that, as before, the
+        // directory alone takes the list.
+        let (mut present, mut defaulted) = (0, 0);
+        let mut dacl: *mut ACL = std::ptr::null_mut();
+        let applied = (directory
+            && unsafe {
+                GetSecurityDescriptorDacl(security, &mut present, &mut dacl, &mut defaulted)
+            } != 0
+            && present != 0
+            && unsafe {
+                SetNamedSecurityInfoW(
+                    name.as_ptr(),
+                    SE_FILE_OBJECT,
+                    information,
+                    std::ptr::null_mut(),
+                    std::ptr::null_mut(),
+                    dacl,
+                    std::ptr::null(),
+                )
+            } == 0)
+            || unsafe { SetFileSecurityW(name.as_ptr(), information, security) } != 0;
         unsafe { LocalFree(security.cast()) };
-        if applied == 0 {
+        if !applied {
             return Err("storage_permissions_failed".into());
         }
         Ok(())
@@ -210,13 +229,13 @@ mod windows {
 mod tests {
     /// The shape is fixed here because the machine that reads it is not
     /// available: a protected list, this account only, inherited by a
-    /// directory's contents and by nothing else.
+    /// directory's contents and by nothing else; SYSTEM may read a directory.
     #[test]
     fn a_path_is_handed_to_this_account_and_protected_from_the_parent() {
         let sid = "S-1-5-21-1111111111-2222222222-3333333333-1001";
         assert_eq!(
             super::descriptor(sid, true),
-            format!("D:P(A;OICI;FA;;;{sid})")
+            format!("D:P(A;OICI;FA;;;{sid})(A;OICI;FR;;;SY)")
         );
         assert_eq!(super::descriptor(sid, false), format!("D:P(A;;FA;;;{sid})"));
         // The core's pipe: the same account, generic access, nothing else.
@@ -224,7 +243,11 @@ mod tests {
         for kind in [true, false] {
             let value = super::descriptor(sid, kind);
             assert!(value.starts_with("D:P("), "the parent must not reach in");
-            assert_eq!(value.matches('(').count(), 1, "one account, not two");
+            // The TUN core runs as SYSTEM and reads a configuration's files;
+            // it never writes here, and no other account is named.
+            let others = value.matches('(').count() - 1;
+            assert_eq!(others, usize::from(kind), "SYSTEM only, and only to read");
+            assert!(!value.contains("FA;;;SY"));
         }
     }
 }

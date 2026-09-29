@@ -92,6 +92,7 @@ pub(super) fn entries() -> Vec<(String, Schema)> {
                 literal("queued"),
                 literal("cancelled"),
                 literal("downloading"),
+                literal("geodata"),
                 literal("checking"),
                 literal("needs-review"),
             ]),

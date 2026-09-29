@@ -197,6 +197,8 @@ pub struct Ticket {
     /// Rows the caller could not import. Set with the preview, reported by the
     /// applied update; a manual import that lost nothing leaves it at zero.
     pub(crate) omitted: jobs::Omitted,
+    /// Why an automatic check left something out; the update then asks for review.
+    pub(crate) review: Option<&'static str>,
 }
 impl Ticket {
     fn expired(&self) -> bool {

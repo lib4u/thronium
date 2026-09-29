@@ -4,7 +4,7 @@ import { Button } from '../shared/ui/controls';
 import { useState } from 'react';
 import { command, type Snapshot } from '../api';
 import { Modal } from '../ui';
-import { tr, message } from './messages';
+import { tr, message, jobText } from './messages';
 import { jobActive, jobHasCounts, jobNeedsAttention } from './jobStatus';
 export default function UpdatesDialog({
   snapshot,
@@ -105,15 +105,14 @@ export default function UpdatesDialog({
           >
             <div className="subscription-job-head">
               <strong>{job.groupName}</strong>
-              <span>
-                {t(job.status)}
-                {job.status === 'checking' && ` ${job.checked}/${job.total}`}
-              </span>
+              <span>{jobText(job, language)}</span>
             </div>
             <small>{t(job.scheduled ? 'scheduled' : 'manualUpdate')}</small>
-            {job.total > 0 && job.status === 'checking' && (
-              <progress max={job.total} value={job.checked} aria-label={t('checking')} />
+            {/* One pass over all servers: its length is unknown, so the bar is indeterminate. */}
+            {(job.status === 'geodata' || job.status === 'checking') && (
+              <progress aria-label={t(job.status)} />
             )}
+            {job.status === 'checking' && <p className="field-hint">{t('checkingHint')}</p>}
             {jobHasCounts(job.status) && (
               <p className="field-hint" data-job-counts={job.id}>
                 {(['added', 'updated', 'removed', 'kept'] as const)
