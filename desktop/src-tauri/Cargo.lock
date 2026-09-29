@@ -5285,7 +5285,7 @@ dependencies = [
 
 [[package]]
 name = "thronium-desktop"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "ashpd",
  "base64 0.22.1",
@@ -5317,7 +5317,7 @@ dependencies = [
 
 [[package]]
 name = "thronium-engine"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "base64 0.22.1",
  "chrono",

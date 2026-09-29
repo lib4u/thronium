@@ -1,6 +1,6 @@
 [package]
 name = "thronium-desktop"
-version = "0.1.1"
+version = "0.1.0"
 description = "Thronium desktop client for ThroneCore"
 license = "GPL-3.0-only"
 edition = "2021"
