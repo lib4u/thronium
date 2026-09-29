@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/screenshots/ux.png" alt="Thronium: connection and servers" width="100%">
+</p>
+
 # Thronium
 
 [Русский](README.md) · **English**
