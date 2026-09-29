@@ -697,6 +697,7 @@ subscription_proxy_unavailable
 subscription_queue_full
 subscription_redirect_error
 subscription_routing_invalid
+subscription_routing_missing
 subscription_routing_unsupported
 subscription_storage_error
 subscription_timeout

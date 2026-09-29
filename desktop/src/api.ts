@@ -50,6 +50,7 @@ export const empty: Snapshot = {
     pending: false,
     profileOwned: false,
     providerOwned: false,
+    providerGroup: null,
   },
   profiles: [],
   groups: structuredClone(defaults.groups) as unknown as Wire.Snapshot['groups'],

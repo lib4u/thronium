@@ -136,6 +136,31 @@ pub(super) fn entries() -> Vec<(String, Command)> {
             },
         ),
         (
+            "subscriptionRouting".into(),
+            Command {
+                request: object([("groupId", required(Schema::String))]),
+                response: object([
+                    ("groupId", required(Schema::String)),
+                    (
+                        "profile",
+                        required(union(vec![Schema::Null, reference("RouteProfile")])),
+                    ),
+                    ("error", required(union(vec![Schema::Null, Schema::String]))),
+                    ("pinnedResolvers", required(Schema::Boolean)),
+                ]),
+            },
+        ),
+        (
+            "useSubscriptionRouting".into(),
+            Command {
+                request: object([
+                    ("revision", required(Schema::Number)),
+                    ("keptName", required(Schema::String)),
+                ]),
+                response: reference("Routing"),
+            },
+        ),
+        (
             "xrayGeodataSources".into(),
             Command {
                 request: object([]),

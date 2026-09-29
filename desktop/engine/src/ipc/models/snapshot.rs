@@ -206,6 +206,12 @@ pub(super) fn entries() -> Vec<(String, Schema)> {
                 ("pending", required(Schema::Boolean)),
                 ("profileOwned", required(Schema::Boolean)),
                 ("providerOwned", required(Schema::Boolean)),
+                // The subscription whose routing is offered for the running or
+                // selected server, even while a client profile takes priority.
+                (
+                    "providerGroup",
+                    required(union(vec![Schema::Null, Schema::String])),
+                ),
             ]),
         ),
         (

@@ -28,6 +28,7 @@ export default function RulesPanel({
     run,
     update,
     reorder,
+    readOnly,
   } = controller;
   return (
     <>
@@ -77,25 +78,34 @@ export default function RulesPanel({
                           : formatRuleValue(f, rule.config[f.key]).replace(/\n/g, ', ')),
                     )
                     .join(' · ');
+                  const name = (
+                    <>
+                      <span className="rule-number">{String(i + 1).padStart(2, '0')}</span>
+                      <span>
+                        <strong>{rule.name}</strong>
+                        <small>
+                          {summary || (rule.config.type === 'logical' ? tr('logical') : tr('any'))}
+                        </small>
+                      </span>
+                    </>
+                  );
                   return (
                     <tr key={rule.id}>
                       <td>
-                        <Button
-                          className="route-rule-name"
-                          data-edit-rule={rule.id}
-                          onClick={() => {
-                            setEditing(rule);
-                            setModal('rule');
-                          }}
-                        >
-                          <span className="rule-number">{String(i + 1).padStart(2, '0')}</span>
-                          <span>
-                            <strong>{rule.name}</strong>
-                            <small>
-                              {summary || (rule.config.type === 'logical' ? tr('logical') : tr('any'))}
-                            </small>
-                          </span>
-                        </Button>
+                        {readOnly ? (
+                          <div className="route-rule-name">{name}</div>
+                        ) : (
+                          <Button
+                            className="route-rule-name"
+                            data-edit-rule={rule.id}
+                            onClick={() => {
+                              setEditing(rule);
+                              setModal('rule');
+                            }}
+                          >
+                            {name}
+                          </Button>
+                        )}
                       </td>
                       <td>
                         <span className="status-tag">{actionLabel(rule)}</span>
@@ -108,7 +118,7 @@ export default function RulesPanel({
                             name: rule.name,
                           })}
                           aria-pressed={rule.enabled}
-                          disabled={busy}
+                          disabled={busy || readOnly}
                           onClick={() =>
                             run(() =>
                               update({
@@ -122,38 +132,40 @@ export default function RulesPanel({
                         />
                       </td>
                       <td>
-                        <div className="route-actions">
-                          <Button
-                            className="icon-button"
-                            data-rule-up={rule.id}
-                            disabled={!i || busy}
-                            aria-label={tr('up')}
-                            onClick={() => reorder(rule, -1)}
-                          >
-                            <Icon name="arrow-up" />
-                          </Button>
-                          <Button
-                            className="icon-button"
-                            data-rule-down={rule.id}
-                            disabled={i === current.rules.length - 1 || busy}
-                            aria-label={tr('down')}
-                            onClick={() => reorder(rule, 1)}
-                          >
-                            <Icon name="arrow-down" />
-                          </Button>
-                          <Button
-                            className="icon-button"
-                            data-delete-rule={rule.id}
-                            disabled={busy}
-                            aria-label={tr('remove')}
-                            onClick={() => {
-                              setEditing(rule);
-                              setModal('delete-rule');
-                            }}
-                          >
-                            <Icon name="trash" />
-                          </Button>
-                        </div>
+                        {!readOnly && (
+                          <div className="route-actions">
+                            <Button
+                              className="icon-button"
+                              data-rule-up={rule.id}
+                              disabled={!i || busy}
+                              aria-label={tr('up')}
+                              onClick={() => reorder(rule, -1)}
+                            >
+                              <Icon name="arrow-up" />
+                            </Button>
+                            <Button
+                              className="icon-button"
+                              data-rule-down={rule.id}
+                              disabled={i === current.rules.length - 1 || busy}
+                              aria-label={tr('down')}
+                              onClick={() => reorder(rule, 1)}
+                            >
+                              <Icon name="arrow-down" />
+                            </Button>
+                            <Button
+                              className="icon-button"
+                              data-delete-rule={rule.id}
+                              disabled={busy}
+                              aria-label={tr('remove')}
+                              onClick={() => {
+                                setEditing(rule);
+                                setModal('delete-rule');
+                              }}
+                            >
+                              <Icon name="trash" />
+                            </Button>
+                          </div>
+                        )}
                       </td>
                     </tr>
                   );
@@ -178,32 +190,34 @@ export default function RulesPanel({
             tr={tr}
             profiles={snapshot.profiles}
             value={String(current.route.final || defaultTarget)}
-            disabled={busy}
+            disabled={busy || readOnly}
             changed={(value) => run(() => update({ ...current, route: { ...current.route, final: value } }))}
           />
         </div>
       </section>
-      <FormActions className="feature-toolbar">
-        <Button
-          className="button secondary"
-          id="route-local"
-          title={tr('localHint')}
-          disabled={busy}
-          onClick={() => {
-            const rule: RouteRule = {
-              id: crypto.randomUUID(),
-              name: tr('local'),
-              enabled: true,
-              config: { ip_is_private: true, action: 'route', outbound: 'direct' },
-            };
-            setEditing(rule);
-            setModal('rule');
-          }}
-        >
-          <Icon name="wifi" />
-          {tr('local')}
-        </Button>
-      </FormActions>
+      {!readOnly && (
+        <FormActions className="feature-toolbar">
+          <Button
+            className="button secondary"
+            id="route-local"
+            title={tr('localHint')}
+            disabled={busy}
+            onClick={() => {
+              const rule: RouteRule = {
+                id: crypto.randomUUID(),
+                name: tr('local'),
+                enabled: true,
+                config: { ip_is_private: true, action: 'route', outbound: 'direct' },
+              };
+              setEditing(rule);
+              setModal('rule');
+            }}
+          >
+            <Icon name="wifi" />
+            {tr('local')}
+          </Button>
+        </FormActions>
+      )}
     </>
   );
 }

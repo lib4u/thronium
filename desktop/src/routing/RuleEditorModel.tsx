@@ -47,7 +47,6 @@ export const messageKeys = {
   inactive: 'routing.these_rules_apply_in_by_rules_mode_e34acb4',
   own: 'routing.the_selected_full_json_configuration_defines_its_365cce9',
   legacyPolicy: 'routing.imported_from_throne_this_preset_keeps_its_saved_18c1992',
-  provider: 'routing.subscription_dns_and_routing_apply_by_default_yo_297a86f',
   up: 'routing.move_up_441b312',
   down: 'routing.move_down_d672813',
   remove: 'routing.delete_55f670b',

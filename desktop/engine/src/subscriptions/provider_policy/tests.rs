@@ -158,3 +158,86 @@ fn chunk_files_are_a_loading_hint_that_changes_no_rule() {
     let invalid = provider(json!({"UseChunkFiles":"sometimes"}));
     assert!(build(&invalid).is_err());
 }
+
+/// The Routing page lists exactly what a connection runs: the same rules in
+/// the same order, the same final outbound and the same DNS, for every
+/// resolution timing and order a provider may send.
+#[test]
+fn the_routing_page_lists_the_rules_and_dns_a_connection_applies() {
+    for strategy in ["AsIs", "IPIfNonMatch", "IPOnDemand"] {
+        for order in [
+            "block-proxy-direct",
+            "direct-proxy-block",
+            "proxy-block-direct",
+        ] {
+            let provider = provider(json!({
+                "Name":"Fixture policy","DomainStrategy":strategy,"RouteOrder":order,
+                "GlobalProxy":false,"FakeDNS":true,"DnsHosts":{"hosts.example.test":"192.0.2.9"},
+                "DirectSites":["domain:a.example.test","full:b.example.test","keyword:c","regexp:^d\\.","plain"],
+                "DirectIp":["192.0.2.0/24"],"ProxySites":["domain:p.example.test"],
+                "ProxyIp":["2001:db8::/32"],"BlockSites":["domain:ads.example.test"],
+                "BlockIp":["198.51.100.1"],"RemoteDNSType":"DoH","DomesticDNSType":"DoU"}));
+            let applied = build(&provider).unwrap();
+            let dir = tempfile::tempdir().unwrap();
+            let view = profile(
+                "subscription:g",
+                "Fixture policy",
+                &provider,
+                &Assets::new(dir.path(), Some(&provider)),
+            )
+            .unwrap();
+            let rules: Vec<Value> = view.rules.iter().map(|r| r.config.clone()).collect();
+            assert_eq!(
+                json!(rules),
+                applied["route"]["rules"],
+                "{strategy} {order}"
+            );
+            assert_eq!(view.route["final"], applied["route"]["final"]);
+            assert_eq!(view.dns, applied["dns"]);
+            assert_eq!(view.name, "Fixture policy");
+            assert!(view.rules.iter().any(|r| r.name == "domain:a.example.test"));
+            // What the page shows is a valid profile, so a copy of it saves.
+            crate::routing::Routing {
+                active: view.id.clone(),
+                profiles: vec![view],
+                revision: 0,
+            }
+            .validate()
+            .unwrap();
+        }
+    }
+}
+
+/// Geo categories become category databases of the provider's own lists, or
+/// of the default source where the provider names none; no file is needed.
+#[test]
+fn geo_categories_on_the_page_are_sources_of_the_provider_lists() {
+    let policy = provider(json!({
+        "Geositeurl":"https://provider.example.test/geosite.dat",
+        "DirectSites":["geosite:category-ru","geosite:category-ru"],"DirectIp":["geoip:ru"]}));
+    let dir = tempfile::tempdir().unwrap();
+    let library = crate::store::Library::default();
+    let assets = Assets::new(dir.path(), Some(&policy)).with_library(&library);
+    let view = profile("subscription:g", "Policy", &policy, &assets).unwrap();
+    assert_eq!(
+        view.route["rule_set"],
+        json!([
+            {"type":"geodata","tag":"geosite:category-ru","kind":"geosite",
+                "url":"https://provider.example.test/geosite.dat","category":"category-ru"},
+            {"type":"geodata","tag":"geoip:ru","kind":"geoip",
+                "url":crate::geodata::default_url(false),"category":"ru"}
+        ])
+    );
+    assert_eq!(
+        view.rules[1].config,
+        json!({"rule_set":["geosite:category-ru"],"action":"route","outbound":"direct"})
+    );
+    // A policy a connection refuses is refused here with the same code.
+    let refused = provider(json!({"DomainStrategy":"UseIP"}));
+    assert_eq!(
+        profile("subscription:g", "Policy", &refused, &assets)
+            .err()
+            .unwrap(),
+        build(&refused).unwrap_err()
+    );
+}

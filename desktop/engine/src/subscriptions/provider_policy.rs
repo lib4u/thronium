@@ -5,7 +5,11 @@
 //! the used categories out of the geo files before its core loads them; the
 //! lists themselves stay inline or in Geoipurl/Geositeurl, so it changes nothing.
 use super::provider_routing::ProviderRouting;
-use crate::{geodata::Assets, proto::LoadConfigReq};
+use crate::{
+    geodata::Assets,
+    proto::LoadConfigReq,
+    routing::{RoutingProfile, Rule},
+};
 use serde_json::{json, Value};
 use std::net::IpAddr;
 mod dns;
@@ -40,11 +44,25 @@ pub(super) const KNOWN_KEYS: [&str; 22] = [
     "UseChunkFiles",
 ];
 
-pub(crate) fn apply(
-    request: &mut LoadConfigReq,
+/// A provider policy translated for sing-box, before it meets a core request.
+/// `apply` puts it into a request and `profile` lists it on the Routing page,
+/// so the page shows exactly what a connection runs.
+pub(crate) struct Policy {
+    /// Route rules in evaluation order, each named by the provider entry it
+    /// comes from.
+    pub(crate) rules: Vec<(String, Value)>,
+    pub(crate) sets: Vec<Value>,
+    /// `final` and the options beside it; rules and rule sets are separate.
+    pub(crate) route: Value,
+    pub(crate) dns: Value,
+}
+
+/// `rule_set` turns a `geosite:`/`geoip:` reference into the rule set a
+/// category becomes; sets are listed once per tag.
+pub(crate) fn translate(
     provider: &ProviderRouting,
-    assets: &Assets,
-) -> Result<(), String> {
+    rule_set: &mut dyn FnMut(&str) -> Result<Value, String>,
+) -> Result<Policy, String> {
     if provider.error.is_some() {
         return Err("subscription_routing_invalid".into());
     }
@@ -70,8 +88,14 @@ pub(crate) fn apply(
     if !matches!(strategy, "AsIs" | "IPIfNonMatch" | "IPOnDemand") {
         return Err("subscription_domain_strategy_unsupported".into());
     }
+    let resolve = || {
+        (
+            format!("DomainStrategy: {strategy}"),
+            json!({"action":"resolve"}),
+        )
+    };
     let mut sets = vec![];
-    let mut traffic = vec![json!({"action":"sniff"})];
+    let mut traffic = vec![("sniff".to_owned(), json!({"action":"sniff"}))];
     let mut dns_rules = vec![];
     let mut ip_rules = vec![];
     let mut first_ip_rule = None;
@@ -92,7 +116,7 @@ pub(crate) fn apply(
                     .as_str()
                     .filter(|s| !s.is_empty())
                     .ok_or("subscription_routing_invalid")?;
-                let mut rule = condition(value, sites, assets, &mut sets)?;
+                let mut rule = condition(value, sites, rule_set, &mut sets)?;
                 if sites {
                     let mut dns = rule.clone();
                     if action == "block" {
@@ -115,9 +139,9 @@ pub(crate) fn apply(
                 }
                 if !sites {
                     first_ip_rule.get_or_insert(traffic.len());
-                    ip_rules.push(rule.clone())
+                    ip_rules.push((value.to_owned(), rule.clone()))
                 }
-                traffic.push(rule);
+                traffic.push((value.to_owned(), rule));
             }
         }
     }
@@ -125,14 +149,14 @@ pub(crate) fn apply(
         // Xray resolves once no site rule matched: literal IP rules first,
         // then the same IP rules again for resolved destinations.
         "IPIfNonMatch" if !ip_rules.is_empty() => {
-            traffic.push(json!({"action":"resolve"}));
+            traffic.push(resolve());
             traffic.extend(ip_rules);
         }
         // Xray resolves as soon as an IP rule is evaluated: one resolve in
         // RouteOrder position, before the first IP rule.
         "IPOnDemand" => {
             if let Some(index) = first_ip_rule {
-                traffic.insert(index, json!({"action":"resolve"}));
+                traffic.insert(index, resolve());
             }
         }
         _ => {}
@@ -153,7 +177,25 @@ pub(crate) fn apply(
         head.push(rule);
     }
     head.extend(dns_rules);
-    let dns_rules = head;
+    let mut dns =
+        json!({"servers":servers,"rules":head,"final":"dns-remote","reverse_mapping":true});
+    if fake_dns {
+        dns["independent_cache"] = json!(true);
+    }
+    Ok(Policy {
+        rules: traffic,
+        sets,
+        route: json!({"final":if boolean(&c["GlobalProxy"],true)? {"proxy"}else{"direct"},"auto_detect_interface":true,"default_domain_resolver":"dns-direct"}),
+        dns,
+    })
+}
+
+pub(crate) fn apply(
+    request: &mut LoadConfigReq,
+    provider: &ProviderRouting,
+    assets: &Assets,
+) -> Result<(), String> {
+    let policy = translate(provider, &mut |reference| assets.rule_set(reference))?;
     let mut core: Value = serde_json::from_str(
         request
             .core_config
@@ -161,21 +203,73 @@ pub(crate) fn apply(
             .ok_or("invalid_configuration")?,
     )
     .map_err(|_| "invalid_configuration")?;
-    dns::pin_resolvers(&mut core, c);
+    dns::pin_resolvers(&mut core, &provider.config);
     // Internal chain bridge rules precede policy, as in the client routing compiler.
     let mut rules = core["route"]["rules"]
         .as_array()
         .cloned()
         .unwrap_or_default();
-    rules.extend(traffic);
-    core["route"] = json!({"final":if boolean(&c["GlobalProxy"],true)? {"proxy"}else{"direct"},"auto_detect_interface":true,"default_domain_resolver":"dns-direct","rules":rules,"rule_set":sets});
-    core["dns"] =
-        json!({"servers":servers,"rules":dns_rules,"final":"dns-remote","reverse_mapping":true});
-    if fake_dns {
-        core["dns"]["independent_cache"] = json!(true);
-    }
+    rules.extend(policy.rules.into_iter().map(|(_, rule)| rule));
+    let mut route = policy.route;
+    route["rules"] = json!(rules);
+    route["rule_set"] = json!(policy.sets);
+    core["route"] = route;
+    core["dns"] = policy.dns;
     request.core_config = Some(core.to_string());
     Ok(())
+}
+/// The Routing page's read-only view of this policy: the rules and DNS
+/// `apply` gives a connection, geo categories as sources of the provider's
+/// lists. A copy of it is an ordinary routing profile.
+pub(crate) fn profile(
+    id: &str,
+    name: &str,
+    provider: &ProviderRouting,
+    assets: &Assets,
+) -> Result<RoutingProfile, String> {
+    let policy = translate(provider, &mut |reference| {
+        let (kind, category) = reference
+            .split_once(':')
+            .ok_or("geodata_reference_invalid")?;
+        Ok(json!({"type":"geodata","tag":reference,"kind":kind,
+            "url":assets.url(kind == "geosite"),"category":category}))
+    })?;
+    let mut route = policy.route;
+    route["rule_set"] = json!(policy.sets);
+    Ok(RoutingProfile {
+        id: id.into(),
+        name: label(name),
+        mode: "rules".into(),
+        rules: policy
+            .rules
+            .into_iter()
+            .enumerate()
+            .map(|(i, (name, config))| Rule {
+                id: format!("{id}:{i}"),
+                name: label(&name),
+                enabled: true,
+                config,
+                simple: None,
+            })
+            .collect(),
+        route,
+        dns: policy.dns,
+        source: None,
+        legacy_constraints: None,
+    })
+}
+/// A provider string as a name: one line, within the name limit.
+fn label(value: &str) -> String {
+    let mut name: String = value
+        .chars()
+        .map(|c| if c.is_control() { ' ' } else { c })
+        .collect::<String>()
+        .trim()
+        .into();
+    while name.len() > crate::store::MAX_NAME_BYTES {
+        name.pop();
+    }
+    name
 }
 fn boolean(value: &Value, default: bool) -> Result<bool, String> {
     match value {
@@ -189,11 +283,11 @@ fn boolean(value: &Value, default: bool) -> Result<bool, String> {
 fn condition(
     value: &str,
     sites: bool,
-    assets: &Assets,
+    rule_set: &mut dyn FnMut(&str) -> Result<Value, String>,
     sets: &mut Vec<Value>,
 ) -> Result<Value, String> {
     if value.starts_with(if sites { "geosite:" } else { "geoip:" }) {
-        let set = assets.rule_set(value)?;
+        let set = rule_set(value)?;
         let tag = set["tag"].clone();
         if !sets.iter().any(|s| s["tag"] == tag) {
             sets.push(set)

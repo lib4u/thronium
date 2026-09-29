@@ -17,6 +17,7 @@ export default function RoutingTextPanel({ controller }: { controller: RoutingPa
     bufferKey,
     setNotice,
     jsonAction,
+    readOnly,
   } = controller;
   return (
     <section className="feature-panel">
@@ -55,32 +56,35 @@ export default function RoutingTextPanel({ controller }: { controller: RoutingPa
         spellCheck={false}
         value={text}
         disabled={busy}
+        readOnly={readOnly}
         onChange={(e) => {
           setBuffers((old) => ({ ...old, [bufferKey]: e.target.value }));
           setNotice('');
         }}
       />
-      <div className="settings-save">
-        <span>
-          {buffers[bufferKey] !== undefined ? tr('unsaved') : tab === 'simple' ? tr('simpleOnly') : ''}
-        </span>
-        <Button
-          className="button secondary"
-          id="route-json-check"
-          disabled={busy}
-          onClick={() => void jsonAction(false)}
-        >
-          {tr('check')}
-        </Button>
-        <Button
-          className="button primary"
-          id="route-json-save"
-          disabled={busy}
-          onClick={() => void jsonAction(true)}
-        >
-          {tr(tab === 'simple' ? 'simpleSave' : 'save')}
-        </Button>
-      </div>
+      {!readOnly && (
+        <div className="settings-save">
+          <span>
+            {buffers[bufferKey] !== undefined ? tr('unsaved') : tab === 'simple' ? tr('simpleOnly') : ''}
+          </span>
+          <Button
+            className="button secondary"
+            id="route-json-check"
+            disabled={busy}
+            onClick={() => void jsonAction(false)}
+          >
+            {tr('check')}
+          </Button>
+          <Button
+            className="button primary"
+            id="route-json-save"
+            disabled={busy}
+            onClick={() => void jsonAction(true)}
+          >
+            {tr(tab === 'simple' ? 'simpleSave' : 'save')}
+          </Button>
+        </div>
+      )}
     </section>
   );
 }

@@ -239,6 +239,7 @@
   "subscription_dns_unsupported": "DNS подписки содержит неподдерживаемые настройки.",
   "subscription_domain_strategy_unsupported": "Эта стратегия разрешения доменов подписки пока не поддерживается.",
   "subscription_routing_invalid": "Не удалось разобрать маршрутизацию подписки.",
+  "subscription_routing_missing": "У этой подписки нет своей маршрутизации.",
   "subscription_routing_unsupported": "Маршрутизация подписки содержит неподдерживаемые поля. Правила не применены.",
   "system_proxy_apply_failed": "Не удалось включить системный прокси. Прежние настройки восстановлены.",
   "system_proxy_busy": "Системным прокси управляет другой экземпляр Thronium. Сначала отключите его.",

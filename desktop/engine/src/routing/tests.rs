@@ -228,3 +228,75 @@ fn structured_routes_sniff_before_their_rules_unless_they_sniff_themselves() {
     routing.legacy_constraints = Some(LegacyRoutingConstraints::default());
     assert_eq!(compiled(&routing), json!([domain]));
 }
+
+/// A server of a subscription with its own routing offers that routing on the
+/// Routing page; a client profile takes priority until routing is given back,
+/// and giving it back keeps changes made to Default as their own profile.
+#[test]
+fn subscription_routing_is_listed_and_can_be_given_back_without_losing_edits() {
+    let dir = tempfile::tempdir().unwrap();
+    let mut e = crate::Engine::open(dir.path(), std::path::Path::new("missing-core")).unwrap();
+    let group = e
+        .save_group(crate::subscriptions::GroupDraft {
+            auto_clear_unavailable: None,
+            proxy_chain: None,
+            id: None,
+            name: "Provider".into(),
+            subscription: Some(
+                serde_json::from_value(json!({"url":"https://example.test/subscription",
+                    "headers":{},"userAgent":"fixture","viaProxy":false,"useProviderRouting":true}))
+                .unwrap(),
+            ),
+        })
+        .unwrap();
+    assert_eq!(
+        e.subscription_routing(&group).unwrap_err(),
+        "subscription_routing_missing"
+    );
+    let mut library = e.store.library.clone();
+    let g = library.groups.iter_mut().find(|g| g.id == group).unwrap();
+    g.subscription.as_mut().unwrap().metadata.routing =
+        Some(crate::subscriptions::provider_routing::ProviderRouting {
+            action: "add".into(),
+            config: json!({"Name":"Provider RU","DirectSites":["domain:example.ru"]}),
+            error: None,
+        });
+    let mut server = profile(
+        "server",
+        ProfileKind::SingBoxOutbound,
+        json!({"type":"direct"}),
+    );
+    server.group_id = group.clone();
+    library.profiles.push(server);
+    library.selected = Some("server".into());
+    e.store.commit(library).unwrap();
+    let snapshot = serde_json::to_value(e.snapshot()).unwrap();
+    assert_eq!(snapshot["routing"]["providerGroup"], json!(group));
+    assert_eq!(snapshot["routing"]["providerOwned"], json!(true));
+    let view = e.subscription_routing(&group).unwrap();
+    assert_eq!(view["profile"]["name"], "Provider RU");
+    assert_eq!(view["profile"]["rules"][1]["name"], "domain:example.ru");
+    assert_eq!(view["error"], Value::Null);
+    // An edited Default takes priority; the subscription is still offered.
+    let mut routing = e.routing();
+    routing.profiles[0].mode = "direct".into();
+    let routing = e.save_routing(routing).unwrap();
+    let snapshot = serde_json::to_value(e.snapshot()).unwrap();
+    assert_eq!(snapshot["routing"]["providerOwned"], json!(false));
+    assert_eq!(snapshot["routing"]["providerGroup"], json!(group));
+    assert_eq!(
+        e.use_subscription_routing(routing.revision - 1, "Kept")
+            .err()
+            .unwrap(),
+        "routing_changed"
+    );
+    let routing = e
+        .use_subscription_routing(routing.revision, "Kept")
+        .unwrap();
+    assert!(!routing.customized());
+    let kept = routing.profiles.iter().find(|p| p.name == "Kept").unwrap();
+    assert_eq!(kept.mode, "direct");
+    assert_ne!(kept.id, "default");
+    let snapshot = serde_json::to_value(e.snapshot()).unwrap();
+    assert_eq!(snapshot["routing"]["providerOwned"], json!(true));
+}

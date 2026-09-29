@@ -204,6 +204,28 @@ export function newProfile(name: string): RouteProfile {
     name,
   };
 }
+/** JSON values compared as the engine compares them: object key order aside. */
+const sameJson = (a: unknown, b: unknown): boolean =>
+  a === b ||
+  (typeof a === 'object' &&
+    typeof b === 'object' &&
+    a !== null &&
+    b !== null &&
+    Array.isArray(a) === Array.isArray(b) &&
+    Object.keys(a).length === Object.keys(b).length &&
+    Object.entries(a).every(([k, v]) => sameJson(v, (b as Record<string, unknown>)[k])));
+/** The untouched Default profile (the engine's `RoutingProfile::baseline`): no
+ * client policy of its own, so a subscription's routing applies instead. */
+export const isBaselineProfile = (profile: RouteProfile) => {
+  const baseline = defaults.routingProfile as unknown as RouteProfile;
+  return (
+    profile.id === baseline.id &&
+    profile.mode === baseline.mode &&
+    !profile.rules.some((r) => r.enabled) &&
+    sameJson(profile.route, baseline.route) &&
+    sameJson(profile.dns, baseline.dns)
+  );
+};
 /** The built-in profile every library starts with, still under its original name. */
 export const isDefaultRoutingProfile = (profile: { id?: string; active?: string; name: string }) =>
   (profile.id ?? profile.active) === defaults.routingProfile.id &&

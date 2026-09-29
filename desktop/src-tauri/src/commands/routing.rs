@@ -77,6 +77,14 @@ pub(super) async fn locked(
             serde_json::to_value(engine.save_routing(routing)?)
                 .map_err(|_| "invalid_command_response".to_owned())
         }
+        "subscriptionRouting" => {
+            engine.subscription_routing(payload["groupId"].as_str().unwrap_or(""))
+        }
+        "useSubscriptionRouting" => serde_json::to_value(engine.use_subscription_routing(
+            payload["revision"].as_u64().ok_or("invalid_routing")?,
+            payload["keptName"].as_str().unwrap_or(""),
+        )?)
+        .map_err(|_| "invalid_command_response".to_owned()),
         "checkRouting" => {
             let routing = serde_json::from_value(payload).map_err(|_| "invalid_routing")?;
             engine.check_routing(routing).await?;

@@ -5,6 +5,8 @@ import { useMessageState } from '../shared/i18n/react';
 import { useEffect, useState } from 'react';
 import type { RoutingImportRequest } from './catalog';
 import { command, type Snapshot } from '../api';
+import type * as Wire from '../shared/api/generated/commands';
+import { translate } from '../shared/i18n/index.ts';
 import { label } from '../profiles/schema';
 import {
   actions,
@@ -44,7 +46,9 @@ export function useRoutingPage({
   const [query, setQuery] = useState('');
   const [simpleTarget, setSimpleTarget] = useState('direct');
   const [buffers, setBuffers] = useState<Record<string, string>>({});
-  const [modal, setModal] = useState<'rule' | 'profiles' | 'delete-rule' | 'import' | null>(null);
+  const [modal, setModal] = useState<
+    'rule' | 'profiles' | 'delete-rule' | 'import' | 'provider-copy' | 'provider-use' | null
+  >(null);
   const [editing, setEditing] = useState<RouteRule | undefined>();
   const [profileName, setProfileName] = useState('');
   const [profileEditing, setProfileEditing] = useState('');
@@ -74,7 +78,34 @@ export function useRoutingPage({
     setImportRequest(requestedImport);
     setModal('import');
   }, [requestedImport, data, busy, modal, importOpened]);
-  const current = data?.profiles.find((p) => p.id === data.active);
+  // The routing a subscription offers for the running or selected server. It
+  // is read again with the library, so it follows every subscription update.
+  const providerGroup = snapshot.routing.providerGroup;
+  const [provider, setProvider] = useState<Wire.Commands['subscriptionRouting']['response'] | null>(null);
+  useEffect(() => {
+    if (!providerGroup) {
+      setProvider(null);
+      return;
+    }
+    let live = true;
+    command('subscriptionRouting', { groupId: providerGroup })
+      .then((r) => {
+        if (live) setProvider(r);
+      })
+      .catch((e) => {
+        if (live) {
+          setProvider(null);
+          setError(e);
+        }
+      });
+    return () => {
+      live = false;
+    };
+  }, [providerGroup, snapshot.libraryRevision]);
+  /** The page shows the subscription's routing while it applies; it is read-only. */
+  const readOnly = !!(snapshot.routing.providerOwned && provider?.profile);
+  const providerName = provider?.profile?.name ?? '';
+  const current = readOnly ? provider!.profile! : data?.profiles.find((p) => p.id === data.active);
   async function persist(next: Routing, check?: RouteProfile | RouteProfile[]) {
     setBusy(true);
     setError('');
@@ -98,6 +129,7 @@ export function useRoutingPage({
     }
   }
   async function update(profile: RouteProfile) {
+    if (readOnly) throw Error('routing_read_only');
     await persist(
       { ...data!, profiles: data!.profiles.map((p) => (p.id === profile.id ? profile : p)) },
       profile,
@@ -116,6 +148,38 @@ export function useRoutingPage({
     } catch (e) {
       setError(e);
       await refresh().catch(() => {});
+    } finally {
+      setBusy(false);
+    }
+  }
+  /** The subscription routing as the user's own profile, used from now on. */
+  async function copyProvider() {
+    const view = provider!.profile!;
+    const copy: RouteProfile = {
+      ...view,
+      id: crypto.randomUUID(),
+      name: translate(language, 'common.copy_name', { name: view.name }),
+      rules: view.rules.map((r) => ({ ...r, id: crypto.randomUUID() })),
+    };
+    await persist({ ...data!, profiles: [...data!.profiles, copy], active: copy.id }, copy);
+  }
+  /** Gives routing back to the subscription; changes to Default are kept. */
+  async function useProvider() {
+    setBusy(true);
+    setError('');
+    setNotice('');
+    try {
+      setData(
+        await command('useSubscriptionRouting', {
+          revision: data!.revision,
+          keptName: label('routing.provider_kept_name', language),
+        }),
+      );
+      setNotice(messageRef(messageKeys.saved));
+      await refresh().catch(() => {});
+    } catch (e) {
+      setError(e);
+      throw e;
     } finally {
       setBusy(false);
     }
@@ -234,6 +298,11 @@ export function useRoutingPage({
     importRequest,
     setImportRequest,
     current,
+    provider,
+    providerName,
+    readOnly,
+    copyProvider,
+    useProvider,
     persist,
     update,
     run,

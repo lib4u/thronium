@@ -239,6 +239,7 @@
   "subscription_dns_unsupported": "Subscription DNS uses unsupported settings.",
   "subscription_domain_strategy_unsupported": "This subscription domain strategy is not supported yet.",
   "subscription_routing_invalid": "Subscription routing is invalid.",
+  "subscription_routing_missing": "This subscription has no routing of its own.",
   "subscription_routing_unsupported": "Subscription routing contains unsupported fields. Its rules were not applied.",
   "system_proxy_apply_failed": "Could not enable the system proxy. The previous settings were restored.",
   "system_proxy_busy": "Another Thronium instance is managing the system proxy. Disconnect it first.",

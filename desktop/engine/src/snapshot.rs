@@ -125,12 +125,16 @@ impl Engine {
             .is_some_and(|p| {
                 matches!(p.kind, ProfileKind::SingBoxConfig | ProfileKind::XrayConfig)
             });
-        let provider_owned = self
+        let current = self
             .running
             .as_ref()
             .or(self.store.library.selected.as_ref())
-            .and_then(|id| self.profile(id).ok())
-            .is_some_and(|p| geodata::enabled(&p, &self.store.library));
+            .and_then(|id| self.profile(id).ok());
+        let provider_group = current
+            .as_ref()
+            .and_then(|p| geodata::offered(p, &self.store.library))
+            .map(|g| g.id.clone());
+        let provider_owned = provider_group.is_some() && !self.store.library.routing.customized();
         let auto_select_member_count = self.auto_select_member_count();
         Snapshot {
             library_revision: self.store.generation(),
@@ -139,7 +143,7 @@ impl Engine {
             url_tests,
             subscription_jobs: self.subscription_jobs.jobs.clone(),
             routing: json!({"active":active_route.id, "name":active_route.name, "mode":active_route.mode,
-                "revision":self.store.library.routing.revision, "profileOwned":owns_route, "providerOwned":provider_owned,
+                "revision":self.store.library.routing.revision, "profileOwned":owns_route, "providerOwned":provider_owned, "providerGroup":provider_group,
                 "pending":self.running.is_some() && !owns_route && self.routing_revision != Some(self.store.library.routing.revision)}),
             profiles,
             groups: self.store.library.groups.iter().map(|g| json!({"id":g.id, "name":g.name,

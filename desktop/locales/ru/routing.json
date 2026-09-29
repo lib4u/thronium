@@ -338,7 +338,6 @@
   "sources_used_by_this_profile_25ff618": "Источники этого профиля",
   "speculative_query_b947716": "Упреждающий запрос",
   "strategy_prefer_ipv4_prefer_ipv6_ipv4_only_ipv6__ec97e62": "Стратегия · prefer_ipv4 / prefer_ipv6 / ipv4_only / ipv6_only",
-  "subscription_dns_and_routing_apply_by_default_yo_297a86f": "По умолчанию применяются DNS и маршрутизация подписки. Собственный профиль или изменения на этой странице имеют приоритет при следующем подключении.",
   "system_route_a6dcab9": "Системный маршрут",
   "system_user_3475816": "Системный пользователь",
   "system_user_id_eeb9180": "ID системного пользователя",
@@ -415,5 +414,16 @@
   "source_download_rejected": "Сервер отказал в загрузке профиля маршрутизации.",
   "source_download_timeout": "Время загрузки профиля маршрутизации истекло.",
   "windows_process_name_example_6bfd7fe": "В Windows — имя файла с .exe, например chrome.exe",
-  "windows_process_path_example_8fae8fb": "Полный путь с обратными косыми, например C:\\Program Files\\App\\app.exe"
+  "windows_process_path_example_8fae8fb": "Полный путь с обратными косыми, например C:\\Program Files\\App\\app.exe",
+  "provider_applied": "К серверам подписки «{name}» применяется её маршрутизация; она обновляется вместе с подпиской. Чтобы изменить правила, создайте копию.",
+  "provider_overridden": "У подписки «{name}» есть своя маршрутизация. Сейчас действует «{profile}»; выберите «{name}» в списке, чтобы использовать маршрутизацию подписки.",
+  "provider_option": "{name} · подписка",
+  "provider_copy": "Создать копию",
+  "provider_copy_title": "Копия маршрутизации подписки",
+  "provider_copy_message": "Копия станет вашим профилем маршрутизации и будет действовать вместо маршрутизации подписки. Обновления подписки её не меняют.",
+  "provider_copy_pinned": "Подписка также определяет адреса серверов из своих DNS-записей hosts; в копии они определяются через прямой DNS-сервер.",
+  "provider_use_title": "Маршрутизация подписки",
+  "provider_use_message": "Ваши изменения профиля «По умолчанию» сохранятся отдельным профилем «{name}».",
+  "provider_kept_name": "По умолчанию · мои изменения",
+  "provider_unavailable": "Не удалось показать маршрутизацию подписки: {error}"
 }

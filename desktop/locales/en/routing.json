@@ -338,7 +338,6 @@
   "sources_used_by_this_profile_25ff618": "Sources used by this profile",
   "speculative_query_b947716": "Speculative query",
   "strategy_prefer_ipv4_prefer_ipv6_ipv4_only_ipv6__ec97e62": "Strategy · prefer_ipv4 / prefer_ipv6 / ipv4_only / ipv6_only",
-  "subscription_dns_and_routing_apply_by_default_yo_297a86f": "Subscription DNS and routing apply by default. Your own routing profile or changes on this page take priority at the next connection.",
   "system_route_a6dcab9": "System route",
   "system_user_3475816": "System user",
   "system_user_id_eeb9180": "System user ID",
@@ -415,5 +414,16 @@
   "source_download_rejected": "The server refused to send the routing profile.",
   "source_download_timeout": "The routing profile download timed out.",
   "windows_process_name_example_6bfd7fe": "On Windows the file name with .exe, for example chrome.exe",
-  "windows_process_path_example_8fae8fb": "Full path with backslashes, for example C:\\Program Files\\App\\app.exe"
+  "windows_process_path_example_8fae8fb": "Full path with backslashes, for example C:\\Program Files\\App\\app.exe",
+  "provider_applied": "Routing from the “{name}” subscription applies to its servers and follows every subscription update. Create a copy to change it.",
+  "provider_overridden": "The “{name}” subscription has its own routing. “{profile}” takes priority; choose “{name}” in the list to use the subscription’s routing.",
+  "provider_option": "{name} · subscription",
+  "provider_copy": "Create copy",
+  "provider_copy_title": "Copy the subscription routing",
+  "provider_copy_message": "The copy becomes your own routing profile and is used instead of the subscription’s. Subscription updates do not change it.",
+  "provider_copy_pinned": "The subscription also resolves the servers named in its DNS hosts through those records; the copy resolves them through the direct DNS server.",
+  "provider_use_title": "Use the subscription routing",
+  "provider_use_message": "Your changes to the Default profile are kept as a separate profile, “{name}”.",
+  "provider_kept_name": "Default · my changes",
+  "provider_unavailable": "The subscription routing cannot be shown: {error}"
 }

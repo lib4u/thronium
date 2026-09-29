@@ -101,6 +101,17 @@ pub struct RoutingProfile {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub legacy_constraints: Option<LegacyRoutingConstraints>,
 }
+impl RoutingProfile {
+    /// The untouched Default profile: no client policy of its own.
+    pub(crate) fn baseline(&self) -> bool {
+        let baseline = Self::default();
+        self.id == baseline.id
+            && self.mode == baseline.mode
+            && !self.rules.iter().any(|r| r.enabled)
+            && self.route == baseline.route
+            && self.dns == baseline.dns
+    }
+}
 impl Default for RoutingProfile {
     fn default() -> Self {
         Self {
@@ -134,15 +145,7 @@ impl Default for Routing {
 impl Routing {
     /// Subscription policy is the default only while the client policy is untouched.
     pub(crate) fn customized(&self) -> bool {
-        let Ok(active) = self.active() else {
-            return true;
-        };
-        let baseline = RoutingProfile::default();
-        active.id != baseline.id
-            || active.mode != baseline.mode
-            || active.rules.iter().any(|r| r.enabled)
-            || active.route != baseline.route
-            || active.dns != baseline.dns
+        self.active().map_or(true, |active| !active.baseline())
     }
     pub fn active(&self) -> Result<&RoutingProfile, String> {
         self.profiles

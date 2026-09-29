@@ -1,6 +1,6 @@
 //! Immutable, user-owned geodata. Stored profiles never contain machine-specific paths.
 use crate::{
-    store::{Library, Profile, ProfileKind},
+    store::{Group, Library, Profile, ProfileKind},
     subscriptions::provider_routing::ProviderRouting,
 };
 use prost::Message;
@@ -59,24 +59,31 @@ pub(crate) fn provider<'a>(profile: &Profile, library: &'a Library) -> Option<&'
         .routing
         .as_ref()
 }
-pub(crate) fn enabled(profile: &Profile, library: &Library) -> bool {
-    !library.routing.customized()
-        && !matches!(
-            profile.kind,
-            ProfileKind::SingBoxConfig | ProfileKind::XrayConfig
-        )
-        && library
-            .groups
-            .iter()
-            .find(|g| g.id == profile.group_id)
-            .and_then(|g| g.subscription.as_ref())
-            .is_some_and(|s| {
+/// The subscription group whose routing is offered for `profile`, whether or
+/// not the client policy currently takes priority over it.
+pub(crate) fn offered<'a>(profile: &Profile, library: &'a Library) -> Option<&'a Group> {
+    if matches!(
+        profile.kind,
+        ProfileKind::SingBoxConfig | ProfileKind::XrayConfig
+    ) {
+        return None;
+    }
+    library
+        .groups
+        .iter()
+        .find(|g| g.id == profile.group_id)
+        .filter(|g| {
+            g.subscription.as_ref().is_some_and(|s| {
                 s.settings.use_provider_routing
                     && s.metadata
                         .routing
                         .as_ref()
                         .is_some_and(|r| r.action != "off")
             })
+        })
+}
+pub(crate) fn enabled(profile: &Profile, library: &Library) -> bool {
+    !library.routing.customized() && offered(profile, library).is_some()
 }
 
 pub(crate) struct Assets {
@@ -120,7 +127,7 @@ impl Assets {
         }
         self
     }
-    fn url(&self, sites: bool) -> &str {
+    pub(crate) fn url(&self, sites: bool) -> &str {
         self.config[if sites { "Geositeurl" } else { "Geoipurl" }]
             .as_str()
             .filter(|s| !s.is_empty())

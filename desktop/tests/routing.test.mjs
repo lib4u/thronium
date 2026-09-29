@@ -1,7 +1,8 @@
 import { translate } from '../src/shared/i18n/index.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { matches, actions, actionFields, newProfile, parseValue, simpleRules, replaceSimple, fromCoreRoute, coreRoute } from '../src/routing/model.ts';
+import { matches, actions, actionFields, newProfile, parseValue, simpleRules, replaceSimple, fromCoreRoute, coreRoute, isBaselineProfile } from '../src/routing/model.ts';
+import { defaults } from '../src/shared/api/generated/defaults.ts';
 import { parseRuleValue, formatRuleValue } from '../src/routing/ruleInput.ts';
 
 test('simple lists preserve IPv6 and process paths, and reject unknown selectors', () => {
@@ -63,4 +64,14 @@ test('WARP targets round-trip through simple lists and raw routing with independ
   const replaced = replaceSimple(result, 'warp', 'domain:other.test');
   assert.equal(replaced.rules[1].config.outbound, 'warp-bypass');
   assert.deepEqual(replaced.rules[1].config.process_name, ['browser']);
+});
+test('an untouched Default leaves routing to a subscription, as the engine decides', () => {
+  const baseline = structuredClone(defaults.routingProfile);
+  assert.ok(isBaselineProfile(baseline));
+  // Key order and a renamed Default do not count; disabled rules neither.
+  assert.ok(isBaselineProfile({ ...baseline, name: 'Renamed', route: Object.fromEntries(Object.entries(baseline.route).reverse()), rules: [{ id: 'r', name: 'Off', enabled: false, config: {} }] }));
+  assert.ok(!isBaselineProfile({ ...baseline, mode: 'direct' }));
+  assert.ok(!isBaselineProfile({ ...baseline, rules: [{ id: 'r', name: 'On', enabled: true, config: {} }] }));
+  assert.ok(!isBaselineProfile({ ...baseline, dns: { ...baseline.dns, final: 'custom' } }));
+  assert.ok(!isBaselineProfile({ ...baseline, id: 'explicit' }));
 });

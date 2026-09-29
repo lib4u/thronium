@@ -195,6 +195,8 @@ async fn locked(
         | "rankMeasuredSelector"
         | "autoSelectorAction"
         | "saveRouting"
+        | "subscriptionRouting"
+        | "useSubscriptionRouting"
         | "checkRouting" => routing::locked(name, payload, engine).await,
         "snapshot"
         | "vpnChallenge"

@@ -8,6 +8,8 @@ import './RuleEditor.css';
 import { Icon, ConfirmDialog } from '../ui';
 import { label } from '../profiles/schema';
 import { messageRef } from '../shared/i18n/message';
+import { translate } from '../shared/i18n/index.ts';
+import { isBaselineProfile } from './model';
 import RuleEditor, { messageKeys, type W } from './RuleEditor';
 import RulesPanel from './RulesPanel';
 import RoutingTextPanel from './RoutingTextPanel';
@@ -43,6 +45,11 @@ export default function RoutingPage(props: RoutingPageProps) {
     importRequest,
     setImportRequest,
     current,
+    provider,
+    providerName,
+    readOnly,
+    copyProvider,
+    useProvider,
     persist,
     update,
     run,
@@ -51,6 +58,16 @@ export default function RoutingPage(props: RoutingPageProps) {
     bufferKey,
     exportProfile,
   } = controller;
+  const view = provider?.profile;
+  const defaultProfile = data?.profiles.find((p) => p.id === 'default');
+  // With a subscription's routing on offer, an untouched Default would mean
+  // the same as choosing it, so only the subscription is listed.
+  const choices = data?.profiles.filter((p) => !(view && isBaselineProfile(p))) ?? [];
+  // Read-only, the subscription's policy is shown as JSON on every tab.
+  const tabs = readOnly
+    ? (['rules', 'sets', 'dns', 'raw'] as const)
+    : (['rules', 'categories', 'simple', 'sets', 'dns', 'raw'] as const);
+  const shown = (tabs as readonly string[]).includes(tab) ? tab : 'rules';
   return (
     <>
       <div className="page-heading">
@@ -61,7 +78,7 @@ export default function RoutingPage(props: RoutingPageProps) {
         <Button
           className="button primary"
           id="route-add-rule"
-          disabled={!current || busy}
+          disabled={!current || busy || readOnly}
           onClick={() => {
             setEditing(undefined);
             setModal('rule');
@@ -86,11 +103,27 @@ export default function RoutingPage(props: RoutingPageProps) {
                 : tr('legacyPolicy')}
             </p>
           )}
-          {snapshot.routing.providerOwned && (
-            <p className="rules-notice">
+          {readOnly && (
+            <p className="rules-notice" id="route-provider-notice">
               <Icon name="info" />
-              {tr('provider')}
+              {translate(language, 'routing.provider_applied', { name: providerName })}
             </p>
+          )}
+          {view && !snapshot.routing.providerOwned && (
+            <p className="rules-notice" id="route-provider-offered">
+              <Icon name="info" />
+              {translate(language, 'routing.provider_overridden', {
+                name: providerName,
+                profile: nameOf(data.profiles.find((p) => p.id === data.active) ?? current),
+              })}
+            </p>
+          )}
+          {provider?.error && (
+            <div className="desktop-inline-error" role="alert">
+              {translate(language, 'routing.provider_unavailable', {
+                error: translateError(provider.error),
+              })}
+            </div>
           )}
           {snapshot.routing.profileOwned && (
             <p className="rules-notice">
@@ -117,19 +150,41 @@ export default function RoutingPage(props: RoutingPageProps) {
               id="route-profile-select"
               className="text-input"
               aria-label={tr('profile')}
-              value={data.active}
+              value={readOnly ? current.id : data.active}
               disabled={busy}
               onChange={(e) => {
+                if (view && e.target.value === view.id) {
+                  // Kept changes to Default are confirmed; otherwise it is only a choice.
+                  if (defaultProfile && isBaselineProfile(defaultProfile)) run(useProvider);
+                  else setModal('provider-use');
+                  return;
+                }
                 const p = data.profiles.find((p) => p.id === e.target.value)!;
                 run(() => persist({ ...data, active: p.id }, p));
               }}
             >
-              {data.profiles.map((p) => (
+              {view && (
+                <option value={view.id}>
+                  {translate(language, 'routing.provider_option', { name: providerName })}
+                </option>
+              )}
+              {choices.map((p) => (
                 <option key={p.id} value={p.id}>
                   {nameOf(p)}
                 </option>
               ))}
             </Select>
+            {readOnly && (
+              <Button
+                className="button secondary"
+                id="route-provider-copy"
+                disabled={busy}
+                onClick={() => setModal('provider-copy')}
+              >
+                <Icon name="copy" />
+                {label('routing.provider_copy', language)}
+              </Button>
+            )}
             <Button
               className="button secondary"
               id="route-profiles"
@@ -159,7 +214,7 @@ export default function RoutingPage(props: RoutingPageProps) {
             <Button
               className="icon-button"
               id="route-export"
-              disabled={busy}
+              disabled={busy || readOnly}
               aria-label={tr('exportProfile')}
               title={tr('exportProfile')}
               onClick={() => void exportProfile()}
@@ -177,7 +232,7 @@ export default function RoutingPage(props: RoutingPageProps) {
                 className={`mode-card ${current.mode === mode ? 'active' : ''}`}
                 data-routing-mode={mode}
                 aria-pressed={current.mode === mode}
-                disabled={busy}
+                disabled={busy || readOnly}
                 key={mode}
                 onClick={() => run(() => update({ ...current, mode }))}
               >
@@ -194,12 +249,12 @@ export default function RoutingPage(props: RoutingPageProps) {
           </section>
           <TabList
             className="feature-tabs route-tabs"
-            value={tab}
+            value={shown}
             onChange={(id) => {
               setTab(id);
               setNotice('');
             }}
-            tabs={(['rules', 'categories', 'simple', 'sets', 'dns', 'raw'] as const).map((id) => ({
+            tabs={tabs.map((id) => ({
               id,
               label: tr(id),
               attributes: { 'data-route-tab': id },
@@ -224,7 +279,9 @@ export default function RoutingPage(props: RoutingPageProps) {
               failed={(error) => setError(error)}
             />
           )}
-          {tab === 'categories' ? (
+          {readOnly && shown !== 'rules' ? (
+            <RoutingTextPanel controller={controller} />
+          ) : shown === 'categories' ? (
             <GeoPanel
               key={current.id}
               profile={current}
@@ -235,12 +292,12 @@ export default function RoutingPage(props: RoutingPageProps) {
               refresh={refresh}
               translateError={translateError}
             />
-          ) : tab === 'rules' ? (
+          ) : shown === 'rules' ? (
             <RulesPanel controller={controller} current={current} />
-          ) : tab === 'dns' || tab === 'sets' ? (
+          ) : shown === 'dns' || shown === 'sets' ? (
             <ResourcesPanel
-              key={current.id + ':' + tab}
-              kind={tab}
+              key={current.id + ':' + shown}
+              kind={shown}
               profile={current}
               profiles={snapshot.profiles}
               language={language}
@@ -324,6 +381,47 @@ export default function RoutingPage(props: RoutingPageProps) {
             />
           )}
           {modal === 'profiles' && <RoutingProfilesDialog controller={controller} data={data} />}
+          {modal === 'provider-copy' && view && (
+            <ConfirmDialog
+              title={label('routing.provider_copy_title', language)}
+              message={
+                label('routing.provider_copy_message', language) +
+                (provider.pinnedResolvers ? ' ' + label('routing.provider_copy_pinned', language) : '')
+              }
+              cancelLabel={tr('cancel')}
+              confirmLabel={label('routing.provider_copy', language)}
+              busy={busy}
+              error={error}
+              cancel={() => setModal(null)}
+              confirmId="route-provider-copy-confirm"
+              confirm={() =>
+                void run(async () => {
+                  await copyProvider();
+                  setModal(null);
+                })
+              }
+            />
+          )}
+          {modal === 'provider-use' && view && (
+            <ConfirmDialog
+              title={label('routing.provider_use_title', language)}
+              message={translate(language, 'routing.provider_use_message', {
+                name: label('routing.provider_kept_name', language),
+              })}
+              cancelLabel={tr('cancel')}
+              confirmLabel={translate(language, 'routing.provider_option', { name: providerName })}
+              busy={busy}
+              error={error}
+              cancel={() => setModal(null)}
+              confirmId="route-provider-use-confirm"
+              confirm={() =>
+                void run(async () => {
+                  await useProvider();
+                  setModal(null);
+                })
+              }
+            />
+          )}
         </>
       )}
     </>

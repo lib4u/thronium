@@ -102,6 +102,46 @@ def run(h):
               'IPOnDemand resolves once, immediately before the first IP rule in RouteOrder position')
         command('checkProfile', command('profile', {'id': demand}))
 
+        # The Routing page lists the subscription's routing as a read-only profile:
+        # exactly the rules the connection applies, and a copy the user owns.
+        command('select', {'id': demand})
+        option = f'subscription:{group}'
+        click('.primary-nav button:nth-child(1)')
+        wait_for('return !document.querySelector("#route-profile-select")')
+        click('.primary-nav button:nth-child(2)')
+        wait_for(f'return document.querySelector("#route-profile-select")?.value === {json.dumps(option)}')
+        view = command('subscriptionRouting', {'groupId': group})
+        shown = [r['config'] for r in view['profile']['rules']]
+        check(view['error'] is None and route_rules[-len(shown):] == shown,
+              'the Routing page lists exactly the rules the connection applies, in order')
+        check(js('return document.querySelector("#route-add-rule").disabled')
+              and int(js('return document.querySelector(".count-badge").textContent')) == len(shown)
+              and not js('return !!document.querySelector("[data-edit-rule]")'),
+              'the subscription routing is shown read-only with all its rules')
+        screenshot('subscription-routing-en')
+        command('preferences', {**command('snapshot')['preferences'], 'language': 'ru'})
+        wait_for('return document.documentElement.lang==="ru"')
+        screenshot('subscription-routing-ru')
+        command('preferences', {**command('snapshot')['preferences'], 'language': 'en'})
+        wait_for('return document.documentElement.lang==="en"')
+        click('#route-provider-copy')
+        click('#route-provider-copy-confirm')
+        wait_for(f'return !!document.querySelector("#route-profile-select") && document.querySelector("#route-profile-select").value !== {json.dumps(option)} && !document.querySelector("#route-add-rule").disabled')
+        copy = command('routing')
+        mine = next(p for p in copy['profiles'] if p['id'] == copy['active'])
+        check([r['config'] for r in mine['rules']] == shown and command('snapshot')['routing']['providerOwned'] is False,
+              'a copy becomes the active, editable profile and takes priority over the subscription')
+        check(js('return !!document.querySelector("#route-provider-offered")'),
+              'the page still offers the subscription routing while the copy applies')
+        js('const e=document.querySelector("#route-profile-select");e.value=arguments[0];e.dispatchEvent(new Event("change",{bubbles:true}));', option)
+        wait_for(f'return document.querySelector("#route-profile-select").value === {json.dumps(option)}')
+        check(command('snapshot')['routing']['providerOwned'] is True
+              and any(p['id'] == mine['id'] for p in command('routing')['profiles']),
+              'choosing the subscription gives routing back to it and keeps the copy')
+        routing = command('routing')
+        routing['profiles'] = [p for p in routing['profiles'] if p['id'] != mine['id']]
+        command('saveRouting', routing)
+
         group, response = subscribe('Happ chunked', 'chunked', True)
         command('applySubscription', {'ticket': response['ticket'], 'useProviderRouting': True})
         chunked = member(group)
