@@ -38,7 +38,8 @@ export const profileCatalogs = [
 export type ProfileCatalogId = (typeof profileCatalogs)[number]['id'];
 /** The routing profile loader opened on a country catalog or on received text. */
 export type RoutingImportRequest = { country?: ProfileCatalogId; text?: string };
-export const geoUrl = (kind: GeoKind, provider = 'global'): string =>
+/** A source of `provider`; by default the pair shipped with the application. */
+export const geoUrl = (kind: GeoKind, provider = 'v2fly'): string =>
   (geoProviders.find((p) => p.id === provider) || geoProviders[0])[kind];
 const config = (value: unknown): Config => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error('routing_import_invalid');

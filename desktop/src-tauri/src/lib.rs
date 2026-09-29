@@ -98,6 +98,10 @@ pub fn run() {
         .plugin(tauri_plugin_notification::init())
         .plugin(tauri_plugin_clipboard_manager::init())
         .setup(move |app| {
+            // The default geodata pair ships beside the application (bundle.resources).
+            if let Ok(resources) = app.path().resource_dir() {
+                thronium_engine::geodata_bundled::use_directory(resources.join("geodata"));
+            }
             let opened = (|| {
                 let data_dir = storage::directory(app.handle())?;
                 let executable =

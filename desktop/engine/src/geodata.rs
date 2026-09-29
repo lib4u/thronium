@@ -15,6 +15,7 @@ use std::{
 };
 
 use crate::routing::MAX_GEODATA_ASSET_BYTES as LIMIT;
+pub mod bundled;
 pub(crate) mod catalog;
 pub mod deferral;
 pub mod manager;
@@ -29,10 +30,20 @@ pub(crate) enum Fetch {
     Download,
     Cached { stale: bool },
 }
-const DEFAULT_IP: &str =
-    "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat";
-const DEFAULT_SITE: &str =
-    "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat";
+/// The default source of a kind: the settings catalog's `xray_geosite_url` or
+/// `xray_geoip_url`, the pair the application ships (`bundled`).
+pub(crate) fn default_url(sites: bool) -> &'static str {
+    let id = if sites {
+        "xray_geosite_url"
+    } else {
+        "xray_geoip_url"
+    };
+    crate::settings::fields()
+        .iter()
+        .find(|f| f.id == id)
+        .and_then(|f| f.default.as_str())
+        .expect("settings catalog geodata default")
+}
 pub(crate) fn digest(bytes: &[u8]) -> String {
     format!("{:x}", Sha256::digest(bytes))
 }
@@ -71,13 +82,32 @@ pub(crate) fn enabled(profile: &Profile, library: &Library) -> bool {
 pub(crate) struct Assets {
     directory: PathBuf,
     config: Value,
+    bundled: Option<PathBuf>,
 }
 impl Assets {
     pub(crate) fn new(directory: &Path, routing: Option<&ProviderRouting>) -> Self {
         Self {
             directory: directory.join("xray-assets"),
             config: routing.map(|r| r.config.clone()).unwrap_or(json!({})),
+            bundled: bundled::directory(),
         }
+    }
+    #[cfg(test)]
+    pub(crate) fn with_bundled(mut self, directory: &Path) -> Self {
+        self.bundled = Some(directory.into());
+        self
+    }
+    /// Installs the shipped list when this source is the default one. It is
+    /// used as a fresh download would be, so a connection never waits on the
+    /// network for it; the weekly refresh replaces it.
+    fn seed(&self, sites: bool) -> Result<bool, String> {
+        let Some(bytes) = bundled::bytes(self.bundled.as_deref(), sites, self.url(sites)) else {
+            return Ok(false);
+        };
+        let hash = digest(&bytes);
+        write(&self.directory.join(format!("{hash}.dat")), &bytes)?;
+        write(&self.manifest(sites), hash.as_bytes())?;
+        Ok(true)
     }
     pub(crate) fn with_library(mut self, library: &Library) -> Self {
         for (key, setting) in [
@@ -94,7 +124,7 @@ impl Assets {
         self.config[if sites { "Geositeurl" } else { "Geoipurl" }]
             .as_str()
             .filter(|s| !s.is_empty())
-            .unwrap_or(if sites { DEFAULT_SITE } else { DEFAULT_IP })
+            .unwrap_or(default_url(sites))
     }
     fn manifest(&self, sites: bool) -> PathBuf {
         self.directory.join(format!(
@@ -160,7 +190,7 @@ impl Assets {
         crate::ownership::restrict_directory(&self.directory)
             .map_err(|_| "geodata_write_failed")?;
         for sites in kinds {
-            let cached = self.cached(sites).is_ok();
+            let cached = self.cached(sites).is_ok() || self.seed(sites)?;
             let fresh = std::fs::metadata(self.manifest(sites))
                 .and_then(|m| m.modified())
                 .ok()

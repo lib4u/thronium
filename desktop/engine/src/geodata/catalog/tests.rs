@@ -159,3 +159,40 @@ fn source_identity_separates_providers_and_rejects_bad_descriptors() {
     assert!(valid_url("https://github.com/example/release/site.dat").is_ok());
     assert!(valid_url("http://127.0.0.1:8080/site.dat").is_ok());
 }
+
+/// A routing category database of the default source is installed from the
+/// shipped list instead of its first download; other sources are not.
+#[test]
+fn the_default_database_is_installed_from_the_shipped_list() {
+    let root = tempfile::tempdir().unwrap();
+    let shipped = tempfile::tempdir().unwrap();
+    std::fs::write(
+        shipped.path().join(crate::geodata::bundled::SITE_FILE),
+        database("TEST", "example.test"),
+    )
+    .unwrap();
+    let library = Library::default();
+    let url = crate::geodata::default_url(true);
+    let source = install_bundled(
+        root.path(),
+        &library,
+        "geosite",
+        url,
+        "v2fly",
+        Some(shipped.path()),
+    )
+    .unwrap()
+    .expect("installed");
+    assert_eq!(source.categories[0].code, "test");
+    assert_eq!(load(root.path(), "geosite", url).unwrap().hash, source.hash);
+    for (kind, url) in [
+        ("geosite", "https://other.example.test/geosite.dat"),
+        ("geoip", crate::geodata::default_url(false)),
+    ] {
+        assert!(
+            install_bundled(root.path(), &library, kind, url, url, Some(shipped.path()))
+                .unwrap()
+                .is_none()
+        );
+    }
+}

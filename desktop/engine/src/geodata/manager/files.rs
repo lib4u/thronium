@@ -1,6 +1,6 @@
 //! Immutable content and a small atomic reference compatible with Assets::prepare.
 use super::{index::Index, Kind, Selection, LIMIT};
-use crate::geodata::{digest, write, Assets, DEFAULT_IP, DEFAULT_SITE};
+use crate::geodata::{default_url, digest, write, Assets};
 use serde::Serialize;
 use serde_json::json;
 use std::{
@@ -13,12 +13,7 @@ impl Selection {
     pub(super) fn checked(mut self) -> Result<Self, String> {
         self.url = self.url.trim().to_owned();
         if self.url.is_empty() {
-            self.url = if self.kind.sites() {
-                DEFAULT_SITE
-            } else {
-                DEFAULT_IP
-            }
-            .into();
+            self.url = default_url(self.kind.sites()).into();
         }
         if self.url.len() > 8192 || self.url.chars().any(char::is_control) {
             return Err("geodata_url_invalid".into());

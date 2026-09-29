@@ -243,6 +243,20 @@ fn install(
     )?;
     Ok(source)
 }
+/// The shipped list stands in for the first download of a default source.
+fn install_bundled(
+    root: &Path,
+    library: &Library,
+    kind: &str,
+    url: &str,
+    name: &str,
+    bundled: Option<&Path>,
+) -> Result<Option<Source>, String> {
+    match super::bundled::bytes(bundled, sites(kind)?, url) {
+        Some(bytes) => install(root, library, kind, url, name, &bytes).map(Some),
+        None => Ok(None),
+    }
+}
 pub(crate) async fn prepare(
     profile: &RoutingProfile,
     root: &Path,
@@ -256,7 +270,17 @@ pub(crate) async fn prepare(
         sources.insert((kind, url), ());
     }
     for ((kind, url), _) in sources {
-        if load(root, kind, url).is_err() {
+        if load(root, kind, url).is_err()
+            && install_bundled(
+                root,
+                library,
+                kind,
+                url,
+                url,
+                super::bundled::directory().as_deref(),
+            )?
+            .is_none()
+        {
             if url.starts_with("local:") {
                 return Err("geodata_local_missing".into());
             }

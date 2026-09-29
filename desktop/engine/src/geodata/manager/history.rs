@@ -1,10 +1,6 @@
 //! Bounded recent explicit download sources. Saving a draft URL is independent.
 use super::{Kind, Selection};
-use crate::{
-    geodata::{DEFAULT_IP, DEFAULT_SITE},
-    store::Library,
-    Engine,
-};
+use crate::{geodata::default_url, store::Library, Engine};
 use serde::Serialize;
 use serde_json::{json, Value};
 
@@ -18,6 +14,13 @@ pub struct Provider {
     pub geosite: &'static str,
 }
 pub const PROVIDERS: [Provider; 4] = [
+    // The default pair, shipped with the application (`geodata::bundled`).
+    Provider {
+        id: "v2fly",
+        name: "v2fly (upstream)",
+        geoip: "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat",
+        geosite: "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat",
+    },
     Provider {
         id: "global",
         name: "Loyalsoldier (global / China)",
@@ -37,12 +40,6 @@ pub const PROVIDERS: [Provider; 4] = [
         geoip: "https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geoip.dat",
         geosite: "https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geosite.dat",
     },
-    Provider {
-        id: "v2fly",
-        name: "v2fly (upstream)",
-        geoip: "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat",
-        geosite: "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat",
-    },
 ];
 fn key(kind: Kind) -> &'static str {
     if kind.sites() {
@@ -52,7 +49,7 @@ fn key(kind: Kind) -> &'static str {
     }
 }
 fn builtin(url: &str) -> bool {
-    [DEFAULT_IP, DEFAULT_SITE].contains(&url)
+    [default_url(false), default_url(true)].contains(&url)
         || PROVIDERS.iter().any(|p| p.geoip == url || p.geosite == url)
 }
 fn custom(selection: Selection) -> Option<String> {
@@ -162,8 +159,8 @@ mod tests {
         let dir = tempfile::tempdir().unwrap();
         let mut engine = Engine::open(dir.path(), &dir.path().join("absent")).unwrap();
         for url in PROVIDERS.iter().flat_map(|p| [p.geoip, p.geosite]).chain([
-            DEFAULT_IP,
-            DEFAULT_SITE,
+            crate::geodata::default_url(false),
+            crate::geodata::default_url(true),
             "",
             "http://bad.test/a",
             "https://u:p@bad.test/a",

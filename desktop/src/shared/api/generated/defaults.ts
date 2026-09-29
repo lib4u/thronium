@@ -6,6 +6,12 @@ export const defaults = {
   },
   "geodataProviders": [
     {
+      "geoip": "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat",
+      "geosite": "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat",
+      "id": "v2fly",
+      "name": "v2fly (upstream)"
+    },
+    {
       "geoip": "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat",
       "geosite": "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat",
       "id": "global",
@@ -22,12 +28,6 @@ export const defaults = {
       "geosite": "https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geosite.dat",
       "id": "ir",
       "name": "Chocolate4U (Iran)"
-    },
-    {
-      "geoip": "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat",
-      "geosite": "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat",
-      "id": "v2fly",
-      "name": "v2fly (upstream)"
     }
   ],
   "groups": [

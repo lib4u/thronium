@@ -30,6 +30,10 @@
     "active": true,
     "targets": "all",
     "externalBin": ["binaries/ThroniumCore"],
+    "resources": {
+      "binaries/geodata/geosite.dat": "geodata/geosite.dat",
+      "binaries/geodata/geoip.dat": "geodata/geoip.dat"
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

@@ -33,6 +33,7 @@ mod session;
 mod snapshot;
 pub mod vpn_endpoint;
 pub mod vpn_otp_bindings;
+pub use geodata::bundled as geodata_bundled;
 pub use geodata::catalog::downloads as routing_downloads;
 pub use geodata::deferral as geodata_deferral;
 pub use geodata::manager as geodata_assets;

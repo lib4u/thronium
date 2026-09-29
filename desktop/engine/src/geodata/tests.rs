@@ -173,3 +173,69 @@ fn conversion_preserves_or_attributes_ipv6_and_inversion() {
         vec![json!({"ip_cidr":["::/128"],"invert":false})]
     );
 }
+
+fn fixture_sites() -> Vec<u8> {
+    SiteList {
+        entry: vec![Site {
+            code: "TEST".into(),
+            domain: vec![Domain {
+                kind: 2,
+                value: "example.test".into(),
+                attribute: vec![],
+            }],
+        }],
+    }
+    .encode_to_vec()
+}
+/// The shipped pair stands in for the first download of the default source,
+/// offline and under the Engine lock alike, and needs no refresh before a
+/// connection; a provider's own source is never replaced by it.
+#[tokio::test]
+async fn the_shipped_default_list_replaces_a_first_download() {
+    let dir = tempfile::tempdir().unwrap();
+    let shipped = tempfile::tempdir().unwrap();
+    write(&shipped.path().join(bundled::SITE_FILE), &fixture_sites()).unwrap();
+    let library = Library::default();
+    let rule = json!({"rules":[{"domain":["geosite:test"]}]});
+    let assets = Assets::new(dir.path(), None)
+        .with_library(&library)
+        .with_bundled(shipped.path());
+    assert_eq!(assets.url(true), default_url(true));
+    assets
+        .prepare(&[&rule], &library, None, Fetch::Cached { stale: true })
+        .await
+        .expect("no download is needed");
+    assert!(assets.rule_set("geosite:test").is_ok());
+    assets
+        .prepare(&[&rule], &library, None, Fetch::Cached { stale: false })
+        .await
+        .expect("a connection does not wait for a refresh of the shipped copy");
+    let provider = ProviderRouting {
+        action: "add".into(),
+        config: json!({"Geositeurl":"https://provider.example.test/geosite.dat"}),
+        error: None,
+    };
+    let other = tempfile::tempdir().unwrap();
+    let assets = Assets::new(other.path(), Some(&provider))
+        .with_library(&library)
+        .with_bundled(shipped.path());
+    assert_eq!(
+        assets
+            .prepare(&[&rule], &library, None, Fetch::Cached { stale: true })
+            .await
+            .unwrap_err(),
+        deferral::DOWNLOAD_REQUIRED
+    );
+    // Not a list of its kind: the shipped file is ignored.
+    write(&shipped.path().join(bundled::IP_FILE), b"not a list").unwrap();
+    assert!(bundled::bytes(Some(shipped.path()), false, default_url(false)).is_none());
+}
+/// The shipped pair is the first publisher the settings and the routing
+/// category databases offer, and the settings catalog's default.
+#[test]
+fn the_default_publisher_is_the_shipped_pair() {
+    let first = &manager::PROVIDERS[0];
+    assert_eq!(first.id, "v2fly");
+    assert_eq!(first.geosite, default_url(true));
+    assert_eq!(first.geoip, default_url(false));
+}

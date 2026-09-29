@@ -31,6 +31,14 @@ PROTOC_SHA256 = {
     'osx-aarch_64': '193289af0470c6a1aada357d4fba0bbf8d78bfaac8b5e42ca30af2ef75583de2',
     'win64': '5d3ff218d7d91eea95f7569bcb5a98f3030f8996d44151279d9772edcff76082',
 }
+# The default geodata pair (v2fly, the engine's DEFAULT_SITE/DEFAULT_IP) ships
+# as Tauri resources, so geo categories work before the first download.
+GEODATA = {
+    'geosite.dat': ('https://github.com/v2fly/domain-list-community/releases/download/20260925234224/dlc.dat',
+                    '14eb82bb1147839bfcd2b0ffe91a5bc5ed4cf90d50337607cc93abe73a06b436'),
+    'geoip.dat': ('https://github.com/v2fly/geoip/releases/download/202609050329/geoip.dat',
+                  '1cba1f0982cf62502fa079c66047c3d0c608196da5b3305671e68f60e917a482'),
+}
 TAGS = 'with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_openvpn,with_openconnect,with_naive_outbound,badlinkname,tfogo_checklinkname0'
 
 
@@ -74,6 +82,24 @@ def protoc(host):
     # zipfile drops the executable bit.
     binary.chmod(0o755)
     return folder
+
+
+def geodata():
+    """The pinned geodata pair in src-tauri/binaries/geodata, downloaded and checked on first use."""
+    target = DESKTOP / 'src-tauri/binaries/geodata'
+    target.mkdir(parents=True, exist_ok=True)
+    for name, (url, digest) in GEODATA.items():
+        cached = CACHE / 'geodata' / f'{digest}.dat'
+        if not cached.exists() or hashlib.sha256(cached.read_bytes()).hexdigest() != digest:
+            cached.parent.mkdir(parents=True, exist_ok=True)
+            temporary = cached.with_suffix('.part')
+            print('+ fetching', url, flush=True)
+            urllib.request.urlretrieve(url, temporary)
+            if hashlib.sha256(temporary.read_bytes()).hexdigest() != digest:
+                temporary.unlink()
+                raise RuntimeError(f'{name} does not match its pinned SHA-256')
+            temporary.replace(cached)
+        shutil.copyfile(cached, target / name)
 
 
 def main():
@@ -190,6 +216,7 @@ def main():
                 'sha256': hashlib.sha256(binary.read_bytes()).hexdigest(),
                 'parentName': 'Thronium', 'tunOverlaySha256': overlay_hash, **extra}
     binary.with_suffix('.build.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    geodata()
     print(f'Built {binary}', flush=True)
 
 

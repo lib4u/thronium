@@ -1,6 +1,6 @@
 //! An owned HTTP request and an optimistic commit token. No Engine/RPC borrow
 //! survives execute; downloaded bytes cannot update a changed library context.
-use super::{digest, install, load, sets, sites, valid_url};
+use super::{digest, install, install_bundled, load, sets, sites, valid_url};
 use crate::{
     routing::{MAX_CATEGORY_DATABASE_BYTES, MAX_PROFILE_BYTES},
     settings,
@@ -158,6 +158,21 @@ impl Engine {
             && load(&self.data_dir, kind, url).is_ok()
         {
             load(&self.data_dir, kind, url)?
+        } else if let Some(source) = (!payload["force"].as_bool().unwrap_or(false))
+            .then(|| {
+                install_bundled(
+                    &self.data_dir,
+                    &self.store.library,
+                    kind,
+                    url,
+                    name,
+                    super::super::bundled::directory().as_deref(),
+                )
+            })
+            .transpose()?
+            .flatten()
+        {
+            source
         } else {
             if url.starts_with("local:") {
                 return Err("geodata_local_missing".into());

@@ -925,7 +925,7 @@
     "section": "core",
     "id": "xray_geoip_url",
     "label": "settings.geoip_source_cc5f14b",
-    "default": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat",
+    "default": "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat",
     "kind": "url",
     "group": "xray",
     "subgroup": "geodata"
@@ -934,7 +934,7 @@
     "section": "core",
     "id": "xray_geosite_url",
     "label": "settings.geosite_source_5705a65",
-    "default": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat",
+    "default": "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat",
     "kind": "url",
     "group": "xray",
     "subgroup": "geodata"
