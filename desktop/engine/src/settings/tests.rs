@@ -682,6 +682,28 @@ fn an_unavailable_saved_mode_blocks_choosing_it_not_unrelated_edits() {
     );
 }
 
+/// A first start connects through TUN where it is available; a library saved
+/// before keeps the mode it has, even the old default.
+#[test]
+fn a_new_library_starts_in_tun_and_a_saved_one_keeps_its_mode() {
+    use crate::system_proxy::ConnectionMode;
+    let (dir, mut e) = setup();
+    e.adopt_first_run_defaults();
+    let first = e.store.library.preferences.connection_mode;
+    assert!(if crate::tun::supported() {
+        first == ConnectionMode::Tun
+    } else {
+        first == ConnectionMode::Local
+    });
+    let mut local = e.store.library.preferences.clone();
+    local.connection_mode = ConnectionMode::Local;
+    e.preferences(local).unwrap();
+    drop(e);
+    let mut e = Engine::open(dir.path(), Path::new("missing-core")).unwrap();
+    e.adopt_first_run_defaults();
+    assert!(e.store.library.preferences.connection_mode == ConnectionMode::Local);
+}
+
 /// The polled status carries any registered code, including background ones
 /// like a stale one-time code, but never raw core text.
 #[test]

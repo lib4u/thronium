@@ -69,6 +69,15 @@ impl Engine {
         self.credentials_proxy_guard()?;
         self.system_proxy.retry_recovery()
     }
+    /// A library started in this folder for the first time connects through TUN
+    /// where this installation provides it: always on Linux, on Windows with
+    /// the service an installation for all users adds. Elsewhere, and in every
+    /// library saved before, the mode stays as it is.
+    pub fn adopt_first_run_defaults(&mut self) {
+        if self.store.created && tun::supported() {
+            self.store.library.preferences.connection_mode = system_proxy::ConnectionMode::Tun;
+        }
+    }
     /// A connection mode this session cannot provide is refused only while it is
     /// being chosen. A library saved in another desktop session or on another
     /// platform must still accept unrelated edits; Connect reports the mode.

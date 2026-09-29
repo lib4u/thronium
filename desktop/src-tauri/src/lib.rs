@@ -118,6 +118,7 @@ pub fn run() {
                     .as_ref()
                     .is_ok_and(|location| location.mode == thronium_engine::launch::Mode::System);
                 let mut engine = Engine::open_with(&data_dir, &core, seal)?;
+                engine.adopt_first_run_defaults();
                 engine.verify_core_pair();
                 engine.initialize_guarded_system_proxy();
                 Ok(engine)

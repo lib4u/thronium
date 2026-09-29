@@ -254,6 +254,8 @@ pub struct Store {
     _lock: LibraryLock,
     durability: durability::Durability,
     pub(crate) auto_select_source_repaired: bool,
+    /// No library file existed: this is the first start with this folder.
+    pub(crate) created: bool,
     /// The key of this desktop, when its store keeps one. The library is then
     /// written sealed; without it the file stays as it always was.
     pub(crate) secrets: Result<crate::secrets::Key, crate::secrets::keyring::Absent>,
@@ -289,6 +291,7 @@ impl Store {
         } else {
             Err(crate::secrets::keyring::Absent::Portable)
         };
+        let mut created = false;
         let mut library: Library = match std::fs::read(&path) {
             Ok(bytes) => {
                 // A sealed library is unreadable without this desktop's key; it
@@ -319,7 +322,10 @@ impl Store {
                 crate::vless::migrate(&mut value);
                 serde_json::from_value(value).map_err(|_| "library_corrupt".to_string())?
             }
-            Err(e) if e.kind() == std::io::ErrorKind::NotFound => Library::default(),
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
+                created = true;
+                Library::default()
+            }
             Err(e) => return Err(e.to_string()),
         };
         if !supported_version(u64::from(library.version)) {
@@ -352,6 +358,7 @@ impl Store {
             _lock: lock,
             durability: Default::default(),
             auto_select_source_repaired,
+            created,
             secrets,
         };
         if auto_select_source_repaired {
