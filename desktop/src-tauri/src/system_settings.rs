@@ -613,15 +613,14 @@ pub fn ready(app: &AppHandle) {
                 .logs
                 .event("warn", "system_integrations_restore_failed", None);
         }
-        if enabled(&s, "start_minimal") {
-            if let Some(window) = app.get_webview_window("main") {
-                let _ = window.minimize();
-            }
-        }
+        let start_minimal = enabled(&s, "start_minimal");
         let remembered = enabled(&s, "remember_enable")
             .then(|| engine.store.library.selected.clone())
             .flatten();
         drop(guard);
+        if start_minimal {
+            crate::window_behavior::start_minimal(&app).await;
+        }
         if let Some(id) = remembered {
             if crate::connection_preflight::connect(&app, &id)
                 .await
