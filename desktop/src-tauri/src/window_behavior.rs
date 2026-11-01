@@ -26,7 +26,7 @@ pub fn shown(app: &AppHandle) {
 
 /// Asks the session bus; blocking for up to 500 ms, so only `watch` calls it
 /// on a blocking thread.
-fn host_available(app: &AppHandle) -> bool {
+pub(crate) fn host_available(app: &AppHandle) -> bool {
     if app.state::<State>().disabled.load(Ordering::SeqCst) {
         return false;
     }
@@ -70,7 +70,7 @@ fn host_available(app: &AppHandle) -> bool {
     }
 }
 
-fn background(app: &AppHandle, can_hide: bool) {
+pub(crate) fn background(app: &AppHandle, can_hide: bool) {
     if let Some(window) = app.get_webview_window("main") {
         if can_hide && window.hide().is_ok() {
             app.state::<State>().hidden.store(true, Ordering::SeqCst);
@@ -168,4 +168,26 @@ pub fn toggle(app: &AppHandle) {
     } else {
         crate::tray::show(app);
     }
+}
+
+/// Applies the "start minimized" setting: into the tray when a tray host shows
+/// our indicator, otherwise minimized so the window stays reachable. Right
+/// after login the tray host may register a moment later than an autostarted
+/// application, so a tray that is expected is waited for briefly.
+pub async fn start_minimal(app: &AppHandle) {
+    const ATTEMPTS: u32 = 5;
+    let mut can_hide = false;
+    for attempt in 1..=ATTEMPTS {
+        let handle = app.clone();
+        can_hide = tauri::async_runtime::spawn_blocking(move || host_available(&handle))
+            .await
+            .unwrap_or(false);
+        let tray_expected = !app.state::<State>().disabled.load(Ordering::SeqCst)
+            && app.tray_by_id("thronium").is_some();
+        if can_hide || !tray_expected || attempt == ATTEMPTS {
+            break;
+        }
+        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+    }
+    background(app, can_hide);
 }
